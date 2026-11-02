@@ -1,0 +1,35 @@
+{
+  "name": "Kids Money Games",
+  "short_name": "Money Games",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e4f3f6",
+  "theme_color": "#e4f3f6",
+  "icons": [
+    {
+      "src": "icons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

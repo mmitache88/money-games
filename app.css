@@ -1,0 +1,906 @@
+/* Shared look: soft pastels, chunky rounded shapes, the system font stack. */
+:root {
+  --ink: #24324a;
+  --ink-soft: #4d5b73;
+  --paper: #ffffff;
+  --sky: #e4f3f6;
+  --mint: #dff3e4;
+  --sun: #ffd56b;
+  --coral: #ff9d8a;
+  --lilac: #cfc8f2;
+  --teal: #1f6f6b;
+  --teal-soft: #bfe5de;
+  --radius: 24px;
+  --tap: 64px;
+  --font: ui-rounded, "SF Pro Rounded", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(160deg, var(--sky), var(--mint));
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 18px;
+  overscroll-behavior: none;
+}
+
+#app {
+  height: 100vh;
+  height: 100dvh;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Keyboard focus only, so a tap does not leave a ring behind. */
+:focus-visible {
+  outline: 4px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.btn {
+  min-width: var(--tap);
+  min-height: var(--tap);
+  padding: 12px 28px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.16);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #fff;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(36, 50, 74, 0.16);
+}
+
+.icon {
+  display: inline-flex;
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: middle;
+}
+
+.icon svg { width: 100%; height: 100%; }
+
+.icon-btn {
+  flex: none;
+  width: var(--tap);
+  height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.16);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.star { display: inline-flex; font-size: clamp(2.2rem, 11vw, 4rem); }
+.stars-small .star { font-size: 1rem; }
+.star-won { color: #e8a917; }
+.star-empty { color: rgba(36, 50, 74, 0.16); }
+
+/* Celebration */
+.celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(228, 243, 246, 0.86);
+  overflow: hidden;
+}
+
+.celebration-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(20px, 5vw, 44px);
+  border-radius: 32px;
+  background: var(--paper);
+  box-shadow: 0 10px 0 rgba(36, 50, 74, 0.1);
+}
+
+.celebration .star-won { animation: star-in 0.42s ease-out backwards; animation-delay: calc(0.5s + var(--delay)); }
+
+@keyframes star-in {
+  from { transform: scale(0.2) rotate(-40deg); opacity: 0; }
+}
+
+.celebration-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti span {
+  position: absolute;
+  top: -20px;
+  width: 12px;
+  height: 18px;
+  border-radius: 3px;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to { transform: translateY(110vh) rotate(540deg); }
+}
+
+.sparkle {
+  position: fixed;
+  z-index: 40;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.sparkle span {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px;
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 8px #fff;
+  animation: sparkle-out 0.6s ease-out forwards;
+}
+
+@keyframes sparkle-out {
+  to { transform: translate(var(--x), var(--y)) scale(0.2); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Coin Sorter's own styles. */
+
+/* Home */
+.cs-home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  overflow: auto;
+}
+
+.home-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-left { justify-self: start; display: flex; gap: 8px; }
+.home-right { justify-self: end; display: flex; gap: 8px; }
+
+.home-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.level-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 260px));
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .level-grid { grid-template-columns: repeat(2, minmax(0, 260px)); }
+}
+
+.level-card {
+  position: relative;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 0 6px 0 rgba(36, 50, 74, 0.14);
+}
+
+.level-card:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(36, 50, 74, 0.14); }
+.level-locked { background: #eef1f4; }
+.level-locked .level-art { opacity: 0.4; }
+
+.level-number {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.level-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Can shrink, so three coins still fit a narrow card. */
+.level-art .coin-mini {
+  flex: 0 1 60px;
+  min-width: 0;
+  aspect-ratio: 1;
+}
+
+.level-lock {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--ink-soft);
+}
+
+.debug-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Play */
+.play {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.play-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex: none;
+}
+
+.pips {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pip {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(36, 50, 74, 0.14);
+  transition: background 0.2s;
+}
+
+.pip-done { background: var(--teal); }
+
+.prompt {
+  align-self: center;
+  flex: none;
+  min-height: 48px;
+  padding: 4px 20px;
+  border: 0;
+  background: none;
+  font-size: clamp(1.1rem, 3.4vw, 1.6rem);
+  font-weight: 800;
+}
+
+/* The zones area takes all the height left over, and the pots are sized to fit. */
+.zones {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: var(--row-width);
+}
+
+.pot {
+  position: relative;
+  flex: none;
+  width: var(--pot);
+  height: calc(var(--pot) * 1.06);
+}
+
+/* The body sits behind the opening, so the whole dark ellipse shows. */
+.pot-body {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50% 50% 26% 26% / 12% 12% 26% 26%;
+  background: var(--pot-colour);
+  box-shadow: inset 0 -10px 18px rgba(36, 50, 74, 0.14), 0 6px 0 rgba(36, 50, 74, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18% 8% 6%;
+}
+
+.pot-mouth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22%;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.7);
+  background: #5b6677;
+  background-clip: padding-box;
+  box-shadow: inset 0 8px 14px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(36, 50, 74, 0.12);
+  z-index: 1;
+}
+
+.pot-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.pot-label .coin-mini { width: 44%; aspect-ratio: 1; }
+.pot-label .coin-mini:only-child { width: 72%; }
+
+.coin-mini {
+  display: inline-block;
+  flex: none;
+}
+
+/* Level 3: the coin to find, above its pot. */
+.find-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.find-sideways { flex-direction: row; }
+
+.target {
+  position: relative;
+  flex: none;
+  width: var(--target);
+  height: var(--target);
+  padding: 0;
+  border: 0;
+  background: none;
+  filter: drop-shadow(0 5px 5px rgba(36, 50, 74, 0.28));
+}
+
+.target-speaker {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--paper);
+  font-size: 15px;
+}
+
+/* Level 4: numbered slots, with steps that rise from left to right. */
+.slots {
+  display: grid;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.slot-hold {
+  width: var(--slot);
+  height: var(--slot);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px dashed rgba(36, 50, 74, 0.32);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.slot-filled .slot-hold {
+  border: 4px solid transparent;
+  background: none;
+}
+
+.slot-hold .coin-mini { width: 100%; height: 100%; }
+
+.slot-number {
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 24px;
+}
+
+.slot::after {
+  content: "";
+  width: 70%;
+  height: calc(4px + var(--step) * 28px);
+  margin-top: calc(28px - var(--step) * 28px);
+  border-radius: 4px;
+  background: #6fbfb4;
+}
+
+/* The tray sits above the pots, so a dragged coin is never hidden behind one. */
+.tray {
+  position: relative;
+  z-index: 5;
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 124px;
+  padding: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Fixed slots in one row, so the other coins stay put when one is taken. */
+.tray-sort, .tray-find, .tray-few {
+  flex-wrap: nowrap;
+  min-height: calc(var(--coin-max, 100px) + 20px + env(safe-area-inset-bottom, 0px));
+}
+
+.tray-all .tray-slot {
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  max-width: none;
+}
+
+.tray-slot {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Parent area. This is the one screen that scrolls. */
+.parent {
+  height: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.parent-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.parent h1 { margin: 0; font-size: 1.8rem; }
+.parent h2 { margin: 0 0 10px; font-size: 1.2rem; }
+.parent h3 { margin: 16px 0 8px; font-size: 1rem; }
+
+.parent-card {
+  flex: none;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.parent-note {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.parent-note:empty { display: none; }
+
+.parent-actions { margin-top: 10px; }
+
+.parent-actions, .round-choices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.parent-actions .btn, .round-choices .btn {
+  background: var(--sky);
+  box-shadow: none;
+}
+
+.parent-actions .btn-danger { background: #f8d2c9; }
+
+.round-choices .btn[aria-pressed="true"] {
+  background: var(--teal);
+  color: #fff;
+}
+
+.switch {
+  width: 100%;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 600;
+}
+
+.switch-track {
+  flex: none;
+  width: 64px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 18px;
+  background: #b9c2cd;
+  transition: background 0.15s;
+}
+
+.switch-thumb {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+
+.switch[aria-checked="true"] .switch-track { background: var(--teal); }
+.switch[aria-checked="true"] .switch-thumb { transform: translateX(28px); }
+
+.coin-choices {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.coin-choice {
+  position: relative;
+  min-height: var(--tap);
+  aspect-ratio: 1;
+  max-height: 110px;
+  justify-self: center;
+  width: 100%;
+  max-width: 110px;
+  padding: 8px;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background: var(--sky);
+}
+
+.coin-choice svg { display: block; width: 100%; height: 100%; }
+.coin-choice[aria-pressed="true"] { border-color: var(--teal); }
+.coin-choice[aria-pressed="false"] { background: #eef1f4; }
+.coin-choice[aria-pressed="false"] svg { opacity: 0.3; }
+
+.progress-list, .confused {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  align-items: center;
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+.progress-row .parent-note { margin: 0; font-weight: 400; }
+
+.confused li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.confused .coin-mini { width: 44px; height: 44px; }
+
+/* The hold button, with the ring that fills while it is held. */
+.gate { position: relative; }
+
+.gate-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.gate-ring svg { width: 100%; height: 100%; }
+
+.gate-ring circle {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.gate-holding .gate-ring circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 3s linear;
+}
+
+.gate-hint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* Very short screens, such as a phone on its side: every pixel goes to the game. */
+@media (max-height: 480px) {
+  .play { position: relative; }
+  .pips { visibility: hidden; }
+
+  .prompt {
+    position: absolute;
+    top: 8px;
+    left: 92px;
+    right: 92px;
+    height: var(--tap);
+  }
+
+  .level-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .level-card { min-height: 140px; padding: 8px; }
+  .level-art .coin-mini { flex-basis: 40px; }
+}
+
+/* Coins */
+.coin {
+  width: var(--size);
+  height: var(--size);
+  flex: none;
+  position: relative;
+  perspective: 600px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.coin-face {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 3px 3px rgba(36, 50, 74, 0.28));
+  transition: filter 0.12s ease-out, transform 0.12s ease-out;
+}
+
+.coin-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.coin-value {
+  font-family: var(--font);
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-width: 4px;
+}
+
+.pop { animation: coin-pop 0.26s ease-out; }
+
+@keyframes coin-pop {
+  from { transform: scale(0.4); opacity: 0; }
+}
+
+/* Picked up: a little bigger, with a longer shadow. */
+.coin.dragging {
+  z-index: 30;
+  cursor: grabbing;
+}
+
+.coin.dragging .coin-face {
+  transform: scale(1.12);
+  filter: drop-shadow(0 16px 12px rgba(36, 50, 74, 0.34));
+}
+
+.coin.returning { transition: transform 0.26s ease-out; }
+
+/* A gentle wobble, never a shake. */
+.coin.wobble .coin-face { animation: wobble 0.32s ease-in-out; }
+.level-card.wobble { animation: wobble 0.32s ease-in-out; }
+
+@keyframes wobble {
+  25% { transform: rotate(-7deg); }
+  75% { transform: rotate(7deg); }
+}
+
+.coin.landing {
+  z-index: 30;
+  transition: transform 0.24s ease-in;
+}
+
+.coin.landing .coin-face { animation: coin-land 0.44s ease-in forwards; }
+
+@keyframes coin-land {
+  0% { transform: rotateY(0) scale(1); opacity: 1; }
+  70% { transform: rotateY(360deg) scale(0.8); opacity: 1; }
+  100% { transform: rotateY(360deg) scale(0.3); opacity: 0; }
+}
+
+/* The hub home screen and the access-code screen. */
+.hub {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+  overflow: auto;
+}
+
+.hub-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 800;
+}
+
+.hub-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hub-tile {
+  position: relative;
+  width: 260px;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px;
+  border: 0;
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 6px 0 rgba(36, 50, 74, 0.14);
+}
+
+.hub-tile:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(36, 50, 74, 0.14); }
+
+.hub-tile .icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--ink-soft);
+}
+
+.hub-art { display: flex; gap: 6px; }
+.hub-art .coin-mini { width: 66px; height: 66px; }
+.hub-name { font-size: 1.4rem; font-weight: 800; }
+
+.code-card {
+  width: min(460px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 28px;
+  background: var(--paper);
+}
+
+.code-card h1 { margin: 0; font-size: 1.5rem; }
+.code-card p { margin: 0; color: var(--ink-soft); }
+
+.code-input {
+  min-height: var(--tap);
+  padding: 8px 14px;
+  border: 3px solid var(--teal-soft);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font);
+  /* 16px or more, or Safari zooms the page when the field is tapped. */
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  min-width: 0;
+}
+
+.code-message { font-weight: 600; }
+.code-message:empty { display: none; }
+
+.install-tip {
+  width: min(460px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+}
