@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"]}}};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"]}}};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -230,6 +230,12 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
     // Low and short, a soft "boop", never a buzzer.
     wrong: [{ frequency: 294, slideTo: 247, length: 0.2, volume: 0.12 }],
     star: [{ frequency: 1760, length: 0.25, volume: 0.1, type: 'triangle' }],
+    // A shop till: a quick "cha" sliding down, then a bright two-note "ching".
+    till: [
+      { frequency: 1400, slideTo: 700, length: 0.07, volume: 0.06, type: 'triangle' },
+      { frequency: 2093, start: 0.08, length: 0.3, volume: 0.1, type: 'triangle' },
+      { frequency: 3136, start: 0.08, length: 0.22, volume: 0.05, type: 'triangle' },
+    ],
     fanfare: [
       { frequency: 523, length: 0.15 },
       { frequency: 659, start: 0.14, length: 0.15 },
@@ -417,287 +423,50 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
   KMG.ui = { el, show, reducedMotion, icon, iconButton, muteButton };
 })(window.KMG);
 
-// Dragging with Pointer Events, so mouse, finger and stylus all work the same.
-// Only one pointer can drag at a time: a resting palm or a second thumb is ignored.
+// Amounts of money, written and spoken the UK way. Amounts are whole pence.
+//
+//   KMG.money.format(7)    "7p"      KMG.money.words(7)    "seven p"
+//   KMG.money.format(23)   "23p"     KMG.money.words(23)   "twenty-three p"
+//   KMG.money.format(100)  "£1"      KMG.money.words(100)  "one pound"
+//   KMG.money.format(150)  "£1.50"   KMG.money.words(150)  "one pound fifty"
+//   KMG.money.parse("23p") 23        KMG.money.parse("£2") 200
 (function (KMG) {
   'use strict';
 
-  let activePointer = null;
+  const ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-  // handlers: canStart(), onStart(), onEnd(), onCancel()
-  function draggable(node, handlers) {
-    let startX = 0;
-    let startY = 0;
-
-    node.addEventListener('pointerdown', (event) => {
-      if (activePointer !== null) return;
-      if (event.pointerType === 'mouse' && event.button !== 0) return;
-      if (handlers.canStart && !handlers.canStart()) return;
-
-      activePointer = event.pointerId;
-      startX = event.clientX;
-      startY = event.clientY;
-      try {
-        node.setPointerCapture(event.pointerId);
-      } catch (error) {
-        // Capture is a nicety: moves still reach the node while over it.
-      }
-      event.preventDefault();
-      handlers.onStart();
-    });
-
-    node.addEventListener('pointermove', (event) => {
-      if (event.pointerId !== activePointer) return;
-      node.style.transform = `translate(${event.clientX - startX}px, ${event.clientY - startY}px)`;
-    });
-
-    function finish(event, callback) {
-      if (event.pointerId !== activePointer) return;
-      activePointer = null;
-      callback();
-    }
-
-    node.addEventListener('pointerup', (event) => finish(event, handlers.onEnd));
-    node.addEventListener('pointercancel', (event) => finish(event, handlers.onCancel));
-    // Fires after pointerup as well, by which time activePointer is already clear.
-    node.addEventListener('lostpointercapture', (event) => finish(event, handlers.onCancel));
+  // 0 to 99 in words, with a hyphen as in "twenty-three".
+  function number(n) {
+    if (n < 20) return ONES[n];
+    const tens = TENS[Math.floor(n / 10)];
+    return n % 10 ? `${tens}-${ONES[n % 10]}` : tens;
   }
 
-  // A screen that replaces a mid-drag coin must not leave the lock held.
-  function reset() {
-    activePointer = null;
+  function format(pence) {
+    if (pence < 100) return `${pence}p`;
+    if (pence % 100 === 0) return `£${pence / 100}`;
+    return `£${(pence / 100).toFixed(2)}`;
   }
 
-  KMG.drag = { draggable, reset };
-})(window.KMG);
-
-// Sparkles and confetti, built from plain elements. Both are skipped entirely
-// for anyone who prefers reduced motion.
-(function (KMG) {
-  'use strict';
-
-  const { el, reducedMotion } = KMG.ui;
-
-  const removeLater = (node, ms) => window.setTimeout(() => node.remove(), ms);
-
-  function sparkle(x, y) {
-    if (reducedMotion()) return;
-    const burst = el('div', { class: 'sparkle', style: `left:${x}px;top:${y}px`, 'aria-hidden': 'true' });
-    for (let i = 0; i < 8; i++) {
-      const angle = (i / 8) * Math.PI * 2;
-      burst.appendChild(el('span', {
-        style: `--x:${Math.round(Math.cos(angle) * 64)}px;--y:${Math.round(Math.sin(angle) * 64)}px`,
-      }));
-    }
-    document.body.appendChild(burst);
-    removeLater(burst, 700);
+  function words(pence) {
+    if (pence < 100) return `${number(pence)} p`;
+    const pounds = Math.floor(pence / 100);
+    const poundWords = `${number(pounds)} ${pounds === 1 ? 'pound' : 'pounds'}`;
+    return pence % 100 ? `${poundWords} ${number(pence % 100)}` : poundWords;
   }
 
-  const CONFETTI_COLOURS = ['#ffd56b', '#ff9d8a', '#8fd3c7', '#cfc8f2', '#9cc9f5'];
-
-  function confetti(parent) {
-    if (reducedMotion()) return;
-    const layer = el('div', { class: 'confetti', 'aria-hidden': 'true' });
-    for (let i = 0; i < 44; i++) {
-      layer.appendChild(el('span', {
-        style: [
-          `left:${Math.random() * 100}%`,
-          `background:${CONFETTI_COLOURS[i % CONFETTI_COLOURS.length]}`,
-          `animation-delay:${(Math.random() * 0.7).toFixed(2)}s`,
-          `animation-duration:${(1.8 + Math.random() * 1.2).toFixed(2)}s`,
-        ].join(';'),
-      }));
-    }
-    parent.appendChild(layer);
-    removeLater(layer, 3800);
+  // The amount a label like "23p" or "£2" stands for, or null.
+  function parse(label) {
+    const text = String(label);
+    let match = /^([1-9][0-9]?)p$/.exec(text);
+    if (match) return Number(match[1]);
+    match = /^£([1-9][0-9]*)$/.exec(text);
+    return match ? Number(match[1]) * 100 : null;
   }
 
-  KMG.effects = { sparkle, confetti };
-})(window.KMG);
-
-// The end-of-round screen, used by every game: stars, confetti, cheerful sound.
-(function (KMG) {
-  'use strict';
-
-  const { el, icon, reducedMotion } = KMG.ui;
-
-  const STAR_GAP_MS = 320;
-
-  // options: stars (1 to 3), onAgain, onHome, and onNext (null when there is no next level)
-  function celebrate(parent, options) {
-    const stars = [1, 2, 3].map((n) => el('span', {
-      class: `star ${n <= options.stars ? 'star-won' : 'star-empty'}`,
-      style: `--delay:${(n - 1) * STAR_GAP_MS}ms`,
-    }, icon('star')));
-
-    const button = (action, iconName, label, onclick, primary) => el('button', {
-      class: `btn ${primary ? 'btn-primary' : ''}`,
-      'data-action': action,
-      onclick,
-    }, icon(iconName), ' ', label);
-
-    const overlay = el('div', {
-      class: 'celebration',
-      'data-screen': 'celebration',
-      'data-stars': options.stars,
-      role: 'dialog',
-      'aria-label': `${options.stars} ${options.stars === 1 ? 'star' : 'stars'}`,
-    }, el('div', { class: 'celebration-card' },
-      el('div', { class: 'stars' }, stars),
-      el('div', { class: 'celebration-actions' },
-        button('again', 'replay', 'Play again', options.onAgain, !options.onNext),
-        options.onNext && button('next', 'next', 'Next level', options.onNext, true),
-        button('home', 'home', 'Home', options.onHome, false))));
-
-    parent.appendChild(overlay);
-    KMG.effects.confetti(overlay);
-    KMG.audio.play('fanfare');
-
-    if (!reducedMotion()) {
-      for (let n = 0; n < options.stars; n++) {
-        window.setTimeout(() => KMG.audio.play('star'), 500 + n * STAR_GAP_MS);
-      }
-    }
-  }
-
-  KMG.celebrate = celebrate;
-})(window.KMG);
-
-// The way into the parent area: a button that must be held for 3 seconds, with a
-// ring that fills while it is held, so children do not open it by accident.
-(function (KMG) {
-  'use strict';
-
-  const { el, icon } = KMG.ui;
-
-  const HOLD_MS = 3000;
-
-  function button(onOpen) {
-    const ring = el('span', {
-      class: 'gate-ring',
-      'aria-hidden': 'true',
-      html: '<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" pathLength="100"/></svg>',
-    });
-    const hint = el('span', { class: 'gate-hint', role: 'status' });
-    const node = el('button', {
-      class: 'icon-btn gate',
-      'data-action': 'parent-gate',
-      'aria-label': 'Grown-ups: press and hold for 3 seconds',
-    }, ring, icon('person'), hint);
-
-    let timer = null;
-    let holdingPointer = null;
-
-    function stop() {
-      window.clearTimeout(timer);
-      timer = null;
-      holdingPointer = null;
-      node.classList.remove('gate-holding');
-    }
-
-    node.addEventListener('pointerdown', (event) => {
-      if (holdingPointer !== null) return;
-      holdingPointer = event.pointerId;
-      hint.textContent = '';
-      try {
-        node.setPointerCapture(event.pointerId);
-      } catch (error) {
-        // Without capture, moving off the button just cancels the hold.
-      }
-      node.classList.add('gate-holding');
-      timer = window.setTimeout(() => {
-        stop();
-        onOpen();
-      }, HOLD_MS);
-    });
-
-    const release = (event) => {
-      if (event.pointerId !== holdingPointer) return;
-      stop();
-      hint.textContent = 'Keep holding';
-    };
-    node.addEventListener('pointerup', release);
-    node.addEventListener('pointercancel', release);
-
-    // A long press would otherwise open the browser's own menu on a tablet.
-    node.addEventListener('contextmenu', (event) => event.preventDefault());
-
-    return node;
-  }
-
-  KMG.parentGate = { button, HOLD_MS };
-})(window.KMG);
-
-// Saving a small file to the device, and reading one back. Used for moving
-// progress between devices, since nothing ever leaves the device by itself.
-(function (KMG) {
-  'use strict';
-
-  const { el } = KMG.ui;
-
-  // Largest file worth reading. A real progress file is well under 2 KB.
-  const MAX_BYTES = 100 * 1024;
-
-  function isIos() {
-    const { userAgent, platform, maxTouchPoints } = window.navigator;
-    return /iP(ad|hone|od)/.test(userAgent) || (platform === 'MacIntel' && maxTouchPoints > 1);
-  }
-
-  function shareOnIos(name, text) {
-    try {
-      if (!isIos() || !window.navigator.canShare) return false;
-      const file = new window.File([text], name, { type: 'application/json' });
-      if (!window.navigator.canShare({ files: [file] })) return false;
-      window.navigator.share({ files: [file] }).catch(() => {});
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  // An installed app on iOS cannot use download links, so it goes through the
-  // share sheet there. Everywhere else it is a normal download.
-  function save(name, text) {
-    if (shareOnIos(name, text)) return true;
-    try {
-      const url = window.URL.createObjectURL(new window.Blob([text], { type: 'application/json' }));
-      const link = el('a', { href: url, download: name, style: 'display:none' });
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.setTimeout(() => window.URL.revokeObjectURL(url), 1000);
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  // Calls back with the file's text, or null if it could not be read.
-  function open(onText) {
-    const input = el('input', {
-      type: 'file',
-      accept: '.json,application/json',
-      style: 'display:none',
-      'data-file-input': true,
-      onchange() {
-        const file = input.files && input.files[0];
-        input.remove();
-        if (!file) return;
-        if (file.size > MAX_BYTES) {
-          onText(null);
-          return;
-        }
-        const reader = new window.FileReader();
-        reader.onload = () => onText(String(reader.result));
-        reader.onerror = () => onText(null);
-        reader.readAsText(file);
-      },
-    });
-    document.body.appendChild(input);
-    input.click();
-  }
-
-  KMG.fileTransfer = { save, open };
+  KMG.money = { format, words, parse };
 })(window.KMG);
 
 // The eight UK coins as stylised SVG drawings. These are original shapes with
@@ -853,6 +622,721 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
   };
 })(window.KMG);
 
+// Dragging with Pointer Events, so mouse, finger and stylus all work the same.
+// Only one pointer can drag at a time: a resting palm or a second thumb is ignored.
+(function (KMG) {
+  'use strict';
+
+  let activePointer = null;
+
+  // handlers: canStart(), onStart(), onEnd(), onCancel()
+  function draggable(node, handlers) {
+    let startX = 0;
+    let startY = 0;
+
+    node.addEventListener('pointerdown', (event) => {
+      if (activePointer !== null) return;
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      if (handlers.canStart && !handlers.canStart()) return;
+
+      activePointer = event.pointerId;
+      startX = event.clientX;
+      startY = event.clientY;
+      try {
+        node.setPointerCapture(event.pointerId);
+      } catch (error) {
+        // Capture is a nicety: moves still reach the node while over it.
+      }
+      event.preventDefault();
+      handlers.onStart();
+    });
+
+    node.addEventListener('pointermove', (event) => {
+      if (event.pointerId !== activePointer) return;
+      node.style.transform = `translate(${event.clientX - startX}px, ${event.clientY - startY}px)`;
+    });
+
+    function finish(event, callback) {
+      if (event.pointerId !== activePointer) return;
+      activePointer = null;
+      callback();
+    }
+
+    node.addEventListener('pointerup', (event) => finish(event, handlers.onEnd));
+    node.addEventListener('pointercancel', (event) => finish(event, handlers.onCancel));
+    // Fires after pointerup as well, by which time activePointer is already clear.
+    node.addEventListener('lostpointercapture', (event) => finish(event, handlers.onCancel));
+  }
+
+  // A screen that replaces a mid-drag coin must not leave the lock held.
+  function reset() {
+    activePointer = null;
+  }
+
+  KMG.drag = { draggable, reset };
+})(window.KMG);
+
+// Sparkles and confetti, built from plain elements. Both are skipped entirely
+// for anyone who prefers reduced motion.
+(function (KMG) {
+  'use strict';
+
+  const { el, reducedMotion } = KMG.ui;
+
+  const removeLater = (node, ms) => window.setTimeout(() => node.remove(), ms);
+
+  function sparkle(x, y) {
+    if (reducedMotion()) return;
+    const burst = el('div', { class: 'sparkle', style: `left:${x}px;top:${y}px`, 'aria-hidden': 'true' });
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * Math.PI * 2;
+      burst.appendChild(el('span', {
+        style: `--x:${Math.round(Math.cos(angle) * 64)}px;--y:${Math.round(Math.sin(angle) * 64)}px`,
+      }));
+    }
+    document.body.appendChild(burst);
+    removeLater(burst, 700);
+  }
+
+  const CONFETTI_COLOURS = ['#ffd56b', '#ff9d8a', '#8fd3c7', '#cfc8f2', '#9cc9f5'];
+
+  function confetti(parent) {
+    if (reducedMotion()) return;
+    const layer = el('div', { class: 'confetti', 'aria-hidden': 'true' });
+    for (let i = 0; i < 44; i++) {
+      layer.appendChild(el('span', {
+        style: [
+          `left:${Math.random() * 100}%`,
+          `background:${CONFETTI_COLOURS[i % CONFETTI_COLOURS.length]}`,
+          `animation-delay:${(Math.random() * 0.7).toFixed(2)}s`,
+          `animation-duration:${(1.8 + Math.random() * 1.2).toFixed(2)}s`,
+        ].join(';'),
+      }));
+    }
+    parent.appendChild(layer);
+    removeLater(layer, 3800);
+  }
+
+  KMG.effects = { sparkle, confetti };
+})(window.KMG);
+
+// The end-of-round screen, used by every game: stars, confetti, cheerful sound.
+(function (KMG) {
+  'use strict';
+
+  const { el, icon, reducedMotion } = KMG.ui;
+
+  const STAR_GAP_MS = 320;
+
+  // options: stars (1 to 3), onAgain, onHome, and onNext (null when there is no next level)
+  function celebrate(parent, options) {
+    const stars = [1, 2, 3].map((n) => el('span', {
+      class: `star ${n <= options.stars ? 'star-won' : 'star-empty'}`,
+      style: `--delay:${(n - 1) * STAR_GAP_MS}ms`,
+    }, icon('star')));
+
+    const button = (action, iconName, label, onclick, primary) => el('button', {
+      class: `btn ${primary ? 'btn-primary' : ''}`,
+      'data-action': action,
+      onclick,
+    }, icon(iconName), ' ', label);
+
+    const overlay = el('div', {
+      class: 'celebration',
+      'data-screen': 'celebration',
+      'data-stars': options.stars,
+      role: 'dialog',
+      'aria-label': `${options.stars} ${options.stars === 1 ? 'star' : 'stars'}`,
+    }, el('div', { class: 'celebration-card' },
+      el('div', { class: 'stars' }, stars),
+      el('div', { class: 'celebration-actions' },
+        button('again', 'replay', 'Play again', options.onAgain, !options.onNext),
+        options.onNext && button('next', 'next', 'Next level', options.onNext, true),
+        button('home', 'home', 'Home', options.onHome, false))));
+
+    parent.appendChild(overlay);
+    KMG.effects.confetti(overlay);
+    KMG.audio.play('fanfare');
+
+    if (!reducedMotion()) {
+      for (let n = 0; n < options.stars; n++) {
+        window.setTimeout(() => KMG.audio.play('star'), 500 + n * STAR_GAP_MS);
+      }
+    }
+  }
+
+  // Stars for a round, the same in every game: 0 mistakes is 3 stars, 1 or 2
+  // is 2 stars, and 3 or more is 1 star. Never none.
+  const starsFor = (mistakes) => (mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1);
+
+  KMG.celebrate = celebrate;
+  KMG.stars = { forMistakes: starsFor };
+})(window.KMG);
+
+// The way into the parent area: a button that must be held for 3 seconds, with a
+// ring that fills while it is held, so children do not open it by accident.
+(function (KMG) {
+  'use strict';
+
+  const { el, icon } = KMG.ui;
+
+  const HOLD_MS = 3000;
+
+  function button(onOpen) {
+    const ring = el('span', {
+      class: 'gate-ring',
+      'aria-hidden': 'true',
+      html: '<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" pathLength="100"/></svg>',
+    });
+    const hint = el('span', { class: 'gate-hint', role: 'status' });
+    const node = el('button', {
+      class: 'icon-btn gate',
+      'data-action': 'parent-gate',
+      'aria-label': 'Grown-ups: press and hold for 3 seconds',
+    }, ring, icon('person'), hint);
+
+    let timer = null;
+    let holdingPointer = null;
+
+    function stop() {
+      window.clearTimeout(timer);
+      timer = null;
+      holdingPointer = null;
+      node.classList.remove('gate-holding');
+    }
+
+    node.addEventListener('pointerdown', (event) => {
+      if (holdingPointer !== null) return;
+      holdingPointer = event.pointerId;
+      hint.textContent = '';
+      try {
+        node.setPointerCapture(event.pointerId);
+      } catch (error) {
+        // Without capture, moving off the button just cancels the hold.
+      }
+      node.classList.add('gate-holding');
+      timer = window.setTimeout(() => {
+        stop();
+        onOpen();
+      }, HOLD_MS);
+    });
+
+    const release = (event) => {
+      if (event.pointerId !== holdingPointer) return;
+      stop();
+      hint.textContent = 'Keep holding';
+    };
+    node.addEventListener('pointerup', release);
+    node.addEventListener('pointercancel', release);
+
+    // A long press would otherwise open the browser's own menu on a tablet.
+    node.addEventListener('contextmenu', (event) => event.preventDefault());
+
+    return node;
+  }
+
+  KMG.parentGate = { button, HOLD_MS };
+})(window.KMG);
+
+// Saving a small file to the device, and reading one back. Used for moving
+// progress between devices, since nothing ever leaves the device by itself.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+
+  // Largest file worth reading. A real progress file is well under 2 KB.
+  const MAX_BYTES = 100 * 1024;
+
+  function isIos() {
+    const { userAgent, platform, maxTouchPoints } = window.navigator;
+    return /iP(ad|hone|od)/.test(userAgent) || (platform === 'MacIntel' && maxTouchPoints > 1);
+  }
+
+  function shareOnIos(name, text) {
+    try {
+      if (!isIos() || !window.navigator.canShare) return false;
+      const file = new window.File([text], name, { type: 'application/json' });
+      if (!window.navigator.canShare({ files: [file] })) return false;
+      window.navigator.share({ files: [file] }).catch(() => {});
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  // An installed app on iOS cannot use download links, so it goes through the
+  // share sheet there. Everywhere else it is a normal download.
+  function save(name, text) {
+    if (shareOnIos(name, text)) return true;
+    try {
+      const url = window.URL.createObjectURL(new window.Blob([text], { type: 'application/json' }));
+      const link = el('a', { href: url, download: name, style: 'display:none' });
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  // Calls back with the file's text, or null if it could not be read.
+  function open(onText) {
+    const input = el('input', {
+      type: 'file',
+      accept: '.json,application/json',
+      style: 'display:none',
+      'data-file-input': true,
+      onchange() {
+        const file = input.files && input.files[0];
+        input.remove();
+        if (!file) return;
+        if (file.size > MAX_BYTES) {
+          onText(null);
+          return;
+        }
+        const reader = new window.FileReader();
+        reader.onload = () => onText(String(reader.result));
+        reader.onerror = () => onText(null);
+        reader.readAsText(file);
+      },
+    });
+    document.body.appendChild(input);
+    input.click();
+  }
+
+  KMG.fileTransfer = { save, open };
+})(window.KMG);
+
+// A game's saved data: stars, unlocked levels, mistakes, and the parent's
+// settings. Saved through KMG.storage, so it can never throw. Each game makes
+// its own store with KMG.progressStore({...}) and adds its settings.
+//
+//   key            storage key, and the game named in exported files
+//   levels()       the game's levels, each { id, stages? }
+//   settings()     the game's own settings and their defaults, such as
+//                  { coins: [...], roundLength: 8 }
+//   keepOnReset    settings a reset leaves alone, such as ['coins', 'roundLength']
+//   isMistakeKey   whether a key in `mistakes` is valid (a coin, a price, ...)
+//   checkSettings  (fileData, clean) => false if the file's settings are wrong;
+//                  otherwise copies them into `clean`
+(function (KMG) {
+  'use strict';
+
+  const VERSION = 1;
+
+  const isCount = (value) => Number.isInteger(value) && value >= 0;
+  const isPlainObject = (value) => typeof value === 'object' && value !== null && !Array.isArray(value);
+
+  function progressStore(options) {
+    const { key } = options;
+    const levelById = (id) => options.levels().find((level) => level.id === id);
+
+    function defaults() {
+      return Object.assign({ version: VERSION, unlocked: 1, levels: {}, mistakes: {} }, options.settings());
+    }
+
+    const load = () => Object.assign(defaults(), KMG.storage.load(key, null));
+    const save = (data) => KMG.storage.save(key, data);
+
+    function levelRecord(data, levelId) {
+      return data.levels[levelId] || { stars: 0, plays: 0, stage: 0 };
+    }
+
+    // Keeps the best stars, and finishing a round unlocks the next level.
+    // `mistakes` counts mistakes per key in this round.
+    function recordRound(levelId, { stars, mistakes, stage, lastStage }) {
+      const data = load();
+      const record = levelRecord(data, levelId);
+      data.levels[levelId] = {
+        stars: Math.max(record.stars, stars),
+        plays: record.plays + 1,
+        stage: Math.max(record.stage, Math.min(stage + 1, lastStage)),
+      };
+      data.unlocked = Math.min(options.levels().length, Math.max(data.unlocked, levelId + 1));
+      Object.entries(mistakes).forEach(([id, count]) => {
+        data.mistakes[id] = (data.mistakes[id] || 0) + count;
+      });
+      save(data);
+      return data;
+    }
+
+    // Clears what the child has done, and keeps the parent's settings.
+    function reset() {
+      const data = load();
+      const fresh = defaults();
+      options.keepOnReset.forEach((name) => {
+        fresh[name] = data[name];
+      });
+      save(fresh);
+    }
+
+    // The keys with the most mistakes, worst first.
+    function confused(data, limit) {
+      return Object.entries(data.mistakes)
+        .filter(([, count]) => count > 0)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, limit);
+    }
+
+    function exportText() {
+      return JSON.stringify({
+        app: 'kids-money-games',
+        game: key,
+        version: VERSION,
+        exportedAt: new Date().toISOString(),
+        data: load(),
+      }, null, 2);
+    }
+
+    // Checks every field and rebuilds the data from what was checked, so nothing
+    // unexpected in a file can reach the game. Returns null if anything is wrong.
+    function parseImport(text) {
+      let file;
+      try {
+        file = JSON.parse(text);
+      } catch (error) {
+        return null;
+      }
+      if (!isPlainObject(file) || file.app !== 'kids-money-games' || file.game !== key) return null;
+      if (file.version !== VERSION || !isPlainObject(file.data)) return null;
+
+      const { unlocked, levels, mistakes } = file.data;
+      const levelCount = options.levels().length;
+      if (!Number.isInteger(unlocked) || unlocked < 1 || unlocked > levelCount) return null;
+      if (!isPlainObject(levels) || !isPlainObject(mistakes)) return null;
+
+      const clean = defaults();
+      clean.unlocked = unlocked;
+      if (options.checkSettings(file.data, clean) === false) return null;
+
+      for (const [id, record] of Object.entries(levels)) {
+        const level = levelById(Number(id));
+        if (!level || !isPlainObject(record)) return null;
+        const lastStage = level.stages ? level.stages.length - 1 : 0;
+        if (!isCount(record.stars) || record.stars > 3 || !isCount(record.plays)) return null;
+        if (!isCount(record.stage) || record.stage > lastStage) return null;
+        clean.levels[id] = { stars: record.stars, plays: record.plays, stage: record.stage };
+      }
+
+      for (const [id, count] of Object.entries(mistakes)) {
+        if (!options.isMistakeKey(id) || !isCount(count)) return null;
+        clean.mistakes[id] = count;
+      }
+
+      return clean;
+    }
+
+    return { load, save, defaults, levelRecord, recordRound, reset, confused, exportText, parseImport, VERSION };
+  }
+
+  KMG.progressStore = progressStore;
+})(window.KMG);
+
+// A game's home screen: the level picker. One card per level with its picture,
+// its stars and a lock, the way into the grown-ups area, and the way back to
+// the hub. Pictures rather than words, because many players cannot read yet.
+//
+//   KMG.levelPicker.show({
+//     title,           the game's name, shown at the top
+//     levels,          the game's levels, each { id }
+//     art(level),      the picture on a level's card
+//     store,           the game's progress store (src/shared/progress-store.js)
+//     onPlay(id),      start a level
+//     onParent(),      open the grown-ups area, after the 3-second hold
+//     exit,            back to the hub, or null in the standalone build
+//   })
+(function (KMG) {
+  'use strict';
+
+  const { el, show, icon, iconButton, muteButton } = KMG.ui;
+
+  function levelCard(level, data, options) {
+    const locked = level.id > data.unlocked;
+    const record = options.store.levelRecord(data, level.id);
+    const stars = [1, 2, 3].map((n) => el('span', { class: `star ${n <= record.stars ? 'star-won' : 'star-empty'}` }, icon('star')));
+    const card = el('button', {
+      class: `level-card ${locked ? 'level-locked' : ''}`,
+      'data-level': level.id,
+      'data-stars': record.stars,
+      'data-locked': String(locked),
+      'aria-label': `Level ${level.id}${locked ? ', locked' : ''}`,
+      onclick() {
+        if (!locked) {
+          options.onPlay(level.id);
+          return;
+        }
+        card.classList.remove('wobble');
+        void card.offsetWidth;
+        card.classList.add('wobble');
+      },
+    },
+    el('span', { class: 'level-number' }, String(level.id)),
+    el('span', { class: 'level-art' }, options.art(level)),
+    el('span', { class: 'stars stars-small' }, stars),
+    locked && el('span', { class: 'level-lock' }, icon('lock')));
+    return card;
+  }
+
+  // ?debug=1 adds a bar for jumping to any level and resetting everything.
+  function debugBar(options) {
+    if (!KMG.debug.on) return null;
+    const jump = options.levels.map((level) => el('button', {
+      class: 'btn',
+      'data-debug-level': level.id,
+      onclick: () => options.onPlay(level.id),
+    }, `L${level.id}`));
+    const reset = el('button', {
+      class: 'btn',
+      'data-debug-reset': true,
+      onclick() {
+        KMG.storage.clearAll();
+        showPicker(options);
+      },
+    }, 'Reset');
+    return el('div', { class: 'debug-bar' }, jump, reset);
+  }
+
+  function showPicker(options) {
+    const data = options.store.load();
+    show(el('main', { class: 'game-home', 'data-screen': 'game-home' },
+      el('header', { class: 'home-top' },
+        el('div', { class: 'home-left' },
+          options.exit && iconButton('home', 'All games', options.exit, 'exit'),
+          KMG.parentGate.button(options.onParent)),
+        el('h1', { class: 'home-title' }, options.title),
+        el('div', { class: 'home-right' }, muteButton())),
+      el('div', { class: 'level-grid' },
+        options.levels.map((level) => levelCard(level, data, options))),
+      debugBar(options)));
+  }
+
+  KMG.levelPicker = { show: showPicker };
+})(window.KMG);
+
+// The frame of every game's play screen: a top bar with the back button, one
+// pip per item in the round and the mute button; the prompt, which says itself
+// again when tapped; then an empty play area ("zones") and tray for the game
+// to fill. The game adds the screen with KMG.ui.show(screen.main).
+//
+//   const screen = KMG.playScreen.build({ levelId, kind, total, text, spoken, onBack });
+//   screen.zones, screen.tray        fill these
+//   screen.setDone(n)                light up the first n pips
+//   screen.setPrompt(text, spoken)   change what the prompt shows and says
+//   screen.speak()                   say the prompt
+(function (KMG) {
+  'use strict';
+
+  const { el, iconButton, muteButton } = KMG.ui;
+
+  function build({ levelId, kind, total, text, spoken, onBack }) {
+    const pips = el('div', { class: 'pips', 'aria-hidden': 'true' },
+      Array.from({ length: total }, () => el('span', { class: 'pip' })));
+
+    const promptText = el('span', { class: 'prompt-text' }, text);
+    let spokenPrompt = spoken;
+    const speak = () => KMG.speech.say(spokenPrompt);
+
+    const top = el('header', { class: 'play-top' },
+      iconButton('back', 'Back', onBack, 'back'),
+      pips,
+      muteButton());
+    const prompt = el('button', { class: 'prompt', 'data-action': 'repeat', onclick: speak }, promptText);
+    const zones = el('div', { class: `zones zones-${kind}` });
+    const tray = el('div', { class: `tray tray-${kind}` });
+    const main = el('main', {
+      class: 'play',
+      'data-screen': 'play',
+      'data-level': levelId,
+      'data-kind': kind,
+    }, top, prompt, zones, tray);
+
+    return {
+      main,
+      zones,
+      tray,
+      promptText,
+      speak,
+      setDone(done) {
+        Array.from(pips.children).forEach((pip, i) => pip.classList.toggle('pip-done', i < done));
+      },
+      setPrompt(newText, newSpoken) {
+        promptText.textContent = newText;
+        spokenPrompt = newSpoken;
+      },
+    };
+  }
+
+  KMG.playScreen = { build };
+})(window.KMG);
+
+// The grown-ups area every game shares, opened through the 3-second hold
+// (src/shared/parent-gate.js). This screen is for adults, so unlike the child
+// screens it uses words. In order: sound, the game's own settings, progress,
+// moving progress to another device, and starting again.
+//
+//   KMG.parentArea.show({
+//     gameName,        "Coin Sorter", for messages
+//     store,           the game's progress store (src/shared/progress-store.js)
+//     fileName,        name of the exported progress file
+//     levels,          the game's levels, each { id, text }
+//     settings(data),  the game's own setting sections, made with the helpers below
+//     practise,        { title, item(key) }: what the child finds hardest, from
+//                      the mistakes counted per key (a coin, a price, ...)
+//     onDone(),        back to the game's home
+//   })
+//
+// Helpers for a game's own settings: section(title, ...children),
+// choices({ title, values, current, label, attr, onPick }) and
+// toggle(label, setting, isOn, onChange), an on/off switch.
+(function (KMG) {
+  'use strict';
+
+  const { el, show, icon } = KMG.ui;
+  const { audio, fileTransfer } = KMG;
+
+  const PRACTISE_LIMIT = 3;
+
+  function section(title, ...children) {
+    return el('section', { class: 'parent-card' }, el('h2', {}, title), children);
+  }
+
+  function toggle(label, setting, isOn, onChange) {
+    const button = el('button', {
+      class: 'switch',
+      role: 'switch',
+      'aria-checked': String(isOn),
+      'data-setting': setting,
+      onclick() {
+        const on = button.getAttribute('aria-checked') !== 'true';
+        button.setAttribute('aria-checked', String(on));
+        onChange(on);
+      },
+    }, el('span', { class: 'switch-label' }, label), el('span', { class: 'switch-track' }, el('span', { class: 'switch-thumb' })));
+    return button;
+  }
+
+  // A row of buttons, one pressed: round length, highest price and so on. Each
+  // button carries data-<attr>="<value>", which the tests use.
+  function choices({ title, values, current, label, attr, onPick }) {
+    const buttons = values.map((value) => el('button', {
+      class: 'btn choice',
+      [`data-${attr}`]: value,
+      'aria-pressed': String(current === value),
+      onclick() {
+        onPick(value);
+        buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === this)));
+      },
+    }, label(value)));
+    return section(title, el('div', { class: 'choice-row' }, buttons));
+  }
+
+  function soundSection() {
+    const { sound, voice } = audio.settings();
+    return section('Sound',
+      toggle('Sound effects', 'sound', sound, (on) => audio.saveSettings({ sound: on })),
+      toggle('Spoken prompts', 'voice', voice, (on) => audio.saveSettings({ voice: on })));
+  }
+
+  function progressSection(data, options) {
+    const { store } = options;
+    const rows = options.levels.map((level) => {
+      const record = store.levelRecord(data, level.id);
+      const stars = [1, 2, 3].map((n) => el('span', { class: `star ${n <= record.stars ? 'star-won' : 'star-empty'}` }, icon('star')));
+      const played = record.plays === 1 ? 'Played once' : `Played ${record.plays} times`;
+      return el('li', { class: 'progress-row', 'data-progress-level': level.id, 'data-stars': record.stars },
+        el('span', {}, `Level ${level.id}: ${level.text}`),
+        el('span', { class: 'stars stars-small', 'aria-label': `${record.stars} of 3 stars` }, stars),
+        el('span', { class: 'parent-note' }, played));
+    });
+
+    const confused = store.confused(data, PRACTISE_LIMIT);
+    const practise = confused.length
+      ? el('ul', { class: 'confused' }, confused.map(([key, count]) => el('li', { 'data-confused': key },
+        options.practise.item(key),
+        count === 1 ? '1 mistake' : `${count} mistakes`)))
+      : el('p', { class: 'parent-note', 'data-confused-none': true }, 'No mistakes yet.');
+
+    return section('Progress', el('ul', { class: 'progress-list' }, rows), el('h3', {}, options.practise.title), practise);
+  }
+
+  function transferSection(options, refresh) {
+    const { store } = options;
+    const message = el('p', { class: 'parent-note', role: 'status', 'data-transfer-message': true });
+    const say = (text) => {
+      message.textContent = text;
+    };
+    const importFile = () => fileTransfer.open((text) => {
+      const data = text === null ? null : store.parseImport(text);
+      if (!data) {
+        say(`That file doesn't look like ${options.gameName} progress, so nothing has been changed.`);
+        return;
+      }
+      store.save(data);
+      refresh('Progress imported.');
+    });
+    const exportFile = () => {
+      const saved = fileTransfer.save(options.fileName, store.exportText());
+      say(saved ? 'Progress exported.' : 'Sorry, this device could not save the file.');
+    };
+
+    return {
+      node: section('Move to another device',
+        el('p', { class: 'parent-note' }, 'Progress stays on this device. To move it, export a small file here and import it on the other device.'),
+        el('div', { class: 'parent-actions' },
+          el('button', { class: 'btn', 'data-action': 'export', onclick: exportFile }, 'Export progress'),
+          el('button', { class: 'btn', 'data-action': 'import', onclick: importFile }, 'Import progress')),
+        message),
+      say,
+    };
+  }
+
+  function resetSection(options, refresh) {
+    const area = el('div', { class: 'parent-actions' });
+    const ask = () => {
+      area.textContent = '';
+      area.append(
+        el('p', { class: 'parent-note' }, 'Remove all stars and unlocked levels? This cannot be undone.'),
+        el('button', {
+          class: 'btn btn-danger',
+          'data-action': 'reset-yes',
+          onclick() {
+            options.store.reset();
+            refresh('Progress reset.');
+          },
+        }, 'Yes, reset'),
+        el('button', { class: 'btn', 'data-action': 'reset-no', onclick: start }, 'Keep progress'));
+    };
+    const start = () => {
+      area.textContent = '';
+      area.append(el('button', { class: 'btn', 'data-action': 'reset', onclick: ask }, 'Reset progress'));
+    };
+    start();
+    return section('Start again', area);
+  }
+
+  function showArea(options, notice) {
+    const refresh = (message) => showArea(options, message);
+    const data = options.store.load();
+    const transfer = transferSection(options, refresh);
+    if (notice) transfer.say(notice);
+
+    show(el('main', { class: 'parent', 'data-screen': 'parent' },
+      el('header', { class: 'parent-top' },
+        el('h1', {}, 'Grown-ups'),
+        el('button', { class: 'btn btn-primary', 'data-action': 'close-parent', onclick: options.onDone }, 'Done')),
+      soundSection(),
+      options.settings(data),
+      progressSection(data, options),
+      transfer.node,
+      resetSection(options, refresh)));
+  }
+
+  KMG.parentArea = { show: (options) => showArea(options), section, choices, toggle };
+})(window.KMG);
+
 // What each level asks for. This file is plain logic with no drawing: `build`
 // turns a level and the parent's settings into the contents of one round, so a
 // new level is a new entry in LEVELS plus a build function.
@@ -976,142 +1460,40 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
     return BUILDERS[levelId]({ selected: usableCoins(selected), roundLength, rng, stage: stage || 0, traySize });
   }
 
-  // 0 mistakes is 3 stars, 1 or 2 is 2 stars, and 3 or more is 1 star.
-  const starsFor = (mistakes) => (mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1);
+  // The shared star rule (src/shared/celebration.js).
+  const starsFor = KMG.stars.forMistakes;
 
   KMG.cs.levels = { LEVELS, levelById, usableCoins, build, starsFor, MINIMUM_COINS };
 })(window.KMG);
 
-// Coin Sorter's saved data: stars, unlocked levels, mistakes per coin and the
-// parent's settings. Saved through KMG.storage, so it can never throw.
+// Coin Sorter's saved data: the shared progress store (src/shared/progress-store.js)
+// with this game's settings, the coins in play and the round length, and its
+// mistakes counted per coin.
 (function (KMG) {
   'use strict';
 
   const { coins, cs } = KMG;
-  const KEY = 'coin-sorter';
-  const VERSION = 1;
-
-  function defaults() {
-    return {
-      version: VERSION,
-      unlocked: 1,
-      levels: {},
-      mistakes: {},
-      coins: coins.ALL.map((coin) => coin.id),
-      roundLength: 8,
-    };
-  }
-
-  const load = () => Object.assign(defaults(), KMG.storage.load(KEY, null));
-  const save = (data) => KMG.storage.save(KEY, data);
-
-  function levelRecord(data, levelId) {
-    return data.levels[levelId] || { stars: 0, plays: 0, stage: 0 };
-  }
-
-  // Keeps the best stars, and finishing a round unlocks the next level.
-  function recordRound(levelId, { stars, mistakes, stage, lastStage }) {
-    const data = load();
-    const record = levelRecord(data, levelId);
-    data.levels[levelId] = {
-      stars: Math.max(record.stars, stars),
-      plays: record.plays + 1,
-      stage: Math.max(record.stage, Math.min(stage + 1, lastStage)),
-    };
-    data.unlocked = Math.min(cs.levels.LEVELS.length, Math.max(data.unlocked, levelId + 1));
-    Object.entries(mistakes).forEach(([id, count]) => {
-      data.mistakes[id] = (data.mistakes[id] || 0) + count;
-    });
-    save(data);
-    return data;
-  }
-
-  // Clears what the child has done, and keeps the parent's settings.
-  function reset() {
-    const data = load();
-    const fresh = defaults();
-    save(Object.assign(fresh, { coins: data.coins, roundLength: data.roundLength }));
-  }
-
-  // The coins with the most mistakes, worst first.
-  function confused(data, limit) {
-    return Object.entries(data.mistakes)
-      .filter(([, count]) => count > 0)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, limit);
-  }
 
   const ROUND_LENGTHS = [5, 8, 12];
 
-  function exportText() {
-    return JSON.stringify({
-      app: 'kids-money-games',
-      game: KEY,
-      version: VERSION,
-      exportedAt: new Date().toISOString(),
-      data: load(),
-    }, null, 2);
-  }
+  const store = KMG.progressStore({
+    key: 'coin-sorter',
+    levels: () => cs.levels.LEVELS,
+    settings: () => ({ coins: coins.ALL.map((coin) => coin.id), roundLength: 8 }),
+    keepOnReset: ['coins', 'roundLength'],
+    isMistakeKey: (id) => Boolean(coins.byId(id)),
+    checkSettings(data, clean) {
+      const { coins: chosen, roundLength } = data;
+      if (!Array.isArray(chosen) || ROUND_LENGTHS.indexOf(roundLength) === -1) return false;
+      if (chosen.length < cs.levels.MINIMUM_COINS || new Set(chosen).size !== chosen.length) return false;
+      if (!chosen.every((id) => coins.byId(id))) return false;
+      clean.roundLength = roundLength;
+      clean.coins = chosen.slice();
+      return true;
+    },
+  });
 
-  const isCount = (value) => Number.isInteger(value) && value >= 0;
-  const isPlainObject = (value) => typeof value === 'object' && value !== null && !Array.isArray(value);
-
-  // Checks every field and rebuilds the data from what was checked, so nothing
-  // unexpected in a file can reach the game. Returns null if anything is wrong.
-  function parseImport(text) {
-    let file;
-    try {
-      file = JSON.parse(text);
-    } catch (error) {
-      return null;
-    }
-    if (!isPlainObject(file) || file.app !== 'kids-money-games' || file.game !== KEY) return null;
-    if (file.version !== VERSION || !isPlainObject(file.data)) return null;
-
-    const { unlocked, levels, mistakes, coins: chosen, roundLength } = file.data;
-    const levelCount = cs.levels.LEVELS.length;
-    if (!Number.isInteger(unlocked) || unlocked < 1 || unlocked > levelCount) return null;
-    if (!isPlainObject(levels) || !isPlainObject(mistakes) || !Array.isArray(chosen)) return null;
-    if (ROUND_LENGTHS.indexOf(roundLength) === -1) return null;
-
-    const clean = defaults();
-    clean.unlocked = unlocked;
-    clean.roundLength = roundLength;
-
-    for (const [id, record] of Object.entries(levels)) {
-      const level = cs.levels.levelById(Number(id));
-      if (!level || !isPlainObject(record)) return null;
-      const lastStage = level.stages ? level.stages.length - 1 : 0;
-      if (!isCount(record.stars) || record.stars > 3 || !isCount(record.plays)) return null;
-      if (!isCount(record.stage) || record.stage > lastStage) return null;
-      clean.levels[id] = { stars: record.stars, plays: record.plays, stage: record.stage };
-    }
-
-    for (const [id, count] of Object.entries(mistakes)) {
-      if (!coins.byId(id) || !isCount(count)) return null;
-      clean.mistakes[id] = count;
-    }
-
-    if (chosen.length < cs.levels.MINIMUM_COINS || new Set(chosen).size !== chosen.length) return null;
-    if (!chosen.every((id) => coins.byId(id))) return null;
-    clean.coins = chosen.slice();
-
-    return clean;
-  }
-
-  cs.progress = {
-    load,
-    save,
-    defaults,
-    levelRecord,
-    recordRound,
-    reset,
-    confused,
-    exportText,
-    parseImport,
-    ROUND_LENGTHS,
-    VERSION,
-  };
+  cs.progress = Object.assign(store, { ROUND_LENGTHS });
 })(window.KMG);
 
 // The play screen. Each kind of level supplies its zones (where coins can go)
@@ -1119,7 +1501,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
 (function (KMG) {
   'use strict';
 
-  const { el, show, icon, iconButton, muteButton } = KMG.ui;
+  const { el, show, icon } = KMG.ui;
   const { coins, audio, speech, drag, effects, cs } = KMG;
 
   // How far outside a pot a coin can be dropped and still count.
@@ -1354,26 +1736,17 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
     let mistakes = 0;
     const mistakesByCoin = {};
 
-    const pips = el('div', { class: 'pips', 'aria-hidden': 'true' },
-      Array.from({ length: round.total }, () => el('span', { class: 'pip' })));
-
-    const promptText = el('span', { class: 'prompt-text' }, level.text);
-    let spokenPrompt = level.spoken;
-    const speakPrompt = () => speech.say(spokenPrompt);
-
-    const top = el('header', { class: 'play-top' },
-      iconButton('back', 'Back', () => context.home(), 'back'),
-      pips,
-      muteButton());
-    const prompt = el('button', { class: 'prompt', 'data-action': 'repeat', onclick: speakPrompt }, promptText);
-    const zones = el('div', { class: `zones zones-${round.kind}` });
-    const tray = el('div', { class: `tray tray-${round.kind}` });
-    const main = el('main', {
-      class: 'play',
-      'data-screen': 'play',
-      'data-level': levelId,
-      'data-kind': round.kind,
-    }, top, prompt, zones, tray);
+    // The shared frame: top bar, pips and the prompt (src/shared/play-screen.js).
+    const screen = KMG.playScreen.build({
+      levelId,
+      kind: round.kind,
+      total: round.total,
+      text: level.text,
+      spoken: level.spoken,
+      onBack: () => context.home(),
+    });
+    const { main, zones, tray, promptText } = screen;
+    const speakPrompt = screen.speak;
 
     const coinSize = (coin) => coins.sizeOf(coin, coins.scaleFor(window.innerWidth, window.innerHeight));
 
@@ -1481,15 +1854,12 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
       // Counts a placed coin, and says whether that finished the round.
       counted() {
         placed++;
-        Array.from(pips.children).forEach((pip, i) => pip.classList.toggle('pip-done', i < placed));
+        screen.setDone(placed);
         const finished = placed === round.total;
         if (finished) finishRound();
         return finished;
       },
-      setPrompt(text, spoken) {
-        promptText.textContent = text;
-        spokenPrompt = spoken;
-      },
+      setPrompt: screen.setPrompt,
       speak: speakPrompt,
     };
 
@@ -1522,41 +1892,14 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
   cs.play = play;
 })(window.KMG);
 
-// The parent area: settings, progress, and moving progress between devices.
-// This screen is for adults, so unlike the child screens it uses words.
+// Coin Sorter's grown-ups area: the shared one (src/shared/parent-area.js) with
+// this game's settings, which coins are in play and the round length, and its
+// "coins to practise".
 (function (KMG) {
   'use strict';
 
-  const { el, show, icon } = KMG.ui;
-  const { audio, coins, cs, fileTransfer } = KMG;
-
-  const FILE_NAME = 'coin-sorter-progress.json';
-
-  function section(title, ...children) {
-    return el('section', { class: 'parent-card' }, el('h2', {}, title), children);
-  }
-
-  function toggle(label, setting, isOn, onChange) {
-    const button = el('button', {
-      class: 'switch',
-      role: 'switch',
-      'aria-checked': String(isOn),
-      'data-setting': setting,
-      onclick() {
-        const on = button.getAttribute('aria-checked') !== 'true';
-        button.setAttribute('aria-checked', String(on));
-        onChange(on);
-      },
-    }, el('span', { class: 'switch-label' }, label), el('span', { class: 'switch-track' }, el('span', { class: 'switch-thumb' })));
-    return button;
-  }
-
-  function soundSection() {
-    const { sound, voice } = audio.settings();
-    return section('Sound',
-      toggle('Sound effects', 'sound', sound, (on) => audio.saveSettings({ sound: on })),
-      toggle('Spoken prompts', 'voice', voice, (on) => audio.saveSettings({ voice: on })));
-  }
+  const { el } = KMG.ui;
+  const { coins, cs, parentArea } = KMG;
 
   function coinSection(data) {
     const message = el('p', { class: 'parent-note', role: 'status' });
@@ -1583,190 +1926,64 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
       });
       return button;
     });
-    return section('Coins in the game', el('div', { class: 'coin-choices' }, buttons), message);
+    return parentArea.section('Coins in the game', el('div', { class: 'coin-choices' }, buttons), message);
   }
 
   function roundSection(data) {
-    const buttons = cs.progress.ROUND_LENGTHS.map((length) => el('button', {
-      class: 'btn round-choice',
-      'data-round': length,
-      'aria-pressed': String(data.roundLength === length),
-      onclick() {
+    return parentArea.choices({
+      title: 'Round length',
+      values: cs.progress.ROUND_LENGTHS,
+      current: data.roundLength,
+      label: (length) => `${length} coins`,
+      attr: 'round',
+      onPick(length) {
         const saved = cs.progress.load();
         saved.roundLength = length;
         cs.progress.save(saved);
-        buttons.forEach((other) => other.setAttribute('aria-pressed', String(other.dataset.round === String(length))));
       },
-    }, `${length} coins`));
-    return section('Round length', el('div', { class: 'round-choices' }, buttons));
-  }
-
-  function progressSection(data) {
-    const rows = cs.levels.LEVELS.map((level) => {
-      const record = cs.progress.levelRecord(data, level.id);
-      const stars = [1, 2, 3].map((n) => el('span', { class: `star ${n <= record.stars ? 'star-won' : 'star-empty'}` }, icon('star')));
-      const played = record.plays === 1 ? 'Played once' : `Played ${record.plays} times`;
-      return el('li', { class: 'progress-row', 'data-progress-level': level.id, 'data-stars': record.stars },
-        el('span', {}, `Level ${level.id}: ${level.text}`),
-        el('span', { class: 'stars stars-small', 'aria-label': `${record.stars} of 3 stars` }, stars),
-        el('span', { class: 'parent-note' }, played));
     });
-
-    const confused = cs.progress.confused(data, 3);
-    const practise = confused.length
-      ? el('ul', { class: 'confused' }, confused.map(([id, count]) => el('li', { 'data-confused': id },
-        el('span', { class: 'coin-mini', html: coins.svg(coins.byId(id)) }),
-        count === 1 ? '1 mistake' : `${count} mistakes`)))
-      : el('p', { class: 'parent-note', 'data-confused-none': true }, 'No mistakes yet.');
-
-    return section('Progress', el('ul', { class: 'progress-list' }, rows), el('h3', {}, 'Coins to practise'), practise);
   }
 
-  function transferSection(refresh) {
-    const message = el('p', { class: 'parent-note', role: 'status', 'data-transfer-message': true });
-    const say = (text) => {
-      message.textContent = text;
-    };
-    const importFile = () => fileTransfer.open((text) => {
-      const data = text === null ? null : cs.progress.parseImport(text);
-      if (!data) {
-        say("That file doesn't look like Coin Sorter progress, so nothing has been changed.");
-        return;
-      }
-      cs.progress.save(data);
-      refresh('Progress imported.');
+  function parent(context) {
+    parentArea.show({
+      gameName: 'Coin Sorter',
+      store: cs.progress,
+      fileName: 'coin-sorter-progress.json',
+      levels: cs.levels.LEVELS,
+      settings: (data) => [coinSection(data), roundSection(data)],
+      practise: {
+        title: 'Coins to practise',
+        item: (id) => el('span', { class: 'coin-mini', html: coins.svg(coins.byId(id)) }),
+      },
+      onDone: () => context.home(),
     });
-    const exportFile = () => {
-      const saved = fileTransfer.save(FILE_NAME, cs.progress.exportText());
-      say(saved ? 'Progress exported.' : 'Sorry, this device could not save the file.');
-    };
-
-    return {
-      node: section('Move to another device',
-        el('p', { class: 'parent-note' }, 'Progress stays on this device. To move it, export a small file here and import it on the other device.'),
-        el('div', { class: 'parent-actions' },
-          el('button', { class: 'btn', 'data-action': 'export', onclick: exportFile }, 'Export progress'),
-          el('button', { class: 'btn', 'data-action': 'import', onclick: importFile }, 'Import progress')),
-        message),
-      say,
-    };
-  }
-
-  function resetSection(refresh) {
-    const area = el('div', { class: 'parent-actions' });
-    const ask = () => {
-      area.textContent = '';
-      area.append(
-        el('p', { class: 'parent-note' }, 'Remove all stars and unlocked levels? This cannot be undone.'),
-        el('button', {
-          class: 'btn btn-danger',
-          'data-action': 'reset-yes',
-          onclick() {
-            cs.progress.reset();
-            refresh('Progress reset.');
-          },
-        }, 'Yes, reset'),
-        el('button', { class: 'btn', 'data-action': 'reset-no', onclick: start }, 'Keep progress'));
-    };
-    const start = () => {
-      area.textContent = '';
-      area.append(el('button', { class: 'btn', 'data-action': 'reset', onclick: ask }, 'Reset progress'));
-    };
-    start();
-    return section('Start again', area);
-  }
-
-  function parent(context, notice) {
-    const refresh = (message) => parent(context, message);
-    const data = cs.progress.load();
-    const transfer = transferSection(refresh);
-    if (notice) transfer.say(notice);
-
-    show(el('main', { class: 'parent', 'data-screen': 'parent' },
-      el('header', { class: 'parent-top' },
-        el('h1', {}, 'Grown-ups'),
-        el('button', { class: 'btn btn-primary', 'data-action': 'close-parent', onclick: () => context.home() }, 'Done')),
-      soundSection(),
-      coinSection(data),
-      roundSection(data),
-      progressSection(data),
-      transfer.node,
-      resetSection(refresh)));
   }
 
   cs.parent = parent;
 })(window.KMG);
 
-// Coin Sorter's home screen: pick a level.
+// Coin Sorter's home screen: the shared level picker (src/shared/level-picker.js)
+// with a picture of coins on each level's card.
 (function (KMG) {
   'use strict';
 
-  const { el, show, icon, iconButton, muteButton } = KMG.ui;
+  const { el } = KMG.ui;
   const { coins, cs } = KMG;
 
   const mini = (id) => el('span', { class: 'coin-mini', html: coins.svg(coins.byId(id)) });
 
-  // Pictures rather than words, because many players cannot read yet.
   const LEVEL_ART = { 1: ['1p', '10p', '£2'], 2: ['1p', '£1'], 3: ['20p'], 4: ['1p', '5p', '10p'] };
 
-  function levelCard(level, data, context) {
-    const locked = level.id > data.unlocked;
-    const record = cs.progress.levelRecord(data, level.id);
-    const stars = [1, 2, 3].map((n) => el('span', { class: `star ${n <= record.stars ? 'star-won' : 'star-empty'}` }, icon('star')));
-    const card = el('button', {
-      class: `level-card ${locked ? 'level-locked' : ''}`,
-      'data-level': level.id,
-      'data-stars': record.stars,
-      'data-locked': String(locked),
-      'aria-label': `Level ${level.id}${locked ? ', locked' : ''}`,
-      onclick() {
-        if (!locked) {
-          cs.play(level.id, context);
-          return;
-        }
-        card.classList.remove('wobble');
-        void card.offsetWidth;
-        card.classList.add('wobble');
-      },
-    },
-    el('span', { class: 'level-number' }, String(level.id)),
-    el('span', { class: 'level-art' }, LEVEL_ART[level.id].map(mini)),
-    el('span', { class: 'stars stars-small' }, stars),
-    locked && el('span', { class: 'level-lock' }, icon('lock')));
-    return card;
-  }
-
-  // ?debug=1 adds a bar for jumping to any level and resetting everything.
-  function debugBar(context) {
-    if (!KMG.debug.on) return null;
-    const jump = cs.levels.LEVELS.map((level) => el('button', {
-      class: 'btn',
-      'data-debug-level': level.id,
-      onclick: () => cs.play(level.id, context),
-    }, `L${level.id}`));
-    const reset = el('button', {
-      class: 'btn',
-      'data-debug-reset': true,
-      onclick() {
-        KMG.storage.clearAll();
-        home(context);
-      },
-    }, 'Reset');
-    return el('div', { class: 'debug-bar' }, jump, reset);
-  }
-
   function home(context) {
-    const data = cs.progress.load();
-    show(el('main', { class: 'cs-home', 'data-screen': 'game-home' },
-      el('header', { class: 'home-top' },
-        el('div', { class: 'home-left' },
-          context.exit && iconButton('home', 'All games', context.exit, 'exit'),
-          KMG.parentGate.button(() => cs.parent(context))),
-        el('h1', { class: 'home-title' }, 'Coin Sorter'),
-        el('div', { class: 'home-right' }, muteButton())),
-      el('div', { class: 'level-grid' },
-        cs.levels.LEVELS.map((level) => levelCard(level, data, context))),
-      debugBar(context)));
+    KMG.levelPicker.show({
+      title: 'Coin Sorter',
+      levels: cs.levels.LEVELS,
+      art: (level) => LEVEL_ART[level.id].map(mini),
+      store: cs.progress,
+      onPlay: (levelId) => cs.play(levelId, context),
+      onParent: () => cs.parent(context),
+      exit: context.exit,
+    });
   }
 
   cs.home = home;
@@ -1803,6 +2020,1143 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
         const stage = KMG.debug.stage === null ? undefined : KMG.debug.stage;
         cs.play(KMG.debug.level, Object.assign({}, context, { stage }));
       } else context.home();
+    },
+  });
+})(window.KMG);
+
+// Play Shop's twelve toys, drawn as simple SVG on a 120 by 120 canvas. Original
+// and unbranded: no real toy brands or characters. Flat pastel fills with the
+// same soft outline, so they look like one set next to the coins.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  KMG.ps = KMG.ps || {};
+
+  // The soft outline every toy uses
+  const LINE = 'stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"';
+  const INK = '#24324a';
+
+  const CORAL = '#ff9d8a';
+  const SUN = '#ffd56b';
+  const SKY = '#9cc9f5';
+  const LILAC = '#cfc8f2';
+  const MINT = '#8fd3c7';
+  const CLOUD = '#f4f7fb';
+  const WOOD = '#9b7653';
+
+  const DRAWINGS = {
+    ball: `
+      <circle cx="60" cy="62" r="44" fill="${CORAL}"/>
+      <ellipse cx="60" cy="62" rx="14" ry="44" fill="${SKY}"/>
+      <ellipse cx="60" cy="62" rx="44" ry="13" fill="${SUN}"/>
+      <circle cx="60" cy="62" r="44" fill="none" ${LINE}/>
+      <circle cx="42" cy="42" r="9" fill="#fff" opacity="0.6"/>`,
+
+    teddy: `
+      <circle cx="34" cy="34" r="14" fill="#d9a066" ${LINE}/>
+      <circle cx="86" cy="34" r="14" fill="#d9a066" ${LINE}/>
+      <circle cx="34" cy="34" r="7" fill="#f0c99a"/>
+      <circle cx="86" cy="34" r="7" fill="#f0c99a"/>
+      <ellipse cx="60" cy="94" rx="31" ry="23" fill="#d9a066" ${LINE}/>
+      <ellipse cx="60" cy="98" rx="16" ry="13" fill="#f0c99a"/>
+      <circle cx="60" cy="54" r="30" fill="#d9a066" ${LINE}/>
+      <ellipse cx="60" cy="64" rx="13" ry="10" fill="#f0c99a"/>
+      <ellipse cx="60" cy="59" rx="5" ry="3.5" fill="${INK}"/>
+      <path d="M55 67 Q60 71 65 67" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="49" cy="48" r="3.5" fill="${INK}"/>
+      <circle cx="71" cy="48" r="3.5" fill="${INK}"/>`,
+
+    car: `
+      <path d="M14 74 Q14 62 26 60 L40 58 L52 40 Q55 36 60 36 L84 36 Q89 36 92 40 L102 58 Q108 60 108 68 L108 80 Q108 86 102 86 L20 86 Q14 86 14 80 Z" fill="${SKY}" ${LINE}/>
+      <path d="M58 56 L63 43 L72 43 L72 56 Z" fill="${CLOUD}"/>
+      <path d="M77 43 L86 43 L94 56 L77 56 Z" fill="${CLOUD}"/>
+      <circle cx="104" cy="70" r="4" fill="${SUN}"/>
+      <circle cx="36" cy="86" r="13" fill="${INK}"/>
+      <circle cx="86" cy="86" r="13" fill="${INK}"/>
+      <circle cx="36" cy="86" r="5" fill="#dfe5ec"/>
+      <circle cx="86" cy="86" r="5" fill="#dfe5ec"/>`,
+
+    kite: `
+      <path d="M60 92 Q48 100 58 108 Q66 114 56 119" fill="none" stroke="${INK}" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 98 L58 102 L50 106 Z M66 98 L58 102 L66 106 Z" fill="${SUN}"/>
+      <path d="M60 12 L92 46 L60 92 L28 46 Z" fill="${LILAC}"/>
+      <path d="M60 12 L28 46 L60 46 Z M60 46 L92 46 L60 92 Z" fill="${CORAL}"/>
+      <path d="M60 12 L60 92 M28 46 L92 46" stroke="${INK}" stroke-opacity="0.3" stroke-width="2"/>
+      <path d="M60 12 L92 46 L60 92 L28 46 Z" fill="none" ${LINE}/>`,
+
+    boat: `
+      <rect x="58" y="18" width="4" height="64" rx="2" fill="${WOOD}"/>
+      <path d="M60 12 L74 16 L60 20 Z" fill="${MINT}"/>
+      <path d="M63 22 L63 76 L96 76 Z" fill="#fff" ${LINE}/>
+      <path d="M57 32 L57 76 L32 76 Z" fill="${SUN}" ${LINE}/>
+      <path d="M16 82 L104 82 L91 100 L29 100 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M8 100 Q20 92 32 100 T56 100 T80 100 T104 100 L112 100 L112 114 L8 114 Z" fill="${SKY}"/>`,
+
+    rocket: `
+      <path d="M48 82 Q60 114 72 82 Z" fill="${SUN}"/>
+      <path d="M54 82 Q60 100 66 82 Z" fill="${CORAL}"/>
+      <path d="M38 60 L24 84 L41 78 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M82 60 L96 84 L79 78 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M60 10 Q84 34 82 76 L38 76 Q36 34 60 10 Z" fill="${CLOUD}" ${LINE}/>
+      <path d="M60 10 Q74 22 78 38 L42 38 Q46 22 60 10 Z" fill="${CORAL}" ${LINE}/>
+      <circle cx="60" cy="55" r="10" fill="${SKY}" ${LINE}/>
+      <rect x="40" y="74" width="40" height="9" rx="4" fill="${LILAC}" ${LINE}/>`,
+
+    duck: `
+      <path d="M26 86 Q8 72 20 62 Q28 72 38 76 Z" fill="${SUN}" ${LINE}/>
+      <ellipse cx="60" cy="84" rx="40" ry="22" fill="${SUN}" ${LINE}/>
+      <path d="M42 80 Q58 70 74 82 Q58 94 44 88 Z" fill="#f2c14e"/>
+      <circle cx="78" cy="48" r="23" fill="${SUN}" ${LINE}/>
+      <path d="M98 46 Q114 48 102 58 Q95 56 96 51 Z" fill="${CORAL}" ${LINE}/>
+      <circle cx="84" cy="42" r="3.5" fill="${INK}"/>
+      <circle cx="72" cy="40" r="5" fill="#fff" opacity="0.5"/>`,
+
+    drum: `
+      <path d="M30 34 L54 12 M90 34 L66 12" stroke="${WOOD}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="54" cy="12" r="5" fill="${LILAC}"/>
+      <circle cx="66" cy="12" r="5" fill="${LILAC}"/>
+      <ellipse cx="60" cy="92" rx="38" ry="10" fill="${CORAL}" ${LINE}/>
+      <rect x="22" y="46" width="76" height="46" fill="${CORAL}"/>
+      <polyline points="24,52 34,86 44,52 54,86 64,52 74,86 84,52 94,86" fill="none" stroke="${SUN}" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M22 46 L22 92 M98 46 L98 92" ${LINE}/>
+      <ellipse cx="60" cy="46" rx="38" ry="10" fill="${CLOUD}" ${LINE}/>`,
+
+    dinosaur: `
+      <rect x="32" y="78" width="13" height="22" rx="5" fill="${MINT}" ${LINE}/>
+      <rect x="66" y="78" width="13" height="22" rx="5" fill="${MINT}" ${LINE}/>
+      <path d="M20 84 Q4 84 4 74 Q14 78 24 72 Q30 56 54 54 Q74 52 84 40 Q88 24 102 26 Q114 28 110 42 Q106 50 96 50 Q92 70 88 84 Z" fill="${MINT}" ${LINE}/>
+      <circle cx="50" cy="66" r="5" fill="#6fbfb4"/>
+      <circle cx="65" cy="62" r="4" fill="#6fbfb4"/>
+      <circle cx="74" cy="72" r="3.5" fill="#6fbfb4"/>
+      <circle cx="101" cy="35" r="3.5" fill="${INK}"/>
+      <path d="M106 43 Q101 46 96 44" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>`,
+
+    robot: `
+      <path d="M60 22 L60 12" stroke="${INK}" stroke-opacity="0.5" stroke-width="3"/>
+      <circle cx="60" cy="10" r="5" fill="${CORAL}"/>
+      <rect x="18" y="68" width="12" height="28" rx="6" fill="#dfe5ec" ${LINE}/>
+      <rect x="90" y="68" width="12" height="28" rx="6" fill="#dfe5ec" ${LINE}/>
+      <rect x="40" y="100" width="13" height="14" rx="4" fill="#dfe5ec" ${LINE}/>
+      <rect x="67" y="100" width="13" height="14" rx="4" fill="#dfe5ec" ${LINE}/>
+      <rect x="30" y="64" width="60" height="40" rx="10" fill="${LILAC}" ${LINE}/>
+      <rect x="44" y="72" width="32" height="20" rx="5" fill="${CLOUD}"/>
+      <circle cx="52" cy="82" r="3.5" fill="${CORAL}"/>
+      <circle cx="60" cy="82" r="3.5" fill="${SUN}"/>
+      <circle cx="68" cy="82" r="3.5" fill="${MINT}"/>
+      <rect x="28" y="34" width="6" height="14" rx="3" fill="${LILAC}"/>
+      <rect x="86" y="34" width="6" height="14" rx="3" fill="${LILAC}"/>
+      <rect x="34" y="22" width="52" height="38" rx="10" fill="#dfe5ec" ${LINE}/>
+      <circle cx="50" cy="40" r="6" fill="${SKY}"/>
+      <circle cx="70" cy="40" r="6" fill="${SKY}"/>
+      <circle cx="50" cy="40" r="2.5" fill="${INK}"/>
+      <circle cx="70" cy="40" r="2.5" fill="${INK}"/>
+      <rect x="50" y="50" width="20" height="4" rx="2" fill="${INK}" opacity="0.6"/>`,
+
+    yoyo: `
+      <circle cx="60" cy="10" r="5" fill="none" stroke="${INK}" stroke-opacity="0.45" stroke-width="2.5"/>
+      <path d="M60 15 Q67 30 60 46" fill="none" stroke="${INK}" stroke-opacity="0.45" stroke-width="2.5"/>
+      <circle cx="60" cy="74" r="38" fill="${CORAL}" ${LINE}/>
+      <circle cx="60" cy="74" r="26" fill="${SUN}"/>
+      <path d="M60 48 A26 26 0 0 1 86 74 L60 74 Z M60 100 A26 26 0 0 1 34 74 L60 74 Z" fill="${SKY}"/>
+      <circle cx="60" cy="74" r="8" fill="${CLOUD}" ${LINE}/>
+      <circle cx="44" cy="56" r="6" fill="#fff" opacity="0.5"/>`,
+
+    blocks: `
+      <rect x="38" y="18" width="44" height="44" rx="7" fill="${SUN}" ${LINE}/>
+      <rect x="12" y="66" width="44" height="44" rx="7" fill="${CORAL}" ${LINE}/>
+      <rect x="64" y="66" width="44" height="44" rx="7" fill="${SKY}" ${LINE}/>
+      <text class="ps-toy-text" x="60" y="40" dy="0.35em" text-anchor="middle" font-size="30" fill="${INK}">C</text>
+      <text class="ps-toy-text" x="34" y="88" dy="0.35em" text-anchor="middle" font-size="30" fill="${INK}">A</text>
+      <text class="ps-toy-text" x="86" y="88" dy="0.35em" text-anchor="middle" font-size="30" fill="${INK}">B</text>`,
+  };
+
+  // `name` is how the shopkeeper says it; blocks are plural ("cost").
+  const TOYS = [
+    { id: 'ball', name: 'the ball' },
+    { id: 'teddy', name: 'the teddy bear' },
+    { id: 'car', name: 'the toy car' },
+    { id: 'kite', name: 'the kite' },
+    { id: 'boat', name: 'the boat' },
+    { id: 'rocket', name: 'the rocket' },
+    { id: 'duck', name: 'the duck' },
+    { id: 'drum', name: 'the drum' },
+    { id: 'dinosaur', name: 'the dinosaur' },
+    { id: 'robot', name: 'the robot' },
+    { id: 'yoyo', name: 'the yo-yo' },
+    { id: 'blocks', name: 'the blocks', plural: true },
+  ];
+
+  const byId = (id) => TOYS.find((toy) => toy.id === id);
+
+  function svg(id) {
+    const toy = byId(id);
+    return `<svg class="ps-toy-svg" viewBox="0 0 120 120" role="img" aria-label="${toy.name.replace('the ', '')}">${DRAWINGS[id]}</svg>`;
+  }
+
+  // A toy at any size: the element fills whatever box the stylesheet gives it.
+  const element = (id, className = 'ps-toy') => el('span', { class: className, 'data-toy': id, html: svg(id) });
+  const mini = (id) => element(id, 'ps-toy-mini');
+
+  KMG.ps.toys = { ALL: TOYS, byId, svg, element, mini };
+})(window.KMG);
+
+// The shopkeeper: a simple, friendly character seen from the chest up behind
+// the counter, drawn as SVG on a 200 by 200 canvas from a dozen rounded shapes.
+// Original and unbranded.
+//
+// Looks change from round to round (picked by the seeded random numbers), so
+// every child can see someone like them: 4 skin tones, 3 hair shapes, 4 hair
+// colours. Four expressions, all friendly, never cross or sad:
+//   idle     a smile
+//   talking  the mouth opens and closes while a prompt is spoken
+//   happy    happy-arc eyes and a small bounce, after an exact payment
+//   hmm      a head tilt and raised eyebrows, for "a little more, please"
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+
+  const INK = '#24324a';
+  const LINE = 'stroke="#24324a" stroke-opacity="0.2" stroke-width="3" stroke-linejoin="round"';
+  const MOUTH = '#8a3b44';
+  const SHIRT = '#9cc9f5';
+  const APRON = '#1f6f6b';
+
+  const SKINS = ['#f7d7c4', '#e3ad84', '#b97b52', '#7b4a2e'];
+  const HAIR_COLOURS = ['#2e1f17', '#6b4226', '#b8622d', '#e3c06e'];
+  const HAIR_SHAPES = ['short', 'bun', 'curly'];
+  const EXPRESSIONS = ['idle', 'talking', 'happy', 'hmm'];
+
+  // One look for a round, from the game's seeded random numbers.
+  function lookFor(rng) {
+    return { skin: rng.pick(SKINS), hair: rng.pick(HAIR_COLOURS), shape: rng.pick(HAIR_SHAPES) };
+  }
+
+  // Hair behind the head (a bun) and in front of it (the fringe or curls)
+  function hairBehind(look) {
+    return look.shape === 'bun' ? `<circle cx="100" cy="28" r="19" fill="${look.hair}" ${LINE}/>` : '';
+  }
+
+  function hairFront(look) {
+    if (look.shape === 'curly') {
+      const curls = [[58, 70, 13], [64, 50, 14], [82, 38, 15], [102, 34, 15], [121, 39, 14], [137, 51, 13], [142, 70, 12]];
+      return curls.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${look.hair}"/>`).join('');
+    }
+    return `<path d="M54 80 Q50 34 100 32 Q150 34 146 80 Q140 58 122 54 Q100 64 78 54 Q60 58 54 80 Z" fill="${look.hair}"/>`;
+  }
+
+  function face(expression) {
+    const brows = expression === 'hmm'
+      ? `<path d="M76 64 Q84 58 92 62 M108 66 Q116 62 124 64" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`
+      : `<path d="M76 72 Q84 67 92 70 M108 70 Q116 67 124 72" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`;
+    const eyes = expression === 'happy'
+      ? `<path d="M77 87 Q84 79 91 87 M109 87 Q116 79 123 87" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`
+      : `<circle cx="84" cy="85" r="5" fill="${INK}"/><circle cx="116" cy="85" r="5" fill="${INK}"/>`;
+    const smile = `<path d="M86 104 Q100 115 114 104" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    let mouth = smile;
+    if (expression === 'happy') {
+      mouth = `<path d="M83 101 Q100 124 117 101 Z" fill="${MOUTH}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+    } else if (expression === 'talking') {
+      // Two mouths; the stylesheet shows one, then the other.
+      mouth = `<g class="ps-mouth-shut">${smile}</g>` +
+        `<g class="ps-mouth-open"><ellipse cx="100" cy="107" rx="10" ry="8" fill="${MOUTH}" stroke="${INK}" stroke-width="3"/></g>`;
+    } else if (expression === 'hmm') {
+      // A lopsided, thinking smile: puzzled, never worried.
+      mouth = `<path d="M90 106 Q101 113 111 103" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    }
+    const cheeks = `<ellipse cx="71" cy="100" rx="8" ry="5" fill="#ff9d8a" opacity="0.4"/><ellipse cx="129" cy="100" rx="8" ry="5" fill="#ff9d8a" opacity="0.4"/>`;
+    return brows + eyes + cheeks + mouth;
+  }
+
+  function svg(look, expression) {
+    return `<svg class="ps-shopkeeper-svg" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M28 200 Q28 140 100 136 Q172 140 172 200 Z" fill="${SHIRT}" ${LINE}/>
+      <path d="M64 200 L66 150 Q100 160 134 150 L136 200 Z" fill="${APRON}"/>
+      <path d="M70 152 L80 138 M130 152 L120 138" stroke="${APRON}" stroke-width="7" stroke-linecap="round"/>
+      <rect x="88" y="172" width="24" height="16" rx="4" fill="#2a8580"/>
+      <g class="ps-shopkeeper-head">
+        <rect x="88" y="116" width="24" height="24" rx="8" fill="${look.skin}"/>
+        ${hairBehind(look)}
+        <circle cx="54" cy="86" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="146" cy="86" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="100" cy="82" r="46" fill="${look.skin}" ${LINE}/>
+        ${hairFront(look)}
+        ${face(expression)}
+      </g>
+    </svg>`;
+  }
+
+  // The shopkeeper on screen. setExpression swaps the face, and the stylesheet
+  // animates by expression (.ps-shopkeeper[data-expression="..."]).
+  function element(look, expression = 'idle') {
+    const node = el('div', {
+      class: 'ps-shopkeeper',
+      'data-expression': expression,
+      'data-look': `${look.shape}-${SKINS.indexOf(look.skin)}-${HAIR_COLOURS.indexOf(look.hair)}`,
+      html: svg(look, expression),
+    });
+    return {
+      node,
+      setExpression(name) {
+        node.dataset.expression = name;
+        node.innerHTML = svg(look, name);
+      },
+    };
+  }
+
+  KMG.ps.shopkeeper = { lookFor, element, svg, EXPRESSIONS, SKINS, HAIR_COLOURS, HAIR_SHAPES };
+})(window.KMG);
+
+// Price tags: a swing tag hanging from the toy, with the price in large type.
+// At level 1 it also shows the coin that pays it, so a child who cannot read
+// numbers yet can match by look. A small version names prices in the grown-ups
+// area.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { coins, money } = KMG;
+
+  function element(item, onTap) {
+    return el('button', {
+      class: 'ps-tag',
+      'data-price': item.price,
+      'data-action': 'repeat-price',
+      'aria-label': `Price: ${money.format(item.price)}. Hear it again`,
+      onclick: onTap,
+    },
+    el('span', { class: 'ps-tag-hole', 'aria-hidden': 'true' }),
+    el('span', { class: 'ps-tag-price' }, money.format(item.price)),
+    item.tagCoin && el('span', { class: 'coin-mini ps-tag-coin', html: coins.svg(coins.byId(item.tagCoin)) }));
+  }
+
+  // "7p" on a small tag, for lists
+  const mini = (label) => el('span', { class: 'ps-tag-mini' }, label);
+
+  KMG.ps.tag = { element, mini };
+})(window.KMG);
+
+// What each Play Shop level asks for. Plain logic with no drawing: `build`
+// turns a level and the parent's settings into one round: a list of toys, each
+// with a price and the coins the child can pay with. Amounts are whole pence.
+(function (KMG) {
+  'use strict';
+
+  const { coins, money } = KMG;
+  const { toys } = KMG.ps;
+
+  const LEVELS = [
+    { id: 1, kind: 'pay', text: 'One coin', spoken: 'Pay with one coin!' },
+    { id: 2, kind: 'pay', text: 'Count it out', spoken: 'Pay the right amount!' },
+    { id: 3, kind: 'pay', text: 'Bigger prices', spoken: 'Pay the right amount!' },
+    { id: 4, kind: 'change', text: 'Change please', spoken: 'Pay with your coin, then check your change!' },
+  ];
+
+  const levelById = (id) => LEVELS.find((level) => level.id === id);
+
+  // The parent's choice of the highest price at level 3. Level 2 always stops at 10p.
+  const HIGHEST_PRICES = [20, 50];
+  const LEVEL_2_HIGHEST = 10;
+  // Change at level 4 is never more than this.
+  const MOST_CHANGE = 20;
+
+  // The coins in the purse at each level. A 1p is always there from level 2 on,
+  // so every price can be paid exactly.
+  const PURSES = {
+    1: coins.ALL.map((coin) => coin.id),
+    2: ['1p', '2p', '5p'],
+    3: ['1p', '2p', '5p', '10p', '20p'],
+  };
+  // The coin a child pays with at level 4, from the smallest that works.
+  const PAYING_COINS = ['10p', '20p', '50p'];
+
+  const valueOf = (id) => coins.byId(id).value;
+  const between = (rng, low, high) => low + rng.int(high - low + 1);
+
+  // A price for each toy, never the same twice in a row.
+  function prices(count, makePrice) {
+    const list = [];
+    for (let i = 0; i < count; i++) {
+      let price = makePrice();
+      for (let tries = 0; tries < 10 && price === list[i - 1]; tries++) price = makePrice();
+      list.push(price);
+    }
+    return list;
+  }
+
+  // Level 4's three piles of change to choose from: the right one, and two near
+  // misses. A near miss is 1p or 2p out, or the price itself, a common mix-up.
+  function changeChoices(change, price, coin, rng) {
+    const near = [change - 1, change + 1, change - 2, change + 2, price]
+      .filter((amount, i, all) => amount > 0 && amount !== change && amount < coin && all.indexOf(amount) === i);
+    return rng.shuffle([change].concat(rng.shuffle(near).slice(0, 2)));
+  }
+
+  // The fewest coins that make an amount. UK coins always allow this greedily.
+  // `ids` limits the coins to those in a purse; by default any coin.
+  function fewestCoins(amount, ids) {
+    const allowed = ids ? coins.ALL.filter((coin) => ids.includes(coin.id)) : coins.ALL;
+    const largestFirst = allowed.slice().sort((a, b) => b.value - a.value);
+    const pile = [];
+    let left = amount;
+    largestFirst.forEach((coin) => {
+      while (left >= coin.value) {
+        pile.push(coin.id);
+        left -= coin.value;
+      }
+    });
+    return pile;
+  }
+
+  // roundLength toys; highestPrice is the parent's level 3 setting.
+  function build(levelId, { roundLength, highestPrice, rng }) {
+    const kind = levelById(levelId).kind;
+    const chosenToys = rng.shuffle(toys.ALL.map((toy) => toy.id)).slice(0, roundLength);
+    const highest = HIGHEST_PRICES.indexOf(highestPrice) === -1 ? 50 : highestPrice;
+
+    if (kind === 'change') {
+      const payingCoins = PAYING_COINS.filter((id) => valueOf(id) <= highest);
+      const items = chosenToys.map((toy) => {
+        const coin = rng.pick(payingCoins);
+        const value = valueOf(coin);
+        const price = between(rng, Math.max(1, value - MOST_CHANGE), value - 1);
+        const change = value - price;
+        return { toy, price, coin, change, choices: changeChoices(change, price, value, rng) };
+      });
+      return { kind, items, total: items.length };
+    }
+
+    const makePrice = {
+      1: () => valueOf(rng.pick(PURSES[1])),
+      2: () => between(rng, 2, LEVEL_2_HIGHEST),
+      3: () => between(rng, LEVEL_2_HIGHEST + 1, highest),
+    }[levelId];
+    const items = prices(chosenToys.length, makePrice).map((price, i) => ({
+      toy: chosenToys[i],
+      price,
+      purse: PURSES[levelId],
+      // At level 1 the price tag also shows the coin that pays it.
+      tagCoin: levelId === 1 ? coins.ALL.find((c) => c.value === price).id : null,
+    }));
+    return { kind, items, total: items.length };
+  }
+
+  // The busiest the mat can be at a level, for fitting small screens (see
+  // fit() in play.js): the payment with the most coins, paid with the fewest
+  // coins from the purse (the biggest coins on a tie), or at level 4 the three
+  // piles of change with the most coins between them. Worked out for the level
+  // rather than the round, so a level always looks the same on a screen.
+  function busiestMat(levelId, highestPrice) {
+    const highest = HIGHEST_PRICES.indexOf(highestPrice) === -1 ? 50 : highestPrice;
+    const size = (ids) => ids.reduce((sum, id) => sum + coins.byId(id).mm, 0);
+    const busier = (a, b) => (b.length > a.length || (b.length === a.length && size(b) > size(a)));
+
+    if (levelById(levelId).kind === 'change') {
+      let most = { ids: [], piles: [] };
+      PAYING_COINS.filter((id) => valueOf(id) <= highest).forEach((coin) => {
+        const value = valueOf(coin);
+        for (let price = Math.max(1, value - MOST_CHANGE); price < value; price++) {
+          const change = value - price;
+          const near = [change - 1, change + 1, change - 2, change + 2, price]
+            .filter((amount, i, all) => amount > 0 && amount !== change && amount < value && all.indexOf(amount) === i);
+          near.forEach((a, i) => near.slice(i + 1).forEach((b) => {
+            const piles = [change, a, b];
+            const ids = [].concat(...piles.map((amount) => fewestCoins(amount)));
+            if (busier(most.ids, ids)) most = { ids, piles };
+          }));
+        }
+      });
+      return { piles: most.piles };
+    }
+
+    const range = (low, high) => Array.from({ length: high - low + 1 }, (_, i) => low + i);
+    const allPrices = {
+      1: PURSES[1].map(valueOf),
+      2: range(2, LEVEL_2_HIGHEST),
+      3: range(LEVEL_2_HIGHEST + 1, highest),
+    }[levelId];
+    return {
+      coins: allPrices.map((price) => fewestCoins(price, PURSES[levelId]))
+        .reduce((most, ids) => (busier(most, ids) ? ids : most)),
+    };
+  }
+
+  // What the shopkeeper says about a toy, on screen and spoken.
+  function priceLine(item) {
+    const toy = toys.byId(item.toy);
+    const name = toy.name.charAt(0).toUpperCase() + toy.name.slice(1);
+    const verb = toy.plural ? 'cost' : 'costs';
+    return {
+      text: `${name} ${verb} ${money.format(item.price)}.`,
+      spoken: `${name} ${verb} ${money.words(item.price)}.`,
+    };
+  }
+
+  KMG.ps.levels = {
+    LEVELS, levelById, build, priceLine, fewestCoins, busiestMat, PURSES, HIGHEST_PRICES, LEVEL_2_HIGHEST, MOST_CHANGE,
+  };
+})(window.KMG);
+
+// Play Shop's saved data: the shared progress store (src/shared/progress-store.js)
+// with this game's settings, and its mistakes counted per price ("7p", "£1").
+(function (KMG) {
+  'use strict';
+
+  const { money, ps } = KMG;
+
+  const ROUND_LENGTHS = [3, 5, 8];
+
+  const store = KMG.progressStore({
+    key: 'play-shop',
+    levels: () => ps.levels.LEVELS,
+    settings: () => ({ roundLength: 5, highestPrice: 50, showTotal: true }),
+    keepOnReset: ['roundLength', 'highestPrice', 'showTotal'],
+    isMistakeKey: (key) => money.parse(key) !== null,
+    checkSettings(data, clean) {
+      const { roundLength, highestPrice, showTotal } = data;
+      if (ROUND_LENGTHS.indexOf(roundLength) === -1) return false;
+      if (ps.levels.HIGHEST_PRICES.indexOf(highestPrice) === -1) return false;
+      if (typeof showTotal !== 'boolean') return false;
+      Object.assign(clean, { roundLength, highestPrice, showTotal });
+      return true;
+    },
+  });
+
+  ps.progress = Object.assign(store, { ROUND_LENGTHS });
+})(window.KMG);
+
+// Play Shop's play screen: the shop. The shared frame (src/shared/play-screen.js)
+// holds the shopkeeper behind the counter (with a shopping bag, the toy and its
+// price tag, and the till), the payment mat in front, and the purse in the tray.
+//
+// Levels 1 to 3 ("pay"): the child drags coins from the purse to the mat (the
+// purse never runs out), taps a coin on the mat to send it back, and presses
+// the till. The shopkeeper checks the payment:
+//   exact      a till "cha-ching", the toy drops into the bag, the next toy comes
+//   too little "A little more, please"; a second time says how much more
+//   too much   "That's a bit too much"; the child takes some back
+// A wrong payment is one mistake. An empty mat just repeats the price.
+//
+// Level 4 ("change"): the purse holds one coin bigger than the price. The
+// child puts it on the mat (the mat takes just that coin) and presses the till.
+// The shopkeeper takes it and holds out three piles of change on the mat; the
+// child taps the right one. A wrong pile is one mistake: the first time
+// "Have another look", then the sum spelled out ("From 7p up to 10p is 3p").
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { coins, money, audio, speech, drag, effects, ps } = KMG;
+
+  // How far outside the mat a coin can be dropped and still count.
+  const FORGIVING_PX = 44;
+  // The most coins the mat holds, so it never pushes the shop off screen.
+  const MAT_LIMIT = 12;
+  const TALK_MS = 1800;
+  const RETURN_MS = 260;
+  const BAG_MS = 520;
+  const NEXT_TOY_MS = 900;
+  // Small screens (see fit() below): the shopkeeper's height to aim for, the
+  // least they may shrink to (and in the tight layout), and the height below
+  // which the phone-on-its-side layout in style.css applies.
+  const KEEPER_PX = 120;
+  const KEEPER_MIN_PX = 90;
+  const KEEPER_TIGHT_PX = 64;
+  const SHORT_PX = 520;
+
+  // A phone turning from its side to upright, with a curved arrow, for when a
+  // phone on its side has no room for the shop.
+  const TURN_SVG = `<svg viewBox="0 0 120 120" aria-hidden="true">
+    <path d="M30 26 A44 44 0 0 1 96 46" fill="none" stroke="#24324a" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+    <path d="M86 40 L98 48 L101 34" fill="none" stroke="#24324a" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g class="ps-turn-phone">
+      <rect x="38" y="30" width="44" height="76" rx="9" fill="#f4f7fb" stroke="#24324a" stroke-width="5"/>
+      <rect x="45" y="40" width="30" height="52" rx="3" fill="#8fd3c7"/>
+      <circle cx="60" cy="99" r="3" fill="#24324a"/>
+    </g>
+  </svg>`;
+
+  // A plain till, drawn like the toys: a body, a screen with a pound sign and keys.
+  const TILL_SVG = `<svg viewBox="0 0 120 110" aria-hidden="true">
+    <rect x="24" y="8" width="72" height="30" rx="8" fill="#24324a"/>
+    <text class="ps-toy-text" x="60" y="23" dy="0.35em" text-anchor="middle" font-size="22" fill="#ffd56b">£</text>
+    <path d="M14 46 Q14 38 22 38 L98 38 Q106 38 106 46 L112 92 Q112 100 104 100 L16 100 Q8 100 8 92 Z" fill="#8fd3c7" stroke="#24324a" stroke-opacity="0.22" stroke-width="3"/>
+    <g fill="#f4f7fb">
+      <rect x="28" y="50" width="16" height="11" rx="3"/><rect x="52" y="50" width="16" height="11" rx="3"/><rect x="76" y="50" width="16" height="11" rx="3"/>
+      <rect x="26" y="68" width="16" height="11" rx="3"/><rect x="52" y="68" width="16" height="11" rx="3"/><rect x="78" y="68" width="16" height="11" rx="3"/>
+    </g>
+    <rect x="30" y="86" width="60" height="8" rx="4" fill="#6fbfb4"/>
+  </svg>`;
+
+  // A paper shopping bag with handles, for the toys bought this round.
+  const BAG_SVG = `<svg viewBox="0 0 100 110" aria-hidden="true">
+    <path d="M34 34 Q34 12 50 12 Q66 12 66 34" fill="none" stroke="#9b7653" stroke-width="5" stroke-linecap="round"/>
+    <path d="M16 34 L84 34 L90 104 Q90 108 86 108 L14 108 Q10 108 10 104 Z" fill="#f2c9a0" stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M16 34 L84 34 L83 46 L17 46 Z" fill="#e9b887"/>
+  </svg>`;
+
+  function play(levelId, context) {
+    drag.reset();
+    const level = ps.levels.levelById(levelId);
+    const saved = ps.progress.load();
+    const round = ps.levels.build(levelId, {
+      roundLength: saved.roundLength,
+      highestPrice: saved.highestPrice,
+      rng: context.rng,
+    });
+
+    const screen = KMG.playScreen.build({
+      levelId,
+      kind: round.kind,
+      total: round.total,
+      text: level.text,
+      spoken: level.spoken,
+      onBack: () => context.home(),
+    });
+
+    let alive = true;
+    // Busy while the shopkeeper checks a payment or the next toy arrives. Shown
+    // as data-busy on the screen, so tests can wait for it.
+    let busy = false;
+    const setBusy = (value) => {
+      busy = value;
+      screen.main.dataset.busy = String(value);
+    };
+    let index = 0;
+    let shortTries = 0;
+    // Level 4: the piles of change are on the mat, waiting for a tap.
+    let choosing = false;
+    let wrongPicks = 0;
+    let mistakes = 0;
+    const mistakesByPrice = {};
+    const item = () => round.items[index];
+
+    const later = (callback, ms) => window.setTimeout(() => {
+      if (alive) callback();
+    }, ms);
+
+    // The shopkeeper and what they say. `expression` lasts TALK_MS, then idle.
+    const keeper = ps.shopkeeper.element(ps.shopkeeper.lookFor(context.rng));
+    const bubble = el('div', { class: 'ps-bubble', role: 'status' });
+    let talkTimer = null;
+    function say(text, spoken, expression = 'talking') {
+      bubble.textContent = text;
+      keeper.setExpression(expression);
+      speech.say(spoken);
+      window.clearTimeout(talkTimer);
+      talkTimer = window.setTimeout(() => {
+        if (alive && keeper.node.dataset.expression === expression) keeper.setExpression('idle');
+      }, TALK_MS);
+    }
+    const sayPrice = () => {
+      const line = ps.levels.priceLine(item());
+      say(line.text, line.spoken);
+    };
+
+    const goods = el('div', { class: 'ps-goods' });
+    const bag = el('div', { class: 'ps-bag', 'data-bag': true, html: BAG_SVG });
+    const till = el('button', {
+      class: 'ps-till',
+      'data-action': 'pay',
+      'aria-label': 'Pay',
+      html: TILL_SVG,
+    });
+    const mat = el('div', { class: 'ps-mat', 'data-mat': true, 'aria-label': 'Put coins here to pay' });
+    const total = el('div', { class: 'ps-total', 'data-total': true, 'aria-live': 'polite' });
+    const showTotal = saved.showTotal && (levelId === 2 || levelId === 3);
+
+    const back = el('div', { class: 'ps-back' }, keeper.node, bubble);
+    const counter = el('div', { class: 'ps-counter' }, bag, goods, till);
+    const matArea = el('div', { class: 'ps-mat-area' }, mat, showTotal && total);
+    screen.zones.appendChild(el('div', { class: 'ps-shop' }, back, counter, matArea));
+    screen.main.appendChild(el('div', { class: 'ps-turn', 'data-turn': true },
+      el('div', { class: 'ps-turn-art', html: TURN_SVG }),
+      el('p', { class: 'ps-turn-text' }, 'Turn me upright')));
+
+    // Fitting small screens. The purse's height depends on the level (level 1
+    // has all eight coins), so the layout is measured, not just set by the
+    // screen's size:
+    //   usual    the shopkeeper behind the counter, the mat in front
+    //   compact  a phone held upright, when the shopkeeper would be under
+    //            KEEPER_PX: they stand beside the mat, and the level's name and
+    //            the speech bubble make way (data-ps-fit="compact")
+    //   tight    the smallest phones, when even that leaves no room: a smaller
+    //            shopkeeper at the end of the counter, the bag put away and
+    //            the mat the full width (data-ps-fit="tight")
+    //   turn     a phone on its side with no room for the shop at all: a
+    //            picture asks for it to be turned upright (data-ps-turn)
+    // Phones on their side otherwise use the short-screen layout in style.css.
+    const box = (node) => node.getBoundingClientRect();
+    function shopFits() {
+      const top = box(screen.main.querySelector('.play-top')).bottom;
+      const bottom = box(screen.tray).top;
+      const inside = [back, counter, matArea].every((node) => {
+        const edges = box(node);
+        return edges.top >= top - 1 && edges.bottom <= bottom + 1 && edges.right <= window.innerWidth + 1;
+      });
+      const least = screen.main.dataset.psFit === 'tight' ? KEEPER_TIGHT_PX : KEEPER_MIN_PX;
+      return inside && box(keeper.node).height >= least - 1;
+    }
+
+    // The most this level's mat can need to hold (see levels.js)
+    function busiestMat() {
+      const busiest = ps.levels.busiestMat(levelId, saved.highestPrice);
+      if (busiest.piles) return busiest.piles.map(pileButton);
+      return busiest.coins.map((id) => coins.element(coins.byId(id), sizeOf(id)));
+    }
+
+    // Measures with the busiest mat in place, then puts the mat back. All in
+    // one go, so nothing is ever drawn.
+    function fitsWithBusiestMat() {
+      const kept = Array.from(mat.childNodes);
+      mat.textContent = '';
+      busiestMat().forEach((node) => mat.appendChild(node));
+      const fits = shopFits();
+      mat.textContent = '';
+      kept.forEach((node) => mat.appendChild(node));
+      return fits;
+    }
+
+    // On arrival and whenever the screen changes size or turns: the usual
+    // layout if it fits with the shopkeeper at KEEPER_PX or more, then compact,
+    // then the usual layout with a smaller shopkeeper, then tight. On a phone
+    // on its side with no room even so, the turn picture.
+    function fit() {
+      if (!alive) return;
+      const data = screen.main.dataset;
+      delete data.psTurn;
+      delete data.psFit;
+      if (window.innerHeight <= SHORT_PX) {
+        if (!fitsWithBusiestMat() && window.innerWidth > window.innerHeight) data.psTurn = 'true';
+        return;
+      }
+      if (box(keeper.node).height >= KEEPER_PX && fitsWithBusiestMat()) return;
+      data.psFit = 'compact';
+      if (fitsWithBusiestMat()) return;
+      delete data.psFit;
+      if (fitsWithBusiestMat()) return;
+      data.psFit = 'tight';
+    }
+
+    // A child may pay with more coins than the busiest mat, such as nine 1p
+    // coins for 9p. On a phone held upright, when the mat outgrows the layout,
+    // this tries the roomier layouts in turn before the mat refuses a coin.
+    // The level's own layout returns with the next toy.
+    function makeRoom() {
+      if (shopFits()) return true;
+      if (window.innerHeight <= SHORT_PX) return false;
+      const data = screen.main.dataset;
+      const was = data.psFit;
+      // The layouts roomier than the current one, roomiest last
+      const roomier = ['compact', 'tight'].slice(['compact', 'tight'].indexOf(was) + 1);
+      for (const layout of roomier) {
+        data.psFit = layout;
+        if (shopFits()) return true;
+      }
+      if (was) data.psFit = was;
+      else delete data.psFit;
+      return false;
+    }
+
+    const scale = coins.scaleFor(window.innerWidth, window.innerHeight);
+    const sizeOf = (id) => coins.sizeOf(coins.byId(id), scale);
+    // The biggest coin that can go on the mat this level. The empty mat is tall
+    // enough for it, so the shop never jumps when a bigger coin lands.
+    const matCoinIds = [].concat(...round.items.map((it) => (round.kind === 'pay' ? it.purse : [it.coin])));
+    screen.main.style.setProperty('--ps-mat-coin', `${Math.max(...matCoinIds.map(sizeOf))}px`);
+
+    // Puts the current toy and its tag on the counter.
+    function showToy(entrance) {
+      goods.textContent = '';
+      const toy = ps.toys.element(item().toy);
+      const tag = ps.tag.element(item(), () => {
+        if (!busy) sayPrice();
+      });
+      if (entrance) {
+        toy.classList.add('pop');
+        tag.classList.add('pop');
+      }
+      goods.append(toy, tag);
+    }
+
+    // What is on the mat, in pence
+    const matCoins = () => Array.from(mat.querySelectorAll('.coin'));
+    const paid = () => matCoins().reduce((sum, node) => sum + coins.byId(node.dataset.coin).value, 0);
+    function refreshTotal() {
+      const amount = paid();
+      total.textContent = amount ? money.format(amount) : '';
+      total.dataset.amount = amount;
+    }
+
+    function addToMat(id) {
+      const node = coins.element(coins.byId(id), sizeOf(id));
+      node.classList.add('pop');
+      node.setAttribute('role', 'button');
+      node.setAttribute('aria-label', `${id} on the mat. Tap to take it back`);
+      node.dataset.matCoin = id;
+      // A tap takes it back to the purse.
+      node.addEventListener('click', () => {
+        if (busy || choosing || !alive) return;
+        audio.play('pickup');
+        node.remove();
+        refreshTotal();
+      });
+      mat.appendChild(node);
+      // On a small screen a mat fuller than the level needs could push the
+      // shop into the purse. With no roomier layout left, the coin goes back,
+      // as a 13th coin would.
+      if (!makeRoom() && matCoins().length > 1) {
+        node.remove();
+        return false;
+      }
+      refreshTotal();
+      return true;
+    }
+
+    function overMat(box) {
+      const area = mat.getBoundingClientRect();
+      const x = box.left + box.width / 2;
+      const y = box.top + box.height / 2;
+      return x >= area.left - FORGIVING_PX && x <= area.right + FORGIVING_PX &&
+        y >= area.top - FORGIVING_PX && y <= area.bottom + FORGIVING_PX;
+    }
+
+    function returnToPurse(node) {
+      node.classList.add('returning');
+      node.style.transform = '';
+      later(() => node.classList.remove('returning'), RETURN_MS);
+    }
+
+    // A coin in the purse. Dropped on the mat, a copy goes onto the mat and
+    // this one is back in the purse at once, because the purse never runs out.
+    function purseCoin(id) {
+      const node = coins.element(coins.byId(id), sizeOf(id));
+      drag.draggable(node, {
+        canStart: () => alive && !busy && !choosing,
+        onStart() {
+          audio.play('pickup');
+          node.classList.add('dragging');
+        },
+        onEnd() {
+          const box = node.getBoundingClientRect();
+          node.classList.remove('dragging');
+          // At level 4 the mat takes just the one paying coin.
+          const limit = round.kind === 'change' ? 1 : MAT_LIMIT;
+          if (overMat(box) && matCoins().length < limit) {
+            if (addToMat(id)) node.style.transform = '';
+            else returnToPurse(node);
+          } else {
+            returnToPurse(node);
+          }
+        },
+        onCancel() {
+          node.classList.remove('dragging');
+          returnToPurse(node);
+        },
+      });
+      return node;
+    }
+
+    // The purse: the level's coins, or at level 4 this toy's one paying coin.
+    function fillPurse() {
+      screen.tray.textContent = '';
+      const purse = round.kind === 'pay' ? item().purse : [item().coin];
+      purse.forEach((id) => {
+        screen.tray.appendChild(el('div', { class: 'tray-slot', style: `--size:${sizeOf(id)}px` }, purseCoin(id)));
+      });
+    }
+
+    // One mistake, counted against the toy's price, with a gentle wobble.
+    function mistake(text, spoken, wobbling) {
+      mistakes++;
+      const key = money.format(item().price);
+      mistakesByPrice[key] = (mistakesByPrice[key] || 0) + 1;
+      audio.play('wrong');
+      wobbling.classList.remove('wobble');
+      void wobbling.offsetWidth;
+      wobbling.classList.add('wobble');
+      say(text, spoken, 'hmm');
+    }
+    const wrongPayment = (text, spoken) => mistake(text, spoken, till);
+
+    function finishRound() {
+      const stars = KMG.stars.forMistakes(mistakes);
+      ps.progress.recordRound(levelId, { stars, mistakes: mistakesByPrice, stage: 0, lastStage: 0 });
+      const next = ps.levels.levelById(levelId + 1) ? () => play(levelId + 1, context) : null;
+      KMG.celebrate(screen.main, {
+        stars,
+        onAgain: () => play(levelId, context),
+        onNext: next,
+        onHome: () => context.home(),
+      });
+    }
+
+    // The toy flies into the bag, then the next toy comes, or the round ends.
+    function sell() {
+      setBusy(true);
+      audio.play('till');
+      const tillBox = till.getBoundingClientRect();
+      effects.sparkle(tillBox.left + tillBox.width / 2, tillBox.top + tillBox.height / 2);
+      say('Thank you!', 'Thank you!', 'happy');
+
+      const toy = goods.querySelector('.ps-toy');
+      const from = toy.getBoundingClientRect();
+      // Into the bag, or to the shopkeeper when the bag is put away.
+      const to = (bag.offsetWidth ? bag : keeper.node).getBoundingClientRect();
+      toy.classList.add('ps-toy-bagging');
+      toy.style.transform = `translate(${to.left + to.width / 2 - (from.left + from.width / 2)}px, ` +
+        `${to.top + to.height / 2 - (from.top + from.height / 2)}px) scale(0.3)`;
+
+      later(() => {
+        index++;
+        screen.setDone(index);
+        mat.textContent = '';
+        refreshTotal();
+        // Back to the level's own layout, if a full mat needed a roomier one
+        fit();
+        shortTries = 0;
+        wrongPicks = 0;
+        choosing = false;
+        delete screen.main.dataset.choosing;
+        if (index === round.total) {
+          goods.textContent = '';
+          finishRound();
+          return;
+        }
+        later(() => {
+          showToy(true);
+          if (round.kind === 'change') fillPurse();
+          setBusy(false);
+          sayPrice();
+        }, NEXT_TOY_MS - BAG_MS);
+      }, BAG_MS);
+    }
+
+    // Level 4: a tap on a pile of change.
+    function pickChange(amount, pile) {
+      if (busy || !choosing || !alive) return;
+      const { price, coin, change } = item();
+      if (amount === change) {
+        sell();
+        return;
+      }
+      wrongPicks++;
+      const value = coins.byId(coin).value;
+      if (wrongPicks === 1) {
+        mistake('Have another look.',
+          `Have another look. You gave me ${money.words(value)}, and it costs ${money.words(price)}.`, pile);
+      } else {
+        mistake(`From ${money.format(price)} up to ${money.format(value)} is ${money.format(change)}.`,
+          `From ${money.words(price)} up to ${money.words(value)} is ${money.words(change)}.`, pile);
+      }
+    }
+
+    // Level 4: a pile of change, its coins and its amount
+    function pileButton(amount) {
+      return el('button', {
+        class: 'ps-pile',
+        'data-change': amount,
+        'aria-label': `${money.format(amount)} change`,
+      },
+      el('span', { class: 'ps-pile-coins' }, ps.levels.fewestCoins(amount).map((id) => el('span', {
+        class: 'coin-mini',
+        html: coins.svg(coins.byId(id)),
+      }))),
+      el('span', { class: 'ps-pile-amount' }, money.format(amount)));
+    }
+
+    // Level 4: the shopkeeper takes the coin and holds out three piles of change.
+    function offerChange() {
+      const it = item();
+      choosing = true;
+      screen.main.dataset.choosing = 'true';
+      audio.play('pickup');
+      mat.textContent = '';
+      it.choices.forEach((amount) => {
+        const pile = pileButton(amount);
+        pile.addEventListener('click', () => pickChange(amount, pile));
+        mat.appendChild(pile);
+      });
+      const line = ps.levels.priceLine(it);
+      say('Which is your change?',
+        `You gave me ${money.words(coins.byId(it.coin).value)}. ${line.spoken} Which is your change?`);
+    }
+
+    till.addEventListener('click', () => {
+      if (busy || choosing || !alive) return;
+      const amount = paid();
+      const price = item().price;
+      if (amount === 0) {
+        sayPrice();
+      } else if (round.kind === 'change') {
+        offerChange();
+      } else if (amount === price) {
+        sell();
+      } else if (amount < price) {
+        shortTries++;
+        const more = price - amount;
+        if (shortTries === 1) wrongPayment('A little more, please.', 'A little more, please.');
+        else wrongPayment(`You need ${money.format(more)} more.`, `You need ${money.words(more)} more.`);
+      } else {
+        wrongPayment("That's a bit too much.", "That's a bit too much.");
+      }
+    });
+
+    screen.main.onleave = () => {
+      alive = false;
+      drag.reset();
+      speech.stop();
+      window.clearTimeout(talkTimer);
+      window.removeEventListener('resize', fit);
+    };
+
+    showToy(false);
+    fillPurse();
+    refreshTotal();
+    setBusy(false);
+    show(screen.main);
+    fit();
+    window.addEventListener('resize', fit);
+    sayPrice();
+  }
+
+  ps.play = play;
+})(window.KMG);
+
+// Play Shop's grown-ups area: the shared one (src/shared/parent-area.js) with
+// this game's settings and its "prices to practise".
+(function (KMG) {
+  'use strict';
+
+  const { money, ps, parentArea } = KMG;
+
+  // Changes one saved setting.
+  function saveSetting(name, value) {
+    const saved = ps.progress.load();
+    saved[name] = value;
+    ps.progress.save(saved);
+  }
+
+  function settings(data) {
+    return [
+      parentArea.choices({
+        title: 'Round length',
+        values: ps.progress.ROUND_LENGTHS,
+        current: data.roundLength,
+        label: (length) => `${length} toys`,
+        attr: 'round',
+        onPick: (length) => saveSetting('roundLength', length),
+      }),
+      parentArea.choices({
+        title: 'Highest price at level 3',
+        values: ps.levels.HIGHEST_PRICES,
+        current: data.highestPrice,
+        label: (pence) => money.format(pence),
+        attr: 'highest',
+        onPick: (pence) => saveSetting('highestPrice', pence),
+      }),
+      parentArea.section('Running total',
+        parentArea.toggle('Show how much is on the mat, at levels 2 and 3', 'total', data.showTotal,
+          (on) => saveSetting('showTotal', on))),
+    ];
+  }
+
+  function parent(context) {
+    parentArea.show({
+      gameName: 'Play Shop',
+      store: ps.progress,
+      fileName: 'play-shop-progress.json',
+      levels: ps.levels.LEVELS,
+      settings,
+      practise: { title: 'Prices to practise', item: (label) => ps.tag.mini(label) },
+      onDone: () => context.home(),
+    });
+  }
+
+  ps.parent = parent;
+})(window.KMG);
+
+// Play Shop's home screen: the shared level picker (src/shared/level-picker.js)
+// with a toy and coins on each level's card.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { coins, ps } = KMG;
+
+  const coin = (id) => el('span', { class: 'coin-mini', html: coins.svg(coins.byId(id)) });
+  const toy = (id) => ps.toys.mini(id);
+
+  const LEVEL_ART = {
+    1: () => [toy('ball'), coin('5p')],
+    2: () => [toy('car'), coin('2p'), coin('1p')],
+    3: () => [toy('robot'), coin('20p'), coin('10p')],
+    4: () => [coin('20p'), toy('kite'), coin('5p')],
+  };
+
+  function home(context) {
+    KMG.levelPicker.show({
+      title: 'Play Shop',
+      levels: ps.levels.LEVELS,
+      art: (level) => LEVEL_ART[level.id](),
+      store: ps.progress,
+      onPlay: (levelId) => ps.play(levelId, context),
+      onParent: () => ps.parent(context),
+      exit: context.exit,
+    });
+  }
+
+  ps.home = home;
+})(window.KMG);
+
+// Play Shop's entry point: registers the game with the hub or standalone boot.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { coins, ps } = KMG;
+
+  const coin = (id) => el('span', { class: 'coin-mini', html: coins.svg(coins.byId(id)) });
+
+  // ?debug=1&toys=1 shows every toy with a price tag, and the shopkeeper in
+  // several looks and every expression, for checking the artwork.
+  function gallery(context) {
+    const toys = ps.toys.ALL.map((toy, i) => el('figure', { class: 'ps-gallery-item' },
+      ps.toys.element(toy.id),
+      ps.tag.element({ price: [1, 7, 10, 23, 50, 99, 2, 5, 12, 35, 48, 20][i] }, null),
+      el('figcaption', {}, toy.name)));
+
+    const looks = [1, 2, 3, 4, 5, 6].map((seed) => {
+      const keeper = ps.shopkeeper.element(ps.shopkeeper.lookFor(KMG.rng.create(seed)));
+      return el('figure', { class: 'ps-gallery-item', 'data-look-seed': seed }, keeper.node, el('figcaption', {}, `Seed ${seed}`));
+    });
+
+    const look = ps.shopkeeper.lookFor(context.rng);
+    const expressions = ps.shopkeeper.EXPRESSIONS.map((name) => el('figure', { class: 'ps-gallery-item', 'data-expression-sample': name },
+      ps.shopkeeper.element(look, name).node, el('figcaption', {}, name)));
+
+    show(el('main', { class: 'ps-gallery', 'data-screen': 'gallery' },
+      el('h2', {}, 'Toys'), el('div', { class: 'ps-gallery-grid' }, toys),
+      el('h2', {}, 'Shopkeeper looks'), el('div', { class: 'ps-gallery-grid' }, looks),
+      el('h2', {}, 'Expressions'), el('div', { class: 'ps-gallery-grid' }, expressions)));
+  }
+
+  KMG.registerGame('play-shop', {
+    // Called once before any of this game's art is drawn.
+    prepare: () => coins.installDefs(),
+
+    // The picture on the hub tile.
+    art: () => [ps.toys.mini('teddy'), coin('10p'), ps.toys.mini('duck')],
+
+    open(exit) {
+      coins.installDefs();
+      const context = { exit, rng: KMG.rng.create(KMG.debug.seed) };
+      context.home = () => ps.home(context);
+
+      if (KMG.debug.flag('toys')) gallery(context);
+      else if (KMG.debug.level) ps.play(KMG.debug.level, context);
+      else context.home();
     },
   });
 })(window.KMG);
@@ -1982,13 +3336,20 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"ae1adf220c09","games
 
   const allLocked = () => KMG.build.games.every((game) => !access.isUnlocked(game.id));
 
+  // The shape of a code. Each game has its own prefix, so with several games the
+  // example cannot name one.
+  const codeExample = () => {
+    const { games } = KMG.build;
+    return `${games.length === 1 ? games[0].prefix : 'XXXX'}-XXXXX-XXXXX`;
+  };
+
   function codeScreen() {
     const input = el('input', {
       class: 'code-input',
       type: 'text',
       'data-code-input': true,
       'aria-label': 'Access code',
-      placeholder: 'COIN-XXXXX-XXXXX',
+      placeholder: codeExample(),
       autocomplete: 'off',
       autocapitalize: 'characters',
       autocorrect: 'off',

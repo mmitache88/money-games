@@ -188,10 +188,95 @@ button {
   }
 }
 
-/* Coin Sorter's own styles. */
+/* The coins, shared by every game that uses them (src/shared/coins.js). */
 
-/* Home */
-.cs-home {
+.coin-mini {
+  display: inline-block;
+  flex: none;
+}
+
+/* Coins */
+.coin {
+  width: var(--size);
+  height: var(--size);
+  flex: none;
+  position: relative;
+  perspective: 600px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.coin-face {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 3px 3px rgba(36, 50, 74, 0.28));
+  transition: filter 0.12s ease-out, transform 0.12s ease-out;
+}
+
+.coin-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.coin-value {
+  font-family: var(--font);
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-width: 4px;
+}
+
+.pop { animation: coin-pop 0.26s ease-out; }
+
+@keyframes coin-pop {
+  from { transform: scale(0.4); opacity: 0; }
+}
+
+/* Picked up: a little bigger, with a longer shadow. */
+.coin.dragging {
+  z-index: 30;
+  cursor: grabbing;
+}
+
+.coin.dragging .coin-face {
+  transform: scale(1.12);
+  filter: drop-shadow(0 16px 12px rgba(36, 50, 74, 0.34));
+}
+
+.coin.returning { transition: transform 0.26s ease-out; }
+
+/* A gentle wobble, never a shake. */
+.coin.wobble .coin-face { animation: wobble 0.32s ease-in-out; }
+
+@keyframes wobble {
+  25% { transform: rotate(-7deg); }
+  75% { transform: rotate(7deg); }
+}
+
+.coin.landing {
+  z-index: 30;
+  transition: transform 0.24s ease-in;
+}
+
+.coin.landing .coin-face { animation: coin-land 0.44s ease-in forwards; }
+
+@keyframes coin-land {
+  0% { transform: rotateY(0) scale(1); opacity: 1; }
+  70% { transform: rotateY(360deg) scale(0.8); opacity: 1; }
+  100% { transform: rotateY(360deg) scale(0.3); opacity: 0; }
+}
+
+/* Screens every game shares: the level picker, the play screen's top bar and
+   tray, and the grown-ups area. A game's own classes carry its prefix (cs-, ...). */
+
+/* Level picker (src/shared/level-picker.js) */
+.game-home {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -288,6 +373,7 @@ button {
 }
 
 /* Play */
+/* Play */
 .play {
   height: 100%;
   display: flex;
@@ -337,7 +423,7 @@ button {
   font-weight: 800;
 }
 
-/* The zones area takes all the height left over, and the pots are sized to fit. */
+/* The play area takes all the height left over. */
 .zones {
   flex: 1;
   min-height: 0;
@@ -346,6 +432,222 @@ button {
   justify-content: center;
 }
 
+/* The tray sits above the pots, so a dragged coin is never hidden behind one. */
+.tray {
+  position: relative;
+  z-index: 5;
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 124px;
+  padding: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.tray-slot {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Parent area. This is the one screen that scrolls. */
+.parent {
+  height: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.parent-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.parent h1 { margin: 0; font-size: 1.8rem; }
+.parent h2 { margin: 0 0 10px; font-size: 1.2rem; }
+.parent h3 { margin: 16px 0 8px; font-size: 1rem; }
+
+.parent-card {
+  flex: none;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.parent-note {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.parent-note:empty { display: none; }
+
+.parent-actions { margin-top: 10px; }
+
+.parent-actions, .choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.parent-actions .btn, .choice-row .btn {
+  background: var(--sky);
+  box-shadow: none;
+}
+
+.parent-actions .btn-danger { background: #f8d2c9; }
+
+.choice-row .btn[aria-pressed="true"] {
+  background: var(--teal);
+  color: #fff;
+}
+
+.switch {
+  width: 100%;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 600;
+}
+
+.switch-track {
+  flex: none;
+  width: 64px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 18px;
+  background: #b9c2cd;
+  transition: background 0.15s;
+}
+
+.switch-thumb {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+
+.switch[aria-checked="true"] .switch-track { background: var(--teal); }
+.switch[aria-checked="true"] .switch-thumb { transform: translateX(28px); }
+
+.progress-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* What the child finds hardest: one row per coin, price or other key */
+.confused {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.confused li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  align-items: center;
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+.progress-row .parent-note { margin: 0; font-weight: 400; }
+
+/* The hold button, with the ring that fills while it is held. */
+.gate { position: relative; }
+
+.gate-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.gate-ring svg { width: 100%; height: 100%; }
+
+.gate-ring circle {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.gate-holding .gate-ring circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 3s linear;
+}
+
+.gate-hint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* Very short screens, such as a phone on its side: every pixel goes to the game. */
+@media (max-height: 480px) {
+  .play { position: relative; }
+  .pips { visibility: hidden; }
+
+  .prompt {
+    position: absolute;
+    top: 8px;
+    left: 92px;
+    right: 92px;
+    height: var(--tap);
+  }
+
+  .level-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .level-card { min-height: 140px; padding: 8px; }
+  .level-art .coin-mini { flex-basis: 40px; }
+}
+
+.level-card.wobble { animation: wobble 0.32s ease-in-out; }
+
+/* Coin Sorter's own styles. Shared screens are in src/shared/game-ui.css and the
+   coins in src/shared/coins.css. These class names predate the cs- prefix rule,
+   so no other game may use them: pot and pot-*, pots, find-*, target and
+   target-*, slot and slot-*, slots, tray-sort, tray-find, tray-few, tray-all,
+   coin-choice and coin-choices. */
+
+/* Pots, sized in play.js to fit the zones area. */
 .pots {
   display: flex;
   flex-wrap: wrap;
@@ -402,11 +704,6 @@ button {
 
 .pot-label .coin-mini { width: 44%; aspect-ratio: 1; }
 .pot-label .coin-mini:only-child { width: 72%; }
-
-.coin-mini {
-  display: inline-block;
-  flex: none;
-}
 
 /* Level 3: the coin to find, above its pot. */
 .find-area {
@@ -490,23 +787,6 @@ button {
   background: #6fbfb4;
 }
 
-/* The tray sits above the pots, so a dragged coin is never hidden behind one. */
-.tray {
-  position: relative;
-  z-index: 5;
-  flex: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 124px;
-  padding: 10px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.6);
-}
-
 /* Fixed slots in one row, so the other coins stay put when one is taken. */
 .tray-sort, .tray-find, .tray-few {
   flex-wrap: nowrap;
@@ -519,110 +799,6 @@ button {
   height: var(--size);
   max-width: none;
 }
-
-.tray-slot {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Parent area. This is the one screen that scrolls. */
-.parent {
-  height: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.parent-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.parent h1 { margin: 0; font-size: 1.8rem; }
-.parent h2 { margin: 0 0 10px; font-size: 1.2rem; }
-.parent h3 { margin: 16px 0 8px; font-size: 1rem; }
-
-.parent-card {
-  flex: none;
-  padding: 16px;
-  border-radius: var(--radius);
-  background: var(--paper);
-}
-
-.parent-note {
-  margin: 8px 0 0;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-
-.parent-note:empty { display: none; }
-
-.parent-actions { margin-top: 10px; }
-
-.parent-actions, .round-choices {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.parent-actions .btn, .round-choices .btn {
-  background: var(--sky);
-  box-shadow: none;
-}
-
-.parent-actions .btn-danger { background: #f8d2c9; }
-
-.round-choices .btn[aria-pressed="true"] {
-  background: var(--teal);
-  color: #fff;
-}
-
-.switch {
-  width: 100%;
-  min-height: var(--tap);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-weight: 600;
-}
-
-.switch-track {
-  flex: none;
-  width: 64px;
-  height: 36px;
-  padding: 4px;
-  border-radius: 18px;
-  background: #b9c2cd;
-  transition: background 0.15s;
-}
-
-.switch-thumb {
-  display: block;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #fff;
-  transition: transform 0.15s;
-}
-
-.switch[aria-checked="true"] .switch-track { background: var(--teal); }
-.switch[aria-checked="true"] .switch-thumb { transform: translateX(28px); }
 
 .coin-choices {
   display: grid;
@@ -649,164 +825,513 @@ button {
 .coin-choice[aria-pressed="false"] { background: #eef1f4; }
 .coin-choice[aria-pressed="false"] svg { opacity: 0.3; }
 
-.progress-list, .confused {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.progress-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2px 12px;
-  align-items: center;
-  padding: 8px 0;
-  font-weight: 600;
-}
-
-.progress-row .parent-note { margin: 0; font-weight: 400; }
-
-.confused li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 4px 0;
-}
-
+/* The grown-ups area's coins to practise */
 .confused .coin-mini { width: 44px; height: 44px; }
 
-/* The hold button, with the ring that fills while it is held. */
-.gate { position: relative; }
+/* Play Shop's own styles. Shared screens are in src/shared/game-ui.css and the
+   coins in src/shared/coins.css. Every class here starts with ps-. */
 
-.gate-ring {
-  position: absolute;
-  inset: 0;
-  transform: rotate(-90deg);
-  pointer-events: none;
-}
-
-.gate-ring svg { width: 100%; height: 100%; }
-
-.gate-ring circle {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-}
-
-.gate-holding .gate-ring circle {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 3s linear;
-}
-
-.gate-hint {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 8px;
-  white-space: nowrap;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-
-/* Very short screens, such as a phone on its side: every pixel goes to the game. */
-@media (max-height: 480px) {
-  .play { position: relative; }
-  .pips { visibility: hidden; }
-
-  .prompt {
-    position: absolute;
-    top: 8px;
-    left: 92px;
-    right: 92px;
-    height: var(--tap);
-  }
-
-  .level-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .level-card { min-height: 140px; padding: 8px; }
-  .level-art .coin-mini { flex-basis: 40px; }
-}
-
-/* Coins */
-.coin {
-  width: var(--size);
-  height: var(--size);
+/* Toys */
+.ps-toy, .ps-toy-mini {
+  display: inline-block;
   flex: none;
-  position: relative;
-  perspective: 600px;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
 }
 
-.coin-face {
+.ps-toy-svg {
+  display: block;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 3px 3px rgba(36, 50, 74, 0.28));
-  transition: filter 0.12s ease-out, transform 0.12s ease-out;
 }
 
-.coin-svg {
+.ps-toy-text {
+  font-family: var(--font);
+  font-weight: 800;
+}
+
+.level-art .ps-toy-mini {
+  flex: 0 1 60px;
+  min-width: 0;
+  aspect-ratio: 1;
+}
+
+.hub-art .ps-toy-mini { width: 66px; height: 66px; }
+
+/* The shopkeeper. The head tilts for "hmm", the whole figure bounces when
+   happy, and the two mouths take turns while talking. */
+.ps-shopkeeper {
+  position: relative;
+  flex: none;
+  aspect-ratio: 1;
+}
+
+.ps-shopkeeper-svg {
   display: block;
   width: 100%;
   height: 100%;
   overflow: visible;
-  pointer-events: none;
+  filter: drop-shadow(0 3px 3px rgba(36, 50, 74, 0.2));
 }
 
-.coin-value {
-  font-family: var(--font);
+.ps-shopkeeper-head {
+  transform-box: view-box;
+  transform-origin: 100px 132px;
+}
+
+.ps-shopkeeper[data-expression="hmm"] .ps-shopkeeper-head { transform: rotate(-7deg); }
+.ps-shopkeeper[data-expression="happy"] { animation: ps-bounce 0.5s ease-out; }
+
+@keyframes ps-bounce {
+  40% { transform: translateY(-10px); }
+}
+
+.ps-mouth-open, .ps-mouth-shut { animation: ps-talk 0.36s infinite; }
+.ps-mouth-shut { animation-delay: -0.18s; }
+
+@keyframes ps-talk {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* No flapping mouth with reduced motion: just the smile. */
+@media (prefers-reduced-motion: reduce) {
+  .ps-mouth-open { display: none; }
+  .ps-mouth-shut { animation: none; opacity: 1; }
+}
+
+/* The shop: shopkeeper behind the counter, the toy and till on it, the mat in front. */
+.ps-shop {
+  width: 100%;
+  max-width: 760px;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ps-back {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* No wider than about half the screen, so the speech bubble fits beside them
+   on a tall, narrow phone. */
+.ps-back .ps-shopkeeper {
+  height: 100%;
+  max-height: min(300px, 55vw);
+}
+
+.ps-bubble {
+  position: relative;
+  align-self: center;
+  max-width: 46%;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.1);
   font-weight: 800;
-  paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.45);
-  stroke-width: 4px;
+  font-size: clamp(1rem, 2.6vh, 1.35rem);
 }
 
-.pop { animation: coin-pop 0.26s ease-out; }
-
-@keyframes coin-pop {
-  from { transform: scale(0.4); opacity: 0; }
+/* The bubble's tail, pointing at the shopkeeper */
+.ps-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right-color: var(--paper);
 }
 
-/* Picked up: a little bigger, with a longer shadow. */
-.coin.dragging {
-  z-index: 30;
-  cursor: grabbing;
+/* The counter covers the bottom of the shopkeeper, so they stand behind it. */
+.ps-counter {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  margin-top: -18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 64px);
+  padding: 14px clamp(10px, 3vw, 24px) 12px;
+  border-radius: 22px;
+  background: #f3dcc0;
+  box-shadow: 0 8px 0 #e2c3a1;
 }
 
-.coin.dragging .coin-face {
-  transform: scale(1.12);
-  filter: drop-shadow(0 16px 12px rgba(36, 50, 74, 0.34));
+.ps-goods {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.coin.returning { transition: transform 0.26s ease-out; }
-
-/* A gentle wobble, never a shake. */
-.coin.wobble .coin-face { animation: wobble 0.32s ease-in-out; }
-.level-card.wobble { animation: wobble 0.32s ease-in-out; }
-
-@keyframes wobble {
-  25% { transform: rotate(-7deg); }
-  75% { transform: rotate(7deg); }
+.ps-goods .ps-toy {
+  width: clamp(64px, min(17vh, 20vw), 150px);
+  aspect-ratio: 1;
 }
 
-.coin.landing {
-  z-index: 30;
-  transition: transform 0.24s ease-in;
+.ps-till {
+  flex: none;
+  width: clamp(70px, min(13vh, 16vw), 116px);
+  aspect-ratio: 120 / 110;
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
-.coin.landing .coin-face { animation: coin-land 0.44s ease-in forwards; }
+.ps-till svg { display: block; width: 100%; height: 100%; }
 
-@keyframes coin-land {
-  0% { transform: rotateY(0) scale(1); opacity: 1; }
-  70% { transform: rotateY(360deg) scale(0.8); opacity: 1; }
-  100% { transform: rotateY(360deg) scale(0.3); opacity: 0; }
+/* The bag on the counter, which bought toys fly into */
+.ps-bag {
+  flex: none;
+  width: clamp(44px, min(10vh, 12vw), 92px);
+  aspect-ratio: 100 / 110;
 }
+
+.ps-bag svg { display: block; width: 100%; height: 100%; }
+
+.ps-toy-bagging {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+  opacity: 0;
+}
+
+/* A gentle wobble of the till after a wrong payment, never a shake */
+.ps-till.wobble { animation: wobble 0.32s ease-in-out; }
+
+/* Where the child puts the coins to pay, with the running total at its corner */
+.ps-mat-area {
+  position: relative;
+  flex: none;
+  margin-top: 18px;
+}
+
+.ps-total {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  min-width: 64px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 3px 0 rgba(36, 50, 74, 0.15);
+}
+
+.ps-total:empty { display: none; }
+
+/* At least one row of the level's biggest coin (set in play.js), plus the
+   padding and border, so the shop never jumps when a coin lands. */
+.ps-mat {
+  min-height: max(clamp(84px, 15vh, 130px), calc(var(--ps-mat-coin, 64px) + 24px));
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 4px dashed rgba(36, 50, 74, 0.3);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Level 4: three piles of change on the mat, each its coins and its amount */
+.ps-pile {
+  flex: 0 1 auto;
+  min-width: var(--tap);
+  min-height: var(--tap);
+  max-width: 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.12);
+}
+
+.ps-pile-coins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+}
+
+.ps-pile-coins .coin-mini { width: clamp(30px, 5vh, 42px); height: clamp(30px, 5vh, 42px); }
+
+/* Narrow phones, and phones on their side: the three piles stay side by side,
+   with smaller pictures of the coins. The amount underneath stays large. */
+@media (max-width: 480px), (max-height: 520px) {
+  .ps-pile { max-width: calc((100% - 16px) / 3); padding: 8px 6px; }
+  .ps-pile-coins .coin-mini { width: 26px; height: 26px; }
+}
+.ps-pile-amount { font-size: 1.2rem; font-weight: 800; }
+.ps-pile.wobble { animation: wobble 0.32s ease-in-out; }
+
+/* The coin has been handed over, so the purse rests while the change is chosen. */
+.play[data-choosing="true"] .tray .coin { opacity: 0.35; }
+
+/* The purse: each coin keeps its own size and the purse wraps onto a second
+   row on narrow screens, so coins never squeeze together. */
+.tray-pay .tray-slot, .tray-change .tray-slot {
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  max-width: none;
+}
+
+/* Short screens, such as a phone on its side: the shopkeeper, the counter and
+   the mat stand side by side in one row, as height is what is short. */
+@media (max-height: 520px) {
+  .ps-shop {
+    max-width: none;
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-content: center;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  .ps-back {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .ps-back .ps-shopkeeper {
+    height: auto;
+    width: clamp(90px, 16vw, 140px);
+  }
+
+  /* No room for the bubble here: the price is on the tag, and still spoken. */
+  .ps-bubble { display: none; }
+
+  .ps-counter { margin-top: 0; padding: 6px 12px; gap: 10px; }
+  .ps-goods .ps-toy { width: 64px; }
+  .ps-tag { padding-top: 6px; padding-bottom: 6px; }
+  .ps-tag-price { font-size: 1.4rem; }
+  .ps-tag-coin { width: 30px; height: 30px; }
+  /* 70px wide is 64px tall, the smallest touch target */
+  .ps-till { width: 70px; }
+  .ps-mat { min-height: max(64px, calc(var(--ps-mat-coin, 56px) + 16px)); padding: 4px; }
+  .ps-mat-area { margin-top: 0; }
+  .ps-bag { width: 40px; }
+}
+
+/* A phone held upright with a tall purse, chosen by measuring in play.js
+   (data-ps-fit="compact"): the counter goes on top, and the shopkeeper stands
+   beside the mat. The level's name and the speech bubble make way; the price
+   is on the tag and still spoken. */
+.play[data-ps-fit="compact"] .prompt { display: none; }
+
+.play[data-ps-fit="compact"] .ps-shop {
+  height: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+}
+
+.play[data-ps-fit="compact"] .ps-counter {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding: 8px 10px;
+}
+
+.play[data-ps-fit="compact"] .ps-back {
+  grid-column: 1;
+  grid-row: 2;
+  align-items: center;
+}
+
+.play[data-ps-fit="compact"] .ps-back .ps-shopkeeper {
+  height: auto;
+  width: clamp(96px, 28vw, 124px);
+}
+
+.play[data-ps-fit="compact"] .ps-bubble { display: none; }
+
+.play[data-ps-fit="compact"] .ps-mat-area {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0;
+  display: flex;
+}
+
+.play[data-ps-fit="compact"] .ps-mat { flex: 1; min-height: max(96px, calc(var(--ps-mat-coin, 72px) + 24px)); }
+.play[data-ps-fit="compact"] .ps-tag { padding-top: 6px; padding-bottom: 6px; }
+.play[data-ps-fit="compact"] .ps-tag-coin { width: 30px; height: 30px; }
+
+/* The smallest phones held upright, when even compact leaves no room
+   (data-ps-fit="tight"): a smaller shopkeeper at the end of the counter, the
+   bag put away (toys fly to the shopkeeper instead), and the mat the full
+   width below. */
+.play[data-ps-fit="tight"] .prompt { display: none; }
+
+.play[data-ps-fit="tight"] .ps-shop {
+  height: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.play[data-ps-fit="tight"] .ps-back .ps-shopkeeper { height: 64px; width: 64px; }
+.play[data-ps-fit="tight"] .ps-bubble,
+.play[data-ps-fit="tight"] .ps-bag { display: none; }
+
+.play[data-ps-fit="tight"] .ps-counter {
+  margin-top: 0;
+  padding: 8px 10px;
+  gap: 8px;
+}
+
+.play[data-ps-fit="tight"] .ps-mat-area { grid-column: 1 / -1; margin-top: 0; }
+.play[data-ps-fit="tight"] .ps-goods .ps-toy { width: 64px; }
+.play[data-ps-fit="tight"] .ps-tag { padding-top: 6px; padding-bottom: 6px; }
+.play[data-ps-fit="tight"] .ps-tag-coin { width: 30px; height: 30px; }
+
+/* A phone on its side with no room for the shop (data-ps-turn): a picture of
+   the phone turning upright covers the play area. The back button stays. */
+.ps-turn { display: none; }
+
+.play[data-ps-turn] { position: relative; }
+.play[data-ps-turn] .zones, .play[data-ps-turn] .tray { visibility: hidden; }
+
+.play[data-ps-turn] .ps-turn {
+  position: absolute;
+  z-index: 40;
+  top: 80px;
+  right: 12px;
+  bottom: 8px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.ps-turn-art { width: 140px; height: 140px; }
+.ps-turn-art svg { display: block; width: 100%; height: 100%; }
+.ps-turn-text { margin: 0; font-size: 1.5rem; font-weight: 800; }
+
+.ps-turn-phone {
+  transform-box: view-box;
+  transform-origin: 60px 68px;
+  animation: ps-turn 2.4s ease-in-out infinite;
+}
+
+@keyframes ps-turn {
+  0%, 25% { transform: rotate(-90deg); }
+  60%, 100% { transform: rotate(0); }
+}
+
+/* Price tags: a swing tag with a hole, tilted as if hanging from the toy. */
+.ps-tag {
+  position: relative;
+  flex: none;
+  min-width: 80px;
+  min-height: var(--tap);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 16px 10px 28px;
+  border: 0;
+  border-radius: 10px 20px 20px 10px;
+  background: #fff3c4;
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.12);
+  transform: rotate(-6deg);
+}
+
+.ps-tag-hole {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  width: 11px;
+  height: 11px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--sky);
+  box-shadow: inset 0 0 0 2px rgba(36, 50, 74, 0.25);
+}
+
+.ps-tag-price {
+  font-size: clamp(1.5rem, 4.4vh, 2.4rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ps-tag-coin { width: 40px; height: 40px; }
+
+.ps-tag-mini {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 56px;
+  height: 36px;
+  padding: 0 12px 0 20px;
+  border-radius: 8px 14px 14px 8px;
+  background: #fff3c4;
+  font-weight: 800;
+}
+
+.ps-tag-mini::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+
+/* ?debug=1&toys=1: every toy, and the shopkeeper's looks and expressions */
+.ps-gallery {
+  height: 100%;
+  overflow: auto;
+  padding: 16px 24px;
+}
+
+.ps-gallery h2 { margin: 16px 0 8px; }
+
+.ps-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.ps-gallery-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.ps-gallery-item .ps-toy { width: 110px; height: 110px; }
+.ps-gallery-item .ps-shopkeeper { width: 130px; }
+.ps-gallery-item figcaption { font-weight: 700; color: var(--ink-soft); }
 
 /* The hub home screen and the access-code screen. */
 .hub {
