@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"]}}};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}}};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -236,6 +236,11 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
       { frequency: 2093, start: 0.08, length: 0.3, volume: 0.1, type: 'triangle' },
       { frequency: 3136, start: 0.08, length: 0.22, volume: 0.05, type: 'triangle' },
     ],
+    // A rubber stamp landing: a soft low "thunk" and a light paper tap.
+    stamp: [
+      { frequency: 180, slideTo: 90, length: 0.12, volume: 0.18, type: 'triangle' },
+      { frequency: 620, start: 0.01, length: 0.05, volume: 0.04, type: 'triangle' },
+    ],
     fanfare: [
       { frequency: 523, length: 0.15 },
       { frequency: 659, start: 0.14, length: 0.15 },
@@ -430,6 +435,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
 //   KMG.money.format(100)  "£1"      KMG.money.words(100)  "one pound"
 //   KMG.money.format(150)  "£1.50"   KMG.money.words(150)  "one pound fifty"
 //   KMG.money.parse("23p") 23        KMG.money.parse("£2") 200
+//   KMG.money.number(500)  "five hundred"   (any whole number from 0 to 1,000)
 (function (KMG) {
   'use strict';
 
@@ -437,8 +443,16 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
     'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
   const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-  // 0 to 99 in words, with a hyphen as in "twenty-three".
+  // 0 to 1,000 in words, the UK way: "twenty-three", "five hundred",
+  // "two hundred and fifty", "one thousand". Amounts of money only ever use
+  // 0 to 99 here (pence, and pounds up to £99), so they read as before.
   function number(n) {
+    if (n === 1000) return 'one thousand';
+    if (n >= 100) {
+      const rest = n % 100;
+      const hundreds = `${ONES[Math.floor(n / 100)]} hundred`;
+      return rest ? `${hundreds} and ${number(rest)}` : hundreds;
+    }
     if (n < 20) return ONES[n];
     const tens = TENS[Math.floor(n / 10)];
     return n % 10 ? `${tens}-${ONES[n % 10]}` : tens;
@@ -466,7 +480,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
     return match ? Number(match[1]) * 100 : null;
   }
 
-  KMG.money = { format, words, parse };
+  KMG.money = { format, words, parse, number };
 })(window.KMG);
 
 // The eight UK coins as stylised SVG drawings. These are original shapes with
@@ -1108,7 +1122,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
           KMG.parentGate.button(options.onParent)),
         el('h1', { class: 'home-title' }, options.title),
         el('div', { class: 'home-right' }, muteButton())),
-      el('div', { class: 'level-grid' },
+      // data-count lets the stylesheet lay out a game with more levels
+      el('div', { class: 'level-grid', 'data-count': options.levels.length },
         options.levels.map((level) => levelCard(level, data, options))),
       debugBar(options)));
   }
@@ -1183,8 +1198,11 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
 //     fileName,        name of the exported progress file
 //     levels,          the game's levels, each { id, text }
 //     settings(data),  the game's own setting sections, made with the helpers below
-//     practise,        { title, item(key) }: what the child finds hardest, from
-//                      the mistakes counted per key (a coin, a price, ...)
+//     practise,        { title, item(key), include(key)? }: what the child finds
+//                      hardest, from the mistakes counted per key (a coin, a
+//                      price, ...). include(key), if given, leaves some keys out
+//     notes(data)?,    optional lines under that list, for anything else the
+//                      game counts (Price Detective's big pack trick)
 //     onDone(),        back to the game's home
 //   })
 //
@@ -1252,14 +1270,16 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
         el('span', { class: 'parent-note' }, played));
     });
 
-    const confused = store.confused(data, PRACTISE_LIMIT);
+    const include = options.practise.include || (() => true);
+    const confused = store.confused(data, Infinity).filter(([key]) => include(key)).slice(0, PRACTISE_LIMIT);
     const practise = confused.length
       ? el('ul', { class: 'confused' }, confused.map(([key, count]) => el('li', { 'data-confused': key },
         options.practise.item(key),
         count === 1 ? '1 mistake' : `${count} mistakes`)))
       : el('p', { class: 'parent-note', 'data-confused-none': true }, 'No mistakes yet.');
 
-    return section('Progress', el('ul', { class: 'progress-list' }, rows), el('h3', {}, options.practise.title), practise);
+    return section('Progress', el('ul', { class: 'progress-list' }, rows), el('h3', {}, options.practise.title), practise,
+      ...(options.notes ? options.notes(data) : []));
   }
 
   function transferSection(options, refresh) {
@@ -3189,6 +3209,1017 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games
 
       if (KMG.debug.flag('toys')) gallery(context);
       else if (KMG.debug.level) ps.play(KMG.debug.level, context);
+      else context.home();
+    },
+  });
+})(window.KMG);
+
+// Price Detective's twelve groceries, drawn as simple SVG on a 120 by 120
+// canvas, in the same flat pastel style and soft outline as Play Shop's toys.
+// Original and unbranded: no real shop, brand, logo or packaging design.
+//
+// Each product is sold in one of three ways, which decides how its packs are
+// sized and how its value is worked out (see levels.js):
+//   count  eggs, apples ... sold by the number in the pack; worked out per one
+//   g      cereal, pasta ... sold by weight; worked out per 100g
+//   ml     milk and juice, sold by volume; worked out per 100ml
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  KMG.pd = KMG.pd || {};
+
+  // The soft outline every drawing uses
+  const LINE = 'stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"';
+  const SOFT = 'fill="none" stroke="#24324a" stroke-opacity="0.2" stroke-width="3" stroke-linecap="round"';
+
+  const CORAL = '#ff9d8a';
+  const SUN = '#ffd56b';
+  const SKY = '#9cc9f5';
+  const LILAC = '#cfc8f2';
+  const MINT = '#8fd3c7';
+  const CLOUD = '#f4f7fb';
+  const WOOD = '#9b7653';
+  const LEAF = '#9ad48a';
+  const ORANGE = '#ffb35c';
+  const CARD = '#e9d3b4';
+  const CRUST = '#e8b77a';
+
+  // A tin of tomatoes, `width` wide from `x`
+  function tin(x, width) {
+    const mid = x + width / 2;
+    return `
+      <rect x="${x}" y="30" width="${width}" height="74" rx="7" fill="#dfe5ec"/>
+      <rect x="${x}" y="50" width="${width}" height="34" fill="${CORAL}"/>
+      <circle cx="${mid}" cy="69" r="${width / 5.5}" fill="#e8665a"/>
+      <path d="M${mid - 6} 59 L${mid} 55 L${mid + 6} 59" fill="none" stroke="${LEAF}" stroke-width="3" stroke-linecap="round"/>
+      <rect x="${x}" y="30" width="${width}" height="74" rx="7" fill="none" ${LINE}/>
+      <ellipse cx="${mid}" cy="32" rx="${width / 2}" ry="7" fill="#eef2f6" ${LINE}/>`;
+  }
+
+  // The drawings of a whole pack. A count product sold on its own uses ONE
+  // below instead, so one yoghurt never looks like two.
+  const DRAWINGS = {
+    eggs: `
+      <ellipse cx="34" cy="54" rx="14" ry="18" fill="#fff8ec" ${LINE}/>
+      <ellipse cx="60" cy="50" rx="14" ry="18" fill="#f6e3c8" ${LINE}/>
+      <ellipse cx="86" cy="54" rx="14" ry="18" fill="#fff8ec" ${LINE}/>
+      <path d="M12 64 L108 64 L100 98 Q99 104 93 104 L27 104 Q21 104 20 98 Z" fill="${CARD}" ${LINE}/>
+      <path d="M30 80 Q36 88 42 80 M54 80 Q60 88 66 80 M78 80 Q84 88 90 80" ${SOFT}/>`,
+
+    apples: `
+      <path d="M44 42 Q46 32 51 27" fill="none" stroke="${WOOD}" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 34 Q60 25 67 33 Q58 41 50 34 Z" fill="${LEAF}"/>
+      <circle cx="42" cy="70" r="30" fill="#ff8f7a" ${LINE}/>
+      <circle cx="31" cy="58" r="6" fill="#fff" opacity="0.5"/>
+      <path d="M80 48 Q81 40 85 36" fill="none" stroke="${WOOD}" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="80" cy="76" r="27" fill="${LEAF}" ${LINE}/>
+      <circle cx="71" cy="65" r="5" fill="#fff" opacity="0.5"/>`,
+
+    bananas: `
+      <g transform="translate(12 -10)">
+        <path d="M22 40 Q30 96 92 92 Q102 90 100 84 Q60 86 40 40 Q36 32 30 32 Q22 32 22 40 Z" fill="#ffe28f" ${LINE}/>
+      </g>
+      <path d="M22 40 Q30 96 92 92 Q102 90 100 84 Q60 86 40 40 Q36 32 30 32 Q22 32 22 40 Z" fill="${SUN}" ${LINE}/>
+      <path d="M26 33 L31 25 M38 23 L43 15" stroke="${WOOD}" stroke-width="5" stroke-linecap="round"/>`,
+
+    yoghurts: `
+      <path d="M18 44 L58 44 L54 100 Q53 104 49 104 L27 104 Q23 104 22 100 Z" fill="${CLOUD}" ${LINE}/>
+      <rect x="21" y="62" width="34" height="16" fill="${CORAL}" opacity="0.85"/>
+      <rect x="14" y="36" width="48" height="10" rx="4" fill="${LILAC}" ${LINE}/>
+      <path d="M62 44 L102 44 L98 100 Q97 104 93 104 L71 104 Q67 104 66 100 Z" fill="${CLOUD}" ${LINE}/>
+      <rect x="65" y="62" width="34" height="16" fill="${SUN}" opacity="0.9"/>
+      <rect x="58" y="36" width="48" height="10" rx="4" fill="${MINT}" ${LINE}/>`,
+
+    tins: `${tin(10, 44)}${tin(64, 44)}`,
+
+    cereal: `
+      <path d="M92 18 L102 24 L102 104 L92 108 Z" fill="#e9b94a" ${LINE}/>
+      <rect x="28" y="12" width="64" height="96" rx="6" fill="${SUN}" ${LINE}/>
+      <rect x="38" y="24" width="44" height="14" rx="7" fill="${CORAL}"/>
+      <circle cx="48" cy="64" r="5" fill="${ORANGE}"/>
+      <circle cx="57" cy="60" r="5" fill="#f0a040"/>
+      <circle cx="66" cy="63" r="5" fill="${ORANGE}"/>
+      <circle cx="74" cy="60" r="4" fill="#f0a040"/>
+      <path d="M38 66 L82 66 Q80 92 60 92 Q40 92 38 66 Z" fill="${CLOUD}" ${LINE}/>`,
+
+    pasta: `
+      <path d="M30 20 L90 20 L96 104 Q96 108 92 108 L28 108 Q24 108 24 104 Z" fill="${SKY}" ${LINE}/>
+      <path d="M30 20 L90 20 L89 30 L31 30 Z" fill="#7fb3e6"/>
+      <rect x="38" y="46" width="44" height="44" rx="14" fill="#fff6dc"/>
+      <path d="M46 58 L56 64 M64 54 L70 64 M48 76 L58 72 M66 72 L74 80" stroke="#f0b440" stroke-width="6" stroke-linecap="round"/>`,
+
+    rice: `
+      <path d="M34 34 Q30 24 40 22 L80 22 Q90 24 86 34 L96 100 Q96 108 88 108 L32 108 Q24 108 24 100 Z" fill="${CLOUD}" ${LINE}/>
+      <path d="M42 31 L78 31" stroke="${CORAL}" stroke-width="6" stroke-linecap="round"/>
+      <rect x="32" y="56" width="56" height="26" rx="9" fill="${MINT}"/>
+      <g fill="#ffffff">
+        <ellipse cx="46" cy="69" rx="4" ry="2.5" transform="rotate(-25 46 69)"/>
+        <ellipse cx="58" cy="66" rx="4" ry="2.5" transform="rotate(20 58 66)"/>
+        <ellipse cx="70" cy="70" rx="4" ry="2.5" transform="rotate(-10 70 70)"/>
+        <ellipse cx="62" cy="75" rx="4" ry="2.5" transform="rotate(30 62 75)"/>
+      </g>`,
+
+    cheese: `
+      <path d="M14 92 L104 92 Q108 92 108 88 L108 46 Q108 40 102 42 L18 84 Q14 86 14 92 Z" fill="${SUN}" ${LINE}/>
+      <path d="M20 84 L102 44" stroke="#e9b94a" stroke-width="6" stroke-linecap="round"/>
+      <g fill="#e9b94a">
+        <circle cx="82" cy="72" r="7"/>
+        <circle cx="60" cy="82" r="5"/>
+        <circle cx="96" cy="58" r="4"/>
+        <circle cx="40" cy="87" r="3.5"/>
+      </g>`,
+
+    bread: `
+      <path d="M18 62 Q18 30 60 30 Q102 30 102 62 L102 98 Q102 104 96 104 L24 104 Q18 104 18 98 Z" fill="${CRUST}" ${LINE}/>
+      <rect x="24" y="70" width="72" height="28" rx="4" fill="#f6d9a8"/>
+      <path d="M40 42 L48 56 M58 38 L66 54 M76 42 L84 56" fill="none" stroke="#c98a4a" stroke-width="3" stroke-linecap="round"/>`,
+
+    milk: `
+      <rect x="56" y="9" width="8" height="9" rx="2" fill="${SKY}"/>
+      <path d="M34 40 L60 16 L86 40 Z" fill="#dfe5ec" ${LINE}/>
+      <rect x="34" y="40" width="52" height="66" rx="4" fill="${CLOUD}" ${LINE}/>
+      <rect x="34" y="56" width="52" height="26" fill="${SKY}"/>
+      <path d="M60 60 Q68 70 60 77 Q52 70 60 60 Z" fill="${CLOUD}"/>`,
+
+    juice: `
+      <rect x="50" y="10" width="20" height="12" rx="4" fill="${MINT}" ${LINE}/>
+      <path d="M50 22 L70 22 L70 34 Q88 42 88 60 L88 100 Q88 108 80 108 L40 108 Q32 108 32 100 L32 60 Q32 42 50 34 Z" fill="#ffe6c4" ${LINE}/>
+      <path d="M34 58 L86 58 L86 100 Q86 106 80 106 L40 106 Q34 106 34 100 Z" fill="${ORANGE}"/>
+      <rect x="40" y="68" width="40" height="22" rx="6" fill="${CLOUD}"/>
+      <circle cx="60" cy="79" r="7" fill="${ORANGE}"/>`,
+  };
+
+  // One item on its own: an apple, a banana, a yoghurt, a tin
+  const ONE = {
+    apples: `
+      <path d="M60 38 Q62 28 67 23" fill="none" stroke="${WOOD}" stroke-width="4" stroke-linecap="round"/>
+      <path d="M66 30 Q76 21 83 29 Q74 37 66 30 Z" fill="${LEAF}"/>
+      <circle cx="60" cy="72" r="34" fill="#ff8f7a" ${LINE}/>
+      <circle cx="47" cy="58" r="7" fill="#fff" opacity="0.5"/>`,
+
+    bananas: `
+      <g transform="translate(6 0)">
+        <path d="M22 40 Q30 96 92 92 Q102 90 100 84 Q60 86 40 40 Q36 32 30 32 Q22 32 22 40 Z" fill="${SUN}" ${LINE}/>
+        <path d="M26 33 L31 25" stroke="${WOOD}" stroke-width="5" stroke-linecap="round"/>
+      </g>`,
+
+    yoghurts: `
+      <path d="M38 40 L82 40 L78 102 Q77 106 73 106 L47 106 Q43 106 42 102 Z" fill="${CLOUD}" ${LINE}/>
+      <rect x="41" y="60" width="38" height="18" fill="${CORAL}" opacity="0.85"/>
+      <rect x="34" y="31" width="52" height="11" rx="4" fill="${LILAC}" ${LINE}/>`,
+
+    tins: tin(34, 52),
+  };
+
+  // `one` and `many` name a count product's items ("4 apples"); `name` is how
+  // a weight or volume is said ("500 grams of pasta"). `packs` are the numbers
+  // a count product comes in; `sizes` are the grams or millilitres the others
+  // come in, always in whole hundreds up to 1,000.
+  const PRODUCTS = [
+    { id: 'eggs', unit: 'count', one: 'egg', many: 'eggs', packs: [6, 10, 12] },
+    { id: 'apples', unit: 'count', one: 'apple', many: 'apples', packs: [1, 3, 5, 10] },
+    { id: 'bananas', unit: 'count', one: 'banana', many: 'bananas', packs: [1, 2, 5] },
+    { id: 'yoghurts', unit: 'count', one: 'yoghurt', many: 'yoghurts', packs: [1, 2, 4] },
+    { id: 'tins', unit: 'count', one: 'tin of tomatoes', many: 'tins of tomatoes', packs: [1, 2, 4, 10] },
+    { id: 'cereal', unit: 'g', name: 'cereal', sizes: [300, 500, 700] },
+    { id: 'pasta', unit: 'g', name: 'pasta', sizes: [300, 500, 1000] },
+    { id: 'rice', unit: 'g', name: 'rice', sizes: [400, 500, 1000] },
+    { id: 'cheese', unit: 'g', name: 'cheese', sizes: [200, 300, 400] },
+    { id: 'bread', unit: 'g', name: 'bread', sizes: [400, 600, 800] },
+    { id: 'milk', unit: 'ml', name: 'milk', sizes: [200, 500, 1000] },
+    { id: 'juice', unit: 'ml', name: 'juice', sizes: [300, 500, 1000] },
+  ];
+
+  const byId = (id) => PRODUCTS.find((product) => product.id === id);
+  // The pack sizes or weights a product comes in
+  const amountsOf = (product) => (product.unit === 'count' ? product.packs : product.sizes);
+  const labelOf = (product) => (product.unit === 'count' ? product.many : product.name);
+
+  // The drawing for a pack: one item on its own where there is one, otherwise the whole pack
+  function svg(id, amount) {
+    const product = byId(id);
+    const drawing = amount === 1 && ONE[id] ? ONE[id] : DRAWINGS[id];
+    const name = amount === 1 && product.unit === 'count' ? product.one : labelOf(product);
+    return `<svg class="pd-product-svg" viewBox="0 0 120 120" role="img" aria-label="${name}">${drawing}</svg>`;
+  }
+
+  // A product at any size: the element fills whatever box the stylesheet gives it.
+  // With an `amount`, the picture shows the pack's size: a smaller pack is
+  // drawn smaller (--pd-scale), by its place among the sizes the product
+  // comes in: 70% for the smallest, full size for the biggest, evenly between,
+  // so "2 yoghurts" and "4 yoghurts" never look alike and no pack is tiny.
+  // A multipack also wears a sticker with the number in it ("4").
+  function element(id, amount = null, className = 'pd-product') {
+    const product = byId(id);
+    const node = el('span', { class: className, 'data-product': id, html: svg(id, amount) });
+    if (amount === null) return node;
+    node.dataset.amount = amount;
+    const sizes = amountsOf(product);
+    const rank = sizes.indexOf(amount) / (sizes.length - 1);
+    node.style.setProperty('--pd-scale', (0.7 + 0.3 * rank).toFixed(3));
+    if (product.unit === 'count' && amount > 1) {
+      node.appendChild(el('span', { class: 'pd-count', 'aria-hidden': 'true' }, String(amount)));
+    }
+    return node;
+  }
+  const mini = (id) => element(id, null, 'pd-product-mini');
+
+  KMG.pd.products = { ALL: PRODUCTS, ONE_IDS: Object.keys(ONE), byId, amountsOf, svg, element, mini };
+})(window.KMG);
+
+// The detective's kit, drawn in code like the products: a magnifying glass,
+// which shows the clue after a wrong pick, and a notebook, which shows the
+// working after each case. There is no detective character (see the spec).
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+
+  const LINE = 'stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"';
+
+  const DRAWINGS = {
+    magnifier: `
+      <path d="M76 76 L106 106" stroke="#9b7653" stroke-width="15" stroke-linecap="round"/>
+      <path d="M76 76 L84 84" stroke="#24324a" stroke-width="15" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="33" fill="#e4f3fb" fill-opacity="0.85" stroke="#24324a" stroke-width="9"/>
+      <path d="M32 42 Q36 30 48 27" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>`,
+
+    notebook: `
+      <rect x="24" y="10" width="78" height="100" rx="10" fill="#ff9d8a" ${LINE}/>
+      <rect x="34" y="16" width="62" height="88" rx="6" fill="#f4f7fb" ${LINE}/>
+      <path d="M44 38 H86 M44 54 H86 M44 70 H86 M44 86 H72" stroke="#9cc9f5" stroke-width="4" stroke-linecap="round"/>
+      <g fill="#24324a" fill-opacity="0.55">
+        <rect x="18" y="24" width="14" height="6" rx="3"/>
+        <rect x="18" y="46" width="14" height="6" rx="3"/>
+        <rect x="18" y="68" width="14" height="6" rx="3"/>
+        <rect x="18" y="90" width="14" height="6" rx="3"/>
+      </g>`,
+  };
+
+  const NAMES = { magnifier: 'magnifying glass', notebook: 'notebook' };
+
+  const svg = (id) => `<svg class="pd-kit-svg" viewBox="0 0 120 120" role="img" aria-label="${NAMES[id]}">${DRAWINGS[id]}</svg>`;
+  const element = (id, className = 'pd-kit') => el('span', { class: className, 'data-kit': id, html: svg(id) });
+  const mini = (id) => element(id, 'pd-kit-mini');
+
+  KMG.pd.kit = { ITEMS: Object.keys(DRAWINGS), svg, element, mini };
+})(window.KMG);
+
+// What each Price Detective level asks for. Plain logic with no drawing:
+// `build` turns a level and the parent's settings into one round, a list of
+// cases. Each case is one product on the shelf in two or three packs:
+//
+//   { kind, product, options: [{ amount, price, unit }], best, trick }
+//
+//   amount  the number in the pack, or its grams or millilitres
+//   price   whole pence
+//   unit    the price for one, or per 100g or 100ml, in whole pence (levels 3
+//           to 5 only, where that is what the child compares)
+//   best    the index in `options` of the better value; there is always
+//           exactly one, as agreed in the spec
+//   trick   level 5: the biggest pack is not the best value
+//
+// The rounds are made so every division is exact: a price for one or per
+// 100g is chosen first, and the pack's price worked out from it.
+(function (KMG) {
+  'use strict';
+
+  const { money } = KMG;
+  const { products } = KMG.pd;
+
+  const LEVELS = [
+    { id: 1, kind: 'price', text: 'Which costs less?', spoken: 'Which one costs less?' },
+    { id: 2, kind: 'amount', text: 'Which gives more?', spoken: 'They cost the same. Which one gives you more?' },
+    { id: 3, kind: 'multipack', text: 'Multipacks', spoken: 'Which is better value? Find the price for one.' },
+    { id: 4, kind: 'size', text: 'Bigger or smaller', spoken: 'Which is better value? Find the price for a hundred grams, or a hundred millilitres.' },
+    { id: 5, kind: 'label', text: 'Read the label', spoken: 'Which is better value? Read the small print on the labels.' },
+  ];
+
+  const levelById = (id) => LEVELS.find((level) => level.id === id);
+  const KINDS = LEVELS.map((level) => level.kind);
+
+  // The limits in the spec's "Number rules"
+  const RULES = {
+    mostPrice: 500,
+    level1Prices: [20, 200],
+    level1Gap: 5,
+    level2Prices: [50, 200],
+    level2Ratio: 1.25,
+    unitGap: 2,
+    eachPrices: [5, 50],
+    per100Prices: [5, 90],
+  };
+
+  // Level 3's pack sizes: one on its own, or a multipack of 2, 3, 4, 5 or 10
+  const MULTIPACKS = [1, 2, 3, 4, 5, 10];
+
+  const between = (rng, low, high) => low + rng.int(high - low + 1);
+
+  // Keeps calling `make` until it returns something, a few hundred times at
+  // most. The rules always leave a way through, so running out means a rule
+  // has been changed so that it cannot be met: stop loudly rather than hang.
+  function attempt(make) {
+    for (let tries = 0; tries < 500; tries++) {
+      const result = make();
+      if (result) return result;
+    }
+    throw new Error('Price Detective could not make a case that keeps the rules');
+  }
+  const range = (low, high) => Array.from({ length: high - low + 1 }, (_, i) => low + i);
+  // Prices for one are per 1 item; weights and volumes per 100g or 100ml.
+  const per = (product) => (product.unit === 'count' ? 1 : 100);
+  const unitPrice = (product, option) => (option.price * per(product)) / option.amount;
+
+  // Every pair of a product's amounts, smallest first
+  function pairs(list) {
+    const found = [];
+    list.forEach((a, i) => list.slice(i + 1).forEach((b) => found.push(a < b ? [a, b] : [b, a])));
+    return found;
+  }
+
+  // Level 2's pairs: the bigger amount is at least a quarter more, and a
+  // count product's smaller pack has at least two in it.
+  const amountPairs = (product) => pairs(products.amountsOf(product))
+    .filter(([a, b]) => b >= a * RULES.level2Ratio && (product.unit !== 'count' || a >= 2));
+
+  // The unit prices a pack can have and stay within the most a pack costs
+  function unitChoices(product, amount) {
+    const [low, high] = product.unit === 'count' ? RULES.eachPrices : RULES.per100Prices;
+    return range(low, high).filter((unit) => (unit * amount) / per(product) <= RULES.mostPrice);
+  }
+
+  // Unit prices for the given amounts, all at least RULES.unitGap apart, picked
+  // one after another from what is left. Returns null if it runs out, which
+  // the caller handles by trying again.
+  function spacedUnits(rng, product, amounts) {
+    const chosen = [];
+    for (const amount of amounts) {
+      const left = unitChoices(product, amount).filter((unit) => chosen.every((other) => Math.abs(unit - other) >= RULES.unitGap));
+      if (!left.length) return null;
+      chosen.push(rng.pick(left));
+    }
+    return chosen;
+  }
+
+  const multipacks = (product) => product.packs.filter((pack) => MULTIPACKS.includes(pack));
+
+  // Which products each level can use
+  const ELIGIBLE = {
+    price: () => products.ALL,
+    amount: () => products.ALL.filter((product) => amountPairs(product).length),
+    multipack: () => products.ALL.filter((product) => product.unit === 'count' && multipacks(product).length >= 2),
+    size: () => products.ALL.filter((product) => product.unit !== 'count' && product.sizes.length >= 2),
+    label: () => products.ALL.filter((product) => product.unit !== 'count' && product.sizes.length >= 3),
+  };
+
+  // One case per kind. Each returns the options in shelf order.
+  const MAKERS = {
+    // Level 1: the same pack at two prices, at least 5p apart
+    price(rng, product) {
+      const amount = rng.pick(products.amountsOf(product));
+      const [low, high] = RULES.level1Prices;
+      const first = between(rng, low, high);
+      const second = rng.pick(range(low, high).filter((price) => Math.abs(price - first) >= RULES.level1Gap));
+      return [{ amount, price: first }, { amount, price: second }];
+    },
+
+    // Level 2: two amounts at the same price, a multiple of 5p
+    amount(rng, product) {
+      const [small, big] = rng.pick(amountPairs(product));
+      const price = 5 * between(rng, RULES.level2Prices[0] / 5, RULES.level2Prices[1] / 5);
+      return rng.shuffle([{ amount: small, price }, { amount: big, price }]);
+    },
+
+    // Level 3: two pack sizes, each with its own whole-pence price for one
+    multipack(rng, product) {
+      return attempt(() => {
+        const amounts = rng.shuffle(rng.pick(pairs(multipacks(product))));
+        const units = spacedUnits(rng, product, amounts);
+        return units && amounts.map((amount, i) => ({ amount, price: (units[i] * amount) / per(product) }));
+      });
+    },
+
+    // Level 4: two sizes, each with its own whole-pence price per 100g or 100ml
+    size(rng, product) {
+      return attempt(() => {
+        const amounts = rng.shuffle(rng.pick(pairs(product.sizes)));
+        const units = spacedUnits(rng, product, amounts);
+        return units && amounts.map((amount, i) => ({ amount, price: (units[i] * amount) / per(product) }));
+      });
+    },
+
+    // Level 5: three sizes. `trick` says whether the biggest pack must be worse
+    // value than one of the others.
+    label(rng, product, trick) {
+      return attempt(() => {
+        const amounts = rng.shuffle(product.sizes).slice(0, 3);
+        const units = spacedUnits(rng, product, amounts);
+        if (!units) return null;
+        const biggest = amounts.indexOf(Math.max(...amounts));
+        const cheapest = units.indexOf(Math.min(...units));
+        if ((biggest !== cheapest) !== trick) return null;
+        return amounts.map((amount, i) => ({ amount, price: (units[i] * amount) / per(product) }));
+      });
+    },
+  };
+
+  // The better value: the lower price, the bigger amount, or the lower unit price
+  function bestOf(kind, product, options) {
+    const score = {
+      price: (option) => option.price,
+      amount: (option) => -option.amount,
+    }[kind] || ((option) => unitPrice(product, option));
+    const scores = options.map(score);
+    return scores.indexOf(Math.min(...scores));
+  }
+
+  // The products for a round, shuffled, never the same twice in a row. A long
+  // round goes through the list again.
+  function productOrder(rng, kind, count) {
+    const list = ELIGIBLE[kind]().map((product) => product.id);
+    const order = [];
+    while (order.length < count) {
+      const batch = rng.shuffle(list);
+      if (batch[0] === order[order.length - 1]) batch.push(batch.shift());
+      order.push(...batch);
+    }
+    return order.slice(0, count);
+  }
+
+  // Level 5: which cases are the big pack trick. About half, and at least one.
+  function tricks(rng, count) {
+    const list = Array.from({ length: count }, () => rng.next() < 0.5);
+    if (!list.includes(true)) list[rng.int(count)] = true;
+    return list;
+  }
+
+  function build(levelId, { roundLength, rng }) {
+    const kind = levelById(levelId).kind;
+    const trickList = kind === 'label' ? tricks(rng, roundLength) : [];
+    const items = productOrder(rng, kind, roundLength).map((id, i) => {
+      const product = products.byId(id);
+      const options = MAKERS[kind](rng, product, trickList[i]);
+      if (kind === 'multipack' || kind === 'size' || kind === 'label') {
+        options.forEach((option) => { option.unit = unitPrice(product, option); });
+      }
+      return { kind, product: id, options, best: bestOf(kind, product, options), trick: Boolean(trickList[i]) };
+    });
+    return { kind, items, total: items.length };
+  }
+
+  // ---- Words: on the labels, spoken, and in the working ----
+
+  // "4 apples", "500g", "1kg", "1 litre"
+  function sizeText(productId, amount) {
+    const product = products.byId(productId);
+    if (product.unit === 'count') return `${amount} ${amount === 1 ? product.one : product.many}`;
+    if (amount === 1000) return product.unit === 'g' ? '1kg' : '1 litre';
+    return `${amount}${product.unit}`;
+  }
+
+  // "four apples", "five hundred grams of pasta", "one litre of milk"
+  function sizeWords(productId, amount) {
+    const product = products.byId(productId);
+    if (product.unit === 'count') return `${money.number(amount)} ${amount === 1 ? product.one : product.many}`;
+    const unitName = {
+      g: amount === 1000 ? 'one kilogram' : `${money.number(amount)} grams`,
+      ml: amount === 1000 ? 'one litre' : `${money.number(amount)} millilitres`,
+    }[product.unit];
+    return `${unitName} of ${product.name}`;
+  }
+
+  // "25p each", "25p per 100g", "25p per 100ml"
+  function unitText(productId, unit) {
+    const product = products.byId(productId);
+    if (product.unit === 'count') return `${money.format(unit)} each`;
+    return `${money.format(unit)} per 100${product.unit}`;
+  }
+
+  function unitWords(productId, unit) {
+    const product = products.byId(productId);
+    const each = { count: 'each', g: 'per hundred grams', ml: 'per hundred millilitres' }[product.unit];
+    return `${money.words(unit)} ${each}`;
+  }
+
+  // What a shelf label says aloud: "four apples for one pound". With
+  // `withUnit` (level 5's labels) it goes on to the small print: "..., twenty-
+  // five p per hundred grams".
+  function labelWords(productId, option, withUnit = false) {
+    const words = `${sizeWords(productId, option.amount)} for ${money.words(option.price)}`;
+    return withUnit ? `${words}, ${unitWords(productId, option.unit)}` : words;
+  }
+
+  // The working shown after a case, in shelf order:
+  //   level 1   "45p is less than 60p"
+  //   level 2   "10 eggs is more than 6 eggs"
+  //   later     "25p each · 30p each"
+  function working(item) {
+    const best = item.options[item.best];
+    const others = item.options.filter((option, i) => i !== item.best);
+    if (item.kind === 'price') {
+      return {
+        text: `${money.format(best.price)} is less than ${money.format(others[0].price)}`,
+        spoken: `${money.words(best.price)} is less than ${money.words(others[0].price)}`,
+      };
+    }
+    if (item.kind === 'amount') {
+      return {
+        text: `${sizeText(item.product, best.amount)} is more than ${sizeText(item.product, others[0].amount)}`,
+        spoken: `${sizeWords(item.product, best.amount)} is more than ${sizeWords(item.product, others[0].amount)}`,
+      };
+    }
+    return {
+      text: item.options.map((option) => unitText(item.product, option.unit)).join(' · '),
+      spoken: item.options.map((option) => unitWords(item.product, option.unit)).join(', '),
+    };
+  }
+
+  // The clue after a wrong pick: what the magnifying glass shows over each
+  // pack, in shelf order, and what is said.
+  //   level 1   each price                 "Compare the prices: ..."
+  //   level 2   each size                  "They cost the same. Which is more: ..."
+  //   later     each price for one or per 100g or 100ml
+  function clue(item) {
+    const { options, product } = item;
+    if (item.kind === 'price') {
+      return {
+        texts: options.map((option) => money.format(option.price)),
+        spoken: `Compare the prices: ${options.map((option) => money.words(option.price)).join(', or ')}.`,
+      };
+    }
+    if (item.kind === 'amount') {
+      return {
+        texts: options.map((option) => sizeText(product, option.amount)),
+        spoken: `They cost the same. Which is more: ${options.map((option) => sizeWords(product, option.amount)).join(', or ')}?`,
+      };
+    }
+    const lead = {
+      count: 'Work out the price for one',
+      g: 'Work out the price for a hundred grams',
+      ml: 'Work out the price for a hundred millilitres',
+    }[products.byId(product).unit];
+    return {
+      texts: options.map((option) => unitText(product, option.unit)),
+      spoken: `${lead}: ${options.map((option) => money.words(option.unit)).join(', or ')}.`,
+    };
+  }
+
+  KMG.pd.levels = {
+    LEVELS, KINDS, RULES, levelById, build, unitPrice,
+    sizeText, sizeWords, unitText, unitWords, labelWords, working, clue,
+  };
+})(window.KMG);
+
+// Shelf labels: the white label on the shelf's edge under each product, as
+// supermarkets have, though copying no real shop's design. It shows the price
+// in large type and the pack size; at level 5 it also prints the unit price
+// in small type ("25p per 100g"). Tapping it says it aloud. Choosing a
+// product is a tap on the product itself, so a child can hear a label
+// without choosing (see DECISIONS.md).
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { money, pd } = KMG;
+
+  // `item` is the case, `option` one of its packs; `showUnit` prints the unit price.
+  function element(item, option, { showUnit = false, onTap = null } = {}) {
+    const size = pd.levels.sizeText(item.product, option.amount);
+    const unit = showUnit ? pd.levels.unitText(item.product, option.unit) : null;
+    return el('button', {
+      class: 'pd-label',
+      'data-price': option.price,
+      'data-amount': option.amount,
+      'data-action': 'read-label',
+      'aria-label': `${size}, ${money.format(option.price)}${unit ? `, ${unit}` : ''}. Hear it again`,
+      onclick: onTap,
+    },
+    el('span', { class: 'pd-label-price' }, money.format(option.price)),
+    el('span', { class: 'pd-label-size' }, size),
+    unit && el('span', { class: 'pd-label-unit', 'data-unit': option.unit }, unit));
+  }
+
+  // A small label with a few words on it, for the home screen and lists
+  const mini = (text) => el('span', { class: 'pd-label-mini' }, text);
+
+  pd.label = { element, mini };
+})(window.KMG);
+
+// Price Detective's saved data: the shared progress store
+// (src/shared/progress-store.js) with this game's settings. Mistakes are
+// counted per kind of comparison ("multipack", "size" ...), and "big-pack"
+// counts the times a child picked the biggest pack in a big pack trick case.
+(function (KMG) {
+  'use strict';
+
+  const { pd } = KMG;
+
+  const ROUND_LENGTHS = [5, 8, 10];
+  const BIG_PACK = 'big-pack';
+
+  const store = KMG.progressStore({
+    key: 'price-detective',
+    levels: () => pd.levels.LEVELS,
+    settings: () => ({ roundLength: 5, showWorking: true }),
+    keepOnReset: ['roundLength', 'showWorking'],
+    isMistakeKey: (key) => pd.levels.KINDS.includes(key) || key === BIG_PACK,
+    checkSettings(data, clean) {
+      const { roundLength, showWorking } = data;
+      if (ROUND_LENGTHS.indexOf(roundLength) === -1) return false;
+      if (typeof showWorking !== 'boolean') return false;
+      Object.assign(clean, { roundLength, showWorking });
+      return true;
+    },
+  });
+
+  pd.progress = Object.assign(store, { ROUND_LENGTHS, BIG_PACK });
+})(window.KMG);
+
+// Price Detective's play screen: the shelf. The shared frame
+// (src/shared/play-screen.js) holds the level's name, which says the question
+// when tapped; under it the products stand on a shelf with their labels on
+// its edge, and the notebook below shows the working after each case. The
+// play screen's tray is not needed.
+//
+// Each case is two packs of one product (three at level 5). The child taps the
+// product they think is better value; a label only says itself when tapped.
+//   right  a "Case solved!" stamp lands on it with a sparkle, the notebook
+//          shows the working (unless the parent has switched it off), and
+//          the next case comes, or the round ends
+//   wrong  one mistake, a gentle wobble, and "Look again, detective": the
+//          magnifying glass shows the clue over every pack (each price, size,
+//          or price for one or per 100g), and that pack is ruled out, so the
+//          same wrong pick cannot cost a second mistake
+// At level 5, picking the biggest pack in a big pack trick case is also
+// counted under "big-pack", for the grown-ups area, and the notebook says
+// "Bigger is not always better value!" instead.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { audio, speech, effects, pd } = KMG;
+
+  // How long a solved case stays, so the working can be read and heard, and
+  // how long without the working
+  const SOLVED_MS = 3000;
+  const SOLVED_QUICK_MS = 1300;
+  // The stamp lands, then the cheerful notes
+  const CORRECT_AFTER_MS = 120;
+
+  function play(levelId, context) {
+    const level = pd.levels.levelById(levelId);
+    const saved = pd.progress.load();
+    const round = pd.levels.build(levelId, { roundLength: saved.roundLength, rng: context.rng });
+
+    const screen = KMG.playScreen.build({
+      levelId,
+      kind: round.kind,
+      total: round.total,
+      text: level.text,
+      spoken: level.spoken,
+      onBack: () => context.home(),
+    });
+    screen.tray.remove();
+
+    let alive = true;
+    // Busy while a solved case is showing. Shown as data-busy on the screen,
+    // so tests can wait for it.
+    let busy = false;
+    const setBusy = (value) => {
+      busy = value;
+      screen.main.dataset.busy = String(value);
+    };
+    let index = 0;
+    let mistakes = 0;
+    const mistakesByKind = {};
+    const item = () => round.items[index];
+
+    const later = (callback, ms) => window.setTimeout(() => {
+      if (alive) callback();
+    }, ms);
+
+    // The products stand on the shelf; their labels sit on its edge below.
+    const productsRow = el('div', { class: 'pd-products' });
+    const edge = el('div', { class: 'pd-edge' });
+    const shelf = el('div', { class: 'pd-shelf', 'data-shelf': true }, productsRow, edge);
+    const workingText = el('p', { class: 'pd-working', 'data-working': true, 'aria-live': 'polite' });
+    const notebook = el('div', { class: 'pd-notebook', 'data-notebook': true, 'data-empty': 'true' },
+      pd.kit.element('notebook'), workingText);
+    screen.zones.appendChild(el('div', { class: 'pd-scene' }, shelf, notebook));
+
+    // What the notebook says; empty hides it but keeps its space.
+    function note(text) {
+      workingText.textContent = text;
+      notebook.dataset.empty = String(!text);
+    }
+
+    const picks = () => Array.from(productsRow.children);
+
+    function showCase(entrance) {
+      const it = item();
+      productsRow.textContent = '';
+      edge.textContent = '';
+      delete shelf.dataset.clue;
+      shelf.style.setProperty('--pd-count', it.options.length);
+      it.options.forEach((option, i) => {
+        const size = pd.levels.sizeText(it.product, option.amount);
+        const pick = el('button', {
+          class: `pd-pick${entrance ? ' pop' : ''}`,
+          'data-option': i,
+          'data-amount': option.amount,
+          'aria-label': `Choose ${size}`,
+        }, pd.products.element(it.product, option.amount));
+        pick.addEventListener('click', () => choose(i, pick));
+        productsRow.appendChild(pick);
+        edge.appendChild(pd.label.element(it, option, {
+          showUnit: it.kind === 'label',
+          onTap: () => speech.say(pd.levels.labelWords(it.product, option, it.kind === 'label')),
+        }));
+      });
+      note('');
+    }
+
+    // The magnifying glass passes over each pack in turn, leaving the clue
+    // above it. Once per case.
+    function showClue() {
+      if (shelf.dataset.clue) return;
+      shelf.dataset.clue = 'true';
+      const { texts } = pd.levels.clue(item());
+      picks().forEach((pick, i) => {
+        // "85p per 100g" shows as "85p" large with "per 100g" small under it,
+        // so it stays small enough not to hide the product on a phone.
+        const space = texts[i].indexOf(' ');
+        const main = space === -1 ? texts[i] : texts[i].slice(0, space);
+        const sub = space === -1 ? '' : texts[i].slice(space + 1);
+        pick.appendChild(el('span', { class: 'pd-clue', 'data-clue': texts[i], 'aria-label': texts[i], style: `--i:${i}` },
+          pd.kit.mini('magnifier'),
+          el('span', { class: 'pd-clue-text' },
+            el('span', { class: 'pd-clue-main' }, main),
+            sub && el('span', { class: 'pd-clue-sub' }, sub))));
+      });
+    }
+
+    const count = (key) => {
+      mistakesByKind[key] = (mistakesByKind[key] || 0) + 1;
+    };
+
+    function wrong(i, pick) {
+      const it = item();
+      mistakes++;
+      count(it.kind);
+      const biggest = Math.max(...it.options.map((option) => option.amount));
+      // Fell for the big pack trick: say so, as that is the lesson here
+      const fooled = it.trick && it.options[i].amount === biggest;
+      if (fooled) count(pd.progress.BIG_PACK);
+
+      audio.play('wrong');
+      pick.classList.remove('wobble');
+      void pick.offsetWidth;
+      pick.classList.add('wobble');
+      pick.dataset.ruledOut = 'true';
+      pick.setAttribute('aria-disabled', 'true');
+      showClue();
+      if (fooled) {
+        note('Bigger is not always better value!');
+        speech.say(`Look again, detective. The biggest pack is not always the best value. ${pd.levels.clue(it).spoken}`);
+      } else {
+        note('Look again, detective.');
+        speech.say(`Look again, detective. ${pd.levels.clue(it).spoken}`);
+      }
+    }
+
+    function solve(pick) {
+      setBusy(true);
+      const it = item();
+      pick.dataset.solved = 'true';
+      pick.appendChild(el('span', { class: 'pd-stamp', 'data-stamp': true }, 'Case solved!'));
+      audio.play('stamp');
+      later(() => audio.play('correct'), CORRECT_AFTER_MS);
+      const box = pick.getBoundingClientRect();
+      effects.sparkle(box.left + box.width / 2, box.top + box.height / 2);
+
+      if (saved.showWorking) {
+        const { text, spoken } = pd.levels.working(it);
+        note(text);
+        speech.say(`Case solved! ${spoken}.`);
+      } else {
+        speech.say('Case solved!');
+      }
+      later(nextCase, saved.showWorking ? SOLVED_MS : SOLVED_QUICK_MS);
+    }
+
+    function choose(i, pick) {
+      if (busy || !alive || pick.dataset.ruledOut) return;
+      if (i === item().best) solve(pick);
+      else wrong(i, pick);
+    }
+
+    function finishRound() {
+      const stars = KMG.stars.forMistakes(mistakes);
+      pd.progress.recordRound(levelId, { stars, mistakes: mistakesByKind, stage: 0, lastStage: 0 });
+      const next = pd.levels.levelById(levelId + 1) ? () => play(levelId + 1, context) : null;
+      KMG.celebrate(screen.main, {
+        stars,
+        onAgain: () => play(levelId, context),
+        onNext: next,
+        onHome: () => context.home(),
+      });
+    }
+
+    function nextCase() {
+      index++;
+      screen.setDone(index);
+      if (index === round.total) {
+        finishRound();
+        return;
+      }
+      showCase(true);
+      setBusy(false);
+    }
+
+    screen.main.onleave = () => {
+      alive = false;
+      speech.stop();
+    };
+
+    showCase(false);
+    setBusy(false);
+    show(screen.main);
+    screen.speak();
+  }
+
+  KMG.pd.play = play;
+})(window.KMG);
+
+// Price Detective's grown-ups area: the shared one (src/shared/parent-area.js)
+// with this game's settings, the kinds of comparison to practise, and how
+// often the child fell for level 5's big pack trick.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { pd, parentArea } = KMG;
+
+  // How each kind of mistake is named in the list of things to practise
+  const PRACTISE_NAMES = {
+    price: 'Which costs less',
+    amount: 'Which gives more',
+    multipack: 'Multipacks',
+    size: 'Bigger and smaller packs',
+    label: 'Reading the label',
+  };
+
+  // Under the list: the big pack trick, counted apart from the comparisons
+  // because it is about a habit (trusting the bigger pack), not a kind of sum.
+  function bigPackNote(data) {
+    const count = data.mistakes[pd.progress.BIG_PACK] || 0;
+    const played = pd.progress.levelRecord(data, 5).plays > 0;
+    let text;
+    if (count) text = `Picked the bigger pack when it cost more: ${count === 1 ? 'once' : `${count} times`}.`;
+    else if (played) text = 'Has never picked the bigger pack when it cost more.';
+    else text = 'Level 5 has not been played yet.';
+    return [
+      el('h3', {}, 'The big pack trick'),
+      el('p', { class: 'parent-note', 'data-big-pack': count }, text),
+    ];
+  }
+
+  // Changes one saved setting.
+  function saveSetting(name, value) {
+    const saved = pd.progress.load();
+    saved[name] = value;
+    pd.progress.save(saved);
+  }
+
+  function settings(data) {
+    return [
+      parentArea.choices({
+        title: 'Round length',
+        values: pd.progress.ROUND_LENGTHS,
+        current: data.roundLength,
+        label: (length) => `${length} cases`,
+        attr: 'round',
+        onPick: (length) => saveSetting('roundLength', length),
+      }),
+      parentArea.section('Working',
+        parentArea.toggle('Show the working after each case', 'working', data.showWorking,
+          (on) => saveSetting('showWorking', on))),
+    ];
+  }
+
+  function parent(context) {
+    parentArea.show({
+      gameName: 'Price Detective',
+      store: pd.progress,
+      fileName: 'price-detective-progress.json',
+      levels: pd.levels.LEVELS,
+      settings,
+      practise: {
+        title: 'Comparisons to practise',
+        item: (key) => el('span', { class: 'pd-practise' }, PRACTISE_NAMES[key] || key),
+        include: (key) => key !== pd.progress.BIG_PACK,
+      },
+      notes: bigPackNote,
+      onDone: () => context.home(),
+    });
+  }
+
+  pd.parent = parent;
+})(window.KMG);
+
+// Price Detective's home screen: the shared level picker
+// (src/shared/level-picker.js) with a product and a label on each level's card.
+(function (KMG) {
+  'use strict';
+
+  const { pd } = KMG;
+
+  const product = (id) => pd.products.mini(id);
+  const label = (text) => pd.label.mini(text);
+
+  const LEVEL_ART = {
+    1: () => [product('apples'), label('45p')],
+    2: () => [product('eggs'), label('£1')],
+    3: () => [product('yoghurts'), label('4 for £1')],
+    4: () => [product('pasta'), label('500g')],
+    5: () => [product('juice'), pd.kit.mini('magnifier')],
+  };
+
+  function home(context) {
+    KMG.levelPicker.show({
+      title: 'Price Detective',
+      levels: pd.levels.LEVELS,
+      art: (level) => LEVEL_ART[level.id](),
+      store: pd.progress,
+      onPlay: (levelId) => pd.play(levelId, context),
+      onParent: () => pd.parent(context),
+      exit: context.exit,
+    });
+  }
+
+  pd.home = home;
+})(window.KMG);
+
+// Price Detective's entry point: registers the game with the hub or standalone boot.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { pd } = KMG;
+
+  // Labels for the gallery: each way a pack is sized and priced
+  const SAMPLE_LABELS = [
+    { product: 'apples', option: { amount: 1, price: 30, unit: 30 } },
+    { product: 'yoghurts', option: { amount: 4, price: 100, unit: 25 } },
+    { product: 'pasta', option: { amount: 500, price: 125, unit: 25 } },
+    { product: 'rice', option: { amount: 1000, price: 180, unit: 18 } },
+    { product: 'juice', option: { amount: 300, price: 90, unit: 30 } },
+    { product: 'milk', option: { amount: 1000, price: 95, unit: 10 } },
+  ];
+
+  // ?debug=1&products=1 shows every product, the shelf labels with and without
+  // the unit price, and the detective's kit, for checking the artwork.
+  function gallery() {
+    const items = pd.products.ALL.map((product) => el('figure', { class: 'pd-gallery-item' },
+      pd.products.element(product.id),
+      el('figcaption', {}, product.id)));
+
+    // Packs of different sizes: single items, multipack stickers, and
+    // weights drawn smaller for smaller packs
+    const packs = [['apples', 1], ['yoghurts', 1], ['bananas', 1], ['tins', 1], ['yoghurts', 4], ['eggs', 12],
+      ['rice', 400], ['rice', 1000], ['milk', 200], ['milk', 1000]].map(([id, amount]) => el('figure', {
+      class: 'pd-gallery-item', 'data-pack-sample': `${id}-${amount}`,
+    }, pd.products.element(id, amount), el('figcaption', {}, pd.levels.sizeText(id, amount))));
+
+    const labels = SAMPLE_LABELS.map(({ product, option }, i) => el('figure', { class: 'pd-gallery-item', 'data-label-sample': i },
+      pd.label.element({ product }, option, { showUnit: i % 2 === 1 }),
+      el('figcaption', {}, pd.levels.labelWords(product, option))));
+
+    const kit = pd.kit.ITEMS.map((id) => el('figure', { class: 'pd-gallery-item' },
+      pd.kit.element(id), el('figcaption', {}, id)));
+
+    show(el('main', { class: 'pd-gallery', 'data-screen': 'gallery' },
+      el('h2', {}, 'Products'), el('div', { class: 'pd-gallery-grid' }, items),
+      el('h2', {}, 'Pack sizes'), el('div', { class: 'pd-gallery-grid' }, packs),
+      el('h2', {}, 'Shelf labels'), el('div', { class: 'pd-gallery-grid' }, labels),
+      el('h2', {}, "Detective's kit"), el('div', { class: 'pd-gallery-grid' }, kit)));
+  }
+
+  KMG.registerGame('price-detective', {
+    // Called once before any of this game's art is drawn. Nothing to set up:
+    // the drawings carry everything they need.
+    prepare() {},
+
+    // The picture on the hub tile.
+    art: () => [pd.products.mini('cereal'), pd.kit.mini('magnifier'), pd.products.mini('juice')],
+
+    open(exit) {
+      const context = { exit, rng: KMG.rng.create(KMG.debug.seed) };
+      context.home = () => pd.home(context);
+
+      if (KMG.debug.flag('products')) gallery();
+      else if (KMG.debug.level) pd.play(KMG.debug.level, context);
       else context.home();
     },
   });
