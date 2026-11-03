@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"]}}};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"5e0dc8bd1331","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"]}}};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -2543,6 +2543,11 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
 // The shopkeeper takes it and holds out three piles of change on the mat; the
 // child taps the right one. A wrong pile is one mistake: the first time
 // "Have another look", then the sum spelled out ("From 7p up to 10p is 3p").
+//
+// The till is a button on a white card. With coins on the mat and nothing
+// moved for READY_MS, it glows (data-ready) until the child acts, so a child
+// who has finished paying sees where to press. It glows whatever the coins add
+// up to, so it never gives the answer away.
 (function (KMG) {
   'use strict';
 
@@ -2557,6 +2562,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
   const RETURN_MS = 260;
   const BAG_MS = 520;
   const NEXT_TOY_MS = 900;
+  // How long the coins on the mat stay untouched before the till glows
+  const READY_MS = 2500;
   // Small screens (see fit() below): the shopkeeper's height to aim for, the
   // least they may shrink to (and in the tight layout), and the height below
   // which the phone-on-its-side layout in style.css applies.
@@ -2789,6 +2796,26 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
       total.dataset.amount = amount;
     }
 
+    // The till's glow. calmTill() stops it, for whenever the child is busy or
+    // has just pressed the till. settleTill() starts the wait again after the
+    // mat changes; nothing glows with an empty mat, while the shopkeeper is
+    // busy, or while level 4's piles are out. Pressing the till only calms it,
+    // so after a wrong payment it waits for the coins to change rather than
+    // inviting the same payment again.
+    let readyTimer = null;
+    function calmTill() {
+      window.clearTimeout(readyTimer);
+      delete till.dataset.ready;
+    }
+    function settleTill() {
+      calmTill();
+      const waiting = () => alive && !busy && !choosing && matCoins().length > 0;
+      if (!waiting()) return;
+      readyTimer = later(() => {
+        if (waiting()) till.dataset.ready = 'true';
+      }, READY_MS);
+    }
+
     function addToMat(id) {
       const node = coins.element(coins.byId(id), sizeOf(id));
       node.classList.add('pop');
@@ -2801,6 +2828,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
         audio.play('pickup');
         node.remove();
         refreshTotal();
+        settleTill();
       });
       mat.appendChild(node);
       // On a small screen a mat fuller than the level needs could push the
@@ -2837,6 +2865,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
         onStart() {
           audio.play('pickup');
           node.classList.add('dragging');
+          calmTill();
         },
         onEnd() {
           const box = node.getBoundingClientRect();
@@ -2849,10 +2878,12 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
           } else {
             returnToPurse(node);
           }
+          settleTill();
         },
         onCancel() {
           node.classList.remove('dragging');
           returnToPurse(node);
+          settleTill();
         },
       });
       return node;
@@ -2985,6 +3016,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
 
     till.addEventListener('click', () => {
       if (busy || choosing || !alive) return;
+      calmTill();
       const amount = paid();
       const price = item().price;
       if (amount === 0) {
@@ -3008,6 +3040,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"43a097d928e5","games
       drag.reset();
       speech.stop();
       window.clearTimeout(talkTimer);
+      calmTill();
       window.removeEventListener('resize', fit);
     };
 

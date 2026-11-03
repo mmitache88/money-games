@@ -975,16 +975,46 @@ button {
   aspect-ratio: 1;
 }
 
+/* The till is a button like the game's others: a white card with a shadow,
+   which presses down when tapped. */
 .ps-till {
   flex: none;
   width: clamp(70px, min(13vh, 16vw), 116px);
   aspect-ratio: 120 / 110;
-  padding: 0;
+  padding: 6px;
   border: 0;
-  background: none;
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 5px 0 rgba(36, 50, 74, 0.18);
+}
+
+.ps-till:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 rgba(36, 50, 74, 0.18);
 }
 
 .ps-till svg { display: block; width: 100%; height: 100%; }
+
+/* Coins on the mat and nothing moved for a moment (data-ready, see play.js):
+   a warm glow pulses round the till and the till inside breathes. The button
+   itself stays still, so it is easy to hit. */
+.ps-till[data-ready] { animation: ps-till-glow 1.4s ease-in-out infinite; }
+.ps-till[data-ready] svg { animation: ps-till-breathe 1.4s ease-in-out infinite; }
+
+@keyframes ps-till-glow {
+  0%, 100% { box-shadow: 0 5px 0 rgba(36, 50, 74, 0.18), 0 0 0 0 rgba(255, 213, 107, 0.9); }
+  50% { box-shadow: 0 5px 0 rgba(36, 50, 74, 0.18), 0 0 0 10px rgba(255, 213, 107, 0.9); }
+}
+
+@keyframes ps-till-breathe {
+  50% { transform: scale(1.08); }
+}
+
+/* With reduced motion, a steady glow instead */
+@media (prefers-reduced-motion: reduce) {
+  .ps-till[data-ready], .ps-till[data-ready] svg { animation: none; }
+  .ps-till[data-ready] { box-shadow: 0 5px 0 rgba(36, 50, 74, 0.18), 0 0 0 8px rgba(255, 213, 107, 0.9); }
+}
 
 /* The bag on the counter, which bought toys fly into */
 .ps-bag {
