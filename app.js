@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"party-planner","title":"Party Planner","prefix":"PRTY"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"party-planner":["195c03847cf3a302e41ed0637b16e978f24cdd1c051563ba7d23e62f1668b1e8","a4fd3d5b2a733e241212350e3f8397d4072c9feb8c7c555281067aa48da2c2a4","46f6dae075b508c7917532e6f6b9b3c1526c735d06d21762ab1c29f750de71c1","9b0b7ba1c6011c1818c8f3452dd49fe51a0f56db9e3744690ab4df8f0e57d81c","45d24bd6254412c85b0c96bf423111c0f913ad94b619d99111d40d2d998342bb","bbe6fe2c6fa5946c74eefddb58d598cef8359c8448b4873b631ed2f06ac32993","1ed7c3244df9b18e53337b5032d498bc84c833688cda8f764f3ecd4aaa39cc77","13dce02eb60a9549d7cb10032c847e5159751e66485716d050d6c454e04b06fe","d5d69d74daa162a14cbdf08e149697f06c00cf2390981f001e5e54462b2cb691","12eb40164d6945272aa91749b98e1fae16461d436fb35b9112b3360f2644a00e"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}}};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"4544bfcdd027","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"party-planner","title":"Party Planner","prefix":"PRTY"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"party-planner":["195c03847cf3a302e41ed0637b16e978f24cdd1c051563ba7d23e62f1668b1e8","a4fd3d5b2a733e241212350e3f8397d4072c9feb8c7c555281067aa48da2c2a4","46f6dae075b508c7917532e6f6b9b3c1526c735d06d21762ab1c29f750de71c1","9b0b7ba1c6011c1818c8f3452dd49fe51a0f56db9e3744690ab4df8f0e57d81c","45d24bd6254412c85b0c96bf423111c0f913ad94b619d99111d40d2d998342bb","bbe6fe2c6fa5946c74eefddb58d598cef8359c8448b4873b631ed2f06ac32993","1ed7c3244df9b18e53337b5032d498bc84c833688cda8f764f3ecd4aaa39cc77","13dce02eb60a9549d7cb10032c847e5159751e66485716d050d6c454e04b06fe","d5d69d74daa162a14cbdf08e149697f06c00cf2390981f001e5e54462b2cb691","12eb40164d6945272aa91749b98e1fae16461d436fb35b9112b3360f2644a00e"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}},"voice":["shared","party-planner"]};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -166,8 +166,9 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
   };
 })(window.KMG);
 
-// All sounds are made with the Web Audio API, so there are no audio files.
-// Every call is wrapped: headless browsers and locked-down devices may have no
+// All sound effects are made with the Web Audio API, so there are no audio
+// files for them. The recorded voice (speech.js) plays through the same
+// context, which iOS unlocks on the first tap. Every call is wrapped: headless browsers and locked-down devices may have no
 // audio at all, and the game must carry on silently if so.
 (function (KMG) {
   'use strict';
@@ -285,6 +286,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
   KMG.audio = {
     listenForUnlock,
     play,
+    // The one audio context, or null with no audio. speech.js plays clips on it
+    context: getContext,
     settings,
     saveSettings,
     isEnabled: () => settings().sound,
@@ -300,10 +303,223 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
   };
 })(window.KMG);
 
-// Spoken prompts, using an en-GB voice when the device has one. Every prompt is
-// also on screen, so with no voice the game just stays quiet.
+// Spoken prompts. Each line is said in Alice's recorded voice when there are
+// clips for every word of it, and otherwise by the device's own en-GB voice.
+// Every prompt is also on screen, so with neither the game just stays quiet.
+//
+// Clips come in packs: 'shared' (numbers, amounts and words every game uses)
+// and one per game. Each pack maps the words a clip says to the clip itself, as
+// base64 MP3. The standalone file has its packs built in; the hosted hub
+// loads a game's packs when the game opens, from its offline cache.
+//
+//   KMG.speech.say(text)       say a line, stopping anything already speaking
+//   KMG.speech.stop()          stop speaking
+//   KMG.speech.prepare(gameId) a game is opening: use its clips (and, in the
+//                              hosted hub, load its packs)
+//   KMG.speech.addClips(pack, map)  add a pack: { "words it says": "<base64 MP3>" }
+//   KMG.speech.plan(text)      the clips a line would be joined from, or null
+//
+// A game only uses clips if it has a pack of its own, and then only the shared
+// pack and its own. So a game not yet recorded keeps the device voice for
+// every line, rather than Alice saying just the lines made of numbers.
+//
+// A line is joined from clips played one after another: "Hmm, that's" + "one
+// pound" + "fifty" + "too much. What could we swap?". Each clip was recorded
+// knowing the words either side, so the joins sound natural. If any piece has
+// no clip, the whole line goes to the device voice: a line is never half said
+// in one voice and half in the other.
 (function (KMG) {
   'use strict';
+
+  // The packs loaded so far: pack name -> Map of clips, by their words in
+  // plain form (see `plain`), as base64. Each clip is decoded on first use
+  // and kept, by pack and words.
+  const packs = new Map();
+  const decoded = new Map();
+  // Which packs have been asked for, so each is loaded only once
+  const requested = new Set();
+  // The game being played, whose clips (with the shared ones) are used
+  let game = null;
+
+  // Clips scheduled to play now, so `stop` can cut them off
+  let playing = [];
+  // Goes up on every `say` and `stop`. A line still decoding when it changes
+  // has been talked over or stopped, and is dropped
+  let turn = 0;
+
+  // ---- Matching words to clips -------------------------------------------
+
+  // Words without capitals or punctuation, so "That's £1.50 too much!" and the
+  // clip for "that's" match however the line is written. Hyphens and
+  // apostrophes inside words stay ("twenty-three", "that's").
+  function words(text) {
+    return String(text)
+      .toLowerCase()
+      .replace(/[‘’]/g, "'")
+      .replace(/[^a-z0-9'\-]+/g, ' ')
+      .split(' ')
+      .map((word) => word.replace(/^['\-]+|['\-]+$/g, ''))
+      .filter(Boolean);
+  }
+
+  const plain = (text) => words(text).join(' ');
+
+  // The packs the game being played may use: none until it has its own
+  function packsInUse() {
+    if (!game || !packs.has(game)) return [];
+    return [packs.get(game), packs.get('shared')].filter(Boolean);
+  }
+
+  // The pack that has a clip for these words, or undefined
+  const packWith = (inUse, key) => inUse.find((pack) => pack.has(key));
+
+  // The fewest clips that say the whole line, in order, or null if some words
+  // have no clip. `best[i]` is the shortest way to say the words from i on.
+  function plan(text) {
+    const list = words(text);
+    const inUse = packsInUse();
+    if (!list.length || !inUse.length) return null;
+    const longest = Math.max(...inUse.map((pack) => pack.longest));
+    const best = new Array(list.length + 1).fill(null);
+    best[list.length] = [];
+    for (let i = list.length - 1; i >= 0; i -= 1) {
+      for (let size = Math.min(longest, list.length - i); size >= 1; size -= 1) {
+        const key = list.slice(i, i + size).join(' ');
+        const rest = best[i + size];
+        if (rest && packWith(inUse, key) && (!best[i] || rest.length + 1 < best[i].length)) {
+          best[i] = [key, ...rest];
+        }
+      }
+    }
+    return best[0];
+  }
+
+  // Adds a pack. `longest` is its longest clip in words, so `plan` knows how
+  // far ahead to look.
+  function addClips(name, map) {
+    const pack = packs.get(name) || Object.assign(new Map(), { longest: 0 });
+    Object.keys(map || {}).forEach((text) => {
+      const key = plain(text);
+      if (!key) return;
+      pack.set(key, map[text]);
+      pack.longest = Math.max(pack.longest, key.split(' ').length);
+    });
+    packs.set(name, pack);
+  }
+
+  // Hosted hub only: load the shared pack and this game's pack, if the build
+  // has them. Each pack is a script, voice/<pack>.js, that calls addClips: the
+  // page's security policy allows scripts from the site but no fetch at all
+  // (connect-src 'none'), which keeps the promise of no network calls. A pack
+  // that fails to load leaves its lines to the device voice.
+  function prepare(gameId) {
+    game = gameId;
+    const build = KMG.build || {};
+    // A game without its own pack uses no clips, so loads none
+    if (build.target !== 'web' || (build.voice || []).indexOf(gameId) === -1) return;
+    ['shared', gameId].forEach((pack) => {
+      if (requested.has(pack) || (build.voice || []).indexOf(pack) === -1) return;
+      requested.add(pack);
+      try {
+        const script = document.createElement('script');
+        script.src = `voice/${pack}.js`;
+        script.onerror = () => {
+          requested.delete(pack);
+          script.remove();
+        };
+        document.head.appendChild(script);
+      } catch (error) {
+        requested.delete(pack);
+      }
+    });
+  }
+
+  // ---- Playing clips -------------------------------------------------------
+
+  function bytes(base64) {
+    const binary = atob(base64);
+    const out = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i += 1) out[i] = binary.charCodeAt(i);
+    return out.buffer;
+  }
+
+  // One clip as sound, decoded on first use. Older Safari only has the
+  // callback form of decodeAudioData, so both forms are handled.
+  function decode(context, key) {
+    const pack = packWith(packsInUse(), key);
+    if (!pack) return Promise.reject(new Error('No clip'));
+    if (!decoded.has(pack)) decoded.set(pack, new Map());
+    const done = decoded.get(pack);
+    if (!done.has(key)) {
+      const sound = new Promise((resolve, reject) => {
+        const promise = context.decodeAudioData(bytes(pack.get(key)), resolve, reject);
+        if (promise && promise.then) promise.then(resolve, reject);
+      });
+      // A clip that fails once is tried again next time
+      sound.catch(() => done.delete(key));
+      done.set(key, sound);
+    }
+    return done.get(key);
+  }
+
+  function stopClips() {
+    playing.forEach((source) => {
+      try {
+        source.stop();
+      } catch (error) {
+        // It had already finished.
+      }
+    });
+    playing = [];
+  }
+
+  // Whether the sound engine is running, waiting a moment if it is starting.
+  // The tap that opens a round also starts the engine (audio.js), but a round
+  // speaks as it opens, often a moment before the engine is up. Without the
+  // wait, a round's first line would be in the device voice.
+  const STARTING_MS = 300;
+  function running(context) {
+    if (context.state === 'running') return Promise.resolve(true);
+    return new Promise((resolve) => {
+      const started = Date.now();
+      const check = () => {
+        if (context.state === 'running') resolve(true);
+        else if (Date.now() - started >= STARTING_MS) resolve(false);
+        else setTimeout(check, 25);
+      };
+      check();
+    });
+  }
+
+  // Plays the clips back to back, each starting the moment the one before
+  // ends. Resolves true once they are all scheduled, false if they cannot be
+  // (no sound engine running, or a clip that will not decode). A line talked
+  // over meanwhile counts as done: there is nothing left to say.
+  function playClips(pieces, myTurn) {
+    const context = KMG.audio.context();
+    if (!context) return Promise.resolve(false);
+    return running(context).then((ok) => {
+      if (myTurn !== turn) return [];
+      if (!ok) throw new Error('No sound engine running');
+      return Promise.all(pieces.map((key) => decode(context, key)));
+    }).then((sounds) => {
+      // Talked over or stopped while decoding: there is nothing left to say
+      if (myTurn !== turn) return true;
+      if (context.state !== 'running') return false;
+      let at = context.currentTime + 0.02;
+      sounds.forEach((sound) => {
+        const source = context.createBufferSource();
+        source.buffer = sound;
+        source.connect(context.destination);
+        source.start(at);
+        at += sound.duration;
+        playing.push(source);
+      });
+      return true;
+    });
+  }
+
+  // ---- The device voice, as before ---------------------------------------
 
   function synth() {
     try {
@@ -326,7 +542,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
     }
   }
 
-  function stop() {
+  function stopDevice() {
     try {
       const engine = synth();
       if (engine) engine.cancel();
@@ -335,8 +551,7 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
     }
   }
 
-  function say(text) {
-    if (!KMG.audio.settings().voice) return;
+  function sayOnDevice(text) {
     try {
       const engine = synth();
       const voice = findVoice();
@@ -352,7 +567,48 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
     }
   }
 
-  KMG.speech = { say, stop };
+  // ---- Saying a line -------------------------------------------------------
+
+  function stop() {
+    turn += 1;
+    try {
+      stopClips();
+    } catch (error) {
+      // Nothing to stop.
+    }
+    stopDevice();
+  }
+
+  function say(text) {
+    if (!KMG.audio.settings().voice) return;
+    stop();
+    const myTurn = turn;
+    let pieces = null;
+    try {
+      pieces = plan(text);
+    } catch (error) {
+      pieces = null;
+    }
+    if (!pieces) {
+      sayOnDevice(text);
+      return;
+    }
+    // A clip may fail to decode, or the sound engine may not be running yet
+    // (before the first tap on iOS): the device voice says the line instead,
+    // unless a newer line or a stop came first.
+    const fallBack = () => {
+      if (myTurn === turn) sayOnDevice(text);
+    };
+    try {
+      playClips(pieces, myTurn).then((done) => {
+        if (!done) fallBack();
+      }, fallBack);
+    } catch (error) {
+      fallBack();
+    }
+  }
+
+  KMG.speech = { say, stop, prepare, addClips, plan };
 })(window.KMG);
 
 // Small DOM helpers and the shared icons.
@@ -5809,7 +6065,12 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
       class: 'hub-tile',
       'data-game': game.id,
       'data-locked': String(locked),
-      onclick: () => (locked ? codeScreen() : KMG.games[game.id].open(home)),
+      onclick: () => {
+        if (locked) return codeScreen();
+        // The game's voice clips load while its home screen shows
+        KMG.speech.prepare(game.id);
+        return KMG.games[game.id].open(home);
+      },
     },
     el('span', { class: 'hub-art' }, KMG.games[game.id].art()),
     el('span', { class: 'hub-name' }, game.title),
@@ -5843,6 +6104,12 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games
   if (KMG.debug.flag('reset')) KMG.storage.clearAll();
   KMG.audio.listenForUnlock();
 
-  if (KMG.hub) KMG.hub.start();
-  else KMG.games[KMG.build.games[0].id].open(null);
+  if (KMG.hub) {
+    KMG.hub.start();
+  } else {
+    // The one game in this file: its voice clips are built in above
+    const { id } = KMG.build.games[0];
+    KMG.speech.prepare(id);
+    KMG.games[id].open(null);
+  }
 })(window.KMG);
