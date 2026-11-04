@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}}};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"b4ca3fdfd2dd","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"party-planner","title":"Party Planner","prefix":"PRTY"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"party-planner":["195c03847cf3a302e41ed0637b16e978f24cdd1c051563ba7d23e62f1668b1e8","a4fd3d5b2a733e241212350e3f8397d4072c9feb8c7c555281067aa48da2c2a4","46f6dae075b508c7917532e6f6b9b3c1526c735d06d21762ab1c29f750de71c1","9b0b7ba1c6011c1818c8f3452dd49fe51a0f56db9e3744690ab4df8f0e57d81c","45d24bd6254412c85b0c96bf423111c0f913ad94b619d99111d40d2d998342bb","bbe6fe2c6fa5946c74eefddb58d598cef8359c8448b4873b631ed2f06ac32993","1ed7c3244df9b18e53337b5032d498bc84c833688cda8f764f3ecd4aaa39cc77","13dce02eb60a9549d7cb10032c847e5159751e66485716d050d6c454e04b06fe","d5d69d74daa162a14cbdf08e149697f06c00cf2390981f001e5e54462b2cb691","12eb40164d6945272aa91749b98e1fae16461d436fb35b9112b3360f2644a00e"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}}};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -151,6 +151,19 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games
   }
 
   KMG.rng = { create };
+})(window.KMG);
+
+// The skin tones and hair colours for the games' characters (Play Shop's
+// shopkeeper, Party Planner's birthday child), so every child can see someone
+// like them, and the characters look like one family across the series.
+// Each game picks a look with its own seeded random numbers.
+(function (KMG) {
+  'use strict';
+
+  KMG.looks = {
+    SKINS: ['#f7d7c4', '#e3ad84', '#b97b52', '#7b4a2e'],
+    HAIR_COLOURS: ['#2e1f17', '#6b4226', '#b8622d', '#e3c06e'],
+  };
 })(window.KMG);
 
 // All sounds are made with the Web Audio API, so there are no audio files.
@@ -2044,6 +2057,1348 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games
   });
 })(window.KMG);
 
+// Party Planner's party items, drawn as simple SVG on a 120 by 120 canvas, in
+// the same flat pastel style and soft outline as the other games' art.
+// Original and unbranded: no shop, brand or licensed party theme.
+//
+// Each item belongs to a line of the party list:
+//   needs   food, drinks, cake, bags: enough for every guest
+//   wishes  balloons, bunting, hats, game, facepaints, magician, castle
+// A need is sold in packs that serve a number of people ("6 slices"); a wish
+// is bought once.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  KMG.pp = KMG.pp || {};
+
+  // The soft outline every drawing uses
+  const LINE = 'stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"';
+  const INK = '#24324a';
+
+  const CORAL = '#ff9d8a';
+  const SUN = '#ffd56b';
+  const SKY = '#9cc9f5';
+  const LILAC = '#cfc8f2';
+  const MINT = '#8fd3c7';
+  const CLOUD = '#f4f7fb';
+  const LEAF = '#9ad48a';
+  const ORANGE = '#ffb35c';
+  const CRUST = '#e8b77a';
+  const TOMATO = '#e8665a';
+
+  const DRAWINGS = {
+    sandwiches: `
+      <ellipse cx="60" cy="94" rx="52" ry="14" fill="${CLOUD}" ${LINE}/>
+      <path d="M18 88 L52 38 L62 88 Z" fill="#f6e3c8" ${LINE}/>
+      <path d="M26 82 L52 46 L55 54 L33 84 Z" fill="${LEAF}"/>
+      <path d="M58 88 L74 34 L104 88 Z" fill="#fff8ec" ${LINE}/>
+      <path d="M66 82 L75 46 L80 52 L73 84 Z" fill="${CORAL}"/>`,
+
+    pizza: `
+      <circle cx="60" cy="62" r="48" fill="${CRUST}" ${LINE}/>
+      <circle cx="60" cy="62" r="39" fill="${CORAL}"/>
+      <g fill="#ffe28f"><circle cx="44" cy="48" r="9"/><circle cx="76" cy="56" r="10"/><circle cx="54" cy="80" r="9"/><circle cx="80" cy="82" r="7"/></g>
+      <g fill="${TOMATO}"><circle cx="62" cy="40" r="6"/><circle cx="38" cy="70" r="6"/><circle cx="70" cy="72" r="5"/></g>
+      <path d="M60 23 L60 101 M21 62 L99 62 M33 35 L87 89 M87 35 L33 89" stroke="#c98a4a" stroke-opacity="0.5" stroke-width="2"/>`,
+
+    'sausage-rolls': `
+      <ellipse cx="60" cy="96" rx="52" ry="13" fill="${CLOUD}" ${LINE}/>
+      <rect x="16" y="66" width="44" height="22" rx="11" fill="${CRUST}" ${LINE}/>
+      <rect x="60" y="66" width="44" height="22" rx="11" fill="${CRUST}" ${LINE}/>
+      <rect x="38" y="44" width="44" height="22" rx="11" fill="#f0c48a" ${LINE}/>
+      <g fill="#c9715a"><ellipse cx="18" cy="77" rx="4" ry="8"/><ellipse cx="102" cy="77" rx="4" ry="8"/><ellipse cx="80" cy="55" rx="4" ry="8"/></g>`,
+
+    fruit: `
+      <circle cx="44" cy="54" r="15" fill="${ORANGE}" ${LINE}/>
+      <g fill="#b48fd8"><circle cx="70" cy="50" r="7"/><circle cx="80" cy="50" r="7"/><circle cx="75" cy="40" r="7"/><circle cx="85" cy="60" r="7"/><circle cx="74" cy="61" r="7"/></g>
+      <path d="M48 68 Q60 40 96 50 Q90 60 60 70 Z" fill="${SUN}" ${LINE}/>
+      <path d="M14 66 L106 66 Q100 102 60 102 Q20 102 14 66 Z" fill="${MINT}" ${LINE}/>`,
+
+    juice: `
+      <rect x="20" y="40" width="36" height="58" rx="5" fill="${CLOUD}" ${LINE}/>
+      <rect x="20" y="56" width="36" height="26" fill="${ORANGE}"/>
+      <path d="M48 40 L52 18 L60 16" fill="none" stroke="${CORAL}" stroke-width="4" stroke-linecap="round"/>
+      <rect x="64" y="44" width="36" height="58" rx="5" fill="${CLOUD}" ${LINE}/>
+      <rect x="64" y="60" width="36" height="26" fill="${LEAF}"/>
+      <path d="M92 44 L96 22 L104 20" fill="none" stroke="${SKY}" stroke-width="4" stroke-linecap="round"/>`,
+
+    squash: `
+      <rect x="49" y="8" width="22" height="14" rx="4" fill="${CORAL}" ${LINE}/>
+      <path d="M49 22 L71 22 L71 34 Q90 42 90 60 L90 102 Q90 110 82 110 L38 110 Q30 110 30 102 L30 60 Q30 42 49 34 Z" fill="#ffe2dc" ${LINE}/>
+      <path d="M32 62 L88 62 L88 102 Q88 108 82 108 L38 108 Q32 108 32 102 Z" fill="${CORAL}"/>
+      <circle cx="60" cy="84" r="11" fill="${CLOUD}"/>`,
+
+    lemonade: `
+      <rect x="49" y="8" width="22" height="14" rx="4" fill="${MINT}" ${LINE}/>
+      <path d="M49 22 L71 22 L71 34 Q90 42 90 60 L90 102 Q90 110 82 110 L38 110 Q30 110 30 102 L30 60 Q30 42 49 34 Z" fill="#effbe3" ${LINE}/>
+      <path d="M32 56 L88 56 L88 102 Q88 108 82 108 L38 108 Q32 108 32 102 Z" fill="#ddf3a4"/>
+      <g fill="#ffffff"><circle cx="46" cy="90" r="4"/><circle cx="62" cy="76" r="3"/><circle cx="74" cy="94" r="5"/><circle cx="54" cy="66" r="3"/></g>`,
+
+    cake: `
+      <path d="M44 28 L44 14 M60 26 L60 10 M76 28 L76 14" stroke="${SKY}" stroke-width="5" stroke-linecap="round"/>
+      <g fill="${SUN}"><ellipse cx="44" cy="9" rx="4" ry="6"/><ellipse cx="60" cy="5" rx="4" ry="6"/><ellipse cx="76" cy="9" rx="4" ry="6"/></g>
+      <rect x="18" y="34" width="84" height="66" rx="12" fill="#ffe2ec" ${LINE}/>
+      <path d="M18 46 Q18 34 30 34 L90 34 Q102 34 102 46 L102 54 Q94 64 86 54 Q78 64 70 54 Q62 64 54 54 Q46 64 38 54 Q30 64 22 54 Q18 52 18 54 Z" fill="${CLOUD}"/>
+      <path d="M18 76 L102 76" stroke="${CORAL}" stroke-width="6"/>
+      <ellipse cx="60" cy="102" rx="52" ry="8" fill="${CLOUD}" ${LINE}/>`,
+
+    cupcakes: `
+      <path d="M14 66 L50 66 L46 102 L18 102 Z" fill="${SKY}" ${LINE}/>
+      <path d="M12 66 Q12 42 32 42 Q52 42 52 66 Z" fill="#ffe2ec" ${LINE}/>
+      <circle cx="32" cy="38" r="6" fill="${TOMATO}"/>
+      <path d="M68 66 L104 66 L100 102 L72 102 Z" fill="${LILAC}" ${LINE}/>
+      <path d="M66 66 Q66 42 86 42 Q106 42 106 66 Z" fill="#fff3c4" ${LINE}/>
+      <circle cx="86" cy="38" r="6" fill="${TOMATO}"/>`,
+
+    'bags-plain': `
+      <path d="M44 40 Q44 22 60 22 Q76 22 76 40" fill="none" stroke="#7b6fbf" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 40 L94 40 L100 106 Q100 110 96 110 L24 110 Q20 110 20 106 Z" fill="${LILAC}" ${LINE}/>
+      <circle cx="60" cy="74" r="12" fill="${CLOUD}"/>`,
+
+    'bags-filled': `
+      <path d="M44 40 Q44 22 60 22 Q76 22 76 40" fill="none" stroke="#2a8580" stroke-width="5" stroke-linecap="round"/>
+      <path d="M38 40 L44 14 L50 40 Z" fill="${SUN}" ${LINE}/>
+      <path d="M72 40 L74 16" stroke="${INK}" stroke-opacity="0.4" stroke-width="3"/>
+      <circle cx="74" cy="14" r="8" fill="${CORAL}" ${LINE}/>
+      <path d="M26 40 L94 40 L100 106 Q100 110 96 110 L24 110 Q20 110 20 106 Z" fill="${MINT}" ${LINE}/>
+      <path d="M60 64 L64 74 L75 75 L67 82 L69 93 L60 87 L51 93 L53 82 L45 75 L56 74 Z" fill="${SUN}"/>`,
+
+    balloons: `
+      <path d="M36 70 Q40 92 58 112 M60 64 Q60 90 58 112 M84 68 Q78 92 58 112" fill="none" stroke="${INK}" stroke-opacity="0.4" stroke-width="2"/>
+      <ellipse cx="36" cy="44" rx="20" ry="25" fill="${CORAL}" ${LINE}/>
+      <ellipse cx="84" cy="42" rx="20" ry="25" fill="${SKY}" ${LINE}/>
+      <ellipse cx="60" cy="36" rx="20" ry="25" fill="${SUN}" ${LINE}/>
+      <g fill="#ffffff" opacity="0.6"><ellipse cx="29" cy="34" rx="4" ry="7"/><ellipse cx="53" cy="26" rx="4" ry="7"/><ellipse cx="77" cy="32" rx="4" ry="7"/></g>`,
+
+    bunting: `
+      <path d="M6 30 Q60 58 114 30" fill="none" stroke="${INK}" stroke-opacity="0.45" stroke-width="3"/>
+      <path d="M12 33 L28 39 L16 64 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M34 41 L52 45 L40 72 Z" fill="${SUN}" ${LINE}/>
+      <path d="M58 45 L76 44 L67 74 Z" fill="${MINT}" ${LINE}/>
+      <path d="M82 42 L98 37 L94 68 Z" fill="${LILAC}" ${LINE}/>
+      <path d="M102 35 L112 31 L114 58 Z" fill="${SKY}" ${LINE}/>`,
+
+    hats: `
+      <path d="M14 104 L40 32 L66 104 Z" fill="${SKY}" ${LINE}/>
+      <path d="M22 82 L56 76 M30 60 L48 57" stroke="${CLOUD}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="40" cy="30" r="7" fill="${SUN}" ${LINE}/>
+      <path d="M54 104 L80 32 L106 104 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M62 82 L96 76 M70 60 L88 57" stroke="${CLOUD}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="80" cy="30" r="7" fill="${MINT}" ${LINE}/>`,
+
+    game: `
+      <rect x="18" y="44" width="84" height="62" rx="8" fill="${SUN}" ${LINE}/>
+      <rect x="54" y="44" width="12" height="62" fill="${CORAL}"/>
+      <rect x="18" y="68" width="84" height="12" fill="${CORAL}"/>
+      <path d="M60 44 Q36 22 34 40 Q40 52 60 44 Q84 22 86 40 Q80 52 60 44 Z" fill="${CORAL}" ${LINE}/>`,
+
+    facepaints: `
+      <path d="M14 70 Q12 34 56 30 Q104 28 106 62 Q106 90 74 92 Q66 92 66 100 Q64 110 50 108 Q16 104 14 70 Z" fill="${CLOUD}" ${LINE}/>
+      <g><circle cx="38" cy="52" r="9" fill="${CORAL}"/><circle cx="62" cy="46" r="9" fill="${SKY}"/><circle cx="86" cy="54" r="9" fill="${SUN}"/><circle cx="36" cy="78" r="9" fill="${LEAF}"/><circle cx="84" cy="76" r="8" fill="${LILAC}"/></g>
+      <path d="M66 66 L104 104" stroke="#9b7653" stroke-width="6" stroke-linecap="round"/>
+      <path d="M62 62 L68 68" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>`,
+
+    magician: `
+      <path d="M86 40 L108 18" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>
+      <path d="M104 22 L110 16" stroke="${CLOUD}" stroke-width="6" stroke-linecap="round"/>
+      <rect x="30" y="30" width="56" height="62" rx="6" fill="#3a4766" ${LINE}/>
+      <rect x="30" y="74" width="56" height="10" fill="${CORAL}"/>
+      <ellipse cx="58" cy="94" rx="44" ry="10" fill="#3a4766" ${LINE}/>
+      <path d="M16 30 L19 38 L27 38 L21 43 L23 51 L16 46 L9 51 L11 43 L5 38 L13 38 Z" fill="${SUN}"/>
+      <path d="M100 56 L102 61 L107 61 L103 64 L104 69 L100 66 L96 69 L97 64 L93 61 L98 61 Z" fill="${SUN}"/>`,
+
+    castle: `
+      <rect x="14" y="58" width="92" height="44" rx="10" fill="${SKY}" ${LINE}/>
+      <rect x="10" y="30" width="22" height="72" rx="10" fill="${CORAL}" ${LINE}/>
+      <rect x="88" y="30" width="22" height="72" rx="10" fill="${CORAL}" ${LINE}/>
+      <circle cx="21" cy="28" r="12" fill="${SUN}" ${LINE}/>
+      <circle cx="99" cy="28" r="12" fill="${SUN}" ${LINE}/>
+      <path d="M44 102 L44 76 Q60 62 76 76 L76 102 Z" fill="${LILAC}" ${LINE}/>
+      <rect x="8" y="100" width="104" height="10" rx="5" fill="${MINT}" ${LINE}/>`,
+  };
+
+  // The party list: the needs, served per person, and the wishes, bought once.
+  // `one` and `many` say an item ("a pizza", "two pizzas"); `serves` words its
+  // pack: "serves 4", "6 slices", "makes 8 cups"; `packs` are the sizes it
+  // comes in. Each line's `label` heads its row in the shop.
+  const LINES = [
+    { id: 'food', kind: 'need', label: 'Food', spoken: 'food' },
+    { id: 'drinks', kind: 'need', label: 'Drinks', spoken: 'drinks' },
+    { id: 'cake', kind: 'need', label: 'Cake', spoken: 'cake' },
+    { id: 'bags', kind: 'need', label: 'Party bags', spoken: 'party bags' },
+    { id: 'wish', kind: 'wish', label: 'Wishes', spoken: 'wishes' },
+  ];
+
+  const ITEMS = [
+    { id: 'sandwiches', line: 'food', name: 'Sandwiches', one: 'a plate of sandwiches', many: 'plates of sandwiches', serves: (n) => `serves ${n}`, servesWords: (w) => `serves ${w}`, packs: [4, 6, 8] },
+    { id: 'pizza', line: 'food', name: 'Pizza', one: 'a pizza', many: 'pizzas', serves: (n) => `${n} slices`, servesWords: (w) => `${w} slices`, packs: [4, 6, 8] },
+    { id: 'sausage-rolls', line: 'food', name: 'Sausage rolls', one: 'a pack of sausage rolls', many: 'packs of sausage rolls', serves: (n) => `${n} rolls`, servesWords: (w) => `${w} rolls`, packs: [4, 6, 10] },
+    { id: 'fruit', line: 'food', name: 'Fruit platter', one: 'a fruit platter', many: 'fruit platters', serves: (n) => `serves ${n}`, servesWords: (w) => `serves ${w}`, packs: [4, 6, 8] },
+    { id: 'juice', line: 'drinks', name: 'Juice cartons', one: 'a pack of juice cartons', many: 'packs of juice cartons', serves: (n) => `${n} cartons`, servesWords: (w) => `${w} cartons`, packs: [4, 6, 8] },
+    { id: 'squash', line: 'drinks', name: 'Squash', one: 'a bottle of squash', many: 'bottles of squash', serves: (n) => `makes ${n} cups`, servesWords: (w) => `makes ${w} cups`, packs: [6, 8, 10] },
+    { id: 'lemonade', line: 'drinks', name: 'Lemonade', one: 'a bottle of lemonade', many: 'bottles of lemonade', serves: (n) => `${n} cups`, servesWords: (w) => `${w} cups`, packs: [4, 6, 8] },
+    { id: 'cake', line: 'cake', name: 'Birthday cake', one: 'a birthday cake', many: 'birthday cakes', serves: (n) => `serves ${n}`, servesWords: (w) => `serves ${w}`, packs: [8, 12] },
+    { id: 'cupcakes', line: 'cake', name: 'Cupcakes', one: 'a box of cupcakes', many: 'boxes of cupcakes', serves: (n) => `${n} cupcakes`, servesWords: (w) => `${w} cupcakes`, packs: [4, 6, 8] },
+    { id: 'bags-plain', line: 'bags', name: 'Party bags', one: 'a pack of party bags', many: 'packs of party bags', serves: (n) => `${n} bags`, servesWords: (w) => `${w} bags`, packs: [4, 5, 6, 8] },
+    { id: 'bags-filled', line: 'bags', name: 'Filled party bags', one: 'a pack of filled party bags', many: 'packs of filled party bags', serves: (n) => `${n} bags`, servesWords: (w) => `${w} bags`, packs: [4, 5, 6, 8] },
+    { id: 'balloons', line: 'wish', name: 'Balloons', one: 'balloons', size: 'small' },
+    { id: 'bunting', line: 'wish', name: 'Bunting', one: 'bunting', size: 'small' },
+    { id: 'hats', line: 'wish', name: 'Party hats', one: 'party hats', size: 'small' },
+    { id: 'game', line: 'wish', name: 'Pass the parcel', one: 'a pass the parcel game', size: 'small' },
+    { id: 'facepaints', line: 'wish', name: 'Face paints', one: 'face paints', size: 'small' },
+    { id: 'magician', line: 'wish', name: 'A magician', one: 'a magician', size: 'big' },
+    { id: 'castle', line: 'wish', name: 'Bouncy castle', one: 'a bouncy castle', size: 'big' },
+  ];
+
+  const byId = (id) => ITEMS.find((item) => item.id === id);
+  const lineById = (id) => LINES.find((line) => line.id === id);
+  const inLine = (lineId) => ITEMS.filter((item) => item.line === lineId);
+
+  // The drawing alone, for placing inside a bigger picture (the party scene)
+  const drawing = (id) => DRAWINGS[id];
+
+  function svg(id) {
+    return `<svg class="pp-item-svg" viewBox="0 0 120 120" role="img" aria-label="${byId(id).name}">${DRAWINGS[id]}</svg>`;
+  }
+
+  // An item at any size: the element fills whatever box the stylesheet gives it.
+  const element = (id, className = 'pp-item') => el('span', { class: className, 'data-item': id, html: svg(id) });
+  const mini = (id) => element(id, 'pp-item-mini');
+
+  KMG.pp.items = { ALL: ITEMS, LINES, byId, lineById, inLine, drawing, svg, element, mini };
+})(window.KMG);
+
+// The birthday child: a simple, friendly character seen from the chest up,
+// drawn as SVG on a 200 by 200 canvas from a dozen rounded shapes, the same
+// way as Play Shop's shopkeeper. Younger-looking, with a party hat and a
+// birthday badge. Original and unbranded, with no name: it is "my party".
+//
+// Looks change from party to party (picked by the seeded random numbers), so
+// every child can see someone like them: the shared skin tones and hair
+// colours (src/shared/looks.js) and 3 hair shapes. Four expressions, all
+// friendly, never cross or sad:
+//   idle      a smile
+//   talking   the mouth opens and closes while a line is spoken
+//   excited   happy-arc eyes, a big grin and a small jump, when the party happens
+//   thinking  a head tilt, one raised eyebrow and a finger to the chin, for
+//             "Hmm, what could we swap?"
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { SKINS, HAIR_COLOURS } = KMG.looks;
+
+  const INK = '#24324a';
+  const LINE = 'stroke="#24324a" stroke-opacity="0.2" stroke-width="3" stroke-linejoin="round"';
+  const MOUTH = '#8a3b44';
+  const SHIRTS = ['#ffd56b', '#8fd3c7', '#cfc8f2', '#9cc9f5'];
+  const HATS = [['#ff9d8a', '#ffd56b'], ['#9cc9f5', '#ff9d8a'], ['#8fd3c7', '#cfc8f2']];
+
+  const HAIR_SHAPES = ['short', 'bunches', 'curly'];
+  const EXPRESSIONS = ['idle', 'talking', 'excited', 'thinking'];
+
+  // One look for a party, from the game's seeded random numbers.
+  function lookFor(rng) {
+    return {
+      skin: rng.pick(SKINS),
+      hair: rng.pick(HAIR_COLOURS),
+      shape: rng.pick(HAIR_SHAPES),
+      shirt: rng.pick(SHIRTS),
+      hat: rng.int(HATS.length),
+    };
+  }
+
+  // Hair behind the head (bunches) and in front of it (the fringe or curls)
+  function hairBehind(look) {
+    if (look.shape !== 'bunches') return '';
+    return `<circle cx="44" cy="96" r="17" fill="${look.hair}" ${LINE}/><circle cx="156" cy="96" r="17" fill="${look.hair}" ${LINE}/>`;
+  }
+
+  function hairFront(look) {
+    if (look.shape === 'curly') {
+      const curls = [[56, 76, 13], [60, 56, 14], [78, 44, 15], [100, 40, 15], [122, 44, 15], [140, 56, 14], [144, 76, 13]];
+      return curls.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${look.hair}"/>`).join('');
+    }
+    return `<path d="M52 86 Q48 38 100 36 Q152 38 148 86 Q142 62 122 58 Q100 70 78 58 Q58 62 52 86 Z" fill="${look.hair}"/>`;
+  }
+
+  // A cone party hat with stripes and a pompom, tipped a little to one side
+  function hat(look) {
+    const [colour, stripe] = HATS[look.hat];
+    return `<g transform="rotate(-8 100 46)">
+      <path d="M76 50 L100 2 L124 50 Z" fill="${colour}" ${LINE}/>
+      <path d="M84 36 L116 36 M91 22 L109 22" stroke="${stripe}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="100" cy="4" r="7" fill="${stripe}" ${LINE}/>
+    </g>`;
+  }
+
+  function face(expression) {
+    const brows = expression === 'thinking'
+      ? `<path d="M76 70 Q84 66 92 68 M108 64 Q116 58 124 64" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`
+      : `<path d="M76 74 Q84 69 92 72 M108 72 Q116 69 124 74" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`;
+    const eyes = expression === 'excited'
+      ? `<path d="M77 90 Q84 82 91 90 M109 90 Q116 82 123 90" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`
+      : `<circle cx="84" cy="88" r="5.5" fill="${INK}"/><circle cx="116" cy="88" r="5.5" fill="${INK}"/>`;
+    const smile = `<path d="M86 106 Q100 117 114 106" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    let mouth = smile;
+    if (expression === 'excited') {
+      mouth = `<path d="M82 103 Q100 128 118 103 Z" fill="${MOUTH}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+    } else if (expression === 'talking') {
+      // Two mouths; the stylesheet shows one, then the other.
+      mouth = `<g class="pp-mouth-shut">${smile}</g>` +
+        `<g class="pp-mouth-open"><ellipse cx="100" cy="109" rx="10" ry="8" fill="${MOUTH}" stroke="${INK}" stroke-width="3"/></g>`;
+    } else if (expression === 'thinking') {
+      // Pursed to one side: wondering, never worried.
+      mouth = `<path d="M96 110 Q106 112 114 106" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    }
+    const cheeks = `<ellipse cx="70" cy="104" rx="8" ry="5" fill="#ff9d8a" opacity="0.45"/><ellipse cx="130" cy="104" rx="8" ry="5" fill="#ff9d8a" opacity="0.45"/>`;
+    return brows + eyes + cheeks + mouth;
+  }
+
+  function svg(look, expression) {
+    // Thinking: a hand comes up, one finger at the chin.
+    const hand = expression === 'thinking'
+      ? `<path d="M128 200 L128 150" stroke="${look.shirt}" stroke-width="22"/>
+         <circle cx="128" cy="150" r="11" fill="${look.shirt}"/>
+         <circle cx="124" cy="132" r="13" fill="${look.skin}" ${LINE}/>
+         <path d="M118 124 L112 118" stroke="${look.skin}" stroke-width="7" stroke-linecap="round"/>`
+      : '';
+    return `<svg class="pp-child-svg" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M34 200 Q34 146 100 142 Q166 146 166 200 Z" fill="${look.shirt}" ${LINE}/>
+      <circle cx="68" cy="176" r="13" fill="#ffffff" ${LINE}/>
+      <path d="M68 168 L70.5 173.5 L76.5 174 L72 178 L73.5 184 L68 181 L62.5 184 L64 178 L59.5 174 L65.5 173.5 Z" fill="#e8a917"/>
+      <g class="pp-child-head">
+        <rect x="88" y="120" width="24" height="26" rx="8" fill="${look.skin}"/>
+        ${hairBehind(look)}
+        <circle cx="52" cy="92" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="148" cy="92" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="100" cy="88" r="48" fill="${look.skin}" ${LINE}/>
+        ${hairFront(look)}
+        ${hat(look)}
+        ${face(expression)}
+      </g>
+      ${hand}
+    </svg>`;
+  }
+
+  // The birthday child on screen. setExpression swaps the face, and the
+  // stylesheet animates by expression (.pp-child[data-expression="..."]).
+  function element(look, expression = 'idle') {
+    const node = el('div', {
+      class: 'pp-child',
+      'data-expression': expression,
+      'data-look': `${look.shape}-${SKINS.indexOf(look.skin)}-${HAIR_COLOURS.indexOf(look.hair)}`,
+      html: svg(look, expression),
+    });
+    return {
+      node,
+      setExpression(name) {
+        node.dataset.expression = name;
+        node.innerHTML = svg(look, name);
+      },
+    };
+  }
+
+  KMG.pp.child = { lookFor, element, svg, EXPRESSIONS, HAIR_SHAPES };
+})(window.KMG);
+
+// The party scene: a room drawn as SVG on a 400 by 260 canvas that fills with
+// what was bought. Food, drinks and the cake go on the table, the party bags in
+// a row on the floor, and each wish in its own place: balloons on the wall,
+// bunting across the top, the bouncy castle outside the window, the magician's
+// hat on a stand. A wish not bought is simply absent, never shown as missing.
+// The birthday child is drawn by the play screen, in front of the room.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { items } = KMG.pp;
+
+  const LINE = 'stroke="#24324a" stroke-opacity="0.18" stroke-width="3" stroke-linejoin="round"';
+
+  // Where each item goes: x, y and size, in the room's 400 by 260 canvas.
+  // Needs go by their line (whichever choice was bought), wishes by item.
+  const SPOTS = {
+    food: [92, 104, 62],
+    cake: [168, 92, 70],
+    drinks: [246, 104, 62],
+    bags: [18, 200, 52],
+    balloons: [8, 18, 86],
+    bunting: [96, 0, 200],
+    castle: [300, 34, 72],
+    magician: [338, 150, 56],
+    hats: [116, 202, 50],
+    game: [176, 206, 46],
+    facepaints: [226, 206, 46],
+  };
+
+  const place = (id, [x, y, size]) => `<svg x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 120 120">${items.drawing(id)}</svg>`;
+
+  // `bought` is the list of item ids in the basket, needs and wishes.
+  function svg(bought) {
+    const has = (id) => bought.includes(id);
+    const needIn = (line) => bought.find((id) => items.byId(id).line === line);
+    const things = [];
+    ['food', 'cake', 'drinks', 'bags'].forEach((line) => {
+      const id = needIn(line);
+      if (id) things.push(place(id, SPOTS[line]));
+    });
+    ['hats', 'game', 'facepaints'].forEach((id) => { if (has(id)) things.push(place(id, SPOTS[id])); });
+
+    return `<svg class="pp-scene-svg" viewBox="0 0 400 260" role="img" aria-label="The party">
+      <rect x="0" y="0" width="400" height="196" fill="#fdf3e7"/>
+      <rect x="0" y="196" width="400" height="64" fill="#e9d3b4"/>
+      <rect x="290" y="26" width="92" height="88" rx="8" fill="#dff1fb" ${LINE}/>
+      ${has('castle') ? place('castle', SPOTS.castle) : ''}
+      <path d="M336 26 L336 114 M290 70 L382 70" stroke="#ffffff" stroke-width="5"/>
+      <rect x="290" y="26" width="92" height="88" rx="8" fill="none" stroke="#c9a77f" stroke-width="5"/>
+      ${has('balloons') ? place('balloons', SPOTS.balloons) : ''}
+      ${has('bunting') ? place('bunting', SPOTS.bunting) : ''}
+      ${has('magician') ? place('magician', SPOTS.magician) : ''}
+      <rect x="80" y="160" width="240" height="14" rx="6" fill="#ff9d8a" ${LINE}/>
+      <path d="M96 174 L96 214 M304 174 L304 214" stroke="#c98a6a" stroke-width="7" stroke-linecap="round"/>
+      ${things.join('')}
+    </svg>`;
+  }
+
+  const element = (bought) => el('div', { class: 'pp-scene', 'data-scene': bought.join(' '), html: svg(bought) });
+
+  KMG.pp.scene = { svg, element, SPOTS };
+})(window.KMG);
+
+// What each Party Planner level asks for, and the sums behind a plan. Plain
+// logic with no drawing: `build` turns a level and the parent's settings into
+// one round, a list of parties, and `check` says what is wrong with a basket.
+//
+// A party:
+//   { level, budget, friends, people, surprise, look, lines }
+//   budget    whole pence
+//   people    the friends plus the birthday child; `surprise` more arrive at
+//             level 5, the first time the basket has enough of every need
+//   lines     the party list, each { id, kind, choices }: the four needs
+//             (food, drinks, cake, bags), then the wishes
+//   a choice  { key, item, price, pack, offer }: a need's pack serves `pack`
+//             people; a wish has no pack. `offer` is null, '3for2' or 'half'
+// A basket is { [choice key]: number of packs }.
+//
+// Every party can be planned within budget with every need met for the final
+// number of people and a wish still affordable (the spec's "Number rules").
+(function (KMG) {
+  'use strict';
+
+  const { money, pp } = KMG;
+  const { items } = pp;
+
+  const LEVELS = [
+    { id: 1, kind: 'party', text: 'Shopping list', spoken: 'Plan my party! Stay within the money.' },
+    { id: 2, kind: 'party', text: 'Pounds and pence', spoken: 'Plan my party! Keep an eye on the money left.' },
+    { id: 3, kind: 'party', text: 'Enough for everyone', spoken: 'Plan my party! Buy enough for everyone.' },
+    { id: 4, kind: 'party', text: 'Needs and wishes', spoken: 'Plan my party! Needs first, then wishes.' },
+    { id: 5, kind: 'party', text: 'The big party', spoken: 'Plan my big party!' },
+  ];
+
+  const levelById = (id) => LEVELS.find((level) => level.id === id);
+
+  // Each level's rules, from the spec. Prices in pence; `step` is what every
+  // price is a multiple of. `cover` means one pack of any choice serves
+  // everyone. `choices` is how many choices each need has (where the line has
+  // that many items). `needsShare`: the cheapest way to meet the needs costs at
+  // least this share of the budget, so the money is always a real limit.
+  const CONFIG = {
+    1: { budget: 1000, friends: [3], cover: true, step: 100, needPrice: [100, 600], choices: 2, small: 1, big: 0, smallPrice: [100, 300], dearOver: true },
+    2: { budget: 1500, friends: [5], cover: true, step: 5, needPrice: [80, 500], choices: 2, small: 2, big: 0, smallPrice: [100, 300], dearOver: true },
+    3: { budget: 2000, friends: [6, 7], cover: false, step: 5, needPrice: [80, 450], choices: 2, small: 2, big: 0, smallPrice: [100, 300], needsShare: 0.5 },
+    4: { budget: 3000, friends: [7], cover: false, step: 5, needPrice: [80, 450], choices: 3, small: 3, big: 2, smallPrice: [100, 450], bigPrice: [800, 1500], bigClash: true, needsShare: 0.5 },
+    5: { budget: 5000, friends: [9], cover: false, step: 10, needPrice: [100, 600], choices: 3, small: 3, big: 2, smallPrice: [100, 500], bigPrice: [1000, 1800], offer: true, surprise: 2, needsShare: 0.4, change: true },
+  };
+
+  const NEEDS = ['food', 'drinks', 'cake', 'bags'];
+  const MOST_PRICE = 2000;
+  const SURPRISE = 2;
+
+  const between = (rng, low, high) => low + rng.int(high - low + 1);
+  // A price from `range`, a multiple of `step`
+  const priceIn = (rng, [low, high], step) => step * between(rng, Math.ceil(low / step), Math.floor(high / step));
+
+  // Keeps calling `make` until it returns something, a few hundred times at
+  // most. The rules always leave a way through, so running out means a rule
+  // has been changed so that it cannot be met: stop loudly rather than hang.
+  function attempt(make) {
+    for (let tries = 0; tries < 2000; tries++) {
+      const result = make();
+      if (result) return result;
+    }
+    throw new Error('Party Planner could not make a party that keeps the rules');
+  }
+
+  // ---- The sums ----
+
+  // What `count` packs of a choice cost, with any offer
+  function cost(choice, count) {
+    if (choice.offer === '3for2') return choice.price * (count - Math.floor(count / 3));
+    if (choice.offer === 'half') return (choice.price / 2) * count;
+    return choice.price * count;
+  }
+
+  // How many packs of a need's choice serve everyone
+  const packsFor = (choice, people) => Math.ceil(people / choice.pack);
+
+  const choicesOf = (party) => [].concat(...party.lines.map((line) => line.choices));
+  const lineOf = (party, id) => party.lines.find((line) => line.id === id);
+
+  function spent(party, basket) {
+    return choicesOf(party).reduce((sum, choice) => sum + cost(choice, basket[choice.key] || 0), 0);
+  }
+
+  // How many people a need's packs in the basket serve
+  function servings(party, basket, lineId) {
+    return lineOf(party, lineId).choices.reduce((sum, choice) => sum + choice.pack * (basket[choice.key] || 0), 0);
+  }
+
+  // The wishes in the basket
+  const extras = (party, basket) => lineOf(party, 'wish').choices.filter((choice) => basket[choice.key] > 0).length;
+
+  // Whether every need serves `people`
+  const needsMet = (party, basket, people) => NEEDS.every((id) => servings(party, basket, id) >= people);
+
+  // What "Party time!" finds, one problem at a time, over budget first:
+  //   { problem: 'over-budget', over }
+  //   { problem: 'missing', line }                 none of a need at all
+  //   { problem: 'not-enough', line, have }        some, but not for everyone
+  //   { problem: null, left, extras }              the party happens
+  function check(party, basket, people) {
+    const total = spent(party, basket);
+    if (total > party.budget) return { problem: 'over-budget', over: total - party.budget };
+    for (const id of NEEDS) {
+      const have = servings(party, basket, id);
+      if (have === 0) return { problem: 'missing', line: id };
+      if (have < people) return { problem: 'not-enough', line: id, have };
+    }
+    return { problem: null, left: party.budget - total, extras: extras(party, basket) };
+  }
+
+  // The cheapest and dearest way to meet every need for `people`, buying one
+  // choice per need, as many packs as it takes
+  function needsCost(party, people, pick) {
+    return NEEDS.reduce((sum, id) => sum + pick(lineOf(party, id).choices.map((choice) => cost(choice, packsFor(choice, people)))), 0);
+  }
+  const cheapestNeeds = (party, people) => needsCost(party, people, (list) => Math.min(...list));
+  const dearestNeeds = (party, people) => needsCost(party, people, (list) => Math.max(...list));
+
+  // ---- Making a party ----
+
+  function needLine(rng, config, id, people, lineIndex) {
+    const options = rng.shuffle(items.inLine(id)).slice(0, config.choices);
+    const choices = options.map((item, i) => {
+      // Levels 1 and 2: one pack serves everyone. Later: any of its pack sizes.
+      const pack = config.cover ? item.packs.find((size) => size >= people) : rng.pick(item.packs);
+      return { key: `${id}-${i}`, item: item.id, price: priceIn(rng, config.needPrice, config.step), pack, offer: null };
+    });
+    return { id, kind: 'need', index: lineIndex, choices };
+  }
+
+  function wishLine(rng, config) {
+    const small = rng.shuffle(items.ALL.filter((item) => item.line === 'wish' && item.size === 'small')).slice(0, config.small);
+    const big = rng.shuffle(items.ALL.filter((item) => item.line === 'wish' && item.size === 'big')).slice(0, config.big);
+    const choices = small.map((item) => ({ item: item.id, price: priceIn(rng, config.smallPrice, config.step) }))
+      .concat(big.map((item) => ({ item: item.id, price: priceIn(rng, config.bigPrice, config.step) })))
+      .map((choice, i) => Object.assign(choice, { key: `wish-${i}`, pack: 0, offer: null }));
+    return { id: 'wish', kind: 'wish', choices };
+  }
+
+  // Whether a party keeps its level's rules
+  function keepsRules(party, config) {
+    const finalPeople = party.people + party.surprise;
+    const needLines = party.lines.filter((line) => line.kind === 'need');
+    const wishes = lineOf(party, 'wish').choices;
+    const prices = choicesOf(party).map((choice) => choice.price);
+    if (prices.some((price) => price > MOST_PRICE)) return false;
+    // No two choices in a row cost the same
+    if (party.lines.some((line) => new Set(line.choices.map((c) => c.price)).size !== line.choices.length)) return false;
+    // From level 3, every need has a choice that takes more than one pack
+    if (!config.cover && !needLines.every((line) => line.choices.some((c) => c.pack < party.people))) return false;
+    const cheapest = cheapestNeeds(party, finalPeople);
+    if (cheapest + Math.min(...wishes.map((w) => w.price)) > party.budget) return false;
+    if (config.dearOver && dearestNeeds(party, party.people) <= party.budget) return false;
+    // From level 3, the needs alone take a real share of the money
+    if (config.needsShare && cheapest < party.budget * config.needsShare) return false;
+    if (config.bigClash) {
+      const big = wishes.filter((w) => items.byId(w.item).size === 'big').map((w) => w.price);
+      if (cheapest + big[0] + big[1] <= party.budget) return false;
+      if (cheapest + Math.min(...big) > party.budget) return false;
+    }
+    return true;
+  }
+
+  function party(levelId, rng) {
+    const config = CONFIG[levelId];
+    const friends = rng.pick(config.friends);
+    const people = friends + 1;
+    const look = pp.child.lookFor(rng);
+    return attempt(() => {
+      const lines = NEEDS.map((id, i) => needLine(rng, config, id, people, i)).concat([wishLine(rng, config)]);
+      const made = { level: levelId, budget: config.budget, friends, people, surprise: config.surprise || 0, look, lines };
+      // Level 5: one need's choice is on offer. Half price needs an even price.
+      if (config.offer) {
+        const choice = rng.pick([].concat(...lines.filter((l) => l.kind === 'need').map((l) => l.choices)));
+        choice.offer = rng.pick(['3for2', 'half']);
+        if (choice.offer === 'half' && choice.price % 10 !== 0) return null;
+      }
+      return keepsRules(made, config) ? made : null;
+    });
+  }
+
+  // `partiesPerRound` parties for one round
+  function build(levelId, { partiesPerRound, rng }) {
+    const parties = Array.from({ length: partiesPerRound }, () => party(levelId, rng));
+    return { kind: 'party', parties, total: parties.length };
+  }
+
+  // ---- Words: on screen and spoken ----
+
+  const itemOf = (choice) => items.byId(choice.item);
+
+  // "6 slices", "serves 4", "makes 8 cups"; a wish has none
+  const packText = (choice) => (choice.pack ? itemOf(choice).serves(choice.pack) : '');
+  const packWords = (choice) => (choice.pack ? itemOf(choice).servesWords(money.number(choice.pack)) : '');
+
+  const OFFER_TEXT = { '3for2': '3 for 2', half: 'Half price' };
+  const OFFER_WORDS = { '3for2': 'three for the price of two', half: 'half price' };
+  const offerText = (choice) => (choice.offer ? OFFER_TEXT[choice.offer] : '');
+
+  // What the offer saves on a basket line, so the child sees the meter count
+  // it: "1 free" once a third pack of a "3 for 2" is in, "Half price" always.
+  // Empty when there is nothing to say.
+  function offerNote(choice, count) {
+    if (choice.offer === 'half') return { text: 'Half price', spoken: 'half price' };
+    const free = choice.offer === '3for2' ? Math.floor(count / 3) : 0;
+    if (!free) return { text: '', spoken: '' };
+    return { text: `${free} free`, spoken: `${money.number(free)} free` };
+  }
+
+  // What a price tag says aloud: "Pizza, six slices, three pounds fifty"
+  function choiceWords(choice) {
+    const parts = [itemOf(choice).name, packWords(choice), money.words(choice.price), choice.offer && OFFER_WORDS[choice.offer]];
+    return parts.filter(Boolean).join(', ');
+  }
+
+  // The party card, on screen and said by the birthday child
+  function cardLine(party) {
+    const friends = `${party.friends} friends are coming`;
+    return {
+      text: `It's my party! ${money.format(party.budget)} to spend, and ${friends}.`,
+      spoken: `It's my party! I've got ${money.words(party.budget)} to spend, and ${money.number(party.friends)} friends are coming.`,
+    };
+  }
+
+  // A party list line's heading: "Food for 8", "Wishes"
+  function lineText(line, people) {
+    const label = items.lineById(line.id).label;
+    return line.kind === 'need' ? `${label} for ${people}` : `${label}, if there's money left`;
+  }
+
+  // What the birthday child says about a check (see `check` above), never harsh:
+  //   over budget   "Hmm, that's £1.50 too much. What could we swap?"
+  //   missing       "We haven't got any drinks yet!"
+  //   not enough    "Not enough drinks for 8! We have drinks for 6." Short,
+  //                 so the bubble stays small on phones; the list's heading
+  //                 says "Drinks for 8" too
+  //   all good      "Hooray! We had £2.40 left!"
+  function feedback(result, people) {
+    if (result.problem === 'over-budget') {
+      return {
+        text: `Hmm, that's ${money.format(result.over)} too much. What could we swap?`,
+        spoken: `Hmm, that's ${money.words(result.over)} too much. What could we swap?`,
+      };
+    }
+    if (result.problem) {
+      const what = items.lineById(result.line).spoken;
+      if (result.problem === 'missing') {
+        return { text: `We haven't got any ${what} yet!`, spoken: `We haven't got any ${what} yet!` };
+      }
+      return {
+        text: `Not enough ${what} for ${people}! We have ${what} for ${result.have}.`,
+        spoken: `Not enough ${what} for ${money.number(people)}! We have ${what} for ${money.number(result.have)}.`,
+      };
+    }
+    if (result.left === 0) return { text: 'Hooray! We spent it all, exactly!', spoken: 'Hooray! We spent it all, exactly!' };
+    return {
+      text: `Hooray! We had ${money.format(result.left)} left!`,
+      spoken: `Hooray! We had ${money.words(result.left)} left!`,
+    };
+  }
+
+  // Level 5's surprise, said by the birthday child, excited:
+  //   "2 more friends are coming! Now we need enough for 12."
+  function surpriseLine(more, people) {
+    const howMany = money.number(more);
+    return {
+      text: `${more} more friends are coming! Now we need enough for ${people}.`,
+      spoken: `${howMany[0].toUpperCase()}${howMany.slice(1)} more friends are coming! Now we need enough for ${money.number(people)}.`,
+    };
+  }
+
+  // Level 5's change from the whole budget, paid as one note: the money left
+  // by another name. "You paid with £50. Your change is £6.30."
+  function changeLine(budget, left) {
+    if (left === 0) {
+      return {
+        text: `You paid with ${money.format(budget)}. No change: it's all spent!`,
+        spoken: `You paid with ${money.words(budget)}. No change: it's all spent!`,
+      };
+    }
+    return {
+      text: `You paid with ${money.format(budget)}. Your change is ${money.format(left)}.`,
+      spoken: `You paid with ${money.words(budget)}. Your change is ${money.words(left)}.`,
+    };
+  }
+
+  pp.levels = {
+    LEVELS, CONFIG, NEEDS, SURPRISE, MOST_PRICE, levelById, build,
+    cost, packsFor, spent, servings, extras, needsMet, check, cheapestNeeds, dearestNeeds,
+    packText, packWords, offerText, offerNote, choiceWords, cardLine, lineText, feedback, surpriseLine, changeLine,
+  };
+})(window.KMG);
+
+// A choice in the shop: a card with the item's picture, name and pack size,
+// which adds a pack to the basket when tapped, and a price tag beside it,
+// which says the item aloud (as Price Detective's shelf labels do). They are
+// two buttons, so a child can hear a price without buying.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { money, pp } = KMG;
+
+  // `onAdd` and `onTag` are what tapping the card and the tag do.
+  function element(choice, { onAdd = null, onTag = null } = {}) {
+    const item = pp.items.byId(choice.item);
+    const pack = pp.levels.packText(choice);
+    const offer = pp.levels.offerText(choice);
+    return el('div', {
+      class: 'pp-card',
+      'data-choice': choice.key,
+      'data-item': choice.item,
+      'data-price': choice.price,
+      'data-pack': choice.pack,
+      'data-offer': choice.offer || '',
+    },
+    // How many packs of it are in the basket, shown once there are some
+    el('span', { class: 'pp-card-count', 'data-count': 0, 'aria-hidden': 'true' }),
+    el('button', {
+        class: 'pp-card-pick',
+        'data-action': 'add',
+        'aria-label': `Add ${item.name}${pack ? `, ${pack}` : ''}`,
+        onclick: onAdd,
+      },
+      pp.items.element(choice.item),
+      el('span', { class: 'pp-card-name' }, item.name),
+      pack && el('span', { class: 'pp-card-pack' }, pack)),
+      el('button', {
+        class: 'pp-tag',
+        'data-price': choice.price,
+        'data-action': 'read-price',
+        'aria-label': `${pp.levels.choiceWords(choice)}. Hear it again`,
+        onclick: onTag,
+      },
+      el('span', { class: 'pp-tag-price' }, money.format(choice.price)),
+      offer && el('span', { class: 'pp-tag-offer', 'data-offer': choice.offer }, offer)));
+  }
+
+  // A price tag with a few words on it, for the home screen's cards
+  const mini = (text) => el('span', { class: 'pp-tag-mini' }, text);
+
+  pp.card = { element, mini };
+})(window.KMG);
+
+// Party Planner's saved data: the shared progress store
+// (src/shared/progress-store.js) with this game's settings. Mistakes are
+// counted per kind ("over-budget", "not-enough", "missing"). `leftover` keeps
+// the money left at the end of every party, added up, and how many parties
+// there were, for the grown-ups' "money left, on average".
+(function (KMG) {
+  'use strict';
+
+  const { pp } = KMG;
+
+  const PARTIES_PER_ROUND = [1, 2, 3];
+  const MISTAKES = ['over-budget', 'not-enough', 'missing'];
+
+  const isCount = (value) => Number.isInteger(value) && value >= 0;
+
+  const store = KMG.progressStore({
+    key: 'party-planner',
+    levels: () => pp.levels.LEVELS,
+    settings: () => ({ partiesPerRound: 2, showLeft: true, leftover: { total: 0, parties: 0 } }),
+    // The money left is the child's record, not a setting: a reset clears it.
+    keepOnReset: ['partiesPerRound', 'showLeft'],
+    isMistakeKey: (key) => MISTAKES.includes(key),
+    checkSettings(data, clean) {
+      const { partiesPerRound, showLeft, leftover } = data;
+      if (PARTIES_PER_ROUND.indexOf(partiesPerRound) === -1) return false;
+      if (typeof showLeft !== 'boolean') return false;
+      if (!leftover || !isCount(leftover.total) || !isCount(leftover.parties)) return false;
+      Object.assign(clean, { partiesPerRound, showLeft, leftover: { total: leftover.total, parties: leftover.parties } });
+      return true;
+    },
+  });
+
+  // Adds one finished party's money left
+  function recordLeftover(pence) {
+    const data = store.load();
+    data.leftover = { total: data.leftover.total + pence, parties: data.leftover.parties + 1 };
+    store.save(data);
+  }
+
+  pp.progress = Object.assign(store, { PARTIES_PER_ROUND, MISTAKES, recordLeftover });
+})(window.KMG);
+
+// Party Planner's play screen: the party shop. The shared frame
+// (src/shared/play-screen.js) holds the level's name; under it:
+//   header   the birthday child, who reads the party card in a speech bubble
+//   shop     one row per line of the party list ("Food for 8"), each with its
+//            choices as cards (card.js): tapping a card adds a pack, tapping
+//            its price tag says it aloud
+//   basket   what has been bought, a line per choice ("2 × Pizza"); tapping a
+//            line takes one pack back out
+//   meter    spent and money left, always in £ and p; over budget, "Over by"
+//            and how much, in words as well as colour
+//   "Party time!", which checks the plan (levels.check):
+//     over budget, or a need missing or short: one mistake, and the birthday
+//       child says what to fix, thinking, never cross
+//     all good: the party happens in the party scene, with the money left
+//       (and at level 5 the change from the note), then the next party, or
+//       the stars
+//     all good at level 5, the first time: the surprise instead. "2 more
+//       friends are coming!", the list's numbers go up, and the child tops up
+//       what is now short. Not a mistake.
+// At levels 1 and 2 each need is ticked as soon as there is enough; from level
+// 3 the child works out "enough for everyone", and the ticks only appear when
+// the plan is checked. The play screen's tray is not needed.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { money, audio, speech, effects, pp } = KMG;
+
+  // How long the birthday child keeps an expression after speaking
+  const TALK_MS = 2400;
+  // How long a party is shown before the next one, or the stars
+  const PARTY_MS = 4200;
+  // The most packs of one choice the basket takes, so it stays readable
+  const MOST_PACKS = 9;
+
+  // "£0" rather than "0p" for nothing at all, which reads oddly on a meter
+  const amount = (pence) => (pence === 0 ? '£0' : money.format(pence));
+
+  function play(levelId, context) {
+    const level = pp.levels.levelById(levelId);
+    const saved = pp.progress.load();
+    const round = pp.levels.build(levelId, { partiesPerRound: saved.partiesPerRound, rng: context.rng });
+    const liveTicks = levelId <= 2;
+
+    const screen = KMG.playScreen.build({
+      levelId,
+      kind: round.kind,
+      total: round.total,
+      text: level.text,
+      spoken: level.spoken,
+      onBack: () => context.home(),
+    });
+    screen.tray.remove();
+
+    let alive = true;
+    // Busy while a party is being shown. Shown as data-busy on the screen, so
+    // tests can wait for it.
+    let busy = false;
+    const setBusy = (value) => {
+      busy = value;
+      screen.main.dataset.busy = String(value);
+    };
+    let index = 0;
+    const party = () => round.parties[index];
+    // How many people the party is for (level 5's surprise guests add to it)
+    let people = 0;
+    // Whether this party's surprise guests have arrived
+    let surprised = false;
+    // { [choice key]: packs }
+    let basket = {};
+    let mistakes = 0;
+    const mistakesByKind = {};
+    const later = (callback, ms) => window.setTimeout(() => {
+      if (alive) callback();
+    }, ms);
+
+    const header = el('div', { class: 'pp-header' });
+    const shop = el('div', { class: 'pp-shop', 'data-shop': true });
+    const basketList = el('div', { class: 'pp-basket', 'data-basket': true });
+    const spentValue = el('span', { class: 'pp-meter-value', 'data-spent': true });
+    const leftLabel = el('span', { class: 'pp-meter-label' }, 'Money left');
+    const leftValue = el('span', { class: 'pp-meter-value', 'data-left': true });
+    const leftPart = el('div', { class: 'pp-meter-part pp-meter-left', hidden: !saved.showLeft }, leftLabel, leftValue);
+    const meter = el('div', { class: 'pp-meter', 'data-meter': true },
+      el('div', { class: 'pp-meter-part' }, el('span', { class: 'pp-meter-label' }, 'Spent'), spentValue),
+      leftPart);
+    const go = el('button', { class: 'btn btn-primary pp-go', 'data-action': 'party-time', onclick: partyTime }, 'Party time!');
+    const side = el('div', { class: 'pp-side' }, basketList, meter, go);
+    const planner = el('div', { class: 'pp-planner', 'data-planner': true }, header, shop, side);
+    const partyView = el('div', { class: 'pp-party', 'data-party': true, hidden: true });
+    screen.zones.append(planner, partyView);
+
+    // The birthday child and what they say
+    let child = null;
+    const bubble = el('div', { class: 'pp-bubble', role: 'status' });
+    let talkTimer = null;
+    function say(text, spoken, expression = 'talking') {
+      bubble.textContent = text;
+      child.setExpression(expression);
+      speech.say(spoken);
+      window.clearTimeout(talkTimer);
+      const speaker = child;
+      talkTimer = window.setTimeout(() => {
+        if (alive && speaker.node.dataset.expression === expression) speaker.setExpression('idle');
+      }, TALK_MS);
+    }
+
+    // Everything the birthday child might say during this party, at its
+    // longest: the party card, each need missing or short for the most people
+    // there will be, the dearest over budget, and level 5's surprise.
+    function possibleLines() {
+      const p = party();
+      const most = p.people + p.surprise;
+      const { levels } = pp;
+      const lines = [levels.cardLine(p).text, levels.feedback({ problem: 'over-budget', over: 99999 }, most).text];
+      if (p.surprise) lines.push(levels.surpriseLine(p.surprise, most).text);
+      levels.NEEDS.forEach((id) => {
+        lines.push(levels.feedback({ problem: 'missing', line: id }, most).text);
+        lines.push(levels.feedback({ problem: 'not-enough', line: id, have: most - 1 }, most).text);
+      });
+      return lines;
+    }
+
+    // Keeps the header tall enough for the longest thing the birthday child
+    // might say, so the shop never jumps under a finger when a longer line
+    // wraps onto more rows (as happens on upright phones). Measured, not set,
+    // because how many rows a line takes depends on the screen; measured again
+    // when the screen turns.
+    function reserveHeader() {
+      if (!alive || planner.hidden) return;
+      const shown = bubble.textContent;
+      header.style.minHeight = '';
+      let tallest = 0;
+      possibleLines().forEach((text) => {
+        bubble.textContent = text;
+        tallest = Math.max(tallest, header.offsetHeight);
+      });
+      bubble.textContent = shown;
+      header.style.minHeight = `${tallest}px`;
+    }
+
+    const choices = () => party().lines.flatMap((line) => line.choices);
+    const row = (lineId) => shop.querySelector(`[data-row="${lineId}"]`);
+
+    // The meter: spent, and money left or how much over
+    function refreshMeter() {
+      const total = pp.levels.spent(party(), basket);
+      const over = total - party().budget;
+      spentValue.textContent = amount(total);
+      meter.dataset.total = total;
+      if (over > 0) {
+        // In words as well as colour: "Over by £1.50"
+        leftLabel.textContent = 'Over by';
+        leftValue.textContent = money.format(over);
+        leftPart.dataset.over = over;
+      } else {
+        leftLabel.textContent = 'Money left';
+        leftValue.textContent = amount(-over);
+        delete leftPart.dataset.over;
+      }
+    }
+
+    function refreshBasket() {
+      basketList.textContent = '';
+      const bought = choices().filter((choice) => basket[choice.key] > 0);
+      if (!bought.length) basketList.appendChild(el('p', { class: 'pp-basket-empty' }, 'Tap things in the shop to add them.'));
+      bought.forEach((choice) => {
+        const name = pp.items.byId(choice.item).name;
+        const count = basket[choice.key];
+        // Level 5's offer, so the child sees why the line costs less
+        const note = pp.levels.offerNote(choice, count);
+        basketList.appendChild(el('button', {
+          class: 'pp-line',
+          'data-line': choice.key,
+          'aria-label': `${count} ${name}${note.spoken ? `, ${note.spoken}` : ''}. Tap to take one out`,
+          onclick: () => remove(choice),
+        },
+        pp.items.mini(choice.item),
+        el('span', { class: 'pp-line-name' }, `${count} × ${name}`,
+          note.text && el('span', { class: 'pp-line-offer', 'data-offer-note': note.text }, note.text)),
+        el('span', { class: 'pp-line-cost' }, money.format(pp.levels.cost(choice, count)))));
+      });
+      // Each card shows how many of it are in the basket
+      shop.querySelectorAll('.pp-card').forEach((card) => {
+        const count = basket[card.dataset.choice] || 0;
+        const badge = card.querySelector('.pp-card-count');
+        badge.dataset.count = count;
+        badge.textContent = count ? `× ${count}` : '';
+      });
+    }
+
+    // Ticks on the party list: live at levels 1 and 2, otherwise only when
+    // the plan is checked (`checked`). Any change to the basket clears the
+    // marks from the last check.
+    function refreshTicks(checked = false) {
+      pp.levels.NEEDS.forEach((id) => {
+        const line = row(id);
+        delete line.dataset.short;
+        if (liveTicks || checked) line.dataset.done = String(pp.levels.servings(party(), basket, id) >= people);
+        else delete line.dataset.done;
+      });
+    }
+
+    function changed() {
+      refreshBasket();
+      refreshMeter();
+      refreshTicks();
+    }
+
+    function wobble(node) {
+      node.classList.remove('wobble');
+      void node.offsetWidth;
+      node.classList.add('wobble');
+    }
+
+    function add(choice, card) {
+      if (busy || !alive) return;
+      const count = basket[choice.key] || 0;
+      // A wish is bought once; a need up to MOST_PACKS packs
+      const most = choice.pack ? MOST_PACKS : 1;
+      if (count >= most) {
+        wobble(card);
+        return;
+      }
+      basket[choice.key] = count + 1;
+      audio.play('pickup');
+      changed();
+    }
+
+    function remove(choice) {
+      if (busy || !alive || !basket[choice.key]) return;
+      basket[choice.key] -= 1;
+      if (!basket[choice.key]) delete basket[choice.key];
+      audio.play('pickup');
+      changed();
+    }
+
+    function mistake(result) {
+      mistakes++;
+      mistakesByKind[result.problem] = (mistakesByKind[result.problem] || 0) + 1;
+      audio.play('wrong');
+      if (result.problem === 'over-budget') wobble(meter);
+      else row(result.line).dataset.short = 'true';
+      const { text, spoken } = pp.levels.feedback(result, people);
+      say(text, spoken, 'thinking');
+    }
+
+    function partyTime() {
+      if (busy || !alive) return;
+      const result = pp.levels.check(party(), basket, people);
+      if (!result.problem && party().surprise && !surprised) {
+        surprise();
+        return;
+      }
+      refreshTicks(true);
+      if (result.problem) mistake(result);
+      else celebrateParty(result);
+    }
+
+    // Level 5: a good plan, but more friends are coming. The list's numbers
+    // go up and the ticks show what is now short. The plan was good, so this
+    // is never a mistake.
+    function surprise() {
+      surprised = true;
+      const more = party().surprise;
+      setPeople(people + more);
+      audio.play('correct');
+      refreshTicks(true);
+      const { text, spoken } = pp.levels.surpriseLine(more, people);
+      say(text, spoken, 'excited');
+      wobble(bubble);
+    }
+
+    // How many people the party is for, on the list's headings and the screen
+    function setPeople(count) {
+      people = count;
+      screen.main.dataset.people = people;
+      party().lines.forEach((line) => {
+        const name = row(line.id) && row(line.id).querySelector('.pp-row-name');
+        if (name) name.textContent = pp.levels.lineText(line, people);
+      });
+    }
+
+    // The party happens: the room fills with what was bought, the birthday
+    // child cheers, and the money left is shown and said.
+    function celebrateParty(result) {
+      setBusy(true);
+      audio.play('till');
+      pp.progress.recordLeftover(result.left);
+      const bought = choices().filter((choice) => basket[choice.key] > 0).map((choice) => choice.item);
+      const cheer = pp.child.element(party().look, 'excited');
+      const { text, spoken } = pp.levels.feedback(result, people);
+      // Level 5: the change from the note, the money left by another name
+      const change = pp.levels.CONFIG[levelId].change ? pp.levels.changeLine(party().budget, result.left) : null;
+      partyView.textContent = '';
+      partyView.append(
+        pp.scene.element(bought),
+        el('div', { class: 'pp-party-cheer' }, cheer.node,
+          el('div', { class: 'pp-party-words' },
+            el('p', { class: 'pp-party-left', 'data-party-left': result.left }, text),
+            change && el('p', { class: 'pp-party-change', 'data-change': result.left }, change.text),
+            result.extras > 0 && el('p', { class: 'pp-party-extras', 'data-extras': result.extras },
+              result.extras === 1 ? '1 party extra' : `${result.extras} party extras`))));
+      planner.hidden = true;
+      partyView.hidden = false;
+      speech.say(change ? `${spoken} ${change.spoken}` : spoken);
+      const box = partyView.getBoundingClientRect();
+      effects.sparkle(box.left + box.width / 2, box.top + box.height / 3);
+      later(nextParty, PARTY_MS);
+    }
+
+    function finishRound() {
+      const stars = KMG.stars.forMistakes(mistakes);
+      pp.progress.recordRound(levelId, { stars, mistakes: mistakesByKind, stage: 0, lastStage: 0 });
+      const next = pp.levels.levelById(levelId + 1) ? () => play(levelId + 1, context) : null;
+      KMG.celebrate(screen.main, {
+        stars,
+        onAgain: () => play(levelId, context),
+        onNext: next,
+        onHome: () => context.home(),
+      });
+    }
+
+    function nextParty() {
+      index++;
+      screen.setDone(index);
+      if (index === round.total) {
+        finishRound();
+        return;
+      }
+      showParty();
+      setBusy(false);
+    }
+
+    function showParty() {
+      const p = party();
+      basket = {};
+      people = p.people;
+      surprised = false;
+      screen.main.dataset.people = people;
+      meter.dataset.budget = p.budget;
+      child = pp.child.element(p.look, 'idle');
+      header.textContent = '';
+      header.append(child.node, bubble);
+
+      shop.textContent = '';
+      p.lines.forEach((line) => {
+        shop.appendChild(el('section', { class: 'pp-row', 'data-row': line.id, 'data-kind': line.kind },
+          el('h2', { class: 'pp-row-title' },
+            el('span', { class: 'pp-row-name' }, pp.levels.lineText(line, people)),
+            line.kind === 'need' && el('span', { class: 'pp-row-tick', 'aria-hidden': 'true' })),
+          el('div', { class: 'pp-row-cards' }, line.choices.map((choice) => {
+            const card = pp.card.element(choice, {
+              onTag: () => speech.say(pp.levels.choiceWords(choice)),
+            });
+            card.querySelector('.pp-card-pick').addEventListener('click', () => add(choice, card));
+            return card;
+          }))));
+      });
+      partyView.hidden = true;
+      planner.hidden = false;
+      changed();
+      const card = pp.levels.cardLine(p);
+      say(card.text, card.spoken);
+      reserveHeader();
+    }
+
+    window.addEventListener('resize', reserveHeader);
+    screen.main.onleave = () => {
+      alive = false;
+      speech.stop();
+      window.clearTimeout(talkTimer);
+      window.removeEventListener('resize', reserveHeader);
+    };
+
+    setBusy(false);
+    show(screen.main);
+    showParty();
+  }
+
+  KMG.pp.play = play;
+})(window.KMG);
+
+// Party Planner's grown-ups area: the shared one (src/shared/parent-area.js)
+// with this game's settings, the mistakes to practise, and the money left at
+// the end of a party, on average.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { money, pp, parentArea } = KMG;
+
+  // How each kind of mistake is named in the list of things to practise
+  const PRACTISE_NAMES = {
+    'over-budget': 'Went over budget',
+    'not-enough': 'Not enough for everyone',
+    missing: 'Missed something on the list',
+  };
+
+  // Under the list: the money left at the end of a party, on average, and
+  // over how many parties, so a grown-up can tell one party from twenty
+  function leftoverNote(data) {
+    const { total, parties } = data.leftover;
+    const average = Math.round(total / parties);
+    const over = parties === 1 ? '1 party' : `${parties} parties`;
+    const text = parties
+      ? `Money left at the end of a party, on average: ${average === 0 ? '£0' : money.format(average)}, over ${over}.`
+      : 'No parties planned yet.';
+    return [
+      el('h3', {}, 'Money left over'),
+      el('p', { class: 'parent-note', 'data-leftover': parties ? average : '' }, text),
+    ];
+  }
+
+  // Changes one saved setting.
+  function saveSetting(name, value) {
+    const saved = pp.progress.load();
+    saved[name] = value;
+    pp.progress.save(saved);
+  }
+
+  function settings(data) {
+    return [
+      parentArea.choices({
+        title: 'Parties in a round',
+        values: pp.progress.PARTIES_PER_ROUND,
+        current: data.partiesPerRound,
+        label: (count) => (count === 1 ? '1 party' : `${count} parties`),
+        attr: 'round',
+        onPick: (count) => saveSetting('partiesPerRound', count),
+      }),
+      parentArea.section('Money left',
+        parentArea.toggle('Show the money left as they shop', 'left', data.showLeft,
+          (on) => saveSetting('showLeft', on))),
+    ];
+  }
+
+  function parent(context) {
+    parentArea.show({
+      gameName: 'Party Planner',
+      store: pp.progress,
+      fileName: 'party-planner-progress.json',
+      levels: pp.levels.LEVELS,
+      settings,
+      practise: {
+        title: 'Things to practise',
+        item: (key) => el('span', { class: 'pp-practise' }, PRACTISE_NAMES[key] || key),
+      },
+      notes: leftoverNote,
+      onDone: () => context.home(),
+    });
+  }
+
+  pp.parent = parent;
+})(window.KMG);
+
+// Party Planner's home screen: the shared level picker
+// (src/shared/level-picker.js) with a party item and a price tag on each
+// level's card.
+(function (KMG) {
+  'use strict';
+
+  const { pp } = KMG;
+
+  const item = (id) => pp.items.mini(id);
+  const tag = (text) => pp.card.mini(text);
+
+  const LEVEL_ART = {
+    1: () => [item('sandwiches'), tag('£10')],
+    2: () => [item('juice'), tag('£2.50')],
+    3: () => [item('pizza'), tag('× 2')],
+    4: () => [item('castle'), item('balloons')],
+    5: () => [item('cake'), tag('£50')],
+  };
+
+  function home(context) {
+    KMG.levelPicker.show({
+      title: 'Party Planner',
+      levels: pp.levels.LEVELS,
+      art: (level) => LEVEL_ART[level.id](),
+      store: pp.progress,
+      onPlay: (levelId) => pp.play(levelId, context),
+      onParent: () => pp.parent(context),
+      exit: context.exit,
+    });
+  }
+
+  pp.home = home;
+})(window.KMG);
+
+// Party Planner's entry point: registers the game with the hub or standalone boot.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { pp } = KMG;
+
+  // ?debug=1&items=1 shows every party item, the birthday child in several
+  // looks and every expression, and the party scene empty and full, for
+  // checking the artwork.
+  function gallery(context) {
+    const all = pp.items.ALL.map((item) => el('figure', { class: 'pp-gallery-item' },
+      pp.items.element(item.id),
+      el('figcaption', {}, item.name)));
+
+    const looks = [1, 2, 3, 4, 5, 6].map((seed) => {
+      const child = pp.child.element(pp.child.lookFor(KMG.rng.create(seed)));
+      return el('figure', { class: 'pp-gallery-item', 'data-look-seed': seed }, child.node, el('figcaption', {}, `Seed ${seed}`));
+    });
+
+    const look = pp.child.lookFor(context.rng);
+    const expressions = pp.child.EXPRESSIONS.map((name) => el('figure', { class: 'pp-gallery-item', 'data-expression-sample': name },
+      pp.child.element(look, name).node, el('figcaption', {}, name)));
+
+    const full = ['pizza', 'cake', 'juice', 'bags-filled', 'balloons', 'bunting', 'hats', 'game', 'facepaints', 'magician', 'castle'];
+    const scenes = [['Needs only', ['sandwiches', 'cupcakes', 'squash', 'bags-plain']], ['Everything', full]]
+      .map(([name, bought]) => el('figure', { class: 'pp-gallery-scene', 'data-scene-sample': name },
+        pp.scene.element(bought), el('figcaption', {}, name)));
+
+    show(el('main', { class: 'pp-gallery', 'data-screen': 'gallery' },
+      el('h2', {}, 'Party items'), el('div', { class: 'pp-gallery-grid' }, all),
+      el('h2', {}, 'Birthday child looks'), el('div', { class: 'pp-gallery-grid' }, looks),
+      el('h2', {}, 'Expressions'), el('div', { class: 'pp-gallery-grid' }, expressions),
+      el('h2', {}, 'The party scene'), el('div', { class: 'pp-gallery-scenes' }, scenes)));
+  }
+
+  KMG.registerGame('party-planner', {
+    // Called once before any of this game's art is drawn. Nothing to set up:
+    // the drawings carry everything they need.
+    prepare() {},
+
+    // The picture on the hub tile.
+    art: () => [pp.items.mini('cake'), pp.items.mini('balloons'), pp.items.mini('pizza')],
+
+    open(exit) {
+      const context = { exit, rng: KMG.rng.create(KMG.debug.seed) };
+      context.home = () => pp.home(context);
+
+      if (KMG.debug.flag('items')) gallery(context);
+      else if (KMG.debug.level) pp.play(KMG.debug.level, context);
+      else context.home();
+    },
+  });
+})(window.KMG);
+
 // Play Shop's twelve toys, drawn as simple SVG on a 120 by 120 canvas. Original
 // and unbranded: no real toy brands or characters. Flat pastel fills with the
 // same soft outline, so they look like one set next to the coins.
@@ -2243,8 +3598,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games
   const SHIRT = '#9cc9f5';
   const APRON = '#1f6f6b';
 
-  const SKINS = ['#f7d7c4', '#e3ad84', '#b97b52', '#7b4a2e'];
-  const HAIR_COLOURS = ['#2e1f17', '#6b4226', '#b8622d', '#e3c06e'];
+  // Shared with Party Planner's birthday child (src/shared/looks.js)
+  const { SKINS, HAIR_COLOURS } = KMG.looks;
   const HAIR_SHAPES = ['short', 'bun', 'curly'];
   const EXPRESSIONS = ['idle', 'talking', 'happy', 'hmm'];
 
@@ -4464,7 +5819,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"b6a0c3282969","games
   function home() {
     show(el('main', { class: 'hub', 'data-screen': 'hub' },
       el('h1', { class: 'hub-title' }, 'Money Games'),
-      el('div', { class: 'hub-tiles' }, KMG.build.games.map(tile)),
+      // data-count lets the stylesheet arrange four games as two by two
+      el('div', { class: 'hub-tiles', 'data-count': KMG.build.games.length }, KMG.build.games.map(tile)),
       KMG.install.tip()));
   }
 
