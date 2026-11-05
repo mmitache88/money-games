@@ -1,9 +1,9 @@
 // The service worker. The build fills in the version and the file list, so every
 // deploy is a new worker with a new cache. Only this app's caches are touched:
 // saved progress is in localStorage, which is never involved.
-const CACHE = 'kmg-hub-84990d454fa1';
+const CACHE = 'kmg-hub-3a768dbb643a';
 const OLD_CACHE_PREFIX = 'kmg-hub-';
-const FILES = ["./","index.html","app.js","app.css","manifest.webmanifest","icons/192x192.png","icons/512x512.png","icons/apple-touch-icon.png","voice/shared.js","voice/coin-sorter.js","voice/party-planner.js","voice/play-shop.js","voice/price-detective.js"];
+const FILES = ["./","index.html","app.js","app.css","manifest.webmanifest","icons/192x192.png","icons/512x512.png","icons/apple-touch-icon.png","voice/shared.js","voice/coin-sorter.js","voice/party-planner.js","voice/play-shop.js","voice/pocket-money-month.js","voice/price-detective.js"];
 
 self.addEventListener('install', (event) => {
   // cache: 'reload' goes past the browser's HTTP cache. GitHub Pages sends a

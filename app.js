@@ -1,4 +1,4 @@
-window.KMG_BUILD = {"target":"web","debug":false,"version":"84990d454fa1","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"party-planner","title":"Party Planner","prefix":"PRTY"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"party-planner":["195c03847cf3a302e41ed0637b16e978f24cdd1c051563ba7d23e62f1668b1e8","a4fd3d5b2a733e241212350e3f8397d4072c9feb8c7c555281067aa48da2c2a4","46f6dae075b508c7917532e6f6b9b3c1526c735d06d21762ab1c29f750de71c1","9b0b7ba1c6011c1818c8f3452dd49fe51a0f56db9e3744690ab4df8f0e57d81c","45d24bd6254412c85b0c96bf423111c0f913ad94b619d99111d40d2d998342bb","bbe6fe2c6fa5946c74eefddb58d598cef8359c8448b4873b631ed2f06ac32993","1ed7c3244df9b18e53337b5032d498bc84c833688cda8f764f3ecd4aaa39cc77","13dce02eb60a9549d7cb10032c847e5159751e66485716d050d6c454e04b06fe","d5d69d74daa162a14cbdf08e149697f06c00cf2390981f001e5e54462b2cb691","12eb40164d6945272aa91749b98e1fae16461d436fb35b9112b3360f2644a00e"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}},"voice":["shared","coin-sorter","party-planner","play-shop","price-detective"]};
+window.KMG_BUILD = {"target":"web","debug":false,"version":"3a768dbb643a","games":[{"id":"coin-sorter","title":"Coin Sorter","prefix":"COIN"},{"id":"party-planner","title":"Party Planner","prefix":"PRTY"},{"id":"play-shop","title":"Play Shop","prefix":"SHOP"},{"id":"pocket-money-month","title":"Pocket Money Month","prefix":"PMNY"},{"id":"price-detective","title":"Price Detective","prefix":"CLUE"}],"access":{"requireAccessCode":true,"hashes":{"coin-sorter":["09efc35465112c278366fa55160b495a565c45ae27365905d98fbd70301089f9","c2559e31b43e253f001e28a5b484c02ba547134b25b63e126775079d0e36508a","88d47d9c2c16fd82f9df086a281b5f264c5aa2eace8dbdac1be3978c737e7a87","240d7010d83181dd6a26ae0928a67c80fd61b5f9ef771124225ec32b8e756aca","a7a75441f2d1b1f7648359e656af3032b4a170f86051cc9319b91d84bf5afed0","14f12956b4ed06acadc0f4f92499862cf5b0a1c4ed3a5ad166a99cf451f72b55","eede2cf5a790ec582057d5de840004b0469e22ba51c33960c24a9de0b1cb3548","6d11f68eb4d06290178bed073de34c1eb711a199665e619158b6736139920321","8ba1c850676bf74f13b26850bff10e9b1a51b6dac67488f822fc87e89b53ea15","8ed9ff6991bacd5eeae149bc55cd7e17fb765b3342cdd96a1f23fbcdc6464809"],"party-planner":["195c03847cf3a302e41ed0637b16e978f24cdd1c051563ba7d23e62f1668b1e8","a4fd3d5b2a733e241212350e3f8397d4072c9feb8c7c555281067aa48da2c2a4","46f6dae075b508c7917532e6f6b9b3c1526c735d06d21762ab1c29f750de71c1","9b0b7ba1c6011c1818c8f3452dd49fe51a0f56db9e3744690ab4df8f0e57d81c","45d24bd6254412c85b0c96bf423111c0f913ad94b619d99111d40d2d998342bb","bbe6fe2c6fa5946c74eefddb58d598cef8359c8448b4873b631ed2f06ac32993","1ed7c3244df9b18e53337b5032d498bc84c833688cda8f764f3ecd4aaa39cc77","13dce02eb60a9549d7cb10032c847e5159751e66485716d050d6c454e04b06fe","d5d69d74daa162a14cbdf08e149697f06c00cf2390981f001e5e54462b2cb691","12eb40164d6945272aa91749b98e1fae16461d436fb35b9112b3360f2644a00e"],"play-shop":["386674190f3950fa413e6ae0741ef82c5d80d5d79e9fc42015d0d1a29b93ccef","524eaad8a75a4d1b2082a46599cf07ea9731b188f9cebc2d8f3075943d0a3958","1eb600d989acca75e5d6241583f9e41356d7901a4c5c093c4d0554f0f92378b8","52dafefbdaedf8e67cc1ba380b290a604aa5a221179d1d1ec97178466132e31b","93531b7ba8dad6db6bae4605c437d2769fcc751efec81c23fa5eac622da2082d","3b919818415f5b5c408728718479b9aabfb1635917ae00812fa444f6cfdfdd06","271b6d9c9cf6a53b0e9338ca298e8bfd97e9e88111d41f0006d1c958ce234bfd","9311af0df851d8172fc77c1c72367d051d4a02235791e09302f535550aa0066e","ae5ba3d5c9f71153ad725f81396b878281160defdf92d1036a2b3917504b550f","3895bacb303b007859e8abf0fb6c34bef490ac23480a1103b1132d3ecd02cf57"],"pocket-money-month":["8d0734e804a3deeca3636f1acefc1d62df997d1b17823e9412a818bfe0e919cd","53b3815da6763f2a79cbc4db3d838554fb9782e9e28efcdd1256ed29c88be504","36db3aad8bef348feacfb566658b4d2e70b135b8f2c967940e29d76817c73628","5d3d4f496fd44e75d5cc6b7eb7dbcf9ab0264243951e5b064eb9925da0cbe8d0","51defe1d1d856d68a47a16c44080b65ee42b49d355e9b4f4093c46b43a06c396","7006e4ddb145b0c75082495844c82102e2b22993dea74c4b66f534c767573b1f","ce81568606a852f4e2312405b9cdbf82f8f2524f8ab1f67cf4caacca7e12378c","c7ff4b57f491af703c1e7a21c6745a2874fd6c2767acd0d92d28b1ba020c0547","0662a05de1ed2de0e08b9b57a42904a8fc52f10beb06ee4fe91930221bce6961","45e35b30aa516fff9099c63112911c187e072475d7b6ad3c445bb79883ed8842"],"price-detective":["a8695500c6d9d7ea86f952236b6f6f88f4b3dbf5557b95281406dd46a2fc32e9","5bc4a4e11b2ec3d3f8089fbe443e30f67d1e668dbe90d0a3425044c05494e262","2188ae905edf12088cd6de0dfd63153055c585af6a4e2404721e2adb7cfcc37e","12efb3a09b040beb8592307a806d8c3af1b3b02cf710ea76bbc4d18505dba27d","39ec6e04b7aec61dd5e71f784f5b7a3e1b43c438e064c38a9230953d2f380606","13954cf1f04628e874ed9876a032385999b2a4d16e5bceec1e75fc6352c55518","87da893e94dac70a2263f42f040b387da5ff5d83d37116d7d2ca80d44d1ae2a2","af0ed0e28bdddada99d3a5ce122b9e175750493b1c60ee6661b08f4e0ecda355","1b9258a2eb5fd7b615254f911ac4d2cb7a9eacfc447b235a3101f72e8dfdf150","872a686ee27deffb75c130862eae9145ce46c8593e6e0b88e3209c153a1489d9"]}},"voice":["shared","coin-sorter","party-planner","play-shop","pocket-money-month","price-detective"]};
 // Everything lives on one global, KMG. The build puts KMG_BUILD in front of this
 // file: { target: 'standalone' | 'web', debug, version, games }.
 (function () {
@@ -38,6 +38,8 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"84990d454fa1","games
     seed: number('seed'),
     level: number('level'),
     stage: number('stage'),
+    // Pocket Money Month: start at this week of the month
+    week: number('week'),
     flag: (name) => on && params.get(name) === '1',
   };
 })(window.KMG);
@@ -1467,9 +1469,10 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"84990d454fa1","games
 //     fileName,        name of the exported progress file
 //     levels,          the game's levels, each { id, text }
 //     settings(data),  the game's own setting sections, made with the helpers below
-//     practise,        { title, item(key), include(key)? }: what the child finds
+//     practise?,       { title, item(key), include(key)? }: what the child finds
 //                      hardest, from the mistakes counted per key (a coin, a
-//                      price, ...). include(key), if given, leaves some keys out
+//                      price, ...). include(key), if given, leaves some keys
+//                      out. Left out by a game that counts no mistakes
 //     notes(data)?,    optional lines under that list, for anything else the
 //                      game counts (Price Detective's big pack trick)
 //     onDone(),        back to the game's home
@@ -1539,16 +1542,23 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"84990d454fa1","games
         el('span', { class: 'parent-note' }, played));
     });
 
+    return section('Progress', el('ul', { class: 'progress-list' }, rows), ...practiseList(data, options),
+      ...(options.notes ? options.notes(data) : []));
+  }
+
+  // What the child finds hardest, from the mistakes counted per key. A game
+  // with no mistakes to count (Pocket Money Month, whose stars come from
+  // reaching a goal) leaves out `practise`, and the list with it.
+  function practiseList(data, options) {
+    if (!options.practise) return [];
     const include = options.practise.include || (() => true);
-    const confused = store.confused(data, Infinity).filter(([key]) => include(key)).slice(0, PRACTISE_LIMIT);
+    const confused = options.store.confused(data, Infinity).filter(([key]) => include(key)).slice(0, PRACTISE_LIMIT);
     const practise = confused.length
       ? el('ul', { class: 'confused' }, confused.map(([key, count]) => el('li', { 'data-confused': key },
         options.practise.item(key),
         count === 1 ? '1 mistake' : `${count} mistakes`)))
       : el('p', { class: 'parent-note', 'data-confused-none': true }, 'No mistakes yet.');
-
-    return section('Progress', el('ul', { class: 'progress-list' }, rows), el('h3', {}, options.practise.title), practise,
-      ...(options.notes ? options.notes(data) : []));
+    return [el('h3', {}, options.practise.title), practise];
   }
 
   function transferSection(options, refresh) {
@@ -4821,6 +4831,1698 @@ window.KMG_BUILD = {"target":"web","debug":false,"version":"84990d454fa1","games
       if (KMG.debug.flag('toys')) gallery(context);
       else if (KMG.debug.level) ps.play(KMG.debug.level, context);
       else context.home();
+    },
+  });
+})(window.KMG);
+
+// Pocket Money Month's drawings, as simple SVG on a 120 by 120 canvas, in the
+// same flat pastel style and soft outline as the other games' art. Original and
+// unbranded: no shop, brand, licensed character or real banknote.
+//
+//   goals    what the child saves for: a football, a kite, a scooter...
+//   treats   what the shop tempts them with each week: sweets, a comic...
+//   events   the surprises, needs, Saturday jobs and outings: Granny's
+//            birthday card, a lost water bottle, the school trip coach...
+// plus the purse, and the goal jar, which fills with coins from the bottom
+// and wears the goal's picture on its label.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  KMG.pm = KMG.pm || {};
+
+  // The soft outline every drawing uses
+  const LINE = 'stroke="#24324a" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"';
+  const INK = '#24324a';
+
+  const CORAL = '#ff9d8a';
+  const SUN = '#ffd56b';
+  const SKY = '#9cc9f5';
+  const LILAC = '#cfc8f2';
+  const MINT = '#8fd3c7';
+  const CLOUD = '#f4f7fb';
+  const LEAF = '#9ad48a';
+  const ORANGE = '#ffb35c';
+  const PINK = '#ffd1dd';
+  const WOOD = '#e8b77a';
+  const GOLD = '#f2c94c';
+  const SILVER = '#d9dee6';
+  const COPPER = '#e0a07a';
+
+  // A small coin, for drawings that show money (never a real coin's design)
+  const coin = (x, y, r, fill = GOLD) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" ${LINE}/>` +
+    `<circle cx="${x}" cy="${y}" r="${r * 0.6}" fill="none" stroke="${INK}" stroke-opacity="0.18" stroke-width="2"/>`;
+
+  const DRAWINGS = {
+    // ---- Goals ----
+    'sticker-album': `
+      <rect x="22" y="14" width="76" height="92" rx="8" fill="${LILAC}" ${LINE}/>
+      <rect x="22" y="14" width="14" height="92" rx="6" fill="#b8aee8"/>
+      <path d="M66 34 L71 45 L83 46 L74 54 L77 66 L66 60 L55 66 L58 54 L49 46 L61 45 Z" fill="${SUN}" ${LINE}/>
+      <circle cx="58" cy="82" r="8" fill="${CORAL}"/><circle cx="80" cy="84" r="7" fill="${MINT}"/>`,
+
+    football: `
+      <circle cx="60" cy="60" r="46" fill="#ffffff" ${LINE}/>
+      <path d="M60 44 L75 55 L69 72 L51 72 L45 55 Z" fill="${INK}" fill-opacity="0.8"/>
+      <path d="M60 14 L60 44 M75 55 L102 46 M69 72 L86 96 M51 72 L34 96 M45 55 L18 46" stroke="${INK}" stroke-opacity="0.45" stroke-width="3"/>
+      <path d="M50 15 L60 22 L70 15 M100 38 L98 50 M90 92 L80 98 M30 92 L40 98 M20 38 L22 50" stroke="${INK}" stroke-opacity="0.45" stroke-width="3" fill="none"/>`,
+
+    kite: `
+      <path d="M60 8 L94 46 L60 92 L26 46 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M60 8 L60 92 M26 46 L94 46" stroke="${CLOUD}" stroke-width="4"/>
+      <path d="M60 92 Q50 104 62 110 Q74 116 64 118" fill="none" stroke="${INK}" stroke-opacity="0.5" stroke-width="2.5"/>
+      <path d="M52 100 L58 104 L52 108 Z M66 108 L72 112 L66 116 Z" fill="${SKY}"/>`,
+
+    'book-set': `
+      <rect x="16" y="28" width="26" height="80" rx="4" fill="${SKY}" ${LINE}/>
+      <rect x="44" y="18" width="28" height="90" rx="4" fill="${CORAL}" ${LINE}/>
+      <rect x="74" y="34" width="28" height="74" rx="4" fill="${MINT}" ${LINE}/>
+      <path d="M22 44 L36 44 M50 34 L66 34 M80 50 L96 50" stroke="${CLOUD}" stroke-width="4" stroke-linecap="round"/>`,
+
+    'art-set': `
+      <rect x="10" y="48" width="100" height="56" rx="8" fill="${WOOD}" ${LINE}/>
+      <rect x="18" y="56" width="84" height="40" rx="5" fill="${CLOUD}"/>
+      <g stroke-width="3" stroke="#24324a" stroke-opacity="0.2">
+        <circle cx="34" cy="68" r="7" fill="${CORAL}"/><circle cx="52" cy="68" r="7" fill="${SUN}"/><circle cx="70" cy="68" r="7" fill="${SKY}"/><circle cx="88" cy="68" r="7" fill="${LEAF}"/>
+      </g>
+      <path d="M26 86 L94 86" stroke="${LILAC}" stroke-width="6" stroke-linecap="round"/>
+      <path d="M58 48 L84 12 L92 18 L66 52 Z" fill="${ORANGE}" ${LINE}/>`,
+
+    headphones: `
+      <path d="M24 70 Q24 20 60 20 Q96 20 96 70" fill="none" stroke="${SKY}" stroke-width="10" stroke-linecap="round"/>
+      <rect x="12" y="62" width="26" height="40" rx="12" fill="${LILAC}" ${LINE}/>
+      <rect x="82" y="62" width="26" height="40" rx="12" fill="${LILAC}" ${LINE}/>
+      <rect x="20" y="70" width="10" height="24" rx="5" fill="${CLOUD}"/><rect x="90" y="70" width="10" height="24" rx="5" fill="${CLOUD}"/>`,
+
+    'roller-skates': `
+      <path d="M30 18 L62 18 L64 66 L94 70 Q104 72 104 82 L104 88 L22 88 L22 26 Q22 18 30 18 Z" fill="${PINK}" ${LINE}/>
+      <path d="M34 30 L54 30 M34 42 L54 42 M34 54 L54 54" stroke="${CORAL}" stroke-width="4" stroke-linecap="round"/>
+      <rect x="20" y="86" width="86" height="8" rx="4" fill="${LILAC}" ${LINE}/>
+      <circle cx="34" cy="104" r="10" fill="${SUN}" ${LINE}/><circle cx="90" cy="104" r="10" fill="${SUN}" ${LINE}/>`,
+
+    robot: `
+      <path d="M60 10 L60 22" stroke="${INK}" stroke-opacity="0.5" stroke-width="3"/><circle cx="60" cy="9" r="5" fill="${CORAL}"/>
+      <rect x="30" y="22" width="60" height="42" rx="10" fill="${SILVER}" ${LINE}/>
+      <circle cx="47" cy="42" r="7" fill="${SKY}"/><circle cx="73" cy="42" r="7" fill="${SKY}"/>
+      <path d="M50 54 L70 54" stroke="${INK}" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+      <rect x="34" y="68" width="52" height="40" rx="8" fill="${MINT}" ${LINE}/>
+      <circle cx="60" cy="86" r="7" fill="${SUN}"/>
+      <rect x="18" y="72" width="12" height="28" rx="6" fill="${SILVER}" ${LINE}/><rect x="90" y="72" width="12" height="28" rx="6" fill="${SILVER}" ${LINE}/>`,
+
+    'rc-car': `
+      <path d="M14 76 L22 52 Q26 44 36 44 L76 44 Q86 44 92 52 L104 76 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M34 52 L52 52 L52 66 L28 66 Z M60 52 L80 52 L88 66 L60 66 Z" fill="${SKY}"/>
+      <rect x="10" y="74" width="100" height="14" rx="7" fill="${CORAL}" ${LINE}/>
+      <circle cx="34" cy="92" r="11" fill="${INK}" fill-opacity="0.75"/><circle cx="86" cy="92" r="11" fill="${INK}" fill-opacity="0.75"/>
+      <path d="M92 44 L100 12" stroke="${INK}" stroke-opacity="0.5" stroke-width="3"/><circle cx="100" cy="11" r="4" fill="${SUN}"/>`,
+
+    skateboard: `
+      <g transform="rotate(-14 60 60)">
+        <rect x="8" y="50" width="104" height="18" rx="9" fill="${ORANGE}" ${LINE}/>
+        <path d="M30 59 L90 59" stroke="${SUN}" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="30" cy="78" r="9" fill="${MINT}" ${LINE}/><circle cx="90" cy="78" r="9" fill="${MINT}" ${LINE}/>
+      </g>`,
+
+    scooter: `
+      <path d="M78 22 L88 92" stroke="${SKY}" stroke-width="8" stroke-linecap="round"/>
+      <path d="M66 22 L92 20" stroke="${INK}" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round"/>
+      <rect x="18" y="86" width="74" height="10" rx="5" fill="${SKY}" ${LINE}/>
+      <circle cx="24" cy="102" r="10" fill="${SUN}" ${LINE}/><circle cx="90" cy="102" r="10" fill="${SUN}" ${LINE}/>`,
+
+    helmet: `
+      <path d="M14 76 Q14 26 62 24 Q106 26 106 76 Z" fill="${MINT}" ${LINE}/>
+      <path d="M40 34 L46 56 M62 30 L62 54 M84 34 L78 56" stroke="${CLOUD}" stroke-width="6" stroke-linecap="round"/>
+      <rect x="10" y="74" width="100" height="10" rx="5" fill="${SKY}" ${LINE}/>
+      <rect x="44" y="92" width="32" height="18" rx="6" fill="${CLOUD}" ${LINE}/>
+      <circle cx="60" cy="101" r="6" fill="${SUN}"/>`,
+
+    // ---- Treats ----
+    sweets: `
+      <path d="M14 46 L28 56 L14 66 Z M64 46 L50 56 L64 66 Z" fill="${CORAL}" ${LINE}/>
+      <ellipse cx="39" cy="56" rx="15" ry="13" fill="${CORAL}" ${LINE}/>
+      <path d="M56 76 L70 86 L56 96 Z M106 76 L92 86 L106 96 Z" fill="${SKY}" ${LINE}/>
+      <ellipse cx="81" cy="86" rx="15" ry="13" fill="${SKY}" ${LINE}/>
+      <path d="M32 52 L46 60 M74 82 L88 90" stroke="${CLOUD}" stroke-width="4" stroke-linecap="round"/>`,
+
+    cupcake: `
+      <path d="M32 66 L88 66 L80 108 L40 108 Z" fill="${SKY}" ${LINE}/>
+      <path d="M44 68 L48 106 M60 68 L60 106 M76 68 L72 106" stroke="#7fb3e6" stroke-width="3"/>
+      <path d="M28 68 Q26 36 60 34 Q94 36 92 68 Z" fill="${PINK}" ${LINE}/>
+      <circle cx="60" cy="28" r="8" fill="${CORAL}" ${LINE}/>
+      <g fill="${SUN}"><circle cx="44" cy="52" r="3"/><circle cx="62" cy="46" r="3"/><circle cx="76" cy="56" r="3"/></g>`,
+
+    'ice-cream': `
+      <path d="M38 62 L82 62 L60 112 Z" fill="${WOOD}" ${LINE}/>
+      <path d="M46 72 L74 72 M52 86 L68 86" stroke="#c98a4a" stroke-opacity="0.5" stroke-width="3"/>
+      <circle cx="46" cy="54" r="17" fill="${PINK}" ${LINE}/><circle cx="74" cy="54" r="17" fill="${MINT}" ${LINE}/>
+      <circle cx="60" cy="34" r="17" fill="#fff3d6" ${LINE}/>`,
+
+    'hot-chocolate': `
+      <path d="M38 28 Q34 20 40 14 M58 26 Q54 18 60 12 M78 28 Q74 20 80 14" fill="none" stroke="${SILVER}" stroke-width="4" stroke-linecap="round"/>
+      <path d="M22 40 L90 40 L84 104 Q84 110 78 110 L34 110 Q28 110 28 104 Z" fill="${CORAL}" ${LINE}/>
+      <path d="M90 52 Q108 52 106 70 Q104 86 86 86" fill="none" stroke="${CORAL}" stroke-width="9"/>
+      <ellipse cx="56" cy="40" rx="34" ry="8" fill="#8a5a44"/>
+      <circle cx="46" cy="38" r="7" fill="${CLOUD}"/><circle cx="60" cy="35" r="8" fill="${CLOUD}"/><circle cx="72" cy="39" r="6" fill="${CLOUD}"/>`,
+
+    comic: `
+      <rect x="22" y="12" width="76" height="96" rx="6" fill="${SUN}" ${LINE}/>
+      <rect x="30" y="22" width="60" height="16" rx="4" fill="${CORAL}"/>
+      <rect x="30" y="44" width="28" height="28" rx="4" fill="${SKY}"/><rect x="62" y="44" width="28" height="28" rx="4" fill="${MINT}"/>
+      <path d="M32 82 L88 82 L88 98 L58 98 L50 104 L50 98 L32 98 Z" fill="${CLOUD}"/>`,
+
+    stickers: `
+      <rect x="16" y="16" width="88" height="88" rx="10" fill="${CLOUD}" ${LINE}/>
+      <path d="M40 24 L45 35 L57 36 L48 44 L51 56 L40 50 L29 56 L32 44 L23 36 L35 35 Z" fill="${SUN}"/>
+      <path d="M80 46 C70 34 60 46 70 54 L80 62 L90 54 C100 46 90 34 80 46 Z" fill="${CORAL}"/>
+      <circle cx="40" cy="80" r="11" fill="${MINT}"/><rect x="66" y="70" width="22" height="22" rx="5" fill="${LILAC}"/>`,
+
+    slime: `
+      <path d="M26 56 Q22 34 44 30 Q60 18 78 30 Q100 34 94 56 Q100 66 92 70 Q90 82 82 74 Q76 84 70 72 L40 72 Q34 84 30 72 Q20 68 26 56 Z" fill="${LEAF}" ${LINE}/>
+      <circle cx="50" cy="44" r="5" fill="#ffffff" fill-opacity="0.7"/>
+      <path d="M22 70 L98 70 L92 108 L28 108 Z" fill="${SKY}" ${LINE}/>
+      <rect x="22" y="66" width="76" height="10" rx="4" fill="${LILAC}" ${LINE}/>`,
+
+    'toy-car': `
+      <path d="M18 74 L30 50 Q34 44 42 44 L74 44 Q82 44 88 52 L102 74 Z" fill="${SUN}" ${LINE}/>
+      <path d="M40 52 L56 52 L56 66 L34 66 Z M62 52 L78 52 L86 66 L62 66 Z" fill="${SKY}"/>
+      <rect x="12" y="72" width="96" height="16" rx="8" fill="${SUN}" ${LINE}/>
+      <circle cx="34" cy="92" r="11" fill="${INK}" fill-opacity="0.75"/><circle cx="86" cy="92" r="11" fill="${INK}" fill-opacity="0.75"/>`,
+
+    // ---- Surprises, needs, Saturday jobs and outings ----
+    'birthday-money': `
+      <rect x="14" y="20" width="72" height="84" rx="6" fill="${PINK}" ${LINE}/>
+      <path d="M50 40 C40 28 26 40 38 52 L50 62 L62 52 C74 40 60 28 50 40 Z" fill="${CORAL}"/>
+      <path d="M28 76 L72 76 M28 88 L60 88" stroke="${CLOUD}" stroke-width="4" stroke-linecap="round"/>
+      ${coin(88, 82, 18)}`,
+
+    'coat-pocket': `
+      <path d="M18 14 L102 14 L102 110 L18 110 Z" fill="${SKY}" ${LINE}/>
+      <path d="M30 56 L90 56 L90 96 Q90 104 82 104 L38 104 Q30 104 30 96 Z" fill="#86b8ea" ${LINE}/>
+      ${coin(60, 52, 14, SILVER)}
+      <path d="M30 56 L90 56" stroke="${INK}" stroke-opacity="0.3" stroke-width="3"/>
+      <circle cx="60" cy="28" r="5" fill="${CLOUD}" ${LINE}/>`,
+
+    'old-toys': `
+      <rect x="14" y="56" width="92" height="52" rx="6" fill="${WOOD}" ${LINE}/>
+      <circle cx="40" cy="44" r="16" fill="${CORAL}" ${LINE}/>
+      <rect x="62" y="22" width="30" height="36" rx="6" fill="${LILAC}" ${LINE}/>
+      <circle cx="72" cy="36" r="3" fill="${INK}"/><circle cx="83" cy="36" r="3" fill="${INK}"/>
+      <path d="M14 70 L106 70" stroke="#c98a4a" stroke-opacity="0.5" stroke-width="3"/>`,
+
+    'car-wash': `
+      <path d="M22 56 L98 56 L90 110 L30 110 Z" fill="${SKY}" ${LINE}/>
+      <path d="M30 56 Q60 30 90 56" fill="none" stroke="${INK}" stroke-opacity="0.4" stroke-width="4"/>
+      <rect x="30" y="38" width="56" height="22" rx="8" fill="${SUN}" ${LINE}/>
+      <g fill="#ffffff" stroke="${SKY}" stroke-width="2"><circle cx="34" cy="34" r="7"/><circle cx="50" cy="28" r="6"/><circle cx="82" cy="32" r="6"/></g>`,
+
+    raffle: `
+      <path d="M12 34 L108 34 L108 52 Q100 60 108 68 L108 86 L12 86 L12 68 Q20 60 12 52 Z" fill="${SUN}" ${LINE}/>
+      <path d="M40 38 L40 82" stroke="${INK}" stroke-opacity="0.25" stroke-width="3" stroke-dasharray="4 4"/>
+      <path d="M74 46 L78 56 L89 57 L81 64 L83 75 L74 69 L65 75 L67 64 L59 57 L70 56 Z" fill="${CORAL}"/>`,
+
+    'water-bottle': `
+      <rect x="46" y="10" width="28" height="16" rx="5" fill="${CORAL}" ${LINE}/>
+      <rect x="38" y="24" width="44" height="86" rx="14" fill="${SKY}" ${LINE}/>
+      <rect x="38" y="52" width="44" height="22" fill="${CLOUD}"/>
+      <path d="M50 34 L50 46" stroke="${CLOUD}" stroke-width="4" stroke-linecap="round"/>`,
+
+    'pencil-case': `
+      <rect x="10" y="44" width="100" height="44" rx="20" fill="${LILAC}" ${LINE}/>
+      <path d="M24 52 L96 52" stroke="${INK}" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="5 4"/>
+      <circle cx="96" cy="52" r="5" fill="${SUN}" ${LINE}/>
+      <path d="M30 36 L44 50 M74 30 L84 48" stroke="${ORANGE}" stroke-width="7" stroke-linecap="round"/>`,
+
+    mug: `
+      <path d="M26 34 L82 34 L78 104 Q78 110 72 110 L36 110 Q30 110 30 104 Z" fill="${CLOUD}" ${LINE}/>
+      <path d="M82 50 Q102 50 100 68 Q98 84 80 84" fill="none" stroke="${CLOUD}" stroke-width="9"/>
+      <path d="M82 50 Q102 50 100 68 Q98 84 80 84" fill="none" stroke="${INK}" stroke-opacity="0.2" stroke-width="2"/>
+      <path d="M48 34 L56 54 L48 66 L58 84" fill="none" stroke="${INK}" stroke-opacity="0.45" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="40" cy="72" r="8" fill="${CORAL}"/>`,
+
+    'bike-tyre': `
+      <circle cx="60" cy="60" r="46" fill="none" stroke="${INK}" stroke-opacity="0.7" stroke-width="12"/>
+      <circle cx="60" cy="60" r="8" fill="${SILVER}" ${LINE}/>
+      <path d="M60 22 L60 98 M22 60 L98 60 M33 33 L87 87 M87 33 L33 87" stroke="${SILVER}" stroke-width="2.5"/>
+      <rect x="86" y="18" width="22" height="14" rx="4" fill="${SUN}" ${LINE} transform="rotate(30 97 25)"/>`,
+
+    goggles: `
+      <path d="M8 56 L22 56 M98 56 L112 56" stroke="${CORAL}" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="40" cy="58" rx="22" ry="18" fill="${SKY}" ${LINE}/>
+      <ellipse cx="80" cy="58" rx="22" ry="18" fill="${SKY}" ${LINE}/>
+      <path d="M58 56 Q60 50 62 56" stroke="${INK}" stroke-opacity="0.4" stroke-width="4" fill="none"/>
+      <path d="M30 50 Q36 44 44 46 M70 50 Q76 44 84 46" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>`,
+
+    'school-trip': `
+      <rect x="8" y="34" width="104" height="58" rx="12" fill="${SUN}" ${LINE}/>
+      <g fill="${SKY}"><rect x="18" y="44" width="18" height="18" rx="3"/><rect x="42" y="44" width="18" height="18" rx="3"/><rect x="66" y="44" width="18" height="18" rx="3"/></g>
+      <rect x="90" y="44" width="14" height="36" rx="3" fill="${CLOUD}"/>
+      <path d="M8 72 L112 72" stroke="${CORAL}" stroke-width="5"/>
+      <circle cx="32" cy="94" r="11" fill="${INK}" fill-opacity="0.75"/><circle cx="88" cy="94" r="11" fill="${INK}" fill-opacity="0.75"/>`,
+
+    lunchbox: `
+      <path d="M44 34 Q44 20 60 20 Q76 20 76 34" fill="none" stroke="${INK}" stroke-opacity="0.5" stroke-width="5"/>
+      <rect x="14" y="34" width="92" height="70" rx="12" fill="${MINT}" ${LINE}/>
+      <path d="M14 56 L106 56" stroke="${INK}" stroke-opacity="0.2" stroke-width="3"/>
+      <rect x="50" y="50" width="20" height="12" rx="4" fill="${SUN}" ${LINE}/>`,
+
+    present: `
+      <rect x="16" y="50" width="88" height="58" rx="6" fill="${CORAL}" ${LINE}/>
+      <rect x="10" y="36" width="100" height="18" rx="5" fill="${CORAL}" ${LINE}/>
+      <path d="M60 36 L60 108" stroke="${SUN}" stroke-width="10"/>
+      <path d="M60 36 Q40 10 34 28 Q32 38 60 36 Q88 38 86 28 Q80 10 60 36 Z" fill="${SUN}" ${LINE}/>`,
+
+    pencils: `
+      <g transform="rotate(-20 60 60)">
+        <rect x="24" y="22" width="16" height="70" fill="${SUN}" ${LINE}/><path d="M24 92 L32 108 L40 92 Z" fill="${WOOD}"/>
+        <rect x="52" y="18" width="16" height="74" fill="${SKY}" ${LINE}/><path d="M52 92 L60 108 L68 92 Z" fill="${WOOD}"/>
+        <rect x="80" y="22" width="16" height="70" fill="${CORAL}" ${LINE}/><path d="M80 92 L88 108 L96 92 Z" fill="${WOOD}"/>
+      </g>`,
+
+    'cake-sale': `
+      <rect x="10" y="66" width="100" height="12" rx="4" fill="${WOOD}" ${LINE}/>
+      <path d="M18 78 L18 110 M102 78 L102 110" stroke="${WOOD}" stroke-width="7"/>
+      <path d="M24 64 L28 46 L48 46 L52 64 Z" fill="${SKY}" ${LINE}/><path d="M24 48 Q38 28 52 48 Z" fill="${PINK}" ${LINE}/>
+      <rect x="60" y="40" width="40" height="24" rx="5" fill="${PINK}" ${LINE}/>
+      <path d="M60 50 L100 50" stroke="${CORAL}" stroke-width="5"/>`,
+
+    'dog-walk': `
+      <path d="M14 30 Q40 20 56 60" fill="none" stroke="${CORAL}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="14" cy="30" r="7" fill="${CORAL}"/>
+      <ellipse cx="74" cy="80" rx="30" ry="18" fill="${WOOD}" ${LINE}/>
+      <circle cx="56" cy="62" r="15" fill="${WOOD}" ${LINE}/>
+      <ellipse cx="48" cy="54" rx="6" ry="10" fill="#c98a4a"/>
+      <circle cx="52" cy="62" r="2.5" fill="${INK}"/>
+      <path d="M52 96 L52 108 M92 96 L92 108" stroke="${WOOD}" stroke-width="8" stroke-linecap="round"/>`,
+
+    fair: `
+      <circle cx="60" cy="52" r="40" fill="none" stroke="${LILAC}" stroke-width="6"/>
+      <path d="M60 12 L60 92 M20 52 L100 52 M32 24 L88 80 M88 24 L32 80" stroke="${LILAC}" stroke-width="3"/>
+      <g fill="${CORAL}" stroke="#24324a" stroke-opacity="0.2" stroke-width="2"><circle cx="60" cy="12" r="7"/><circle cx="100" cy="52" r="7"/><circle cx="20" cy="52" r="7"/><circle cx="88" cy="80" r="7"/><circle cx="32" cy="80" r="7"/></g>
+      <path d="M60 52 L40 110 M60 52 L80 110" stroke="${INK}" stroke-opacity="0.5" stroke-width="4"/>`,
+
+    cinema: `
+      <path d="M26 40 L94 40 L84 110 L36 110 Z" fill="${CLOUD}" ${LINE}/>
+      <path d="M42 40 L46 110 M60 40 L60 110 M78 40 L74 110" stroke="${CORAL}" stroke-width="7"/>
+      <g fill="#fff3d6" stroke="#24324a" stroke-opacity="0.2" stroke-width="2"><circle cx="38" cy="34" r="10"/><circle cx="56" cy="28" r="11"/><circle cx="74" cy="32" r="10"/><circle cx="88" cy="38" r="8"/></g>`,
+
+    bowling: `
+      <path d="M30 18 Q22 18 24 34 Q26 44 22 56 Q16 80 24 104 L44 104 Q52 80 46 56 Q42 44 44 34 Q46 18 38 18 Z" fill="${CLOUD}" ${LINE}/>
+      <path d="M24 40 L44 40 M23 48 L45 48" stroke="${CORAL}" stroke-width="4"/>
+      <circle cx="80" cy="80" r="26" fill="${SKY}" ${LINE}/>
+      <g fill="${INK}" fill-opacity="0.6"><circle cx="72" cy="70" r="4"/><circle cx="84" cy="68" r="4"/><circle cx="80" cy="80" r="4"/></g>`,
+  };
+
+  // Every drawing, with what it is and its name for speech and screens
+  const ITEMS = [
+    { id: 'sticker-album', kind: 'goal', name: 'a sticker album' },
+    { id: 'football', kind: 'goal', name: 'a football' },
+    { id: 'kite', kind: 'goal', name: 'a kite' },
+    { id: 'book-set', kind: 'goal', name: 'a book set' },
+    { id: 'art-set', kind: 'goal', name: 'an art set' },
+    { id: 'headphones', kind: 'goal', name: 'headphones' },
+    { id: 'roller-skates', kind: 'goal', name: 'roller skates' },
+    { id: 'robot', kind: 'goal', name: 'a toy robot' },
+    { id: 'rc-car', kind: 'goal', name: 'a remote-control car' },
+    { id: 'skateboard', kind: 'goal', name: 'a skateboard' },
+    { id: 'scooter', kind: 'goal', name: 'a scooter' },
+    { id: 'helmet', kind: 'goal', name: 'a bike helmet and lights' },
+    { id: 'sweets', kind: 'treat', name: 'Sweets' },
+    { id: 'cupcake', kind: 'treat', name: 'A cupcake' },
+    { id: 'ice-cream', kind: 'treat', name: 'An ice cream' },
+    { id: 'hot-chocolate', kind: 'treat', name: 'A hot chocolate' },
+    { id: 'comic', kind: 'treat', name: 'A comic' },
+    { id: 'stickers', kind: 'treat', name: 'Stickers' },
+    { id: 'slime', kind: 'treat', name: 'Slime' },
+    { id: 'toy-car', kind: 'treat', name: 'A toy car' },
+    { id: 'birthday-money', kind: 'event', name: 'birthday money' },
+    { id: 'coat-pocket', kind: 'event', name: 'money in a coat pocket' },
+    { id: 'old-toys', kind: 'event', name: 'old toys' },
+    { id: 'car-wash', kind: 'event', name: 'washing a car' },
+    { id: 'raffle', kind: 'event', name: 'a raffle ticket' },
+    { id: 'water-bottle', kind: 'event', name: 'a water bottle' },
+    { id: 'pencil-case', kind: 'event', name: 'a pencil case' },
+    { id: 'mug', kind: 'event', name: 'a mug' },
+    { id: 'bike-tyre', kind: 'event', name: 'a bike tyre' },
+    { id: 'goggles', kind: 'event', name: 'swimming goggles' },
+    { id: 'school-trip', kind: 'event', name: 'the school trip' },
+    { id: 'lunchbox', kind: 'event', name: 'a lunchbox' },
+    { id: 'present', kind: 'event', name: 'a present' },
+    { id: 'pencils', kind: 'event', name: 'pencils' },
+    { id: 'cake-sale', kind: 'event', name: 'the cake sale' },
+    { id: 'dog-walk', kind: 'event', name: "walking Grandma's dog" },
+    { id: 'fair', kind: 'event', name: 'the fair' },
+    { id: 'cinema', kind: 'event', name: 'the cinema' },
+    { id: 'bowling', kind: 'event', name: 'bowling' },
+  ];
+
+  const byId = (id) => ITEMS.find((item) => item.id === id);
+  const ofKind = (kind) => ITEMS.filter((item) => item.kind === kind);
+
+  function svg(id) {
+    return `<svg class="pm-art-svg" viewBox="0 0 120 120" role="img" aria-label="${byId(id).name}">${DRAWINGS[id]}</svg>`;
+  }
+
+  // A drawing at any size: the element fills whatever box the stylesheet gives it.
+  const element = (id, className = 'pm-art') => el('span', { class: className, 'data-art': id, html: svg(id) });
+  const mini = (id) => element(id, 'pm-art-mini');
+
+  // ---- The purse and the goal jar ----
+
+  const PURSE = `<svg class="pm-purse-svg" viewBox="0 0 120 100" aria-hidden="true">
+    <path d="M46 22 Q46 8 60 8 Q74 8 74 22" fill="none" stroke="${GOLD}" stroke-width="5"/>
+    <path d="M12 46 Q12 20 40 20 L80 20 Q108 20 108 46 L108 76 Q108 94 90 94 L30 94 Q12 94 12 76 Z" fill="${CORAL}" ${LINE}/>
+    <path d="M12 46 L108 46" stroke="#e8806c" stroke-width="4"/>
+    <circle cx="52" cy="46" r="6" fill="${GOLD}" ${LINE}/><circle cx="68" cy="46" r="6" fill="${GOLD}" ${LINE}/>
+  </svg>`;
+
+  // The coins inside the jar, stacked in rows from the bottom up to `full`
+  // (0 to 1). Copper, silver and gold in turn, so the jar looks like a mix.
+  function jarCoins(full) {
+    const top = 136;
+    const height = Math.round(Math.max(0, Math.min(1, full)) * 92);
+    const colours = [GOLD, SILVER, COPPER];
+    let coins = '';
+    for (let row = 0; row * 11 < height; row++) {
+      const y = top - row * 11;
+      const shift = row % 2 ? 7 : 0;
+      for (let col = 0; col < 5; col++) {
+        coins += `<ellipse cx="${30 + shift + col * 15}" cy="${y}" rx="8" ry="5" fill="${colours[(row + col) % 3]}" stroke="#24324a" stroke-opacity="0.2" stroke-width="1.5"/>`;
+      }
+    }
+    return coins;
+  }
+
+  // The goal jar, `full` from 0 (empty) to 1 (enough for the goal), with the
+  // goal's picture on its label. The glass is drawn over the coins.
+  function jar(goalId, full) {
+    const label = goalId
+      ? `<rect x="34" y="70" width="52" height="40" rx="8" fill="#ffffff" fill-opacity="0.9" stroke="#24324a" stroke-opacity="0.18" stroke-width="2"/>
+         <svg x="40" y="70" width="40" height="40" viewBox="0 0 120 120">${DRAWINGS[goalId]}</svg>`
+      : '';
+    return `<svg class="pm-jar-svg" viewBox="0 0 120 150" aria-hidden="true">
+      <defs><clipPath id="pm-jar-inside"><path d="M24 44 L96 44 Q104 44 104 56 L104 132 Q104 144 92 144 L28 144 Q16 144 16 132 L16 56 Q16 44 24 44 Z"/></clipPath></defs>
+      <rect x="30" y="10" width="60" height="18" rx="6" fill="${WOOD}" ${LINE}/>
+      <path d="M36 28 L84 28 L84 40 Q104 40 104 56 L104 132 Q104 144 92 144 L28 144 Q16 144 16 132 L16 56 Q16 40 36 40 Z" fill="#e9f5fb" ${LINE}/>
+      <g clip-path="url(#pm-jar-inside)">${jarCoins(full)}</g>
+      <path d="M26 58 L26 120" stroke="#ffffff" stroke-opacity="0.8" stroke-width="5" stroke-linecap="round"/>
+      ${label}
+    </svg>`;
+  }
+
+  KMG.pm.art = { ALL: ITEMS, byId, ofKind, svg, element, mini, jar, PURSE };
+})(window.KMG);
+
+// The child whose pocket money month it is: a simple, friendly character seen
+// from the chest up, drawn as SVG on a 200 by 200 canvas from a dozen rounded
+// shapes, the same family as Party Planner's birthday child, in everyday
+// clothes (a striped top) with no party hat or badge. Original and unbranded,
+// with no name: it is "my pocket money".
+//
+// Looks change from month to month (picked by the seeded random numbers), so
+// every child can see someone like them: the shared skin tones and hair
+// colours (src/shared/looks.js) and 3 hair shapes. Four expressions, all
+// friendly, never cross or sad:
+//   idle      a smile
+//   talking   the mouth opens and closes while a line is spoken
+//   excited   happy-arc eyes, a big grin and a small jump: good news, a goal reached
+//   thinking  a head tilt, one raised eyebrow and a finger to the chin: a bad
+//             surprise, or "Nearly!"
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { SKINS, HAIR_COLOURS } = KMG.looks;
+
+  const INK = '#24324a';
+  const LINE = 'stroke="#24324a" stroke-opacity="0.2" stroke-width="3" stroke-linejoin="round"';
+  const MOUTH = '#8a3b44';
+  // Top and stripe colours
+  const TOPS = [['#9cc9f5', '#f4f7fb'], ['#8fd3c7', '#ffd56b'], ['#cfc8f2', '#ff9d8a'], ['#ffb35c', '#f4f7fb']];
+
+  const HAIR_SHAPES = ['short', 'ponytail', 'curly'];
+  const EXPRESSIONS = ['idle', 'talking', 'excited', 'thinking'];
+
+  // One look for a month, from the game's seeded random numbers.
+  function lookFor(rng) {
+    return {
+      skin: rng.pick(SKINS),
+      hair: rng.pick(HAIR_COLOURS),
+      shape: rng.pick(HAIR_SHAPES),
+      top: rng.int(TOPS.length),
+    };
+  }
+
+  // Hair behind the head (a ponytail) and in front of it (the fringe or curls)
+  function hairBehind(look) {
+    if (look.shape !== 'ponytail') return '';
+    return `<path d="M140 70 Q172 74 166 120 Q160 104 146 100 Z" fill="${look.hair}" ${LINE}/>`;
+  }
+
+  function hairFront(look) {
+    if (look.shape === 'curly') {
+      const curls = [[56, 76, 13], [60, 56, 14], [78, 44, 15], [100, 40, 15], [122, 44, 15], [140, 56, 14], [144, 76, 13]];
+      return curls.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${look.hair}"/>`).join('');
+    }
+    // A side parting for short hair; swept back for a ponytail
+    return look.shape === 'ponytail'
+      ? `<path d="M52 86 Q48 38 100 36 Q152 38 148 86 Q140 58 100 54 Q66 56 52 86 Z" fill="${look.hair}"/>`
+      : `<path d="M52 86 Q48 38 100 36 Q152 38 148 86 Q142 60 118 56 Q96 64 82 54 Q60 60 52 86 Z" fill="${look.hair}"/>`;
+  }
+
+  function face(expression) {
+    const brows = expression === 'thinking'
+      ? `<path d="M76 70 Q84 66 92 68 M108 64 Q116 58 124 64" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`
+      : `<path d="M76 74 Q84 69 92 72 M108 72 Q116 69 124 74" fill="none" stroke="${INK}" stroke-opacity="0.65" stroke-width="3.5" stroke-linecap="round"/>`;
+    const eyes = expression === 'excited'
+      ? `<path d="M77 90 Q84 82 91 90 M109 90 Q116 82 123 90" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`
+      : `<circle cx="84" cy="88" r="5.5" fill="${INK}"/><circle cx="116" cy="88" r="5.5" fill="${INK}"/>`;
+    const smile = `<path d="M86 106 Q100 117 114 106" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    let mouth = smile;
+    if (expression === 'excited') {
+      mouth = `<path d="M82 103 Q100 128 118 103 Z" fill="${MOUTH}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+    } else if (expression === 'talking') {
+      // Two mouths; the stylesheet shows one, then the other.
+      mouth = `<g class="pm-mouth-shut">${smile}</g>` +
+        `<g class="pm-mouth-open"><ellipse cx="100" cy="109" rx="10" ry="8" fill="${MOUTH}" stroke="${INK}" stroke-width="3"/></g>`;
+    } else if (expression === 'thinking') {
+      // Pursed to one side: wondering, never worried.
+      mouth = `<path d="M96 110 Q106 112 114 106" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+    }
+    const cheeks = `<ellipse cx="70" cy="104" rx="8" ry="5" fill="#ff9d8a" opacity="0.45"/><ellipse cx="130" cy="104" rx="8" ry="5" fill="#ff9d8a" opacity="0.45"/>`;
+    return brows + eyes + cheeks + mouth;
+  }
+
+  function svg(look, expression) {
+    const [top, stripe] = TOPS[look.top];
+    // Thinking: a hand comes up, one finger at the chin.
+    const hand = expression === 'thinking'
+      ? `<path d="M128 200 L128 150" stroke="${top}" stroke-width="22"/>
+         <circle cx="128" cy="150" r="11" fill="${top}"/>
+         <circle cx="124" cy="132" r="13" fill="${look.skin}" ${LINE}/>
+         <path d="M118 124 L112 118" stroke="${look.skin}" stroke-width="7" stroke-linecap="round"/>`
+      : '';
+    return `<svg class="pm-child-svg" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M34 200 Q34 146 100 142 Q166 146 166 200 Z" fill="${top}" ${LINE}/>
+      <path d="M40 172 L160 172 M36 188 L164 188" stroke="${stripe}" stroke-width="7"/>
+      <g class="pm-child-head">
+        <rect x="88" y="120" width="24" height="26" rx="8" fill="${look.skin}"/>
+        ${hairBehind(look)}
+        <circle cx="52" cy="92" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="148" cy="92" r="9" fill="${look.skin}" ${LINE}/>
+        <circle cx="100" cy="88" r="48" fill="${look.skin}" ${LINE}/>
+        ${hairFront(look)}
+        ${face(expression)}
+      </g>
+      ${hand}
+    </svg>`;
+  }
+
+  // The child on screen. setExpression swaps the face, and the stylesheet
+  // animates by expression (.pm-child[data-expression="..."]).
+  function element(look, expression = 'idle') {
+    const node = el('div', {
+      class: 'pm-child',
+      'data-expression': expression,
+      'data-look': `${look.shape}-${SKINS.indexOf(look.skin)}-${HAIR_COLOURS.indexOf(look.hair)}`,
+      html: svg(look, expression),
+    });
+    return {
+      node,
+      setExpression(name) {
+        node.dataset.expression = name;
+        node.innerHTML = svg(look, name);
+      },
+    };
+  }
+
+  KMG.pm.child = { lookFor, element, svg, EXPRESSIONS, HAIR_SHAPES };
+})(window.KMG);
+
+// What each Pocket Money Month level asks for, and the month itself. Plain
+// logic with no drawing: `build` makes one pretend month from a level and the
+// seeded random numbers. Amounts are whole pence.
+//
+// A month:
+//   { level, pocket, look, goals: [{ item, price }] (cheapest first), weeks }
+// Each of its 4 weeks:
+//   { n, pocket, surprise, need, saturday, treats }
+//   surprise   null, or { id, kind: 'good' | 'bad', amount }: a good one adds
+//              to the purse, a bad one is paid from it, before the shop opens
+//   need       level 4: null, or { id, plain, fancy }: one must be bought,
+//              before the shop opens; `fancy` is null when there is one version
+//   saturday   level 5: { job: { id, amount }, outing: { id, amount } }, one
+//              of them or neither, before the shop opens
+//   treats     the shop: [{ key, item, price }], 2 or 3, each bought at most once
+//
+// A child's choices for a week: { need: 'plain' | 'fancy', saturday: 'job' |
+// 'outing' | null, treats: [keys] }. `simulate` plays a month with them.
+//
+// Number rules (the spec's), checked by `build` for every month it makes:
+//   - saving everything (plain needs, every job) reaches every goal offered
+//   - buying every treat you can afford, week by week, reaches no goal
+//   - whatever must be paid always can be: a bad surprise or a need's plain
+//     version is never more than its week's money, and never two in one week
+//   - the dearest goal is within one week's pocket money of saving
+//     everything, so even it leaves room for a treat or two at most
+//   - the goals are at least half a week's pocket money apart
+//   - level 5: the cheapest goal is reachable without any job
+(function (KMG) {
+  'use strict';
+
+  const { money, pm } = KMG;
+
+  const WEEKS = 4;
+
+  const LEVELS = [
+    { id: 1, kind: 'month', text: 'Saving up', spoken: 'Save up for something special!' },
+    { id: 2, kind: 'month', text: 'Pounds and pence', spoken: 'Save up, and keep an eye on the pence!' },
+    { id: 3, kind: 'month', text: 'Surprises', spoken: 'Save up, and watch out for surprises!' },
+    { id: 4, kind: 'month', text: 'Needs and wants', spoken: 'Needs first, then save up!' },
+    { id: 5, kind: 'month', text: 'The big goal', spoken: 'Save up for something big!' },
+  ];
+  const levelById = (id) => LEVELS.find((level) => level.id === id);
+
+  // Each level's month:
+  //   pocket     pocket money a week
+  //   step       prices and surprises are multiples of this
+  //   goalStep   goal prices are multiples of this
+  //   goalRange  the cheapest and dearest a goal may cost
+  //   good, bad  how many good and bad surprises
+  //   needs      how many needs (level 4)
+  //   saturday   a job or an outing each week (level 5)
+  //   treats     treats in the shop each week
+  const CONFIG = {
+    1: { pocket: 200, step: 100, goalStep: 100, goalRange: [400, 1000], good: 1, bad: 0, needs: 0, saturday: false, treats: 2 },
+    2: { pocket: 350, step: 5, goalStep: 20, goalRange: [800, 1600], good: 1, bad: 0, needs: 0, saturday: false, treats: 3 },
+    3: { pocket: 400, step: 10, goalStep: 50, goalRange: [1000, 2000], good: 1, bad: 1, needs: 0, saturday: false, treats: 3 },
+    4: { pocket: 500, step: 10, goalStep: 50, goalRange: [800, 1800], good: 1, bad: 1, needs: 2, saturday: false, treats: 3 },
+    5: { pocket: 600, step: 10, goalStep: 100, goalRange: [1800, 4000], good: 0, bad: 0, needs: 0, saturday: true, treats: 3 },
+  };
+
+  // What each goal and treat costs, roughly, so a price always suits its
+  // picture: a football is never £30, a scooter never £5
+  const GOAL_PRICES = {
+    'sticker-album': [400, 900],
+    football: [500, 1200],
+    kite: [600, 1500],
+    'book-set': [800, 2000],
+    'art-set': [800, 2000],
+    headphones: [1000, 2500],
+    'roller-skates': [1200, 3000],
+    robot: [1200, 2500],
+    'rc-car': [1200, 3000],
+    skateboard: [1300, 3500],
+    scooter: [1500, 3500],
+    helmet: [2000, 4000],
+  };
+  const TREAT_PRICES = {
+    sweets: [50, 150],
+    cupcake: [80, 200],
+    'ice-cream': [100, 250],
+    'hot-chocolate': [100, 250],
+    comic: [150, 350],
+    stickers: [80, 200],
+    slime: [150, 300],
+    'toy-car': [200, 400],
+  };
+
+  // The surprises, needs, jobs and outings, each with its price range and its
+  // words: fixed words around one amount, so each piece can be a voice clip.
+  const GOOD = [
+    { id: 'birthday-money', range: [200, 600], before: 'Granny sent you', after: 'for your birthday!' },
+    { id: 'coat-pocket', range: [50, 200], before: 'You found', after: 'in your coat pocket!' },
+    { id: 'old-toys', range: [100, 400], before: 'You sold your old toys for', after: '!' },
+    { id: 'car-wash', range: [100, 400], before: 'Grandad gave you', after: 'for helping wash his car!' },
+    { id: 'raffle', range: [100, 500], before: 'You won', after: 'in the school raffle!' },
+  ];
+  const BAD = [
+    { id: 'water-bottle', range: [150, 400], before: 'Oh no, we lost our water bottle. A new one is', after: '.' },
+    { id: 'pencil-case', range: [100, 350], before: 'Oh no, our pencil case broke. A new one is', after: '.' },
+    { id: 'mug', range: [100, 300], before: "Oops, we broke Grandma's mug. A new one is", after: '.' },
+    { id: 'bike-tyre', range: [150, 400], before: 'Oh no, a flat bike tyre! A repair kit is', after: '.' },
+  ];
+  // `extra` is how much more the fancy version costs; no `extra`, one version
+  const NEEDS = [
+    { id: 'goggles', range: [200, 350], extra: [150, 300], before: 'We need swimming goggles:', fancy: 'or the shiny ones for', plainName: 'Swimming goggles', fancyName: 'Shiny goggles' },
+    { id: 'lunchbox', range: [250, 400], extra: [150, 300], before: 'We need a new lunchbox:', fancy: 'or the one that keeps food cold for', plainName: 'A lunchbox', fancyName: 'A cool lunchbox' },
+    { id: 'present', range: [200, 400], extra: [200, 400], before: "It's our friend's party! A present for", fancy: 'or a bigger one for', plainName: 'A small present', fancyName: 'A bigger present' },
+    { id: 'pencils', range: [100, 250], extra: [100, 250], before: 'We need new pencils:', fancy: 'or the glitter ones for', plainName: 'Pencils', fancyName: 'Glitter pencils' },
+    { id: 'school-trip', range: [200, 500], extra: null, before: 'The school trip is this week. It costs', fancy: null, plainName: 'The school trip', fancyName: null },
+  ];
+  const JOBS = [
+    { id: 'cake-sale', range: [150, 300], before: 'Help at the cake sale: earn', name: 'Help at the cake sale' },
+    { id: 'dog-walk', range: [150, 300], before: "Walk Grandma's dog: earn", name: "Walk Grandma's dog" },
+    { id: 'car-wash', range: [200, 300], before: 'Wash the car: earn', name: 'Wash the car' },
+  ];
+  const OUTINGS = [
+    { id: 'fair', range: [250, 450], before: 'Go to the fair:', name: 'Go to the fair' },
+    { id: 'cinema', range: [300, 500], before: 'Go to the cinema:', name: 'Go to the cinema' },
+    { id: 'bowling', range: [250, 450], before: 'Go bowling:', name: 'Go bowling' },
+  ];
+  const byIdIn = (list, id) => list.find((entry) => entry.id === id);
+
+  // ---- Making a month ----
+
+  // A random multiple of `step` from `low` to `high`, or null if there is none
+  function priceIn(rng, [low, high], step) {
+    const first = Math.ceil(low / step);
+    const last = Math.floor(high / step);
+    return last < first ? null : (first + rng.int(last - first + 1)) * step;
+  }
+
+  // The weeks, with their surprises, needs, Saturdays and shops. Every event
+  // gets a week of its own, so no week brings two things to pay.
+  function makeWeeks(rng, config) {
+    const weeks = Array.from({ length: WEEKS }, (_, i) => ({
+      n: i + 1, pocket: config.pocket, surprise: null, need: null, saturday: null, treats: [],
+    }));
+    const free = rng.shuffle(weeks.map((week) => week.n - 1));
+    const events = [
+      ...Array(config.good).fill('good'),
+      ...Array(config.bad).fill('bad'),
+      ...Array(config.needs).fill('need'),
+    ];
+    for (const kind of events) {
+      const week = weeks[free.pop()];
+      if (kind === 'good') {
+        const kindOf = rng.pick(GOOD);
+        week.surprise = { id: kindOf.id, kind: 'good', amount: priceIn(rng, kindOf.range, config.step) };
+      } else if (kind === 'bad') {
+        // Never more than the week's pocket money, so it can always be paid
+        const kindOf = rng.pick(BAD);
+        const range = [kindOf.range[0], Math.min(kindOf.range[1], config.pocket)];
+        week.surprise = { id: kindOf.id, kind: 'bad', amount: priceIn(rng, range, config.step) };
+      } else {
+        // A different need each time; the plain version always fits the week
+        const used = weeks.filter((w) => w.need).map((w) => w.need.id);
+        const kindOf = rng.pick(NEEDS.filter((entry) => !used.includes(entry.id)));
+        const plain = priceIn(rng, [kindOf.range[0], Math.min(kindOf.range[1], config.pocket)], config.step);
+        const fancy = kindOf.extra ? plain + priceIn(rng, kindOf.extra, config.step) : null;
+        week.need = { id: kindOf.id, plain, fancy };
+      }
+    }
+    if (config.saturday) {
+      weeks.forEach((week) => {
+        const job = rng.pick(JOBS);
+        const outing = rng.pick(OUTINGS);
+        week.saturday = {
+          job: { id: job.id, amount: priceIn(rng, job.range, config.step) },
+          outing: { id: outing.id, amount: priceIn(rng, outing.range, config.step) },
+        };
+      });
+    }
+    weeks.forEach((week) => {
+      const items = rng.shuffle(Object.keys(TREAT_PRICES)).slice(0, config.treats);
+      week.treats = items.map((item, i) => ({
+        key: `w${week.n}-${i}`,
+        item,
+        price: priceIn(rng, TREAT_PRICES[item], config.step),
+      }));
+    });
+    return weeks;
+  }
+
+  // ---- Playing a month ----
+
+  // A week's money before any choice: the pocket money and its surprise
+  function weekStart(week) {
+    if (!week.surprise) return week.pocket;
+    return week.pocket + (week.surprise.kind === 'good' ? week.surprise.amount : -week.surprise.amount);
+  }
+
+  // A week's money before the shop: pocket money, a surprise, a need, a
+  // Saturday. null if a choice cannot be paid for.
+  function beforeShop(week, choice) {
+    let purse = week.pocket;
+    if (week.surprise) purse += week.surprise.kind === 'good' ? week.surprise.amount : -week.surprise.amount;
+    if (week.need) purse -= choice.need === 'fancy' && week.need.fancy ? week.need.fancy : week.need.plain;
+    if (week.saturday && choice.saturday === 'job') purse += week.saturday.job.amount;
+    if (week.saturday && choice.saturday === 'outing') purse -= week.saturday.outing.amount;
+    return purse >= 0 ? purse : null;
+  }
+
+  // Plays a month with the child's choices, one per week. The jar gets what is
+  // left in the purse each week. `ok` is false if a choice was never
+  // affordable, which the game's buttons never allow.
+  function simulate(month, choices) {
+    let jar = 0;
+    let treats = 0;
+    let ok = true;
+    month.weeks.forEach((week, i) => {
+      const choice = Object.assign({ need: 'plain', saturday: null, treats: [] }, choices[i]);
+      let purse = beforeShop(week, choice);
+      if (purse === null) {
+        ok = false;
+        return;
+      }
+      choice.treats.forEach((key) => {
+        const treat = week.treats.find((t) => t.key === key);
+        if (!treat || treat.price > purse) {
+          ok = false;
+          return;
+        }
+        purse -= treat.price;
+        treats += treat.price;
+      });
+      jar += purse;
+    });
+    return { jar, treats, ok };
+  }
+
+  // Saving everything: plain needs, no treats, and every job if `jobs`
+  const saveAll = (month, { jobs = true } = {}) => month.weeks.map(() => ({ need: 'plain', saturday: jobs ? 'job' : null, treats: [] }));
+
+  // Spending all you can: the fancy need and the outing when they fit, then
+  // the dearest treats first while the purse has enough
+  function spendAll(month) {
+    return month.weeks.map((week) => {
+      const choice = { need: 'plain', saturday: null, treats: [] };
+      if (week.need && week.need.fancy && beforeShop(week, { need: 'fancy' }) !== null) choice.need = 'fancy';
+      if (week.saturday && beforeShop(week, Object.assign({}, choice, { saturday: 'outing' })) !== null) choice.saturday = 'outing';
+      let purse = beforeShop(week, choice);
+      [...week.treats].sort((a, b) => b.price - a.price).forEach((treat) => {
+        if (treat.price <= purse) {
+          purse -= treat.price;
+          choice.treats.push(treat.key);
+        }
+      });
+      return choice;
+    });
+  }
+
+  // Stars, from the jar at the end against the goal: 3 for reaching it, 2 for
+  // being short by no more than a week's pocket money, 1 otherwise
+  function starsFor(month, jar, goalPrice) {
+    if (jar >= goalPrice) return 3;
+    return goalPrice - jar <= month.pocket ? 2 : 1;
+  }
+
+  // Three goal prices for the month, cheapest first, by the number rules, and
+  // a goal for each that suits its price. null if this month has no room.
+  function makeGoals(rng, config, weeks) {
+    const draft = { pocket: config.pocket, weeks };
+    const most = simulate(draft, saveAll(draft)).jar;
+    const least = simulate(draft, spendAll(draft)).jar;
+    const noJobs = simulate(draft, saveAll(draft, { jobs: false })).jar;
+    const s = config.goalStep;
+    const low = Math.max(config.goalRange[0], Math.floor(least / s) * s + s);
+    const high = Math.min(config.goalRange[1], Math.floor(most / s) * s);
+    // The dearest: no further than a week's pocket money below saving everything
+    const top = priceIn(rng, [Math.max(low, most - config.pocket), high], s);
+    if (top === null) return null;
+    // Goals at least half a week's pocket money apart, so which one to save
+    // for is a real choice (£8 and £8.50 would hardly be)
+    const gap = Math.max(s, Math.round(config.pocket / 2 / s) * s);
+    // The cheapest: two gaps below the dearest; at level 5, reachable without jobs
+    const bottomHigh = Math.min(top - 2 * gap, config.saturday ? Math.floor(noJobs / s) * s : Infinity);
+    const bottom = priceIn(rng, [low, bottomHigh], s);
+    if (bottom === null) return null;
+    const middle = priceIn(rng, [bottom + gap, top - gap], s);
+    const prices = [bottom, middle, top];
+
+    const used = [];
+    const goals = [];
+    for (const price of prices) {
+      const fits = Object.keys(GOAL_PRICES)
+        .filter((item) => !used.includes(item) && GOAL_PRICES[item][0] <= price && price <= GOAL_PRICES[item][1]);
+      if (!fits.length) return null;
+      const item = rng.pick(fits);
+      used.push(item);
+      goals.push({ item, price });
+    }
+    return goals;
+  }
+
+  function month(levelId, rng) {
+    const config = CONFIG[levelId];
+    for (let attempt = 0; attempt < 500; attempt++) {
+      const look = pm.child.lookFor(rng);
+      const weeks = makeWeeks(rng, config);
+      // Distinct treat prices on each shelf, so "which is dearer" always has an answer
+      if (weeks.some((week) => new Set(week.treats.map((t) => t.price)).size !== week.treats.length)) continue;
+      const goals = makeGoals(rng, config, weeks);
+      if (goals) return { level: levelId, pocket: config.pocket, look, goals, weeks };
+    }
+    throw new Error(`No month found for level ${levelId}`);
+  }
+
+  // One round is one month; the play screen's pips are its weeks.
+  function build(levelId, { rng }) {
+    return { kind: 'month', month: month(levelId, rng), total: WEEKS };
+  }
+
+  // ---- Words: on screen and spoken ----
+
+  const wordsOf = (pence) => money.words(pence);
+  const capital = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+
+  // Fixed words around one amount: "Granny sent you £2 for your birthday!",
+  // with no space before a closing "!" or "."
+  function around(before, pence, after, write) {
+    const middle = `${before} ${write(pence)}`;
+    if (!after) return middle;
+    return /^[.!?,]/.test(after) ? `${middle}${after}` : `${middle} ${after}`;
+  }
+  const both = (before, pence, after) => ({
+    text: around(before, pence, after, money.format),
+    spoken: around(before, pence, after, wordsOf),
+  });
+
+  const goalName = (goal) => pm.art.byId(goal.item).name;
+
+  // "Week 1! Here's your £2 pocket money."
+  const weekLine = (week) => ({
+    text: `Week ${week.n}! Here's your ${money.format(week.pocket)} pocket money.`,
+    spoken: `Week ${money.number(week.n)}! Here's your ${wordsOf(week.pocket)} pocket money.`,
+  });
+
+  function surpriseLine(surprise) {
+    const kindOf = byIdIn(surprise.kind === 'good' ? GOOD : BAD, surprise.id);
+    return both(kindOf.before, surprise.amount, kindOf.after);
+  }
+
+  // "We need swimming goggles: £3, or the shiny ones for £5."
+  function needLine(need) {
+    const kindOf = byIdIn(NEEDS, need.id);
+    if (!need.fancy) return both(kindOf.before, need.plain, '.');
+    const write = (format) => `${kindOf.before} ${format(need.plain)}, ${kindOf.fancy} ${format(need.fancy)}.`;
+    return { text: write(money.format), spoken: write(wordsOf) };
+  }
+
+  const SATURDAY = { text: "It's Saturday! Do a job, or go out?", spoken: "It's Saturday! Do a job, or go out?" };
+  const AT_HOME = { text: 'A quiet Saturday at home.', spoken: 'A quiet Saturday at home.' };
+
+  // A need's versions as cards: its name, price and what its tag says
+  // ("Shiny goggles, five pounds"). The school trip has one version.
+  function needVersions(need) {
+    const kindOf = byIdIn(NEEDS, need.id);
+    const versions = [{ version: 'plain', name: kindOf.plainName, price: need.plain }];
+    if (need.fancy) versions.push({ version: 'fancy', name: kindOf.fancyName, price: need.fancy });
+    return versions.map((v) => Object.assign(v, { words: `${v.name}, ${wordsOf(v.price)}` }));
+  }
+  const jobName = (job) => byIdIn(JOBS, job.id).name;
+  const outingName = (outing) => byIdIn(OUTINGS, outing.id).name;
+  // Short names for a phone on its side, where a card has room for a word or two
+  const SHORT_NAMES = {
+    'cake-sale': 'Cake sale', 'dog-walk': 'Dog walk', 'car-wash': 'Car wash',
+    fair: 'The fair', cinema: 'Cinema', bowling: 'Bowling',
+  };
+  const shortName = (job) => SHORT_NAMES[job.id];
+  // A Saturday card: "Help at the cake sale: earn £2", "Go to the fair: £3"
+  const jobLine = (job) => both(byIdIn(JOBS, job.id).before, job.amount, '');
+  const outingLine = (outing) => both(byIdIn(OUTINGS, outing.id).before, outing.amount, '');
+
+  // A price tag, as said when tapped: "Sweets, one pound", "A football, seven pounds"
+  const treatWords = (treat) => `${pm.art.byId(treat.item).name}, ${wordsOf(treat.price)}`;
+  const goalWords = (goal) => `${capital(goalName(goal))}, ${wordsOf(goal.price)}`;
+
+  const CHOOSE_GOAL = { text: 'What shall we save for?', spoken: 'What shall we save for?' };
+  const NOT_ENOUGH = { text: 'Not enough in the purse for that.', spoken: 'Not enough in the purse for that.' };
+  const INTO_JAR = { text: 'Into the jar!', spoken: 'Into the jar!' };
+  // "That's £4 in the jar.", or, with everything spent so far, said plainly
+  const EMPTY_JAR = { text: 'Nothing in the jar yet.', spoken: 'Nothing in the jar yet.' };
+  const jarLine = (jar) => (jar === 0 ? EMPTY_JAR : both("That's", jar, 'in the jar.'));
+
+  // Kind ideas for next month, after "Nearly!"
+  const TIPS = [
+    'Next month we could skip a treat.',
+    'Next month we could save a little more each week.',
+    'Next month we could choose a cheaper treat.',
+  ];
+
+  // The end of the month: the goal reached (with what is left), or how much
+  // is still to go, with a kind idea for next time. "Nearly!" only when it
+  // was nearly: short by no more than a week's pocket money (2 stars).
+  // Further short, what was saved comes first, so the words stay true and kind.
+  function endLines(month, goal, jar, rng) {
+    if (jar >= goal.price) {
+      const lines = [{ text: `We did it! We can buy ${goalName(goal)}!`, spoken: `We did it! We can buy ${goalName(goal)}!` }];
+      if (jar > goal.price) lines.push(both("And we've got", jar - goal.price, 'left.'));
+      return lines;
+    }
+    const tip = TIPS[rng ? rng.int(TIPS.length) : 0];
+    const toGo = goal.price - jar;
+    let first;
+    if (toGo <= month.pocket) {
+      first = both('Nearly!', toGo, 'to go.');
+    } else if (jar > 0) {
+      // "We saved £3.30! £8.40 to go."
+      const write = (format) => `We saved ${format(jar)}! ${capital(format(toGo))} to go.`;
+      first = { text: write(money.format), spoken: write(wordsOf) };
+    } else {
+      first = { text: 'The jar is empty this time.', spoken: 'The jar is empty this time.' };
+    }
+    return [first, { text: tip, spoken: tip }];
+  }
+
+  pm.levels = {
+    LEVELS, CONFIG, WEEKS, GOAL_PRICES, TREAT_PRICES, GOOD, BAD, NEEDS, JOBS, OUTINGS, TIPS,
+    levelById, build, simulate, saveAll, spendAll, weekStart, beforeShop, starsFor,
+    weekLine, surpriseLine, needLine, needVersions, jobLine, outingLine, jobName, outingName, shortName, treatWords, goalWords, jarLine, endLines,
+    SATURDAY, AT_HOME, CHOOSE_GOAL, NOT_ENOUGH, INTO_JAR,
+  };
+})(window.KMG);
+
+// Pocket Money Month's saved data: the shared progress store
+// (src/shared/progress-store.js) with this game's settings. There are no
+// mistakes: stars come from reaching the goal. Instead it keeps, for the
+// grown-ups, how many months were played and how many reached their goal, and
+// the money saved and spent on treats over them all, for the averages.
+(function (KMG) {
+  'use strict';
+
+  const { pm } = KMG;
+
+  const isCount = (value) => Number.isInteger(value) && value >= 0;
+
+  const store = KMG.progressStore({
+    key: 'pocket-money-month',
+    levels: () => pm.levels.LEVELS,
+    settings: () => ({ showToGo: true, months: { played: 0, reached: 0, saved: 0, treats: 0 } }),
+    // The months are the child's record, not a setting: a reset clears them.
+    keepOnReset: ['showToGo'],
+    isMistakeKey: () => false,
+    checkSettings(data, clean) {
+      const { showToGo, months } = data;
+      if (typeof showToGo !== 'boolean') return false;
+      if (!months || !['played', 'reached', 'saved', 'treats'].every((name) => isCount(months[name]))) return false;
+      if (months.reached > months.played) return false;
+      Object.assign(clean, {
+        showToGo,
+        months: { played: months.played, reached: months.reached, saved: months.saved, treats: months.treats },
+      });
+      return true;
+    },
+  });
+
+  // Adds one finished month: whether it reached the goal, what was in the
+  // jar, and what was spent on treats
+  function recordMonth({ reached, saved, treats }) {
+    const data = store.load();
+    const { months } = data;
+    data.months = {
+      played: months.played + 1,
+      reached: months.reached + (reached ? 1 : 0),
+      saved: months.saved + saved,
+      treats: months.treats + treats,
+    };
+    store.save(data);
+  }
+
+  pm.progress = Object.assign(store, { recordMonth });
+})(window.KMG);
+
+// Pocket Money Month's play screen. The shared frame (src/shared/play-screen.js)
+// holds the level's name, and its pips are the month's 4 weeks. Under it:
+//   choosing a goal  the child asks "What shall we save for?" over three goal
+//                    cards; tapping one picks it, tapping its price tag says it
+//   a week           calendar  the month's 4 weeks, this one marked
+//                    header    the child with a speech bubble
+//                    shop      this week's news (a surprise); at levels 4 and 5
+//                              a choice before the shop opens (a need's plain
+//                              or fancy version, or a Saturday's job, outing or
+//                              neither); then the treats: tapping a treat buys
+//                              it from the purse, tapping it again puts it
+//                              back; its tag says it aloud
+//                    side      the purse, the goal jar and "Into the jar",
+//                              which pours what is left into the jar
+//   the end          after week 4 the jar is opened: the goal reached, with
+//                    any money left over, or "Nearly!" and how much to go,
+//                    with a kind idea for next month; then the stars
+// Stars come from the jar against the goal (levels.starsFor). A choice, once
+// made, stays made for the week; the treats can still be bought and put back.
+(function (KMG) {
+  'use strict';
+
+  const { el, show, reducedMotion } = KMG.ui;
+  const { money, speech, audio, effects, pm } = KMG;
+
+  // How long the child keeps an expression after speaking
+  const TALK_MS = 2400;
+  // How long the jar is shown filling before the next week
+  const JAR_MS = 1800;
+  // How long the end of the month is shown before the stars
+  const END_MS = 5200;
+
+  // "£0" rather than "0p" for nothing at all
+  const amount = (pence) => (pence === 0 ? '£0' : money.format(pence));
+  const capital = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+  // Lines said one after the other: their words on screen, and spoken together
+  const joined = (lines) => ({ text: lines.map((l) => l.text).join(' '), spoken: lines.map((l) => l.spoken).join(' ') });
+
+  // A card with a picture, a name and a price tag. Tapping the card does
+  // `onPick`; tapping the tag says `words` aloud. Two buttons, so a child can
+  // hear a price without buying, as in Party Planner and Price Detective.
+  // `priceText` is what the tag shows, if not the price itself ("+£2" for a job).
+  // `shortName`, if given, is shown instead of the name where a card is narrow
+  // (a phone on its side); the full name is still what is read out.
+  function card({ art, name, price, words, onPick, attrs = {}, priceText = money.format(price), shortName = null }) {
+    return el('div', Object.assign({ class: 'pm-card', 'data-price': price }, attrs),
+      el('button', { class: 'pm-card-pick', 'data-action': 'pick', 'aria-label': name, onclick: onPick },
+        pm.art.element(art),
+        el('span', { class: 'pm-card-name' },
+          el('span', { class: shortName ? 'pm-name-long' : '' }, name),
+          shortName && el('span', { class: 'pm-name-short', 'aria-hidden': 'true' }, shortName)),
+        // "Bought", or "Not enough in the purse": shown by the stylesheet
+        el('span', { class: 'pm-card-note', 'aria-hidden': 'true' })),
+      el('button', {
+        class: 'pm-tag',
+        'data-action': 'tag',
+        'aria-label': `${name}, ${priceText}. Hear it again`,
+        onclick: () => speech.say(words),
+      }, el('span', { class: 'pm-tag-price' }, priceText)));
+  }
+
+  function wobble(node) {
+    node.classList.remove('wobble');
+    void node.offsetWidth;
+    node.classList.add('wobble');
+  }
+
+  function play(levelId, context) {
+    const level = pm.levels.levelById(levelId);
+    const saved = pm.progress.load();
+    const round = pm.levels.build(levelId, { rng: context.rng });
+    const { month } = round;
+
+    const screen = KMG.playScreen.build({
+      levelId,
+      kind: round.kind,
+      total: round.total,
+      text: level.text,
+      spoken: level.spoken,
+      onBack: () => context.home(),
+    });
+    screen.tray.remove();
+
+    let alive = true;
+    // Busy while money pours into the jar, or the month ends. Shown as
+    // data-busy on the screen, so tests can wait for it.
+    let busy = false;
+    const setBusy = (value) => {
+      busy = value;
+      screen.main.dataset.busy = String(value);
+    };
+    const later = (callback, ms) => window.setTimeout(() => {
+      if (alive) callback();
+    }, ms);
+
+    let goal = null;
+    let weekIndex = 0;
+    // What is in the purse this week, what is in the jar so far, what was
+    // spent on treats this month, and this week's treats bought (by key)
+    let purse = 0;
+    let jar = 0;
+    // Treats here include level 5's outings: both are wants
+    let treatsSpent = 0;
+    let treatsBought = 0;
+    let bought = new Set();
+    // Levels 4 and 5: this week's choice before the shop opens, and whether
+    // it is still to be made. { need: 'plain' | 'fancy', saturday: 'job' |
+    // 'outing' | null }
+    let choosing = false;
+    let choice = {};
+    const week = () => month.weeks[weekIndex];
+
+    // The child and what they say
+    const child = pm.child.element(month.look, 'idle');
+    const bubble = el('div', { class: 'pm-bubble', role: 'status' });
+    let talkTimer = null;
+    function say(line, expression = 'talking') {
+      bubble.textContent = line.text;
+      child.setExpression(expression);
+      speech.say(line.spoken);
+      window.clearTimeout(talkTimer);
+      talkTimer = window.setTimeout(() => {
+        if (alive && child.node.dataset.expression === expression) child.setExpression('idle');
+      }, TALK_MS);
+    }
+
+    // ---- Choosing a goal ----
+
+    const goalsView = el('div', { class: 'pm-goals', 'data-goals': true });
+
+    function showGoals() {
+      goalsView.textContent = '';
+      goalsView.append(
+        el('div', { class: 'pm-header' }, child.node, bubble),
+        el('div', { class: 'pm-goal-cards' }, month.goals.map((g) => card({
+          art: g.item,
+          name: capital(pm.art.byId(g.item).name),
+          price: g.price,
+          words: pm.levels.goalWords(g),
+          onPick: () => chooseGoal(g),
+          attrs: { 'data-goal': g.item },
+        }))));
+      weekView.hidden = true;
+      endView.hidden = true;
+      goalsView.hidden = false;
+      say(pm.levels.CHOOSE_GOAL);
+    }
+
+    function chooseGoal(g) {
+      if (!alive || goal) return;
+      goal = g;
+      audio.play('pickup');
+      screen.main.dataset.goal = g.item;
+      screen.main.dataset.goalCost = g.price;
+      showWeek();
+    }
+
+    // ---- A week ----
+
+    const calendar = el('ol', { class: 'pm-calendar', 'aria-label': 'The month' },
+      month.weeks.map((w) => el('li', { class: 'pm-calendar-week', 'data-week': w.n }, `Week ${w.n}`)));
+    const header = el('div', { class: 'pm-header' });
+    const news = el('div', { class: 'pm-news', 'data-news': true });
+    const shelf = el('div', { class: 'pm-shelf', 'data-shelf': true });
+    const shop = el('div', { class: 'pm-shop', 'data-shop': true }, news, shelf);
+
+    const purseValue = el('span', { class: 'pm-value', 'data-purse': true });
+    const pursePanel = el('div', { class: 'pm-purse' },
+      el('span', { class: 'pm-purse-art', html: pm.art.PURSE }),
+      el('span', { class: 'pm-panel-words' }, el('span', { class: 'pm-label' }, 'Purse'), purseValue));
+
+    const jarArt = el('span', { class: 'pm-jar-art' });
+    const savedValue = el('span', { class: 'pm-value', 'data-jar': true });
+    const goalValue = el('span', { class: 'pm-goal-price', 'data-goal-price': true });
+    const toGoValue = el('span', { class: 'pm-to-go', 'data-to-go': true, hidden: !saved.showToGo });
+    const jarPanel = el('div', { class: 'pm-jar' }, jarArt,
+      el('span', { class: 'pm-panel-words' }, el('span', { class: 'pm-label' }, 'Saved'), savedValue, goalValue, toGoValue));
+
+    const intoJar = el('button', { class: 'btn btn-primary pm-into-jar', 'data-action': 'into-jar', onclick: pourIntoJar }, 'Into the jar');
+    const side = el('div', { class: 'pm-side' }, pursePanel, jarPanel, intoJar);
+    const weekView = el('div', { class: 'pm-week', 'data-week-view': true, hidden: true }, calendar, header, shop, side);
+    const endView = el('div', { class: 'pm-end', 'data-end': true, hidden: true });
+    screen.zones.append(goalsView, weekView, endView);
+
+    function refreshMoney() {
+      purseValue.textContent = amount(purse);
+      pursePanel.dataset.amount = purse;
+      savedValue.textContent = amount(jar);
+      jarPanel.dataset.amount = jar;
+      goalValue.textContent = `Goal ${money.format(goal.price)}`;
+      const toGo = Math.max(0, goal.price - jar);
+      toGoValue.textContent = toGo ? `${money.format(toGo)} to go` : 'Enough!';
+      toGoValue.dataset.toGo = toGo;
+      jarArt.innerHTML = pm.art.jar(goal.item, jar / goal.price);
+    }
+
+    // Each treat shows whether it is bought, and whether the purse can pay for it
+    function refreshShelf() {
+      shelf.querySelectorAll('[data-treat]').forEach((node) => {
+        const treat = week().treats.find((t) => t.key === node.dataset.treat);
+        const isBought = bought.has(treat.key);
+        const name = pm.art.byId(treat.item).name;
+        node.dataset.bought = String(isBought);
+        node.dataset.afford = String(isBought || treat.price <= purse);
+        const note = node.querySelector('.pm-card-note');
+        note.textContent = isBought ? 'Bought' : treat.price > purse ? 'Not enough in the purse' : '';
+        node.querySelector('[data-action="pick"]').setAttribute('aria-label', isBought ? `${name}: bought. Tap to put it back` : `Buy ${name}`);
+      });
+    }
+
+    function refresh() {
+      refreshMoney();
+      refreshShelf();
+    }
+
+    // Tapping a treat: buy it, put it back, or, if the purse is short, say so
+    // gently. A shortfall is not a mistake: there are none in this game.
+    function tapTreat(treat, node) {
+      if (busy || !alive) return;
+      if (bought.has(treat.key)) {
+        bought.delete(treat.key);
+        purse += treat.price;
+        audio.play('pickup');
+      } else if (treat.price <= purse) {
+        bought.add(treat.key);
+        purse -= treat.price;
+        audio.play('pickup');
+      } else {
+        wobble(node);
+        say(pm.levels.NOT_ENOUGH, 'thinking');
+        return;
+      }
+      refresh();
+    }
+
+    // This week's news: a surprise, and (levels 4 and 5) the need or Saturday:
+    // as a choice until it is made, then as what was chosen
+    const eventCard = (id, kind, text, attrs = {}) => el('div', Object.assign({ class: 'pm-event', 'data-event': id, 'data-kind': kind }, attrs),
+      pm.art.element(id), el('span', { class: 'pm-event-words' }, text));
+    const choicePanel = el('div', { class: 'pm-choice', 'data-choice-panel': true });
+
+    function showNews() {
+      const w = week();
+      news.textContent = '';
+      if (w.surprise) news.appendChild(eventCard(w.surprise.id, w.surprise.kind, pm.levels.surpriseLine(w.surprise).text));
+      if (choosing) {
+        showChoice();
+        news.appendChild(choicePanel);
+      } else if (w.need) {
+        // What was bought: "Shiny goggles, £5"
+        const v = pm.levels.needVersions(w.need).find((x) => x.version === choice.need);
+        news.appendChild(eventCard(w.need.id, 'need', `${v.name}: ${money.format(v.price)}`, { 'data-chosen': choice.need }));
+      } else if (w.saturday) {
+        const { job, outing } = w.saturday;
+        const text = {
+          job: `${pm.levels.jobName(job)}: +${money.format(job.amount)}`,
+          outing: `${pm.levels.outingName(outing)}: ${money.format(outing.amount)}`,
+          none: pm.levels.AT_HOME.text,
+        }[choice.saturday || 'none'];
+        const art = choice.saturday === 'outing' ? outing.id : job.id;
+        news.appendChild(eventCard(art, 'saturday', text, { 'data-chosen': choice.saturday || 'none' }));
+      }
+      news.hidden = !news.childElementCount;
+      shelf.hidden = choosing;
+    }
+
+    // The choice before the shop opens. A need: its plain and fancy versions,
+    // one of which must be bought (the plain one always fits the purse). A
+    // Saturday: the job, the outing, or neither. A version or an outing the
+    // purse can't cover says so, and can't be chosen.
+    function showChoice() {
+      const w = week();
+      choicePanel.textContent = '';
+      let cards;
+      if (w.need) {
+        choicePanel.dataset.choice = 'need';
+        choicePanel.appendChild(el('p', { class: 'pm-choice-words' }, pm.levels.needLine(w.need).text));
+        cards = pm.levels.needVersions(w.need).map((v) => card({
+          art: w.need.id,
+          name: v.name,
+          price: v.price,
+          words: v.words,
+          onPick: () => chooseNeed(v),
+          attrs: { 'data-need': v.version },
+        }));
+      } else {
+        const { job, outing } = w.saturday;
+        choicePanel.dataset.choice = 'saturday';
+        choicePanel.appendChild(el('p', { class: 'pm-choice-words' }, pm.levels.SATURDAY.text));
+        cards = [
+          card({
+            art: job.id,
+            name: pm.levels.jobName(job),
+            shortName: pm.levels.shortName(job),
+            price: job.amount,
+            priceText: `+${money.format(job.amount)}`,
+            words: pm.levels.jobLine(job).spoken,
+            onPick: () => chooseSaturday('job'),
+            attrs: { 'data-saturday': 'job' },
+          }),
+          card({
+            art: outing.id,
+            name: pm.levels.outingName(outing),
+            shortName: pm.levels.shortName(outing),
+            price: outing.amount,
+            words: pm.levels.outingLine(outing).spoken,
+            onPick: () => chooseSaturday('outing'),
+            attrs: { 'data-saturday': 'outing' },
+          }),
+          el('button', { class: 'btn pm-neither', 'data-saturday': 'none', onclick: () => chooseSaturday(null) }, 'Neither'),
+        ];
+      }
+      choicePanel.appendChild(el('div', { class: 'pm-choice-cards' }, cards));
+      // Anything dearer than the purse
+      choicePanel.querySelectorAll('.pm-card').forEach((node) => {
+        const tooDear = node.dataset.saturday !== 'job' && Number(node.dataset.price) > purse;
+        node.dataset.afford = String(!tooDear);
+        node.querySelector('.pm-card-note').textContent = tooDear ? 'Not enough in the purse' : '';
+      });
+    }
+
+    function tooDearFor(node) {
+      wobble(node);
+      say(pm.levels.NOT_ENOUGH, 'thinking');
+    }
+
+    function chooseNeed(v) {
+      if (busy || !alive || !choosing) return;
+      if (v.price > purse) {
+        tooDearFor(choicePanel.querySelector(`[data-need="${v.version}"]`));
+        return;
+      }
+      choice.need = v.version;
+      purse -= v.price;
+      audio.play('pickup');
+      opened();
+    }
+
+    function chooseSaturday(option) {
+      if (busy || !alive || !choosing) return;
+      const { job, outing } = week().saturday;
+      if (option === 'outing' && outing.amount > purse) {
+        tooDearFor(choicePanel.querySelector('[data-saturday="outing"]'));
+        return;
+      }
+      choice.saturday = option;
+      if (option === 'job') {
+        purse += job.amount;
+        audio.play('till');
+        say(pm.levels.jobLine(job), 'excited');
+      } else if (option === 'outing') {
+        purse -= outing.amount;
+        treatsSpent += outing.amount;
+        treatsBought += 1;
+        audio.play('pickup');
+        say(pm.levels.outingLine(outing), 'excited');
+      } else {
+        audio.play('pickup');
+        say(pm.levels.AT_HOME);
+      }
+      opened();
+    }
+
+    // The choice is made: the shop opens
+    function opened() {
+      choosing = false;
+      screen.main.dataset.choosing = 'false';
+      showNews();
+      refresh();
+    }
+
+    function showShelf() {
+      shelf.textContent = '';
+      shelf.append(...week().treats.map((treat) => {
+        const node = card({
+          art: treat.item,
+          name: pm.art.byId(treat.item).name,
+          price: treat.price,
+          words: pm.levels.treatWords(treat),
+          onPick: () => tapTreat(treat, node),
+          attrs: { 'data-treat': treat.key, 'data-item': treat.item },
+        });
+        return node;
+      }));
+    }
+
+    // Everything the child might say during a week, at its longest, so the
+    // header never jumps under a finger when a longer line wraps (as for
+    // Party Planner's birthday child). Measured again when the screen turns.
+    function reserveHeader() {
+      if (!alive || weekView.hidden) return;
+      const shown = bubble.textContent;
+      header.style.minHeight = '';
+      let tallest = 0;
+      const lines = [...month.weeks.map((w) => pm.levels.weekLine(w)), pm.levels.NOT_ENOUGH, pm.levels.jarLine(99999), pm.levels.AT_HOME];
+      month.weeks.filter((w) => w.saturday).forEach((w) => {
+        lines.push(pm.levels.jobLine(w.saturday.job), pm.levels.outingLine(w.saturday.outing));
+      });
+      lines.forEach((line) => {
+        bubble.textContent = line.text;
+        tallest = Math.max(tallest, header.offsetHeight);
+      });
+      bubble.textContent = shown;
+      header.style.minHeight = `${tallest}px`;
+    }
+
+    function showWeek() {
+      const w = week();
+      screen.main.dataset.week = w.n;
+      calendar.querySelectorAll('[data-week]').forEach((node) => {
+        const n = Number(node.dataset.week);
+        node.dataset.current = String(n === w.n);
+        node.dataset.done = String(n < w.n);
+      });
+      header.textContent = '';
+      header.append(child.node, bubble);
+      bought = new Set();
+      choice = {};
+      choosing = Boolean(w.need || w.saturday);
+      screen.main.dataset.choosing = String(choosing);
+      purse = pm.levels.weekStart(w);
+      showShelf();
+      showNews();
+      refresh();
+      goalsView.hidden = true;
+      endView.hidden = true;
+      weekView.hidden = false;
+      audio.play('till');
+      // The week's pocket money, then its surprise and its choice, said
+      // together. The bubble shows the pocket money; the rest is in the news.
+      const weekLine = pm.levels.weekLine(w);
+      const lines = [weekLine];
+      if (w.surprise) lines.push(pm.levels.surpriseLine(w.surprise));
+      if (w.need) lines.push(pm.levels.needLine(w.need));
+      if (w.saturday) lines.push(pm.levels.SATURDAY);
+      say({ text: weekLine.text, spoken: joined(lines).spoken }, w.surprise && w.surprise.kind === 'bad' ? 'thinking' : 'excited');
+      reserveHeader();
+      setBusy(false);
+    }
+
+    // What is left in the purse goes into the jar, which fills; then the next
+    // week, or the end of the month
+    function pourIntoJar() {
+      if (busy || !alive) return;
+      // The need or the Saturday comes first: asked again, gently
+      if (choosing) {
+        wobble(choicePanel);
+        const w = week();
+        say(w.need ? pm.levels.needLine(w.need) : pm.levels.SATURDAY, 'thinking');
+        return;
+      }
+      setBusy(true);
+      const spent = week().treats.filter((t) => bought.has(t.key));
+      treatsSpent += spent.reduce((sum, t) => sum + t.price, 0);
+      treatsBought += spent.length;
+      jar += purse;
+      purse = 0;
+      refresh();
+      audio.play('pickup');
+      later(() => audio.play('pickup'), 140);
+      if (!reducedMotion()) wobble(jarPanel);
+      const box = jarArt.getBoundingClientRect();
+      effects.sparkle(box.left + box.width / 2, box.top + box.height / 2);
+      say(pm.levels.jarLine(jar), jar >= goal.price ? 'excited' : 'talking');
+      screen.setDone(weekIndex + 1);
+      later(() => {
+        weekIndex++;
+        if (weekIndex === month.weeks.length) endMonth();
+        else showWeek();
+      }, JAR_MS);
+    }
+
+    // ---- The end of the month ----
+
+    function endMonth() {
+      const reached = jar >= goal.price;
+      const stars = pm.levels.starsFor(month, jar, goal.price);
+      const lines = pm.levels.endLines(month, goal, jar, context.rng);
+      pm.progress.recordMonth({ reached, saved: jar, treats: treatsSpent });
+      pm.progress.recordRound(levelId, { stars, mistakes: {}, stage: 0, lastStage: 0 });
+
+      const cheer = pm.child.element(month.look, reached ? 'excited' : 'thinking');
+      endView.textContent = '';
+      endView.append(
+        el('div', { class: 'pm-end-things' },
+          el('span', { class: 'pm-jar-art pm-end-jar', html: pm.art.jar(goal.item, jar / goal.price) }),
+          reached && pm.art.element(goal.item, 'pm-art pm-end-goal')),
+        el('div', { class: 'pm-end-cheer' }, cheer.node,
+          el('div', { class: 'pm-end-words' },
+            lines.map((line, i) => el('p', { class: i ? 'pm-end-more' : 'pm-end-line', 'data-end-line': i }, line.text)),
+            el('p', { class: 'pm-end-treats', 'data-treats': treatsBought },
+              ['No treats this month', '1 treat this month'][treatsBought] || `${treatsBought} treats this month`))));
+      endView.dataset.reached = String(reached);
+      endView.dataset.inJar = jar;
+      weekView.hidden = true;
+      endView.hidden = false;
+      speech.say(joined(lines).spoken);
+      if (reached) {
+        audio.play('till');
+        const box = endView.getBoundingClientRect();
+        effects.sparkle(box.left + box.width / 2, box.top + box.height / 3);
+      }
+      later(() => finishRound(stars), END_MS);
+    }
+
+    function finishRound(stars) {
+      const next = pm.levels.levelById(levelId + 1) ? () => play(levelId + 1, context) : null;
+      KMG.celebrate(screen.main, {
+        stars,
+        onAgain: () => play(levelId, context),
+        onNext: next,
+        onHome: () => context.home(),
+      });
+    }
+
+    window.addEventListener('resize', reserveHeader);
+    screen.main.onleave = () => {
+      alive = false;
+      speech.stop();
+      window.clearTimeout(talkTimer);
+      window.removeEventListener('resize', reserveHeader);
+    };
+
+    setBusy(false);
+    show(screen.main);
+
+    // ?debug=1&level=N&week=W: start at week W with the cheapest goal, and
+    // the jar as if everything so far had been saved
+    const startWeek = KMG.debug.week;
+    if (startWeek && startWeek >= 2 && startWeek <= month.weeks.length) {
+      goal = month.goals[0];
+      screen.main.dataset.goal = goal.item;
+      screen.main.dataset.goalCost = goal.price;
+      const earlier = { weeks: month.weeks.slice(0, startWeek - 1) };
+      jar = pm.levels.simulate(earlier, pm.levels.saveAll(earlier, { jobs: false })).jar;
+      weekIndex = startWeek - 1;
+      screen.setDone(weekIndex);
+      showWeek();
+    } else {
+      showGoals();
+    }
+  }
+
+  pm.play = play;
+})(window.KMG);
+
+// Pocket Money Month's grown-ups area: the shared one (src/shared/parent-area.js)
+// with this game's setting, and, instead of mistakes (there are none), how
+// many months reached their goal and how much was saved and spent on treats
+// in a month, on average.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { money, pm, parentArea } = KMG;
+
+  // "£0" rather than "0p" for nothing at all
+  const amount = (pence) => (pence === 0 ? '£0' : money.format(pence));
+
+  // Under the stars: goals reached, then the averages, over how many months,
+  // so a grown-up can tell one month from twenty
+  function monthNotes(data) {
+    const { played, reached, saved, treats } = data.months;
+    if (!played) {
+      return [el('h3', {}, 'Saving'), el('p', { class: 'parent-note', 'data-months': 0 }, 'No months played yet.')];
+    }
+    const months = played === 1 ? '1 month' : `${played} months`;
+    return [
+      el('h3', {}, 'Saving'),
+      el('p', { class: 'parent-note', 'data-months': played, 'data-reached': reached },
+        `Goals reached: ${reached} of ${months}.`),
+      el('p', { class: 'parent-note', 'data-saved': Math.round(saved / played), 'data-treats': Math.round(treats / played) },
+        `In a month, on average: ${amount(Math.round(saved / played))} saved, and ${amount(Math.round(treats / played))} spent on treats.`),
+    ];
+  }
+
+  function saveSetting(name, value) {
+    const saved = pm.progress.load();
+    saved[name] = value;
+    pm.progress.save(saved);
+  }
+
+  function settings(data) {
+    return [
+      parentArea.section('The goal jar',
+        parentArea.toggle('Show how much is still to go', 'to-go', data.showToGo,
+          (on) => saveSetting('showToGo', on))),
+    ];
+  }
+
+  function parent(context) {
+    parentArea.show({
+      gameName: 'Pocket Money Month',
+      store: pm.progress,
+      fileName: 'pocket-money-month-progress.json',
+      levels: pm.levels.LEVELS,
+      settings,
+      notes: monthNotes,
+      onDone: () => context.home(),
+    });
+  }
+
+  pm.parent = parent;
+})(window.KMG);
+
+// Pocket Money Month's home screen: the shared level picker
+// (src/shared/level-picker.js) with a picture and a price tag on each level's card.
+(function (KMG) {
+  'use strict';
+
+  const { el } = KMG.ui;
+  const { pm } = KMG;
+
+  const art = (id) => pm.art.mini(id);
+  const tag = (text) => el('span', { class: 'pm-tag-mini' }, text);
+
+  const LEVEL_ART = {
+    1: () => [art('kite'), tag('£2')],
+    2: () => [art('comic'), tag('£3.50')],
+    3: () => [art('birthday-money'), art('water-bottle')],
+    4: () => [art('goggles'), art('ice-cream')],
+    5: () => [art('scooter'), tag('£30')],
+  };
+
+  function home(context) {
+    KMG.levelPicker.show({
+      title: 'Pocket Money Month',
+      levels: pm.levels.LEVELS,
+      art: (level) => LEVEL_ART[level.id](),
+      store: pm.progress,
+      onPlay: (levelId) => pm.play(levelId, context),
+      onParent: () => pm.parent(context),
+      exit: context.exit,
+    });
+  }
+
+  pm.home = home;
+})(window.KMG);
+
+// Pocket Money Month's entry point: registers the game with the hub or standalone boot.
+(function (KMG) {
+  'use strict';
+
+  const { el, show } = KMG.ui;
+  const { pm } = KMG;
+
+  // ?debug=1&items=1 shows every drawing, the child in several looks and
+  // every expression, the goal jar at four levels of full, and the purse, for
+  // checking the artwork.
+  function gallery(context) {
+    const figure = (attrs, node, caption) => el('figure', Object.assign({ class: 'pm-gallery-item' }, attrs), node, el('figcaption', {}, caption));
+
+    const kinds = [['Goals', 'goal'], ['Treats', 'treat'], ['Surprises, needs, jobs and outings', 'event']];
+    const art = kinds.flatMap(([title, kind]) => [
+      el('h2', {}, title),
+      el('div', { class: 'pm-gallery-grid' }, pm.art.ofKind(kind).map((item) => figure({}, pm.art.element(item.id), item.name))),
+    ]);
+
+    const looks = [1, 2, 3, 4, 5, 6].map((seed) => figure({ 'data-look-seed': seed },
+      pm.child.element(pm.child.lookFor(KMG.rng.create(seed))).node, `Seed ${seed}`));
+
+    const look = pm.child.lookFor(context.rng);
+    const expressions = pm.child.EXPRESSIONS.map((name) => figure({ 'data-expression-sample': name },
+      pm.child.element(look, name).node, name));
+
+    const jars = [[0, 'football'], [0.3, 'kite'], [0.7, 'scooter'], [1, 'helmet']].map(([full, goal]) => figure({ 'data-jar-sample': full },
+      el('span', { class: 'pm-jar-art', html: pm.art.jar(goal, full) }), `${Math.round(full * 100)}% full`));
+    const purse = figure({}, el('span', { class: 'pm-purse-art', html: pm.art.PURSE }), 'The purse');
+
+    show(el('main', { class: 'pm-gallery', 'data-screen': 'gallery' },
+      ...art,
+      el('h2', {}, 'The child: looks'), el('div', { class: 'pm-gallery-grid' }, looks),
+      el('h2', {}, 'Expressions'), el('div', { class: 'pm-gallery-grid' }, expressions),
+      el('h2', {}, 'The jar and the purse'), el('div', { class: 'pm-gallery-grid' }, jars, purse)));
+  }
+
+  KMG.registerGame('pocket-money-month', {
+    // Called once before any of this game's art is drawn. Nothing to set up:
+    // the drawings carry everything they need.
+    prepare() {},
+
+    // The picture on the hub tile.
+    art: () => [pm.art.mini('football'), pm.art.mini('birthday-money'), pm.art.mini('kite')],
+
+    open(exit) {
+      const context = { exit, rng: KMG.rng.create(KMG.debug.seed) };
+      context.home = () => pm.home(context);
+
+      if (KMG.debug.flag('items')) gallery(context);
+      else if (KMG.debug.level) pm.play(KMG.debug.level, context);
+      else pm.home(context);
     },
   });
 })(window.KMG);

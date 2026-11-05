@@ -1897,6 +1897,613 @@ button {
 .ps-gallery-item .ps-shopkeeper { width: 130px; }
 .ps-gallery-item figcaption { font-weight: 700; color: var(--ink-soft); }
 
+/* Pocket Money Month's own styles. Shared screens are in src/shared/game-ui.css.
+   Every class here starts with pm-. */
+
+/* Drawings, at any size the parent box gives them */
+.pm-art, .pm-art-mini {
+  display: inline-block;
+  flex: none;
+  aspect-ratio: 1;
+}
+
+.pm-art-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.level-art .pm-art-mini {
+  flex: 0 1 60px;
+  min-width: 34px;
+}
+
+.hub-art .pm-art-mini { width: 66px; height: 66px; }
+
+/* A small price tag for the home screen's cards */
+.pm-tag-mini {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 8px 14px 14px 8px;
+  background: #fff3c4;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-height: 480px), (max-width: 400px) {
+  .level-art .pm-tag-mini { height: 28px; padding: 0 6px; font-size: 0.8rem; }
+  .level-art .pm-art-mini { flex-basis: 44px; }
+}
+
+/* The child. The head tilts when thinking, the whole child jumps when
+   excited, and the two mouths take turns while talking. */
+.pm-child {
+  position: relative;
+  flex: none;
+  aspect-ratio: 1;
+}
+
+.pm-child-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 3px 3px rgba(36, 50, 74, 0.2));
+}
+
+.pm-child-head {
+  transform-box: view-box;
+  transform-origin: 100px 140px;
+}
+
+.pm-child[data-expression="thinking"] .pm-child-head { transform: rotate(6deg); }
+.pm-child[data-expression="excited"] { animation: pm-jump 0.5s ease-out; }
+
+@keyframes pm-jump {
+  40% { transform: translateY(-12px); }
+}
+
+.pm-mouth-open, .pm-mouth-shut { animation: pm-talk 0.36s infinite; }
+.pm-mouth-shut { animation-delay: -0.18s; }
+
+@keyframes pm-talk {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* No flapping mouth with reduced motion: just the smile. */
+@media (prefers-reduced-motion: reduce) {
+  .pm-mouth-open { display: none; }
+  .pm-mouth-shut { animation: none; opacity: 1; }
+}
+
+/* The child and what they say, with a tail pointing at them */
+.pm-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pm-header .pm-child { height: clamp(72px, 13vh, 120px); }
+
+.pm-bubble {
+  position: relative;
+  min-width: 0;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 4px 0 rgba(36, 50, 74, 0.1);
+  font-weight: 800;
+  font-size: clamp(1rem, 2.4vh, 1.3rem);
+}
+
+.pm-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right-color: var(--paper);
+}
+
+.pm-goals[hidden], .pm-week[hidden], .pm-news[hidden] { display: none; }
+
+/* A card: its picture and name, which picks it, and its price tag, which says
+   it aloud. Goals, treats, needs and Saturdays all use it. */
+.pm-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: 0 3px 0 rgba(36, 50, 74, 0.14);
+}
+
+.pm-card-pick {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 10px;
+  border: 0;
+  border-radius: 16px 0 0 16px;
+  background: none;
+  text-align: left;
+}
+
+.pm-card-pick .pm-art { width: clamp(44px, 8vh, 64px); }
+.pm-card-name { font-weight: 800; line-height: 1.15; }
+.pm-card-pick:active { transform: translateY(2px); }
+
+.pm-tag {
+  flex: none;
+  min-width: var(--tap);
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 0;
+  border-radius: 0 16px 16px 0;
+  background: #fff3c4;
+}
+
+.pm-tag-price { font-size: 1.15rem; font-weight: 800; line-height: 1; white-space: nowrap; }
+
+/* Choosing a goal: the child asks, over three big goal cards */
+.pm-goals {
+  width: 100%;
+  max-width: 980px;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.pm-goal-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pm-goal-cards .pm-card-pick {
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.pm-goal-cards .pm-card-pick .pm-art { width: clamp(70px, 16vh, 130px); }
+.pm-goal-cards .pm-card-name { font-size: 1.15rem; }
+
+/* A week: the calendar, the child, the shop, and beside it (or below it on
+   narrow screens) the purse, the jar and "Into the jar" */
+.pm-week {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(240px, 30vw, 340px);
+  grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-areas: "calendar calendar" "header header" "shop side";
+  gap: 10px;
+}
+
+.pm-calendar {
+  grid-area: calendar;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pm-calendar-week {
+  flex: 1;
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pm-calendar-week[data-current="true"] { background: var(--sun); color: var(--ink); }
+
+/* The shop: this week's news, then the treats; it scrolls if it must */
+.pm-shop {
+  grid-area: shop;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 4px 8px 2px;
+}
+
+.pm-news { display: flex; flex-direction: column; gap: 8px; }
+
+.pm-event {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 18px;
+  background: #e7f6ef;
+  font-weight: 800;
+}
+
+.pm-event[data-kind="bad"], .pm-event[data-kind="need"] { background: #fff1d9; }
+.pm-event[data-kind="saturday"] { background: rgba(207, 200, 242, 0.45); }
+.pm-event .pm-art { width: clamp(44px, 8vh, 64px); }
+
+/* The treats stand up like the goal cards, picture above name, and share the
+   shelf's width */
+.pm-shelf {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pm-shelf .pm-card-pick {
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.pm-shelf .pm-card-pick .pm-art { width: clamp(56px, 12vh, 100px); }
+
+/* Beside the shop: the purse, the jar and "Into the jar" */
+.pm-side {
+  grid-area: side;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-purse, .pm-jar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+/* The jar fills the rest of the side: the jar large, the amounts under it */
+.pm-jar {
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pm-jar .pm-panel-words { align-items: center; text-align: center; }
+.pm-jar .pm-to-go { align-self: center; }
+.pm-purse-art { flex: none; width: clamp(56px, 9vh, 80px); }
+.pm-purse-art svg, .pm-jar-art svg { display: block; width: 100%; height: auto; }
+.pm-jar-art { flex: none; width: clamp(70px, 14vh, 150px); }
+
+.pm-panel-words { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pm-label { font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
+.pm-value { font-size: clamp(1.4rem, 3.6vh, 2rem); font-weight: 800; line-height: 1.1; white-space: nowrap; }
+.pm-goal-price { font-weight: 800; }
+
+.pm-to-go {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #e7f6ef;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.pm-to-go[hidden] { display: none; }
+.pm-into-jar { flex: none; min-height: var(--tap); font-size: 1.2rem; }
+
+/* Narrow screens, such as a tablet upright or a phone: the shop above, and the
+   purse, jar and button below, always in view */
+@media (max-width: 800px) {
+  .pm-week {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "calendar" "header" "shop" "side";
+    gap: 8px;
+  }
+
+  .pm-side {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .pm-into-jar { grid-column: 1 / -1; }
+  /* Side by side below the shop: the jar beside its amounts again */
+  .pm-jar { flex-direction: row; }
+  .pm-jar .pm-panel-words { align-items: flex-start; text-align: left; }
+  .pm-jar .pm-to-go { align-self: flex-start; }
+  .pm-jar-art { width: clamp(52px, 9vh, 80px); }
+}
+
+/* Phones: one goal or treat per row, so names are never squeezed */
+@media (max-width: 480px) {
+  .pm-goal-cards { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pm-goal-cards .pm-card-pick { flex-direction: row; justify-content: flex-start; padding: 6px 10px; text-align: left; }
+  .pm-goal-cards .pm-card-pick .pm-art { width: 56px; }
+  /* One treat per row, lying down again, so three fit above the jar */
+  .pm-shelf { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pm-shelf .pm-card-pick { flex-direction: row; justify-content: flex-start; padding: 6px 10px; text-align: left; }
+  .pm-shelf .pm-card-pick .pm-art { width: 48px; }
+  .pm-purse, .pm-jar { gap: 8px; padding: 6px 8px; }
+  .pm-jar-art { width: 44px; }
+  .pm-purse-art { width: 48px; }
+  .pm-value { font-size: 1.2rem; }
+  .pm-goal-price, .pm-to-go { font-size: 0.85rem; }
+  .pm-to-go { padding: 1px 8px; }
+  .pm-event { padding: 6px 10px; font-size: 0.95rem; }
+  .pm-event .pm-art { width: 40px; }
+  .pm-calendar-week { font-size: 0.8rem; padding: 3px 4px; }
+}
+
+/* Phones on their side: short but wide, so the shop and the side stand side
+   by side again, as on a tablet */
+@media (max-width: 800px) and (max-height: 520px) and (orientation: landscape) {
+  .pm-week {
+    grid-template-columns: minmax(0, 1fr) clamp(220px, 38vw, 290px);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: "calendar calendar" "header header" "shop side";
+  }
+
+  .pm-goal-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* Two treats to a row, so each card stays 64px wide beside its tag; the
+     shop scrolls for a third */
+  .pm-shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pm-shelf .pm-card-pick { flex-direction: column; padding: 6px 4px; text-align: center; }
+}
+
+/* Short screens, such as a phone on its side: a smaller child */
+@media (max-height: 520px) {
+  .pm-header .pm-child { height: 60px; }
+  .pm-bubble { padding: 6px 12px; font-size: 0.95rem; }
+  .pm-value { font-size: 1.3rem; }
+  .pm-jar-art { width: 56px; }
+  .pm-purse-art { width: 48px; }
+  .pm-goal-cards .pm-card-pick .pm-art { width: 64px; }
+  .pm-shelf .pm-card-pick .pm-art { width: 44px; }
+}
+
+/* Short and wide, such as any phone on its side: too short for the purse,
+   the jar and the button stacked, so the purse and the jar stand side by
+   side, with "Into the jar" under both. Their labels go; the amounts stay. */
+@media (max-height: 520px) and (orientation: landscape) {
+  /* The jar gets more of the width: it shows the saved amount, the goal and
+     how much is to go ("£10.50 to go"), the purse just one amount */
+  .pm-side {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .pm-into-jar { grid-column: 1 / -1; }
+  .pm-purse, .pm-jar { flex-direction: row; justify-content: flex-start; gap: 6px; padding: 4px 6px; }
+  .pm-jar .pm-panel-words { align-items: flex-start; text-align: left; }
+  /* The purse, narrower, has its picture above its one amount */
+  .pm-purse { flex-direction: column; justify-content: center; gap: 2px; }
+  .pm-purse .pm-panel-words { align-items: center; }
+  .pm-jar .pm-to-go { align-self: flex-start; }
+  .pm-purse-art { width: 34px; }
+  .pm-jar-art { width: 28px; }
+  .pm-label { display: none; }
+  .pm-value { font-size: 1.1rem; }
+  .pm-goal-price, .pm-to-go { font-size: 0.75rem; }
+  .pm-to-go { padding: 0 6px; }
+}
+
+/* ?debug=1&items=1: every drawing, the child's looks and expressions, the jar */
+.pm-gallery {
+  height: 100%;
+  overflow: auto;
+  padding: 16px 24px;
+}
+
+.pm-gallery h2 { margin: 16px 0 8px; }
+
+.pm-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.pm-gallery-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.pm-gallery-item .pm-art { width: 110px; height: 110px; }
+.pm-gallery-item .pm-child { width: 130px; }
+.pm-gallery-item .pm-jar-art { width: 110px; }
+.pm-gallery-item .pm-purse-art { width: 110px; }
+.pm-gallery-item figcaption { font-weight: 700; color: var(--ink-soft); text-align: center; }
+
+/* Buying (milestone 2) */
+.pm-end[hidden] { display: none; }
+
+/* A treat's note under its name: "Bought" with a tick, or "Not enough in the
+   purse" with a mark, in words as well as colour */
+.pm-card-note:empty { display: none; }
+
+.pm-card-note {
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.pm-card[data-bought="true"] { box-shadow: inset 0 0 0 3px var(--teal), 0 3px 0 rgba(36, 50, 74, 0.14); }
+.pm-card[data-bought="true"] .pm-card-note { background: var(--teal); color: #fff; }
+.pm-card[data-bought="true"] .pm-card-note::before { content: "\2713  "; }
+.pm-card[data-afford="false"] .pm-card-pick { opacity: 0.6; }
+.pm-card[data-afford="false"] .pm-card-note { background: #fff1d9; color: var(--ink); }
+.pm-card[data-afford="false"] .pm-card-note::before { content: "! "; }
+
+.pm-card.wobble, .pm-jar.wobble { animation: wobble 0.32s ease-in-out; }
+
+/* Weeks gone by on the calendar */
+.pm-calendar-week[data-done="true"] { background: #e7f6ef; color: var(--ink); }
+.pm-calendar-week[data-done="true"]::after { content: " \2713"; }
+
+/* The end of the month: the jar (and the goal, if reached), then the child
+   with what they say */
+.pm-end {
+  width: 100%;
+  max-width: 820px;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pm-end-things { display: flex; align-items: flex-end; justify-content: center; gap: 24px; }
+.pm-end .pm-end-jar { width: clamp(90px, 24vh, 200px); }
+.pm-end-goal { width: clamp(90px, 22vh, 180px); }
+.pm-end-cheer { display: flex; align-items: center; gap: 14px; }
+.pm-end-cheer .pm-child { height: clamp(72px, 14vh, 130px); }
+.pm-end-words { display: flex; flex-direction: column; gap: 6px; }
+.pm-end-line { margin: 0; font-size: clamp(1.2rem, 3.4vh, 1.8rem); font-weight: 800; }
+.pm-end-more { margin: 0; font-size: clamp(1rem, 2.6vh, 1.3rem); font-weight: 700; }
+
+.pm-end-treats {
+  align-self: flex-start;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--lilac);
+  font-weight: 800;
+}
+
+@media (max-height: 520px) {
+  .pm-end { flex-direction: row; }
+  .pm-end .pm-end-jar, .pm-end .pm-end-goal { width: clamp(70px, 26vh, 120px); }
+}
+
+/* Levels 4 and 5: the choice before the shop opens (milestone 3). The question,
+   then the cards side by side; "Neither" as a plain button beside a Saturday's
+   job and outing. */
+.pm-shelf[hidden] { display: none; }
+
+.pm-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  border-radius: 18px;
+  background: rgba(207, 200, 242, 0.45);
+}
+
+.pm-choice[data-choice="need"] { background: #fff1d9; }
+.pm-choice.wobble { animation: wobble 0.32s ease-in-out; }
+.pm-choice-words { margin: 0; font-weight: 800; }
+
+.pm-choice-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.pm-choice .pm-card-pick { flex-direction: column; justify-content: center; padding: 10px 6px; text-align: center; }
+.pm-choice .pm-card-pick .pm-art { width: clamp(48px, 10vh, 84px); }
+.pm-neither { min-height: var(--tap); font-size: 1.1rem; }
+
+/* A Saturday: the job and the outing share the row, "Neither" takes what it needs */
+@media (min-width: 481px) {
+  .pm-choice[data-choice="saturday"] .pm-choice-cards { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; }
+  .pm-neither { padding: 0 18px; }
+}
+
+/* A small phone on its side: the shop's column is too narrow for three in a
+   row, so the job and the outing share it, and "Neither" goes under them */
+@media (max-width: 700px) and (max-height: 520px) and (orientation: landscape) {
+  .pm-choice[data-choice="saturday"] .pm-choice-cards { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .pm-neither { grid-column: 1 / -1; }
+}
+
+@media (max-width: 480px) {
+  .pm-choice-cards { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pm-choice .pm-card-pick { flex-direction: row; justify-content: flex-start; padding: 6px 10px; text-align: left; }
+  .pm-choice .pm-card-pick .pm-art { width: 44px; }
+}
+
+@media (max-height: 520px) {
+  .pm-choice { padding: 6px 8px 8px; gap: 6px; }
+  .pm-choice .pm-card-pick { padding: 4px; }
+  .pm-choice .pm-card-pick .pm-art { width: 40px; }
+}
+
+/* Polish (milestone 5). A small phone upright (360x640 and the like): a
+   smaller child, bubble, calendar, purse and jar, so the shop shows more
+   than one treat before it scrolls */
+@media (max-width: 480px) and (max-height: 700px) {
+  .pm-week { gap: 6px; }
+  .pm-header .pm-child { height: 56px; }
+  .pm-bubble { padding: 6px 12px; font-size: 0.95rem; }
+  .pm-calendar-week { padding: 2px 4px; font-size: 0.75rem; }
+  .pm-event { padding: 4px 8px; font-size: 0.9rem; }
+  .pm-event .pm-art { width: 32px; }
+  .pm-purse, .pm-jar { padding: 4px 8px; }
+  .pm-purse-art { width: 36px; }
+  .pm-jar-art { width: 32px; }
+  .pm-label { display: none; }
+  .pm-value { font-size: 1.1rem; }
+  .pm-shelf .pm-card-pick .pm-art { width: 40px; }
+}
+
+/* A short screen on its side: the choice's cards lie down, picture beside
+   the name, so a job's name stays on one or two lines */
+@media (max-height: 520px) and (orientation: landscape) {
+  .pm-choice .pm-card-pick { flex-direction: row; justify-content: flex-start; gap: 6px; padding: 4px 6px; text-align: left; }
+  .pm-choice .pm-card-pick .pm-art { width: 32px; }
+  .pm-choice .pm-card-name { font-size: 0.85rem; }
+  .pm-choice-words { font-size: 0.9rem; }
+}
+
+/* A card's short name ("Cake sale") shows only where the card is narrow */
+.pm-name-short { display: none; }
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .pm-choice .pm-name-long { display: none; }
+  .pm-choice .pm-name-short { display: inline; }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  /* Narrower price tags on the choice's cards (still 64px), so the name keeps its room */
+  .pm-choice .pm-tag { padding: 4px 6px; }
+  .pm-choice .pm-tag-price { font-size: 1rem; }
+  .pm-choice .pm-card-pick .pm-art { width: 28px; }
+}
+
 /* Price Detective's own styles. Shared screens are in src/shared/game-ui.css.
    Every class here starts with pd-. */
 
@@ -2251,6 +2858,8 @@ button {
 
 /* Four games: two by two, rather than three and one left over */
 .hub-tiles[data-count="4"] { max-width: 540px; }
+/* Five games: three over two where there is room */
+.hub-tiles[data-count="5"] { max-width: 820px; }
 
 .hub-tile {
   position: relative;
