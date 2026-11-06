@@ -1,7 +1,7 @@
 // The service worker. The build fills in the version and the file list, so every
 // deploy is a new worker with a new cache. Only this app's caches are touched:
 // saved progress is in localStorage, which is never involved.
-const CACHE = 'kmg-hub-3a768dbb643a';
+const CACHE = 'kmg-hub-19dc91cdc891';
 const OLD_CACHE_PREFIX = 'kmg-hub-';
 const FILES = ["./","index.html","app.js","app.css","manifest.webmanifest","icons/192x192.png","icons/512x512.png","icons/apple-touch-icon.png","voice/shared.js","voice/coin-sorter.js","voice/party-planner.js","voice/play-shop.js","voice/pocket-money-month.js","voice/price-detective.js"];
 
@@ -25,15 +25,25 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Whether an address is the hub's own page: the site's folder, or its
+// index.html. Other pages on the site, such as privacy.html (added by hand
+// beside the build, and linked from the Amazon listings), are not the hub and
+// must never be answered with it.
+function isHubPage(url) {
+  const scope = new URL(self.registration.scope).pathname;
+  return url.pathname === scope || url.pathname === `${scope}index.html`;
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
 
   event.respondWith(
     caches.open(CACHE).then(async (cache) => {
       const hit = await cache.match(request, { ignoreSearch: true });
       if (hit) return hit;
-      if (request.mode === 'navigate') {
+      if (request.mode === 'navigate' && isHubPage(url)) {
         const page = await cache.match('index.html');
         if (page) return page;
       }
